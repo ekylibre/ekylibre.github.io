@@ -9,4 +9,4 @@ COPY . .
 RUN bundle exec nanoc
 
 FROM nginx:stable-alpine
-COPY --from=builder /app/output /usr/share/nginx/html
+COPY --from=builder /app/public /usr/share/nginx/html

@@ -1,0 +1,97 @@
+{
+  "project": "ekylibre-plugins/doc",
+  "type": "static-site",
+  "engine": "nanoc",
+  "language": "ruby",
+  "ruby_version": "3.0",
+  "primary_locale": "fr",
+  "output_dir": "public",
+  "entry_points": {
+    "build": "bundle exec nanoc",
+    "dev_server": "bundle exec nanoc live",
+    "deploy_rsync": "bundle exec nanoc deploy",
+    "check_internal": "bundle exec nanoc check internal_links",
+    "check_external": "bundle exec nanoc check external_links",
+    "docker": "docker compose up --build"
+  },
+  "content_areas": {
+    "/fr/**/*.html": {
+      "layout": "default.html",
+      "filters": [],
+      "count": 16,
+      "examples": ["chapitre1.html", "annexes.html", "demarrage.html", "ekyviti.html", "notes-version.html"]
+    },
+    "/fr/**/*.md": {
+      "layout": "start.html",
+      "filters": ["kramdown"],
+      "count": 0,
+      "note": "rule exists but no markdown files currently"
+    },
+    "/techdoc/**/*.md": {
+      "layout": "docs.html",
+      "filters": ["redcarpet", "normalize_links", "version_warning", "add_anchors", "bootstrappify", "admonition", "colorize_syntax(pygmentsrb)", "config_linker", "toc"],
+      "count": 3
+    },
+    "/index.*": {"layout": "start.html"},
+    "/faq.*": {"layout": "start.html"}
+  },
+  "custom_filters": {
+    "lib/filters/normalize_links.rb": "rewrite links per active doc version",
+    "lib/filters/version_warning.rb": "inject banner when viewing non-latest version",
+    "lib/filters/add_anchors.rb": "add named anchors to headings",
+    "lib/filters/bootstrappify.rb": "rewrite tables/admonitions for Bootstrap markup",
+    "lib/filters/admonition.rb": "convert !!! blocks to styled callouts",
+    "lib/filters/config_linker.rb": "auto-link configuration keys (only on title=Configuration)",
+    "lib/filters/toc.rb": "build in-page table of contents"
+  },
+  "helpers": {
+    "lib/helpers/download.rb": "download link helpers",
+    "lib/helpers/nav.rb": "navigation helpers"
+  },
+  "data_sources": {
+    "active": ["filesystem"],
+    "dormant": {
+      "lib/data_sources/repo_docs.rb": {
+        "purpose": "sparse-checkout versioned techdoc/ from external git repo",
+        "version_pattern": "release-* matching vMAJOR.MINOR.PATCH",
+        "lts_config": "lts.yml (file absent)",
+        "exposes": "/<version>/* and /latest/* aliases"
+      }
+    }
+  },
+  "layouts": ["default.html", "start.html", "docs.html", "blog.html"],
+  "deployment": {
+    "rsync": {"command": "nanoc deploy", "target": "doc:/opt/doc/app/v2"},
+    "github_pages": {"workflow": ".github/workflows/pages.yml", "trigger": "push to master"},
+    "gitlab_pages": {"config": ".gitlab-ci.yml", "artifact": "public/"},
+    "docker": {"image": "nginx:stable-alpine", "port": 3002, "host": "documentation.ekylibre.com"}
+  },
+  "dependencies": {
+    "core": ["nanoc", "kramdown", "redcarpet", "nokogiri", "pygments.rb", "builder", "semverse"],
+    "server": ["adsf", "webrick"],
+    "dev": ["guard-nanoc", "guard-livereload"],
+    "watchers": ["rb-inotify", "rb-fsevent", "rb-fchange"]
+  },
+  "configuration_files": {
+    "nanoc.yaml": "output dir, prune, filesystem data source, rsync deploy",
+    "Rules": "compile/route filter chains",
+    "Gemfile": "ruby deps",
+    ".ruby-version": "3.0",
+    "Guardfile": "livereload + nanoc watchers",
+    "docker-compose.yml": "traefik labels, network proxy_web",
+    "Dockerfile": "multi-stage ruby:3.0 → nginx:stable-alpine"
+  },
+  "known_issues": [
+    ".gitignore excludes output/ (legacy) while builds write to public/ which IS committed",
+    "/fr/**/*.md compile rule exists but no markdown files under content/fr/",
+    "repo_docs data source is referenced in code but not wired in nanoc.yaml; lts.yml is missing"
+  ],
+  "stats": {
+    "fr_chapter_pages": 16,
+    "techdoc_markdown_files": 3,
+    "fr_images": 2312,
+    "custom_filters": 7,
+    "helpers": 2,
+    "layouts": 4
+  }
+}
