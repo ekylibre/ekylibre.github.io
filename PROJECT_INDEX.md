@@ -4,7 +4,7 @@ Generated: 2026-05-31 · Ruby 3.0 · Nanoc static site
 
 ## What it is
 
-User-facing documentation for the Ekylibre solution (French). Static site compiled with [Nanoc](https://nanoc.app/) into `public/`, served behind nginx (Docker) and deployed to GitHub Pages + GitLab Pages + an internal rsync target.
+User-facing documentation for the Ekylibre solution (French). Static site compiled with [Nanoc](https://nanoc.app/) into `public/`, deployed to GitHub Pages at https://ekylibre.github.io/doc/. All asset URLs are hard-prefixed with `/doc/` to match the sub-path.
 
 ## Project Structure
 
@@ -26,14 +26,11 @@ User-facing documentation for the Ekylibre solution (French). Static site compil
 │   ├── data_sources/repo_docs.rb   # versioned-docs sparse-checkout (DORMANT)
 │   └── tasks/
 ├── Rules                    # compile/route dispatcher (kramdown vs redcarpet)
-├── nanoc.yaml               # output_dir: public, auto_prune, rsync deploy
+├── nanoc.yaml               # output_dir: public, auto_prune
 ├── Gemfile / Gemfile.lock   # Ruby 3.0 (.ruby-version)
 ├── Guardfile                # nanoc + livereload for `nanoc live`
-├── Dockerfile               # ruby:3.0 builder → nginx:stable-alpine
-├── docker-compose.yml       # traefik-routed to documentation.ekylibre.com:3002
-├── .gitlab-ci.yml           # GitLab Pages build on master
 ├── .github/workflows/pages.yml   # GitHub Pages deploy on master
-├── public/                  # build output (committed for GitLab Pages legacy)
+├── public/                  # build output
 ├── illustrations/, pdf/     # supplementary assets
 └── tmp/                     # nanoc tmp + repo_docs clones
 ```
@@ -78,20 +75,13 @@ All run on `/techdoc/**/*.md` after redcarpet:
 bundle install                          # gems (Ruby 3.0)
 bundle exec nanoc                       # build → public/
 bundle exec nanoc live                  # dev server :3000 + livereload
-bundle exec nanoc deploy                # rsync public/ to doc:/opt/doc/app/v2
 bundle exec nanoc check internal_links  # validate internal links
 bundle exec nanoc check external_links  # validate external links
-docker compose up --build               # nginx on :3002 (traefik → documentation.ekylibre.com)
 ```
 
-## Deployment paths
+## Deployment
 
-| Trigger | Mechanism | Target |
-|---|---|---|
-| `bundle exec nanoc deploy` | rsync | `doc:/opt/doc/app/v2` (needs `~/.ssh/config` host `doc`) |
-| push to `master` | `.github/workflows/pages.yml` | GitHub Pages |
-| push to `master` | `.gitlab-ci.yml` | GitLab Pages (artifact: `public/`) |
-| `docker compose up` | multi-stage → nginx | `:3002` via traefik |
+Push to `master` → `.github/workflows/pages.yml` builds and publishes to GitHub Pages (https://ekylibre.github.io/doc/). No other deploy paths.
 
 ## Known inconsistencies
 
@@ -102,12 +92,12 @@ docker compose up --build               # nginx on :3002 (traefik → documentat
 
 | File | Purpose |
 |---|---|
-| `nanoc.yaml` | output dir, prune, filesystem data source, check excludes, rsync deploy |
+| `nanoc.yaml` | output dir, prune, filesystem data source, check excludes |
 | `Rules` | compile/route filter chains |
 | `Gemfile` | nanoc, kramdown, redcarpet, nokogiri, pygments.rb, semverse, guard-* |
 | `.ruby-version` | Ruby 3.0 |
 | `Guardfile` | livereload + nanoc watchers |
-| `docker-compose.yml` | traefik labels, network `proxy_web` |
+| `.github/workflows/pages.yml` | GH Pages build+deploy on master |
 
 ## Entry points for editing
 

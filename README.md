@@ -22,10 +22,6 @@ Go to output of your working directory
 
 Go to http://localhost:3000
 
-## deploy live version using gitlab pages
+## deploy
 
-You must have the right configuration in your .ssh/config for the documentation server
-
-`cd doc`
-
-`bundler exec nanoc deploy`
+Push to `master` — `.github/workflows/pages.yml` builds and publishes to GitHub Pages at https://ekylibre.github.io/doc/.

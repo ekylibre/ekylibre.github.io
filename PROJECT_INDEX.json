@@ -9,11 +9,11 @@
   "entry_points": {
     "build": "bundle exec nanoc",
     "dev_server": "bundle exec nanoc live",
-    "deploy_rsync": "bundle exec nanoc deploy",
     "check_internal": "bundle exec nanoc check internal_links",
-    "check_external": "bundle exec nanoc check external_links",
-    "docker": "docker compose up --build"
+    "check_external": "bundle exec nanoc check external_links"
   },
+  "site_base_path": "/doc/",
+  "site_url": "https://ekylibre.github.io/doc/",
   "content_areas": {
     "/fr/**/*.html": {
       "layout": "default.html",
@@ -61,10 +61,7 @@
   },
   "layouts": ["default.html", "start.html", "docs.html", "blog.html"],
   "deployment": {
-    "rsync": {"command": "nanoc deploy", "target": "doc:/opt/doc/app/v2"},
-    "github_pages": {"workflow": ".github/workflows/pages.yml", "trigger": "push to master"},
-    "gitlab_pages": {"config": ".gitlab-ci.yml", "artifact": "public/"},
-    "docker": {"image": "nginx:stable-alpine", "port": 3002, "host": "documentation.ekylibre.com"}
+    "github_pages": {"workflow": ".github/workflows/pages.yml", "trigger": "push to master", "url": "https://ekylibre.github.io/doc/"}
   },
   "dependencies": {
     "core": ["nanoc", "kramdown", "redcarpet", "nokogiri", "pygments.rb", "builder", "semverse"],
@@ -73,13 +70,12 @@
     "watchers": ["rb-inotify", "rb-fsevent", "rb-fchange"]
   },
   "configuration_files": {
-    "nanoc.yaml": "output dir, prune, filesystem data source, rsync deploy",
+    "nanoc.yaml": "output dir, prune, filesystem data source",
     "Rules": "compile/route filter chains",
     "Gemfile": "ruby deps",
     ".ruby-version": "3.0",
     "Guardfile": "livereload + nanoc watchers",
-    "docker-compose.yml": "traefik labels, network proxy_web",
-    "Dockerfile": "multi-stage ruby:3.0 → nginx:stable-alpine"
+    ".github/workflows/pages.yml": "GH Pages build+deploy on master"
   },
   "known_issues": [
     ".gitignore excludes output/ (legacy) while builds write to public/ which IS committed",
