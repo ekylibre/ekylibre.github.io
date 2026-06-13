@@ -6,7 +6,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 User-facing documentation for the Ekylibre solution, built as a static site with [Nanoc](https://nanoc.app/) (Ruby). French content lives under `content/fr/`. Output is written to `public/` (note: `nanoc.yaml` sets `output_dir: public`, not the default `output/` — the `.gitignore` still excludes `output/` from a previous configuration).
 
-Site is served from **GitHub Pages under the `/doc/` sub-path** (https://ekylibre.github.io/doc/). All asset URLs in `layouts/start.html`, `layouts/docs.html`, and `content/index.html` are hard-prefixed with `/doc/` — if you ever change the host or sub-path, search-replace `/doc/` across `layouts/` and `content/`.
+Site is served from **GitHub Pages at the root** of the custom domain https://ekylibre.org/ (with https://ekylibre.github.io/ redirecting to it). The domain is pinned via `content/CNAME` (passed through to `public/CNAME` by Nanoc's catch-all rule). All asset URLs in `layouts/start.html`, `layouts/docs.html`, and `content/index.html` are root-relative (`/…`) — do **not** reintroduce a sub-path prefix.
 
 ## Common commands
 
@@ -18,9 +18,7 @@ bundle exec nanoc check internal_links   # validate internal links
 bundle exec nanoc check external_links   # validate external links
 ```
 
-Deploy: push to `master`. `.github/workflows/pages.yml` builds and publishes to GitHub Pages — no manual deploy command.
-
-> Note: when running `nanoc live` locally, assets resolve to `http://localhost:3000/doc/...` which **does not** exist on the dev server (it serves `/`). To preview locally, either temporarily revert the `/doc/` prefix or browse via `http://localhost:3000/doc/...` after symlinking, or run a static server with a `/doc/` mount.
+Deploy: push to `master`. `.github/workflows/pages.yml` builds and publishes to GitHub Pages — no manual deploy command. The Pages site is configured with custom domain `ekylibre.org` (set in repo Settings → Pages and pinned via `content/CNAME`); DNS for `ekylibre.org` points to GitHub Pages.
 
 ## Architecture
 
