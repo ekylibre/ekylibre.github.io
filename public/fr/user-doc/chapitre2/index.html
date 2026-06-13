@@ -1,0 +1,1273 @@
+<!doctype html>
+<html lang="fr">
+   <head>
+      <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+      <meta name="format-detection" content="telephone=no">
+      <meta property="og:url" content="https://doc.ekylibre.com/" />
+      <meta property="og:title" content="Guide de prise en main Ekylibre" />
+      <meta property="og:description" content="Ce guide a pour but d'aider l'utilisateur à configurer correctement les applications développées par Ekylibre pour gérer son exploitation agricole ou viticole. Il rassemble les informations et les procédures essentielles à connaître pour maîtriser les fonctionnalités disponibles dans les différents modules de la solution." />
+      <meta property="og:image" content="https://doc.ekylibre.com/fr/images/commun/ekylibre.png" />
+      <title>Ekylibre : guide de prise en main</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="preload" href="../images/commun/brand.svg" as="image" type="image/svg+xml"/>
+      <link rel="shortcut icon" href="../images/commun/favicon.ico" />
+      <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="/stylesheets/w3school.css" />
+      <link rel="stylesheet" href="/stylesheets/quickstart.css" />
+      <link rel="stylesheet" href="/stylesheets/ekylibre.css" />
+      <link rel="stylesheet" href="/stylesheets/drawer.css" />
+      <link rel="stylesheet" href="/stylesheets/jquery.qtip.css" />
+      <link rel="stylesheet" href="/stylesheets/chronoline.css" />
+      <link rel="stylesheet" href="/stylesheets/fontawesome.css" />
+	  <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />-->
+	  <link rel="stylesheet" href="/stylesheets/docsearch.css" />
+      <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-58304754-1', 'auto');ga('send', 'pageview');</script>
+      <!-- Start of ekylibrehelp Zendesk Widget script -->
+      <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=8e03812d-d038-4a8c-8412-d85571f9fdbe"> </script>
+      <!-- End of ekylibrehelp Zendesk Widget script -->
+      <script src="/javascripts/jquery.js"></script>
+      <script src="/javascripts/jquery.qtip.js"></script>
+      <script src="/javascripts/chronoline.js"></script>
+      <script src="/javascripts/raphael-min.js"></script>
+	  <script src="/javascripts/justgage.js"></script>
+      <style>
+         .nav-lang-switcher { display: inline-block; margin-right: 1rem; font-weight: 700; letter-spacing: 0.05em; }
+         .nav-lang-switcher a, .nav-lang-switcher span { color: inherit; padding: 0 4px; text-decoration: none; }
+         .nav-lang-switcher a { opacity: 0.6; }
+         .nav-lang-switcher a:hover, .nav-lang-switcher a:focus { opacity: 1; text-decoration: underline; }
+         .nav-lang-switcher span[aria-current] { opacity: 1; }
+         .nav-lang-switcher .lang-sep { opacity: 0.4; }
+      </style>
+   </head>
+   <body class="drawer drawer--top">
+      <a href="javascript:void(0);" id="scroll" title="Scroll to Top" style="display: none;">Top<span></span></a>
+      <div class="conteneur">
+         <div class="ekylibre affichage-print"><img src="../images/commun/brand.svg" alt="Ekylibre" class="logo-entete"></div>
+         <header role="banner">
+            <button type="button" class="drawer-toggle drawer-hamburger">
+            <span class="sr-only">Menu</span>
+            <span class="drawer-hamburger-icon"></span>
+            </button>
+            <div id="shadow"></div>
+            <nav class="drawer-nav" role="navigation">
+               <ul class="drawer-menu columns">
+                  <li><a class="drawer-menu-item" href="../chapitre1"><span data-descr="[Prérequis - Tâches visées - Abonnement - Démarrage]">Introduction</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i></a></li>
+                  <li><a class="drawer-menu-item" href="../chapitre2"><span data-descr="[Récupération et import de la déclaration TelePAC - Utilisation du RPG]">Parcellaire</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i><br></a></li>
+                  <li><a class="drawer-menu-item" href="../chapitre3"><span data-descr="[Activités - Zones de stockage - Équipements - Accès initial]">Exploitation</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i></a></li>
+                  <li><a class="drawer-menu-item" href="../chapitre4"><span data-descr="[Espace de travail - Personnalisation - Utilisateurs et droits - Duke]">Interface et accès</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i></a></li>
+                  <li><a class="drawer-menu-item" href="../chapitre5"><span data-descr="[Journaux - Exercices - Synthèses - Immobilisations - TVA - Trésorerie]">Comptabilité</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i></a></li>
+                  <li><a class="drawer-menu-item" href="../chapitre6"><span data-descr="[Commandes - Réceptions - Facturation - Décaissements]">Achats</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i></a></li>
+                  <li><a class="drawer-menu-item" href="../chapitre7"><span data-descr="[Devis - Expéditions - Livraisons - Encaissements - Remises en banque]">Ventes</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i></a></li>
+                  <li><a class="drawer-menu-item" href="../chapitre8"><span data-descr="[Articles - Inventaires - Équipements - Contacts - Équipiers - Salaires]">Stocks, tiers et RH</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i></a></li>
+                  <li><a class="drawer-menu-item" href="../chapitre9"><span data-descr="[Activités - Assolement - Interventions - Calcul IFT - Planification - Traçabilité]">Production</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i></a></li>
+                  <li><a class="drawer-menu-item" href="../chapitre10"><span data-descr="[Imports de données - Documents - Extractions - Connexions partenaires]">Outils</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i></a></li>
+				  <li><a class="drawer-menu-item" href="../performance"><span data-descr="[Budgets - Coûts - Marges - Seuils de commercialisation - Itinéraires culturaux]">Performance</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i></a></li>
+				  <li><a class="drawer-menu-item" href="../ekyviti"><span data-descr="[Import CVI - Conversion parcellaire - Vendange - Connexion Baqio]">Ekyviti</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i></a></li>
+               </ul>
+            </nav>
+         </header>
+         <div class="main-menu drawer-toggle">
+            <p>Menu principal</p>
+         </div>
+         <div class="affichage-large">
+            <div class="top-background w3-top">
+               <div class="divTableCellMenu w3-right w3-text-white" style="width:364px">
+                  <span class="nav-lang-switcher" role="navigation" aria-label="Langue">
+                     <a href="/" hreflang="en" lang="en">EN</a><span class="lang-sep" aria-hidden="true">|</span><span aria-current="page" lang="fr">FR</span>
+                  </span>
+                  <a href="/">Accueil</a>
+               </div>
+            </div>
+         </div>
+         <div class="affichage-mobile">
+            <div class="top-background w3-top">
+               <div class="divTableCellMenu w3-right w3-text-white" style="width:240px">
+                  <span class="nav-lang-switcher" role="navigation" aria-label="Langue">
+                     <a href="/" hreflang="en" lang="en">EN</a><span class="lang-sep" aria-hidden="true">|</span><span aria-current="page" lang="fr">FR</span>
+                  </span>
+                  <a href="/">Accueil</a>
+               </div>
+            </div>
+         </div>
+         <div class="affichage-print">
+            <div class="top-background w3-top">
+               <div class="w3-right w3-text-white" style="width:250px">GUIDE DE PRISE EN MAIN</div>
+            </div>
+         </div>
+      </div>
+      <!-- !PAGE CONTENT! -->
+	  <div id="loading">
+		<p><i class="fa-duotone fa-spinner-third fa-spin" style="font-size: 100px; top: 156px; color: #fff; z-index: 1000;"></i></p>
+	  </div>
+      <div class="tooltip">
+         <a style="display:block" href="../pdf/Ekylibre-Guide.pdf" target="_blank">
+            <div class="btn_pdf"><span class="tooltiptext2 tooltip-top">Guide format PDF</span></div>
+         </a>
+      </div>
+	  <!--
+      <div class="tooltip">
+         <a style="display:block" href="../notes-version" target="_self">
+            <div class="btn_notes-version"><span class="tooltiptext2 tooltip-top">Notes de version</span></div>
+         </a>
+      </div>
+	  -->
+      <div class="w3-content page-content scroll-spy-heading-breadcrumbs">
+   <article class="post DocSearch-content">
+      <div id="navigation">
+         <div class="divTable">
+            <div class="divTableBody">
+               <div class="divTableRow">
+                  <div class="divTableCellNavi1"><img src="../images/commun/angle-left.svg" alt="Précédent" height="13" class="align-navi icone-marge-droite"><a href="../chapitre1" title="Introduction" target="_self">Introduction</a></div>
+                  <div class="divTableCellNavi2">Guide de prise en main • Parcellaire</div>
+                  <div class="divTableCellNavi3"><a href="../chapitre3" title="Exploitation" target="_self">Exploitation</a><img src="../images/commun/angle-right.svg" alt="Suivant" height="13" class="align-navi icone-marge-gauche"></div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="image-large"><img class="chapitre" src="../images/chapitre2/parcellaire.png" alt="Parcellaire"/></div>
+      <div class="image-carre"><img class="chapitre" src="../images/chapitre2/parcellaire-carre.png" alt="Parcellaire" style="width:auto;" /></div>
+	  <div id="docsearch" class="title-chapter pdf"></div>
+      <h1 align="center" class="majuscule aerateur">2 - Parcellaire</h1>
+      <div class="sommaire">
+         <div class="gris">
+            <div class="contenu">
+               <ul id="toggle">
+                  <li>
+                     <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-all">1</div>
+                           Introduction
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: none;">
+                        <div class="bloc">
+                           <li><a href="../chapitre1#prerequis" target="_self">Prérequis pour utiliser l'application</a></li>
+                           <li><a href="../chapitre1#parcours" target="_self">Parcours de configuration</a></li>
+                           <li><a href="../chapitre1#quefaire" target="_self">Que faire avec <strong>Eky</strong>agri et <strong>Eky</strong>viti&nbsp;?</a></li>
+                           <li><a href="../chapitre1#preparation" target="_self">Préparation des données</a></li>
+                           <li><a href="../chapitre1#inscription" target="_self">Sélection et souscription à une offre</a></li>
+                           <li><a href="../chapitre1#demarrage" target="_self">Arrivée dans l'assistant de démarrage</a></li>
+                           <li><a href="../chapitre1#declaration" target="_self">Déclaration de l'exploitation</a></li>
+                        </div>
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-all">2</div>
+                           Parcellaire
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-up"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: block;">
+                        <div class="bloc">
+                           <li><a href="#gestion" target="_self">Gestion des cultures</a></li>
+                           <li><a href="#zones" target="_self">Création des zones cultivables</a></li>
+                           <li><a href="#declaration" target="_self">Récupération et utilisation des données TelePAC</a></li>
+						   <li><a href="#rpg" target="_self">Utilisation du registre parcellaire graphique</a></li>
+						   <li><a href="#no-pac" target="_self">Création des zones cultivables non déclarées à la PAC</a></li>
+                        </div>
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-all">3</div>
+                           Exploitation
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: none;">
+                        <div class="bloc">
+                           <li><a href="../chapitre3#activites" target="_self">Activités de l'exploitation</a></li>
+                           <li><a href="../chapitre3#zones" target="_self">Création des zones cultivables &#40;sans TelePAC&#41;</a></li>
+                           <li><a href="../chapitre3#batiments" target="_self">Création des bâtiments et des zones de stockage</a></li>
+                           <li><a href="../chapitre3#decoupage" target="_self">Découpage des bâtiments et des zones de stockage</a></li>
+                           <li><a href="../chapitre3#equipements" target="_self">Création des équipements</a></li>
+                           <li><a href="../chapitre3#validation" target="_self">Confirmation de la configuration de démarrage</a></li>
+						   <li><a href="../chapitre3#password" target="_self">Création du mot de passe initial</a></li>
+                        </div>
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-all">4</div>
+                           Interface et accès
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: none;">
+                        <div class="bloc">
+                           <li><a href="../chapitre4#espace" target="_self">Présentation de l'espace de travail</a></li>
+                           <li><a href="../chapitre4#modules" target="_self">Navigation et accès aux différents modules</a></li>
+						   <li><a href="../chapitre4#compte" target="_self">Gestion du compte administrateur</a></li>
+						   <li><a href="../chapitre4#perso" target="_self">Personnalisation des tableaux de bord</a></li>
+						   <li><a href="../chapitre4#etiquettes" target="_self">Paramétrage des étiquettes</a></li>
+						   <li><a href="../chapitre4#champs" target="_self">Création de champs personnalisés</a></li>
+						   <li><a href="../chapitre4#formats" target="_self">Formats de nommage</a></li>
+						   <li><a href="../chapitre4#sequences" target="_self">Configuration des séquences</a></li>
+						   <li><a href="../chapitre4#acces" target="_self">Accès et rôles d'utilisateur</a></li>
+						   <li><a href="../chapitre4#duke" target="_self">Duke, l'assistant vocal intelligent</a></li>
+                        </div>
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-gestion">5</div>
+                           Comptabilité
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: none;">
+                        <div class="bloc">
+                           <li><a href="../chapitre5#introduction" target="_self">Introduction</a></li>
+                           <li><a href="../chapitre5#societe" target="_self">Paramétrage</a></li>
+						   <li><a href="../chapitre5#journaux" target="_self">Journaux</a></li>
+                           <li><a href="../chapitre5#exercice" target="_self">Exercices comptables</a></li>
+                           <li><a href="../chapitre5#plan" target="_self">Plan de comptes</a></li>
+                           <li><a href="../chapitre5#tva" target="_self">Taux et déclaration de TVA</a></li>
+                           <li><a href="../chapitre5#tresorerie" target="_self">Trésorerie</a></li>
+						   <li><a href="../chapitre5#immobilisations" target="_self">Immobilisations</a></li>
+                           <li><a href="../chapitre5#echanges" target="_self">Échanges comptables</a></li>
+						   <li><a href="../chapitre5#balance" target="_self">Balance</a></li>
+						   <li><a href="../chapitre5#ecritures" target="_self">Écritures</a></li>
+                           <li><a href="../chapitre5#grand-livre" target="_self">Grand-livre</a></li>
+                        </div>
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-gestion">6</div>
+                           Achats
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: none;">
+                        <div class="bloc">
+                           <li><a href="../chapitre6#societe" target="_self">Paramétrage</a></li>
+                           <li><a href="../chapitre6#types" target="_self">Types d'achat</a></li>
+                           <li><a href="../chapitre6#achats" target="_self">Enregistrement des commandes</a></li>
+                           <li><a href="../chapitre6#reception" target="_self">Réception des commandes</a></li>
+                           <li><a href="../chapitre6#facturation" target="_self">Facturation des achats</a></li>
+                           <li><a href="../chapitre6#decaissements" target="_self">Décaissements et lots de décaissements</a></li>
+						   <li><a href="../chapitre6#justif-achats" target="_self">Justificatifs d'achats</a></li>
+                           <li><a href="../chapitre6#stockage" target="_self">Zones de stockage</a></li>
+                        </div>
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-gestion">7</div>
+                           Ventes
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: none;">
+                        <div class="bloc">
+                           <li><a href="../chapitre7#societe" target="_self">Paramétrage</a></li>
+                           <li><a href="../chapitre7#types" target="_self">Types de vente</a></li>
+                           <li><a href="../chapitre7#ventes" target="_self">Enregistrer une vente</a></li>
+                           <li><a href="../chapitre7#factures" target="_self">Facturer une vente</a></li>
+                           <li><a href="../chapitre7#expeditions" target="_self">Expédier une vente</a></li>
+                           <li><a href="../chapitre7#avoirs" target="_self">Réaliser un avoir</a></li>
+                           <li><a href="../chapitre7#livraisons" target="_self">Enregistrer une livraison</a></li>
+                           <li><a href="../chapitre7#encaissements" target="_self">Enregistrer un encaissement</a></li>
+                           <li><a href="../chapitre7#remises" target="_self">Remises en banque</a></li>
+                        </div>
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-all">8</div>
+                           Stocks, tiers et RH
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: none;">
+                        <div class="bloc">
+                           <li><a href="../chapitre8#categories" target="_self">Catégories, profils et articles</a></li>
+						   <li><a href="../chapitre8#conditionnement" target="_self">Unités et conditionnements</a></li>
+                           <li><a href="../chapitre8#stocks" target="_self">Gestion des stocks et création de matières</a></li>
+                           <li><a href="../chapitre8#expeditions" target="_self">Expéditions, livraisons et facturation</a></li>
+                           <li><a href="../chapitre8#inventaires" target="_self">Inventaire des stocks</a></li>
+                           <li><a href="../chapitre8#equipements" target="_self">Gestion des équipements</a></li>
+                           <li><a href="../chapitre8#tiers" target="_self">Gestion des tiers et des équipiers</a></li>
+						   <li><a href="../chapitre8#salaires" target="_self">Gestion des salaires et des contrats de travail</a></li>
+                        </div>
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-all">9</div>
+                           Production
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: none;">
+                        <div class="bloc">
+                           <li><a href="../chapitre9#activites" target="_self">Activités agricoles</a></li>
+                           <li><a href="../chapitre9#productions" target="_self">Création des productions dans une campagne</a></li>
+                           <li><a href="../chapitre9#interventions" target="_self">Enregistrement d'interventions</a></li>
+                           <li><a href="../chapitre9#planification" target="_self">Planification d'interventions</a></li>
+						   <li><a href="../chapitre9#zero" target="_self">Utilisation de l'application mobile</a></li>
+                           <li><a href="../chapitre9#cahier" target="_self">Impression des documents réglementaires</a></li>
+						   <li><a href="../chapitre9#suivi" target="_self">Indicateurs et suivi des activités</a></li>
+						   <li><a href="../chapitre9#couts-prod" target="_self">Coûts de production détaillés</a></li>
+                        </div>
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-all">10</div>
+                           Outils
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: none;">
+                        <div class="bloc marge-basse">
+                           <li><a href="../chapitre10#fichiers" target="_self">Importation de fichiers CSV</a></li>
+                           <li><a href="../chapitre10#imports" target="_self">Import de données dans <strong>Eky</strong>agri | <strong>Eky</strong>viti</a></li>
+                           <li><a href="../chapitre10#extractions" target="_self">Extraction de données au format CSV</a></li>
+						   <li><a href="../chapitre10#ged" target="_self">Gestion des documents archivés</a></li>
+						   <li><a href="../chapitre10#connexions" target="_self">Connexions partenaires</a></li>
+                        </div>
+                     </ul>
+                  </li>
+				  <li>
+				  <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-perf">11</div>
+                           Performance
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: none;">
+                        <div class="bloc">
+                           <li><a href="../performance#config" target="_self">Instructions de configuration</a></li>
+						   <li><a href="../performance#activites" target="_self">Paramétrage des activités</a></li>
+						   <li><a href="../performance#budgets" target="_self">Budgets prévisionnels</a></li>
+                           <li><a href="../performance#couts-prod" target="_self">Coûts de production</a></li>
+                           <li><a href="../performance#marges" target="_self">Marges</a></li>
+						   <li><a href="../performance#seuils" target="_self">Seuils de commercialisation</a></li>
+						   <li><a href="../performance#modeles" target="_self">Modèles d'interventions</a></li>
+						   <li><a href="../performance#itineraires" target="_self">Itinéraires culturaux</a></li>
+						   <li><a href="../performance#plan-charges" target="_self">Plan de charges</a></li>
+						   <li><a href="../performance#scenarios" target="_self">Élaboration de scénarios</a></li>
+                        </div>
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-viti">12</div>
+                           Ekyviti
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: none;">
+                        <div class="bloc">
+                           <li><a href="../ekyviti#cvi" target="_self">Préparation et import des données cadastrales du CVI</a></li>
+                           <li><a href="../ekyviti#conversion" target="_self">Conversion du parcellaire cadastral</a></li>
+                           <li><a href="../ekyviti#zones" target="_self">Paramétrage et modification des zones cultivables</a></li>
+                           <li><a href="../ekyviti#parcelles" target="_self">Préparation et conversion du parcellaire cultural</a></li>
+						   <li><a href="../ekyviti#no-cvi" target="_self">Création des cultures sans CVI</a></li>
+                           <li><a href="../ekyviti#indicateurs" target="_self">Consultation et actualisation des indicateurs</a></li>
+						   <li><a href="../ekyviti#vendange" target="_self">Réception de vendange avec Duke</a></li>
+						   <li><a href="../ekyviti#baqio" target="_self">Connexion partenaire avec la solution Baqio</a></li>
+                        </div>
+                     </ul>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+      <div class="config margin-config config-x4">
+         <p>
+            <img src="../images/commun/parcours.svg" height="45" alt="Icône parcours"/>
+         </p>
+         <p class="majuscule">
+            configuration à faire pour
+            <img class="align-icone icone-marge-gauche icone-marge-droite" src="../images/commun/tacheE.svg" width="20" alt="E" />
+            et
+            <img class="align-icone icone-marge-gauche icone-marge-droite" src="../images/commun/tacheF.svg" width="20" alt="F" />
+            production végétale
+         </p>
+      </div>
+      <p class="texte aerateur-haut">
+         <strong>Dans ce chapitre, on vous explique&nbsp;:</strong>
+      </p>
+      <div class="divTableListe marge">
+         <div class="divTableBody">
+            <div class="divTableRow">
+               <div class="divTableCellListe" style="width: 14px">
+                  <img src="../images/commun/caret-right.svg" alt="Flèche" height="15">
+               </div>
+               <div class="divTableCellListe" style="width: auto">
+                  Comment <strong>Eky</strong>agri | <strong>Eky</strong>viti gèrent les cultures sur le plan du parcellaire
+               </div>
+            </div>
+            <div class="divTableRow">
+               <div class="divTableCellListe">
+                  <img src="../images/commun/caret-right.svg" alt="Flèche" height="15">
+               </div>
+               <div class="divTableCellListe">
+                  Comment les configurer dans l'application, si cela est utile pour les tâches que vous envisagez de faire avec <strong>Eky</strong>agri | <strong>Eky</strong>viti
+               </div>
+            </div>
+            <div class="divTableRow">
+               <div class="divTableCellListe">
+                  <img src="../images/commun/caret-right.svg" alt="Flèche" height="15">
+               </div>
+               <div class="divTableCellListe">
+                  Comment récupérer et importer le <a href="#declaration" target="_self">fichier de déclaration TelePAC</a> pour définir vos zones cultivables
+               </div>
+            </div>
+			<div class="divTableRow">
+               <div class="divTableCellListe">
+                  <img src="../images/commun/caret-right.svg" alt="Flèche" height="15">
+               </div>
+               <div class="divTableCellListe">
+                  Comment utiliser le <a href="#rpg" target="_self">registre parcellaire graphique</a> pour définir vos zones cultivables
+               </div>
+            </div>
+         </div>
+      </div>
+	  <div class="saut-page"></div>
+      <h2 class="texte aerateur">Glossaire du chapitre</h2>
+      <div class="divTableGlossaire marge">
+         <div class="divTableBody">
+            <div class="divTableRow">
+               <div class="divTableCellGlossaire1">
+                  Activité agricole
+               </div>
+               <div class="divTableCellGlossaire2">
+                  ensemble des productions d'un même type. Une activité est définie par l'espèce produite &#40;animale ou végétale&#41; et peut être ouverte ou fermée d'une campagne à la suivante
+               </div>
+            </div>
+			<div class="divTableRow">
+               <div class="divTableCellGlossaire1">
+                  Export
+               </div>
+               <div class="divTableCellGlossaire2">
+                  action de transférer des informations incluses dans un logiciel vers un fichier que l'on récupère sur un disque dur ou une clé USB
+               </div>
+            </div>
+			<div class="divTableRow">
+               <div class="divTableCellGlossaire1">
+                  Import
+               </div>
+               <div class="divTableCellGlossaire2">
+                  action de transférer dans un logiciel des informations contenues dans un fichier que l'on a sur un disque dur ou une clé USB
+               </div>
+            </div>
+            <div class="divTableRow">
+               <div class="divTableCellGlossaire1" style="width: auto">
+                  Parcellaire
+               </div>
+               <div class="divTableCellGlossaire2" style="width: 100%">
+                  culture qui se fait par parcelle pour la production agricole
+               </div>
+            </div>
+            <div class="divTableRow">
+               <div class="divTableCellGlossaire1">
+                  Production
+               </div>
+               <div class="divTableCellGlossaire2">
+                  action d'affecter une activité à une parcelle, à un ensemble de parcelles ou à une découpe de parcelle
+               </div>
+            </div>
+            <div class="divTableRow">
+               <div class="divTableCellGlossaire1">
+                  XML
+               </div>
+               <div class="divTableCellGlossaire2">
+                  &#40;Extensible Markup Language&#41; est un langage de balisage permettant de faciliter l'échange d'informations sur internet 
+               </div>
+            </div>
+         </div>
+      </div>
+	  <div class="tabs marge aerateur-haut">
+      <div class="tab">
+        <input type="checkbox" name="ekyviti" id="chck1">
+        <label class="tab-label" for="chck1">Note aux utilisateurs d'Ekyviti</label>
+        <div class="tab-content">
+          Intégrez les données de la déclaration PAC si celle-ci englobe d'autres activités végétales que la vigne ou si la déclaration est obligatoire pour bénéficier d'une aide &#40;aide restructuration, souscription à une assurance récolte, engagement en agriculture biologique&#41; afin de répondre aux exigences de la réglementation en vigueur. Utilisez plus tard la procédure d'<a href="../ekyviti" class="avoid-clicks" target="_self">import et de conversion d'un ou plusieurs casiers viticoles informatisés</a> pour préparer et transformer les données du parcellaire cadastral en parcelles et en cultures viticoles compatibles avec le système de gestion parcellaire propre aux solutions développées par Ekylibre.
+        </div>
+      </div>
+      </div>
+      <h6>Guide de prise en main • Parcellaire • Gestion des cultures</h6>
+      <a class="slice-process" id="gestion"></a>
+      <h2 class="texte aerateur">a - La gestion des cultures dans <strong>Eky</strong>agri | <strong>Eky</strong>viti</h2>
+      <p class="texte">
+         La gestion de productions végétales incluant le suivi des interventions et la traçabilité, nécessite de déclarer vos cultures dans l'application.
+      </p>
+      <p class="texte">
+         Sur le plan du parcellaire, les solutions <strong>Eky</strong>agri | <strong>Eky</strong>viti sont organisées autour de "trois niveaux géographiques"&nbsp;: les zones cultivables, les parcelles qui sont des divisions des zones cultivables et les cultures, elles-mêmes des divisions des parcelles.
+         <br />
+         Notez qu'une culture peut occuper une parcelle complète qui peut elle-même occuper une zone cultivable complète.
+      </p>
+      <p align="center" class="aerateur-haut aerateur-bas texte">
+         <img src="../images/chapitre2/schema.png" alt="Schéma parcelles et cultures" />
+      </p>
+      <p class="texte">
+         Si vous êtes un&#40;e&#41; agricult&#40;eur|rice&#41; ou un&#40;e&#41; viticult&#40;eur|rice&#41; français&#40;e&#41; et que vous déclarez à la PAC, le tableau suivant montre la correspondance des niveaux géographiques entre TelePAC et <strong>Eky</strong>agri | <strong>Eky</strong>viti.
+      </p>
+      <div class="affichage-large"></div>
+      <div class="affichage-mobile">
+         <p align="center">
+            <img src="../images/commun/scroll.svg" alt="Scroll" height="40" />
+            <br />
+            Glissez pour parcourir le tableau
+         </p>
+      </div>
+      <a class="slice-process" id="tableau1"></a>
+      <div class="contour-gris texte aerateur-haut">
+         <div class="tableaux">
+            <p align="center" class="titre-advice">
+               Tableau de correspondance TelePAC/Ekyagri | Ekyviti
+            </p>
+         </div>
+         <div class="scroll">
+            <div class="tableau texte-tableau">
+               <div class="divTable">
+                  <div class="divTableBody">
+                     <div class="divTableRow">
+                        <div class="divTableCell37" style="width: 50%">
+                           TelePAC
+                        </div>
+                        <div class="divTableCell32" style="width: 50%">
+                           <strong>Eky</strong>agri | <strong>Eky</strong>viti
+                        </div>
+                     </div>
+                     <div class="divTableRow">
+                        <div class="divTableCell38">
+                           <p class="titre-advice">
+                              Îlot
+                           </p>
+                        </div>
+                        <div class="divTableCell39">
+                           <p class="titre-advice">
+                              Zone cultivable
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="divTable">
+                  <div class="divTableBody">
+                     <div class="divTableRow">
+                        <div class="divTableCell35" style="width: auto">
+                           Groupe de terres attenantes &#40;parcelles cadastrales&#41;
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="divTable">
+                  <div class="divTableBody">
+                     <div class="divTableRow">
+                        <div class="divTableCell38" style="width: auto">
+                           <p class="titre-advice">
+                              Parcelle
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="divTable">
+                  <div class="divTableBody">
+                     <div class="divTableRow">
+                        <div class="divTableCell35" style="width: 50%">
+                           Surface couverte par une même culture de caractéristique identique &#40;exemple&nbsp;: maïs bio&#41;
+                        </div>
+                        <div class="divTableCell35" style="width: 50%">
+                           Surface de travail qui portera une ou plusieurs cultures différentes
+                        </div>
+                     </div>
+                  </div>
+                  <div class="divTableRow">
+                     <div class="divTableCell31">
+                        &nbsp;
+                     </div>
+                     <div class="divTableCell40">
+                        <p class="titre-advice">
+                           Culture
+                        </p>
+                        <div class="divTable">
+                           <div class="divTableBody">
+                              <div class="divTableRow">
+                                 <div class="divTableCellListe" style="width: 10px">
+                                    <img src="../images/commun/circle.svg" alt="Puce" height="15">
+                                 </div>
+                                 <div class="divTableCellListe" style="width: auto">
+                                    Tout ou partie d'une parcelle qui permet, une fois subdivisée, de cultiver des variétés différentes d'une même espèce &#40;exemple&nbsp;: blé Apache et Aztec&#41;
+                                 </div>
+                              </div>
+                              <div class="divTableRow">
+                                 <div class="divTableCellListe">
+                                    <img src="../images/commun/circle.svg" alt="Puce" height="15">
+                                 </div>
+                                 <div class="divTableCellListe">
+                                    Surface couverte par une même culture de caractéristique identique &#40;exemple&nbsp;: maïs bio&#41; Équivalent de la parcelle TelePAC
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <h6>Guide de prise en main • Introduction • Création des zones cultivables</h6>
+      <a class="slice-process" id="zones"></a>
+      <h2 class="texte aerateur">b - Quatre manières de créer les zones cultivables</h2>
+      <p class="texte">
+         La création des zones cultivables peut être faite de quatre manières différentes dans <strong>Eky</strong>agri | <strong>Eky</strong>viti.
+      </p>
+      <div class="affichage-large"></div>
+      <div class="affichage-mobile">
+         <p align="center">
+            <img src="../images/commun/scroll.svg" alt="Scroll" height="40" class="">
+            <br />
+            Glissez pour parcourir le tableau
+         </p>
+      </div>
+      <div class="contour-gris texte aerateur-haut">
+         <div class="tableaux">
+            <p align="center" class="texte titre-advice">
+               Méthodes de création des zones cultivables
+            </p>
+         </div>
+         <div class="scroll">
+            <div class="tableau texte-tableau">
+               <div class="divTable">
+                  <div class="divTableBody">
+                     <div class="divTableRow">
+                        <div class="divTableCell33" style="width: 50%">
+                           <p>
+                              Utilisation d'un fichier de déclaration TelePAC
+                           </p>
+                           <img src="../images/chapitre2/methode1.png" alt="Import déclaration TelePAC" width="320" />
+                        </div>
+                        <div class="divTableCell34" style="width: 50%">
+                           <p>
+                              Si vous êtes un&#40;e&#41; agricult&#40;eur|rice&#41; français&#40;e&#41;, c'est la méthode la plus simple. Elle permet d'intégrer directement vos zones cultivables et vos activités agricoles. Si toutes vos activités végétales ne sont pas déclarées à la PAC, vous pouvez les ajouter dans l'assistant de démarrage ou plus tard.
+                           </p>
+                        </div>
+                     </div>
+					 <div class="divTableRow">
+                        <div class="divTableCell33" style="width: 50%">
+                           <p>
+                              Utilisation du registre parcellaire graphique
+                           </p>
+                           <img src="../images/chapitre2/methode2.png" alt="Utilisation RPG" width="320" />
+                        </div>
+                        <div class="divTableCell34" style="width: 50%">
+                           <p>
+                              Si le fichier de la dernière déclaration TelePAC n'est pas encore disponible, Ekylibre met à votre disposition les données du registre parcellaire graphique &#40;RPG&#41;, avec la possibilité de créer les zones cultivables à partir de la version anonymisée diffusée par le service public &#40;contours des parcelles et des îlots culturaux transmis à la PAC&#41;.
+                           </p>
+                        </div>
+                     </div>
+                     <div class="divTableRow">
+                        <div class="divTableCell33">
+                           <p>
+                              Dessin des zones à la main
+                           </p>
+                           <img src="../images/chapitre2/methode3.png" alt="Dessin des zones à la main" width="320" />
+                        </div>
+                        <div class="divTableCell34">
+                           <p>
+                              <strong>Eky</strong>agri et <strong>Eky</strong>viti offrent un outil de dessin de zones géographiques dans les cartes permettant de dessiner directement en se repérant sur le fond de carte &#40;routier, satellitaire…&#41;. Plusieurs fonds sont à disposition pour faciliter ce repérage.
+                           </p>
+                        </div>
+                     </div>
+                     <div class="divTableRow">
+                        <div class="divTableCell33">
+                           <p>
+                              Utilisation d'un fichier géographique
+                           </p>
+                           <img src="../images/chapitre2/methode4.png" alt="Importation fichier géographique" width="320" />
+                        </div>
+                        <div class="divTableCell34">
+                           <p>
+                              <strong>Eky</strong>agri et <strong>Eky</strong>viti supportent l'import des fichiers géographiques &#40;SIG&#41; au format Keyhole Markup Language &#40;.kml&#41;.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <p class="texte">
+         Si vous ne déclarez pas à la PAC, passez directement à la section <a href="#no-pac" class="avoid-clicks">&#171;&nbsp;Création des zones cultivables non déclarées à la PAC&nbsp;&#187;</a> de ce chapitre.
+      </p>
+      <h6>Guide de prise en main • Parcellaire • Données TelePAC</h6>
+      <a class="slice-process" id="declaration"></a>
+      <h2 class="texte aerateur">c - Récupération et utilisation des données TelePAC</h2>
+      <p class="texte">Vous devez disposer du fichier TelePAC au format <span class="tooltip">XML<span class="tooltiptext tooltip-top">Voir glossaire</span></span>. Lors de l'intégration du fichier TelePAC, <strong>Eky</strong>agri et <strong>Eky</strong>viti ne récupèrent que les surfaces agricoles, les SNA et les activités déclarées à la PAC.</p>
+      <p class="texte">Notez que ce service n'est disponible que pour les exploitations situées en France.</p>
+      <div class="info-fond aerateur-haut aerateur-bas">
+         <div class="floating-box-info">
+            <img src="../images/commun/info.svg" width="100" alt="Info"/>
+         </div>
+         <div class="info-txt">
+            <span class="titre-advice">Pour connaître le format d'un fichier</span>
+            <br />
+            <p class="texte-advice">
+               Sur Linux ou Windows&nbsp;: faites un clic droit sur le fichier et choisissez "Propriétés". Sur Mac, faites un Contrôle-clic sur le fichier et choisissez "Lire les informations".
+            </p>
+            <br />
+            Le format est indiqué tout en haut de la fenêtre d'information qui s'est ouverte.  
+         </div>
+      </div>
+      <p class="texte aerateur-bas">
+         Si vous ne disposez pas d'un fichier au format XML ou que votre fichier n'est pas à jour, vous pouvez suivre la procédure suivante pour le récupérer chez TelePAC.
+      </p>
+	  <h6>Guide de prise en main • Parcellaire • Récupération TelePAC</h6>
+      <h3 align="center" class="texte aerateur procedure">A - Procédure de récupération du fichier TelePAC</h3>
+      <p class="texte">
+         En suivant les étapes ci-dessous vous serez guidé&#40;e&#41; pour récupérer votre fichier TelePAC au format XML afin d'intégrer vos zones cultivables et vos activités agricoles dans l'application.
+      </p>
+      <div class="info-fond aerateur-haut aerateur-bas">
+         <div class="floating-box-info">
+            <img src="../images/commun/info.svg" width="100" alt="Info"/>
+         </div>
+         <div class="info-txt">
+            <span class="titre-advice">Note pour les utilisateurs d'iPad ou d'iPhone sous iOS v11 et suivantes</span>
+            <br />
+            <p class="texte-advice">
+               Pour une meilleure praticité, téléchargez 
+               <a href="https://itunes.apple.com/fr/app/documents-par-readdle/id364901807?mt=8" title="Documents par Readdle" target="_blank">Documents de l'éditeur Readdle</a> sur l'App Store &#40;gratuit&#41;.
+            </p>
+            <p align="center"><a href="https://itunes.apple.com/fr/app/documents-par-readdle/id364901807?mt=8" title="Documents par Readdle" target="_blank"><img src="../images/chapitre2/apple-appstore-badge-fr.png" width="135" alt="App Store"/></a></p>
+            <p>
+               Lancez l'application et sélectionnez "Navigateur" dans le menu à gauche. Saisissez dans le champ l'adresse TelePAC ci-dessous, puis suivez les étapes de la récupération du fichier. Touchez le lien pour afficher le contenu du fichier XML &#40;une suite de chiffres&#41;.
+            </p>
+            Touchez l'icône de téléchargement en haut à droite de l'écran<img src="../images/chapitre2/download.svg" class="align-icone icone-download" alt="Icône téléchargement" height="15">et sélectionnez "Enregistrer la page" dans "Documents".
+         </div>
+      </div>
+      <div class="info-fond aerateur-haut aerateur-bas">
+         <div class="floating-box-info">
+            <img src="../images/commun/info.svg" width="100" alt="Info"/>
+         </div>
+         <div class="info-txt">
+            <span class="titre-advice">Note pour les utilisateurs de smartphone ou de tablette sous Android</span>
+            <br />
+            <p class="texte-advice">
+               Si vous ne l'avez pas déjà installé, téléchargez le navigateur 
+               <a href="https://play.google.com/store/apps/details?id=com.android.chrome" title="Google Chrome" target="_blank">Google Chrome</a>
+               &#40;gratuit&#41;.
+            </p>
+            <p align="center"><a href="https://play.google.com/store/apps/details?id=com.android.chrome" title="Google Chrome" target="_blank"><img src="../images/chapitre2/google-play-badge-fr.png" width="130" alt="Play Store"/></a></p>
+            Lancez l'application. Saisissez l'adresse TelePAC ci-dessous, puis suivez les étapes de récupération du fichier. Appuyez de manière prolongée sur le lien du fichier XML, puis appuyez sur "Télécharger le lien".
+         </div>
+      </div>
+      <div class="floating-box process">
+         <img src="../images/commun/step1.svg" alt="1" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Rendez-vous sur le site TelePAC</span>
+		 <p>Avec un logiciel de navigation web, connectez-vous sur le portail TelePAC du Ministère de l'Agriculture et de l'Alimentation.</p>
+         <div class="url-bleue">
+            <a href="https://www.telepac.agriculture.gouv.fr" title="TelePAC" target="_blank">https://www.telepac.agriculture.gouv.fr</a>
+         </div>
+         <p class="max-img-process">
+            <img src="../images/chapitre2/telepac1.png" class="contour-img" alt="Site web TelePAC" />
+         </p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step2.svg" alt="2" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Connectez-vous à votre espace personnel</span>
+         <p>
+            Entrez le numéro Pacage et le mot de passe utilisé au moment de la dernière déclaration, puis cliquez sur le bouton "Connexion".
+         </p>
+		 <p class="max-img-process">
+            <img src="../images/chapitre2/telepac2.png" class="contour-img" alt="Identification" />
+         </p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step3.svg" alt="3" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Sélectionnez votre dossier PAC</span>
+		 <p>
+            Dans la liste à gauche cliquez 1&#41; sur "Téléprocédures", puis 2&#41; sur "Dossier PAC 20XX" &#40;année de déclaration&#41;.
+         </p>
+         <p class="max-img-process">
+            <img src="../images/chapitre2/telepac3.png" class="contour-img" alt="Dossier PAC" />
+         </p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step4.svg" alt="4" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Allez dans la section IMPORT/EXPORT</span>
+		 <p>
+            Cliquez sur l'onglet "IMPORT/EXPORT" situé dans la barre de menu en haut de la fenêtre principale.
+         </p>
+         <p class="max-img-process">
+            <img src="../images/chapitre2/telepac4.png" class="contour-img" alt="Import/Export TelePAC" />
+         </p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step5.svg" alt="5" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Réalisez l'export du dossier TelePAC</span>
+		 <p>
+            Cliquez 1&#41; sur "Export dossier complet &#40;XML&#41;" dans la barre en haut, puis 2&#41; sur le lien "Export dossier complet &#40;XML&#41;" de la campagne choisie &#40;de préférence la dernière à votre disposition&#41;.
+         </p>
+         <p class="max-img-process">
+            <img src="../images/chapitre2/telepac5.png" class="contour-img" alt="Export déclaration TelePAC" />
+         </p>
+         <p>
+            Le fichier au format <span class="tooltip">XML<span class="tooltiptext tooltip-top">Voir glossaire</span></span> va venir s'enregistrer dans vos téléchargements.
+         </p>
+      </div>
+      <div class="info-fond aerateur-haut aerateur-bas">
+         <div class="floating-box-info">
+            <img src="../images/commun/info.svg" width="100" alt="Info"/>
+         </div>
+         <div class="info-txt">
+            <span class="titre-advice">Récupérer le fichier dans vos téléchargements<br /></span>
+            <p span="span" class="texte-advice">
+               Le fichier TelePAC téléchargé se présente sous la forme&nbsp;:
+            </p>
+            <br />
+            <strong>
+               <p align="center">Dossier-PAC-20XX_dossier_064123456_20170105134432.xml</p>
+            </strong>
+            <br />
+            Par défaut, il est enregistré dans le dossier des Téléchargements. En fonction de votre système d'exploitation et du navigateur web utilisé, celui-ci a pu être stocké à des endroits différents sur votre disque.
+            <br />
+            <div class="popup-off">
+               <img src="../images/commun/info-outline.svg" alt="Info" height="15" class="icone-info">Consultez l'<a href="../annexes#annexe2" class="avoid-clicks" id="annexe2" target="_blank">annexe 2</a> pour savoir comment le localiser si nécessaire.
+            </div>
+            <div class="popup-on">
+               <img src="../images/commun/info-outline.svg" alt="Info" height="15" class="icone-info">Consultez l'<a href="#" data-width="730" data-rel="popup1" class="poplight">annexe 2</a> pour savoir comment le localiser si nécessaire.
+            </div>
+         </div>
+      </div>
+      <p class="texte aerateur-bas">
+         Si vous disposez d'un fichier TelePAC au format XML vous pouvez suivre la procédure suivante.
+      </p>
+      <h6>Guide de prise en main • Parcellaire • Utilisation TelePAC</h6>
+      <a class="slice-process" id="telepac"></a>
+      <h3 align="center" class="texte aerateur procedure">B - Procédure de configuration des zones de cultures et activités agricoles à partir du fichier de "Déclaration TelePAC"</h3>
+      <p class="texte">
+         Votre fichier de déclaration TelePAC contient les zones de culture &#40;îlots TelePAC et activités agricoles&#41; que vous avez déclarées sur le site des téléservices des aides de la PAC. La procédure montre comment l'utiliser. Pour les zones ou activités non déclarées à la PAC, reportez-vous au <a href="#zones" class="avoid-clicks">tableau récapitulatif</a> de la <strong>section b</strong> de ce chapitre.
+      </p>
+	  <div class="saut-page"></div>
+	   <!--
+      <div class="warn-fond aerateur-haut aerateur-bas">
+         <div class="floating-box-warn">
+            <img src="../images/commun/attention.svg" width="100" alt="Attention"/>
+         </div>
+         <div class="info-txt">
+            <span class="titre-advice">Version du fichier TelePAC<br /></span>
+            <p class="texte-advice">
+               Les versions du fichier XML supportées dans l'assistant de démarrage sont celles de 2015 à 2021. Vous pouvez également intégrer les données de plusieurs déclarations TelePAC grâce à la fonction "Imports" des outils d'échange &#40;procédure expliquée dans le <a href="../chapitre10#import-telepac" class="avoid-clicks">chapitre 10 - Outils</a>&#41;.
+            </p>
+         </div>
+      </div>
+      -->
+	  <div class="warn-fond magic-orange aerateur-haut aerateur-bas">
+         <div class="floating-box-warn">
+            <img src="../images/commun/attention.svg" width="100" alt="Attention"/>
+         </div>
+         <div class="info-txt">
+            <span class="titre-advice">Utilisation du fichier TelePAC<br /></span>
+            <p class="texte-advice">
+               En raison d'une refonte complète de l'étape "Zone cultivable", l'utilisation d'un fichier TelePAC est temporairement retiré de l'assistant de démarrage. Vous pouvez cependant transférer les données d'une déclaration TelePAC dans l'application grâce à la fonction "Imports" disponible dans le <a href="../chapitre10#import-telepac" class="avoid-clicks">module "Outils"</a>.
+            </p>
+         </div>
+      </div>
+      <div class="floating-box process">
+         <img src="../images/commun/step1.svg" alt="1" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Affichez l'étape de l'import TelePAC</span>
+         <p>Si vous êtes toujours à l'étape "Bienvenue dans l'assistant de Démarrage", cliquez sur <span class="btn-blue">Suivant</span> pour basculer sur l'étape d'import de la déclaration TelePAC.</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre2/import-telepac1.png" class="contour-img" alt="Import déclaration TelePAC" />
+         </p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step2.svg" alt="2" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Lancez le processus d'import du fichier TelePAC</span>
+         <p>
+            Choisissez la campagne de votre dossier dans la liste déroulante, puis cliquez sur le bouton "Parcourir" pour sélectionner le fichier TelePAC concordant avec celle-ci. Dès que vous avez validé l'opération, le chargement des informations débute.
+         </p>
+         <p class="max-img-process">
+            <img src="../images/chapitre2/import-telepac2.png" class="contour-img" alt="Import déclaration TelePAC" />
+         </p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step3.svg" alt="3" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Validez la bonne exécution de l'opération</span>
+         <p>
+            Patientez quelques instants. Une fois le chargement des données terminé, la carte affiche vos zones cultivables et vos activités agricoles &#40;productions végétales&#41;.
+         </p>
+         <p class="max-img-process">
+            <img src="../images/chapitre2/import-telepac3.png" class="contour-img" alt="Import déclaration TelePAC" />
+         </p>
+         <p>
+            Notez que les chiffres dans les pastilles blanches sur la carte indiquent le nombre d'activités localisées à cet endroit. Si vous zoomez sur la carte avec le bouton<img src="../images/commun/plus.svg" alt="Zoom avant" height="20" class="icone-marge-gauche align-icone">, vous pouvez voir le détail de ces zones.
+         </p>
+         <p class="max-img-process">
+            <img src="../images/chapitre2/import-telepac4.png" class="contour-img" alt="Import déclaration TelePAC" />
+         </p>
+      </div>
+      <br />
+      <div class="warn-fond">
+         <div class="floating-box-warn">
+            <img src="../images/commun/attention.svg" width="100" alt="Attention"/>
+         </div>
+         <div class="info-txt">
+            <span class="titre-advice">Contrôlez vos zones et activités agricoles<br /></span>
+            <p class="texte-advice">Prenez le temps de vérifier que les contours de vos îlots ainsi que vos activités correspondent bien à la réalité du terrain et qu'ils sont donc bien conformes à vos attentes.<br />Il est plus facile d'intégrer les bonnes informations maintenant, plutôt que de devoir les modifier une par une après.</p>
+         </div>
+      </div>
+      <div class="floating-box process">
+         <span class="etape"></span>
+      </div>
+      <div class="process-txt">
+         <p>Si vous souhaitez annuler l'import ou remplacer les données par celles d'une autre déclaration, vous pouvez le faire en cliquant sur le bouton situé à gauche de l'interface de l'assistant de démarrage&nbsp;:</p>
+		 <p align="center"><span class="btn-red">Annuler l'import TelePAC</span></p>
+      </div>
+      <div class="floating-box process">
+         <img src="../images/commun/step4.svg" alt="4" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Passez à l'étape "Activités"</span>
+         <p>Maintenant que les informations du dossier TelePAC sont chargées dans l'assistant de démarrage, vous pouvez passer à l'étape "Activités" en cliquant sur le bouton <span class="btn-blue">Suivant</span>.</p>
+      </div>
+      <br />
+	  <h6>Guide de prise en main • Parcellaire • Utilisation du RPG</h6>
+      <a class="slice-process" id="rpg"></a>
+      <h2 class="texte aerateur">d - Utilisation du registre parcellaire graphique</h2>
+	  <p class="texte">Si le fichier de la dernière déclaration TelePAC n'est pas encore disponible, Ekylibre met à votre disposition les données du registre parcellaire graphique &#40;RPG&#41;, avec la possibilité de créer les zones cultivables à partir de la version anonymisée diffusée par le service public &#40;contours des parcelles et des îlots culturaux transmis à la PAC&#41;.</p>
+	  <p class="texte">Notez que ce service n'est disponible que pour les exploitations situées en France.</p>
+      <p class="texte"><em>Documentation en cours de rédaction.</em></p>
+      <a class="slice-process" id="no-pac"></a>
+      <h2 class="texte aerateur">e - Création des zones cultivables non déclarées à la PAC.</h2>
+      <p class="texte">Comme expliqué au <a href="#zones" class="avoid-clicks">début de ce chapitre</a>, il est possible de créer des zones cultivables à l'aide d'outils de dessin ou en important des fichiers géographiques compatibles.
+      </p>
+      <p class="texte">
+         Ces opérations se réalisent à l'étape "Zones cultivables" de l'assistant de démarrage et sont documentées dans le <a class="avoid-clicks" href="../chapitre3">chapitre suivant</a>.
+      </p>
+      <p class="texte">Si vous êtes toujours à l'étape "Bienvenue dans l'assistant de démarrage", cliquez sur <span class="btn-blue">Suivant</span> pour passer à l'étape "Import déclaration TelePAC".</p>
+	  <p class="texte">Cliquez à nouveau sur <span class="btn-blue">Suivant</span> pour accéder à l'étape "Activités de l'exploitation"&nbsp;:</p>
+      <p class="texte max-img-inline aerateur-bas">
+         <img src="../images/chapitre2/barre-progression.png" class="contour-img" alt="Barre de progression" />
+      </p>
+	  <div class="pdf">
+      <p align="right" class="texte aerateur-top aerateur-bas">Passez au <a class="avoid-clicks" href="../chapitre3">chapitre suivant</a> de ce guide.</p>
+	  </div>
+      <div class="navishort aerateur-haut">
+         <div class="divTable">
+            <div class="divTableBody">
+               <div class="divTableRow">
+                  <div class="divTableCellCenter" style="width: auto">
+                     &nbsp;
+                  </div>
+                  <div class="divTableCellRight" style="width: 130px">
+                     <span><a href="../chapitre1" target="_self">INTRODUCTION</a></span>
+                  </div>
+                  <div class="divTableCellCenter" style="width: 40px">
+                     <a href="../chapitre1" target="_self"><img src="../images/commun/arrow-left.svg" width="40" alt="Introduction"></a>
+                  </div>
+                  <div class="divTableCellCenter" style="width: 40px">
+                     <a href="../chapitre3" target="_self"><img src="../images/commun/arrow-right.svg" width="40" alt="Exploitation"></a>
+                  </div>
+                  <div class="divTableCellLeft" style="width: 130px">
+                     <span><a href="../chapitre3" target="_self">EXPLOITATION</a></span>
+                  </div>
+                  <div class="divTableCellCenter" style="width: auto">
+                     &nbsp;
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="footer"><img src="../images/commun/frise.png" alt="Frise" /></div>
+	  <div class="navigation">
+         <div id="breadcrumb">
+            <ul class="breadcrumb">
+               <li>
+                  <a href="../ekyviti">
+                  <i class="fa-solid fa-lg fa-grapes"></i>
+                  <span class="text">&nbsp;Ekyviti</span>
+                  </a>
+               </li>
+			   <li>
+                  <a href="../performance">
+                  <i class="fa-solid fa-lg fa-chart-line-up"></i>
+                  <span class="text">&nbsp;Performance</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="../chapitre10">
+                  <i class="fa-solid fa-lg fa-wand-magic-sparkles"></i>
+                  <span class="text">&nbsp;Outils</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="../chapitre9">
+                  <i class="fa-solid fa-lg fa-farm"></i>
+                  <span class="text">&nbsp;Production</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="../chapitre8">
+                  <i class="fa-solid fa-lg fa-warehouse-full"></i>
+                  <span class="text">&nbsp;Stocks, tiers et RH</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="../chapitre7">
+                  <i class="fa-solid fa-lg fa-chart-column"></i>
+                  <span class="text">&nbsp;Ventes</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="../chapitre6">
+                  <i class="fa-solid fa-lg fa-cart-shopping"></i>
+                  <span class="text">&nbsp;Achats</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="../chapitre5">
+                  <i class="fa-solid fa-lg fa-calculator"></i>
+                  <span class="text">&nbsp;Comptabilité</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="../chapitre4">
+                  <i class="fa-solid fa-lg fa-desktop"></i>
+                  <span class="text">&nbsp;Interface et accès</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="../chapitre3">
+                  <i class="fa-solid fa-lg fa-tractor"></i>
+                  <span class="text">&nbsp;Exploitation</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="../chapitre2">
+                  <i class="top-marker"></i><i class="fas fa-lg fa-wheat"></i>
+                  <span class="text">&nbsp;Parcellaire</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="../chapitre1">
+                  <i class="fa-solid fa-lg fa-flag-checkered"></i>
+                  <span class="text">&nbsp;Introduction</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="../demarrage">
+                  <i class="fa-solid fa-lg fa-house"></i>
+                  </a>
+               </li>
+            </ul>
+         </div>
+         <div id="arrow"><i class="fa-solid fa-lg fa-caret-left"></i></div>
+      </div>
+   </article>
+   <aside></aside>
+</div>
+<div id="popup1" class="popup_block">
+   <h2 class="info titre-annexe">Annexe 2&nbsp;: localisez votre fichier TelePAC</h2>
+   <p class="texte-annexe marge-annexe">
+      Le fichier TelePAC téléchargé se présente sous la forme&nbsp;:
+   </p>
+   <strong>
+      <p align="center" class="texte">
+         Dossier-PAC-20XX_dossier_064123456_20170105134432.xml
+      </p>
+   </strong>
+   <p class="texte-annexe marge-annexe">
+      Par défaut, il est enregistré dans le dossier des Téléchargements. En fonction de votre système d'exploitation et du navigateur web utilisé, celui-ci a pu être stocké à des endroits différents sur votre disque. Voici comment le retrouver&nbsp;:
+   </p>
+   <div class="flex-container">
+      <div class="half">
+         <p class="texte-annexe marge-annexe">
+            <img src="../images/annexes/chrome.svg" alt="Google Chrome" height="15" class="icone-marge-droite">
+            <strong>Google Chrome</strong>
+            <img src="../images/annexes/windows.svg" alt="Windows" height="15" class="icone-marge-gauche">
+            <img src="../images/annexes/apple.svg" alt="Apple" height="15" class="icone-marge-gauche">
+            <img src="../images/annexes/linux.svg" alt="Linux" height="15" class="icone-marge-gauche">
+         </p>
+         <p class="texte-annexe marge-annexe">
+            Une fois le téléchargement terminé, celui-ci apparaît en bas de la fenêtre Chrome. Cliquez sur la flèche à côté du nom du fichier. Ensuite, cliquez sur "Afficher dans le dossier" &#40;ou "Afficher dans le Finder"&#41; pour afficher le fichier XML sur votre ordinateur.
+         </p>
+         <p class="texte-annexe marge-annexe">
+            <img src="../images/annexes/firefox.svg" alt="Firefox" height="15" class="icone-marge-droite">
+            <strong>Mozilla Firefox</strong>
+            <img src="../images/annexes/windows.svg" alt="Windows" height="15" class="icone-marge-gauche">
+            <img src="../images/annexes/apple.svg" alt="Apple" height="15" class="icone-marge-gauche">
+            <img src="../images/annexes/linux.svg" alt="Linux" height="15" class="icone-marge-gauche">
+         </p>
+         <p class="texte-annexe marge-annexe">
+            Cliquez sur le bouton des téléchargements &#40;représenté par une flèche orientée vers le bas&#41; situé en haut à droite du champ de recherche de Firefox. En appuyant sur ce bouton, sélectionnez "Afficher tous les téléchargements". Une liste apparaît et il est possible d'ouvrir le dossier contenant le fichier XML en cliquant sur l'icône représentant un dossier &#40;ou une loupe&#41; à sa droite.
+         </p>
+         <p class="texte-annexe marge-annexe">
+            <img src="../images/annexes/safari.svg" alt="Safari" height="15" class="icone-marge-droite">
+            <strong>Safari sous Mac OS X</strong>
+            <img src="../images/annexes/apple.svg" alt="Apple" height="15" class="icone-marge-gauche">
+         </p>
+         <p class="texte-annexe marge-annexe">
+            Par défaut, le fichier est enregistré dans le dossier Téléchargements. Cliquez sur le bouton des téléchargements &#40;représenté par une flèche orientée vers le bas&#41; situé en haut à droite du champ de recherche de Safari pour afficher les téléchargements. Cliquez sur la loupe pour ouvrir le dossier contenant le fichier XML.
+         </p>
+      </div>
+      <div class="half">
+         <p class="texte-annexe marge-annexe">
+            <img src="../images/annexes/opera.svg" alt="Opera" height="15" class="icone-marge-droite">
+            <strong>Opera</strong>
+            <img src="../images/annexes/Windows.svg" alt="Windows" height="15" class="icone-marge-gauche">
+            <img src="../images/annexes/apple.svg" alt="Apple" height="15" class="icone-marge-gauche">
+            <img src="../images/annexes/linux.svg" alt="Linux" height="15" class="icone-marge-gauche">
+         </p>
+         <p class="texte-annexe marge-annexe">
+            Par défaut, le fichier est enregistré dans le dossier Téléchargements. Dans le menu "Afficher", sélectionnez "Afficher les téléchargements" pour afficher le fichier XML.
+         </p>
+         <p class="texte-annexe marge-annexe">
+            <img src="../images/annexes/edge.svg" alt="Edge" height="15" class="icone-marge-droite">
+            <strong>Edge</strong>
+            <img src="../images/annexes/windows.svg" alt="Windows" height="15" class="icone-marge-gauche">
+			<img src="../images/annexes/apple.svg" alt="Apple" height="15" class="icone-marge-gauche">
+         </p>
+         <p class="texte-annexe marge-annexe">
+            Cliquez sur le Hub &#40;représenté par trois traits horizontaux&#41;, puis sur l'icône Téléchargements &#40;représentée par une flèche pointant vers le bas et un trait horizontal&#41; et enfin cliquez sur "Ouvrir le dossier".
+         </p>
+         <p class="texte-annexe marge-annexe">
+            <img src="../images/annexes/android.svg" alt="Android" height="15" class="icone-marge-droite">
+            <strong>Android</strong>
+         </p>
+         <p class="texte-annexe marge-annexe">
+            Le fichier XML téléchargé est stocké dans le dossier Téléchargements &#40;Downloads en anglais&#41;. Il existe le plus souvent une icône Téléchargements/Downloads sur le bureau d'un terminal Android &#40;l'apparence et l'emplacement varient selon les versions et les marques de smartphone/tablette&#41;.
+         </p>
+         <p  class="texte-annexe marge-annexe">
+            <img src="../images/annexes/apple.svg" alt="Apple" height="15" class="icone-marge-droite">
+            <strong>iOS 11 et supérieure</strong>
+         </p>
+         <p class="texte-annexe marge-annexe">
+            Après avoir touché le bouton "Choisir le fichier", allez dans "Explorer"&nbsp;: le fichier XML est enregistré dans "Documents" si vous avez suivi la note explicative au début de la Procédure de récupération du fichier TelePAC.
+         </p>
+      </div>
+   </div>
+</div>
+      <!-- !PAGE CONTENT! -->
+      <script src="/javascripts/iscroll.js"></script>
+      <script src="/javascripts/drawer.js"></script>
+      <script src="/javascripts/popup.js"></script>
+      <script src="/javascripts/breadcrumbs.js"></script>
+      <script src="/javascripts/backtotop.js"></script>
+      <script src="/javascripts/zoom-vanilla.js"></script>
+      <script src="/javascripts/toggle.js"></script>
+      <script>
+         $(document).ready(function() {
+         $('.drawer').drawer();
+         });
+      </script>
+      <script>
+         $(function() {
+          /**
+          * Smooth scrolling to page anchor on click
+          **/
+          $("a[href*='#']:not([href='#'])").click(function() {
+              if (
+                  location.hostname == this.hostname
+                  && this.pathname.replace(/^\//,"") == location.pathname.replace(/^\//,"")
+              ) {
+                  var anchor = $(this.hash);
+                  anchor = anchor.length ? anchor : $("[name=" + this.hash.slice(1) +"]");
+                  if ( anchor.length ) {
+                      $("html, body").animate( { scrollTop: anchor.offset().top }, 500);
+                  }
+                  }
+              });
+           });
+      </script>
+	  <!--<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>-->
+	  <!--<script src="/javascripts/docsearch.js"></script>-->
+	  <!--<script>docsearch({container: '#docsearch',appId: 'JCIFZS1SXO',apiKey:'d7102eaca1a7f74822fa7677a517411d',indexName:'ekylibre'});</script>-->
+	  <script>
+  	  $(window).load(function() {
+	  $('#loading').hide();
+	  $('html').css({'overflow-y': 'visible'});
+	  });
+	  </script>
+   </body>
+   <script>
+      $(function() {
+      $(".content").click(function() {
+        return false;
+      });
+      });
+   </script>
+   <script language="JavaScript">
+      function ChangeUrl(formulaire)
+      {
+      if (formulaire.ListeUrl.selectedIndex != 0)
+        {
+        var url ;
+        url = formulaire.ListeUrl.options[formulaire.ListeUrl.selectedIndex].value;
+        window.open(url,'_self');
+        $('#fade, .popup_block').fadeOut();
+      $('#fade, a.close').remove();
+      $(formulaire.ListeUrl).val("");
+      $('html').css({'overflow-y': 'visible'});
+      }
+      }
+   </script>
+</html>

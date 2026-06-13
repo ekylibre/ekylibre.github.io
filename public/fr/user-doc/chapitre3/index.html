@@ -1,0 +1,2052 @@
+<!doctype html>
+<html lang="fr">
+   <head>
+      <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+      <meta name="format-detection" content="telephone=no">
+      <meta property="og:url" content="https://doc.ekylibre.com/" />
+      <meta property="og:title" content="Guide de prise en main Ekylibre" />
+      <meta property="og:description" content="Ce guide a pour but d'aider l'utilisateur à configurer correctement les applications développées par Ekylibre pour gérer son exploitation agricole ou viticole. Il rassemble les informations et les procédures essentielles à connaître pour maîtriser les fonctionnalités disponibles dans les différents modules de la solution." />
+      <meta property="og:image" content="https://doc.ekylibre.com/fr/images/commun/ekylibre.png" />
+      <title>Ekylibre : guide de prise en main</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="preload" href="../images/commun/brand.svg" as="image" type="image/svg+xml"/>
+      <link rel="shortcut icon" href="../images/commun/favicon.ico" />
+      <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="/stylesheets/w3school.css" />
+      <link rel="stylesheet" href="/stylesheets/quickstart.css" />
+      <link rel="stylesheet" href="/stylesheets/ekylibre.css" />
+      <link rel="stylesheet" href="/stylesheets/drawer.css" />
+      <link rel="stylesheet" href="/stylesheets/jquery.qtip.css" />
+      <link rel="stylesheet" href="/stylesheets/chronoline.css" />
+      <link rel="stylesheet" href="/stylesheets/fontawesome.css" />
+	  <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />-->
+	  <link rel="stylesheet" href="/stylesheets/docsearch.css" />
+      <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-58304754-1', 'auto');ga('send', 'pageview');</script>
+      <!-- Start of ekylibrehelp Zendesk Widget script -->
+      <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=8e03812d-d038-4a8c-8412-d85571f9fdbe"> </script>
+      <!-- End of ekylibrehelp Zendesk Widget script -->
+      <script src="/javascripts/jquery.js"></script>
+      <script src="/javascripts/jquery.qtip.js"></script>
+      <script src="/javascripts/chronoline.js"></script>
+      <script src="/javascripts/raphael-min.js"></script>
+	  <script src="/javascripts/justgage.js"></script>
+      <style>
+         .nav-lang-switcher { display: inline-block; margin-right: 1rem; font-weight: 700; letter-spacing: 0.05em; }
+         .nav-lang-switcher a, .nav-lang-switcher span { color: inherit; padding: 0 4px; text-decoration: none; }
+         .nav-lang-switcher a { opacity: 0.6; }
+         .nav-lang-switcher a:hover, .nav-lang-switcher a:focus { opacity: 1; text-decoration: underline; }
+         .nav-lang-switcher span[aria-current] { opacity: 1; }
+         .nav-lang-switcher .lang-sep { opacity: 0.4; }
+      </style>
+   </head>
+   <body class="drawer drawer--top">
+      <a href="javascript:void(0);" id="scroll" title="Scroll to Top" style="display: none;">Top<span></span></a>
+      <div class="conteneur">
+         <div class="ekylibre affichage-print"><img src="../images/commun/brand.svg" alt="Ekylibre" class="logo-entete"></div>
+         <header role="banner">
+            <button type="button" class="drawer-toggle drawer-hamburger">
+            <span class="sr-only">Menu</span>
+            <span class="drawer-hamburger-icon"></span>
+            </button>
+            <div id="shadow"></div>
+            <nav class="drawer-nav" role="navigation">
+               <ul class="drawer-menu columns">
+                  <li><a class="drawer-menu-item" href="../chapitre1"><span data-descr="[Prérequis - Tâches visées - Abonnement - Démarrage]">Introduction</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i></a></li>
+                  <li><a class="drawer-menu-item" href="../chapitre2"><span data-descr="[Récupération et import de la déclaration TelePAC - Utilisation du RPG]">Parcellaire</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i><br></a></li>
+                  <li><a class="drawer-menu-item" href="../chapitre3"><span data-descr="[Activités - Zones de stockage - Équipements - Accès initial]">Exploitation</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i></a></li>
+                  <li><a class="drawer-menu-item" href="../chapitre4"><span data-descr="[Espace de travail - Personnalisation - Utilisateurs et droits - Duke]">Interface et accès</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i></a></li>
+                  <li><a class="drawer-menu-item" href="../chapitre5"><span data-descr="[Journaux - Exercices - Synthèses - Immobilisations - TVA - Trésorerie]">Comptabilité</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i></a></li>
+                  <li><a class="drawer-menu-item" href="../chapitre6"><span data-descr="[Commandes - Réceptions - Facturation - Décaissements]">Achats</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i></a></li>
+                  <li><a class="drawer-menu-item" href="../chapitre7"><span data-descr="[Devis - Expéditions - Livraisons - Encaissements - Remises en banque]">Ventes</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i></a></li>
+                  <li><a class="drawer-menu-item" href="../chapitre8"><span data-descr="[Articles - Inventaires - Équipements - Contacts - Équipiers - Salaires]">Stocks, tiers et RH</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i></a></li>
+                  <li><a class="drawer-menu-item" href="../chapitre9"><span data-descr="[Activités - Assolement - Interventions - Calcul IFT - Planification - Traçabilité]">Production</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i></a></li>
+                  <li><a class="drawer-menu-item" href="../chapitre10"><span data-descr="[Imports de données - Documents - Extractions - Connexions partenaires]">Outils</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i></a></li>
+				  <li><a class="drawer-menu-item" href="../performance"><span data-descr="[Budgets - Coûts - Marges - Seuils de commercialisation - Itinéraires culturaux]">Performance</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i></a></li>
+				  <li><a class="drawer-menu-item" href="../ekyviti"><span data-descr="[Import CVI - Conversion parcellaire - Vendange - Connexion Baqio]">Ekyviti</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i></a></li>
+               </ul>
+            </nav>
+         </header>
+         <div class="main-menu drawer-toggle">
+            <p>Menu principal</p>
+         </div>
+         <div class="affichage-large">
+            <div class="top-background w3-top">
+               <div class="divTableCellMenu w3-right w3-text-white" style="width:364px">
+                  <span class="nav-lang-switcher" role="navigation" aria-label="Langue">
+                     <a href="/" hreflang="en" lang="en">EN</a><span class="lang-sep" aria-hidden="true">|</span><span aria-current="page" lang="fr">FR</span>
+                  </span>
+                  <a href="/">Accueil</a>
+               </div>
+            </div>
+         </div>
+         <div class="affichage-mobile">
+            <div class="top-background w3-top">
+               <div class="divTableCellMenu w3-right w3-text-white" style="width:240px">
+                  <span class="nav-lang-switcher" role="navigation" aria-label="Langue">
+                     <a href="/" hreflang="en" lang="en">EN</a><span class="lang-sep" aria-hidden="true">|</span><span aria-current="page" lang="fr">FR</span>
+                  </span>
+                  <a href="/">Accueil</a>
+               </div>
+            </div>
+         </div>
+         <div class="affichage-print">
+            <div class="top-background w3-top">
+               <div class="w3-right w3-text-white" style="width:250px">GUIDE DE PRISE EN MAIN</div>
+            </div>
+         </div>
+      </div>
+      <!-- !PAGE CONTENT! -->
+	  <div id="loading">
+		<p><i class="fa-duotone fa-spinner-third fa-spin" style="font-size: 100px; top: 156px; color: #fff; z-index: 1000;"></i></p>
+	  </div>
+      <div class="tooltip">
+         <a style="display:block" href="../pdf/Ekylibre-Guide.pdf" target="_blank">
+            <div class="btn_pdf"><span class="tooltiptext2 tooltip-top">Guide format PDF</span></div>
+         </a>
+      </div>
+	  <!--
+      <div class="tooltip">
+         <a style="display:block" href="../notes-version" target="_self">
+            <div class="btn_notes-version"><span class="tooltiptext2 tooltip-top">Notes de version</span></div>
+         </a>
+      </div>
+	  -->
+      <div class="w3-content page-content scroll-spy-heading-breadcrumbs">
+   <article class="post DocSearch-content">
+      <div id="navigation">
+         <div class="divTable">
+            <div class="divTableBody">
+               <div class="divTableRow">
+                  <div class="divTableCellNavi1"><img src="../images/commun/angle-left.svg" alt="Précédent" height="13" class="align-navi icone-marge-droite"><a href="../chapitre2" title="Parcellaire" target="_self">Parcellaire</a></div>
+                  <div class="divTableCellNavi2">Guide de prise en main • Exploitation</div>
+                  <div class="divTableCellNavi3"><a href="../chapitre4" title="Interface et accès" target="_self">Interface et accès</a><img src="../images/commun/angle-right.svg" alt="Suivant" height="13" class="align-navi icone-marge-gauche"></div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="image-large"><img class="chapitre" src="../images/chapitre3/exploitation.png" alt="Activités"/></div>
+      <div class="image-carre"><img class="chapitre" src="../images/chapitre3/exploitation-carre.png" alt="Activités" style="width:auto;" /></div>
+	  <div id="docsearch" class="title-chapter pdf"></div>
+      <h1 align="center" class="majuscule aerateur">3 - Exploitation</h1>
+      <div class="sommaire">
+         <div class="gris">
+            <div class="contenu">
+               <ul id="toggle">
+                  <li>
+                     <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-all">1</div>
+                           Introduction
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: none;">
+                        <div class="bloc">
+                           <li><a href="../chapitre1#prerequis" target="_self">Prérequis pour utiliser l'application</a></li>
+                           <li><a href="../chapitre1#parcours" target="_self">Parcours de configuration</a></li>
+                           <li><a href="../chapitre1#quefaire" target="_self">Que faire avec <strong>Eky</strong>agri et <strong>Eky</strong>viti&nbsp;?</a></li>
+                           <li><a href="../chapitre1#preparation" target="_self">Préparation des données</a></li>
+                           <li><a href="../chapitre1#inscription" target="_self">Sélection et souscription à une offre</a></li>
+                           <li><a href="../chapitre1#demarrage" target="_self">Arrivée dans l'assistant de démarrage</a></li>
+                           <li><a href="../chapitre1#declaration" target="_self">Déclaration de l'exploitation</a></li>
+                        </div>
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-all">2</div>
+                           Parcellaire
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: none;">
+                        <div class="bloc">
+                           <li><a href="../chapitre2#gestion" target="_self">Gestion des cultures</a></li>
+                           <li><a href="../chapitre2#zones" target="_self">Création des zones cultivables</a></li>
+                           <li><a href="../chapitre2#declaration" target="_self">Récupération et utilisation des données TelePAC</a></li>
+						   <li><a href="../chapitre2#rpg" target="_self">Utilisation du registre parcellaire graphique</a></li>
+						   <li><a href="../chapitre2#no-pac" target="_self">Création des zones cultivables non déclarées à la PAC</a></li>
+                        </div>
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-all">3</div>
+                           Exploitation
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-up"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: block;">
+                        <div class="bloc">
+                           <li><a href="#activites" target="_self">Activités de l'exploitation</a></li>
+                           <li><a href="#zones" target="_self">Création des zones cultivables &#40;sans TelePAC&#41;</a></li>
+                           <li><a href="#batiments" target="_self">Création des bâtiments et des zones de stockage</a></li>
+                           <li><a href="#decoupage" target="_self">Découpage des bâtiments et des zones de stockage</a></li>
+                           <li><a href="#equipements" target="_self">Création des équipements</a></li>
+                           <li><a href="#validation" target="_self">Confirmation de la configuration de démarrage</a></li>
+						   <li><a href="#password" target="_self">Création du mot de passe initial</a></li>
+                        </div>
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-all">4</div>
+                           Interface et accès
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: none;">
+                        <div class="bloc">
+                           <li><a href="../chapitre4#espace" target="_self">Présentation de l'espace de travail</a></li>
+                           <li><a href="../chapitre4#modules" target="_self">Navigation et accès aux différents modules</a></li>
+						   <li><a href="../chapitre4#compte" target="_self">Gestion du compte administrateur</a></li>
+						   <li><a href="../chapitre4#perso" target="_self">Personnalisation des tableaux de bord</a></li>
+						   <li><a href="../chapitre4#etiquettes" target="_self">Paramétrage des étiquettes</a></li>
+						   <li><a href="../chapitre4#champs" target="_self">Création de champs personnalisés</a></li>
+						   <li><a href="../chapitre4#formats" target="_self">Formats de nommage</a></li>
+						   <li><a href="../chapitre4#sequences" target="_self">Configuration des séquences</a></li>
+						   <li><a href="../chapitre4#acces" target="_self">Accès et rôles d'utilisateur</a></li>
+						   <li><a href="../chapitre4#duke" target="_self">Duke, l'assistant vocal intelligent</a></li>
+                        </div>
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-gestion">5</div>
+                           Comptabilité
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: none;">
+                        <div class="bloc">
+                           <li><a href="../chapitre5#introduction" target="_self">Introduction</a></li>
+                           <li><a href="../chapitre5#societe" target="_self">Paramétrage</a></li>
+						   <li><a href="../chapitre5#journaux" target="_self">Journaux</a></li>
+                           <li><a href="../chapitre5#exercice" target="_self">Exercices comptables</a></li>
+                           <li><a href="../chapitre5#plan" target="_self">Plan de comptes</a></li>
+                           <li><a href="../chapitre5#tva" target="_self">Taux et déclaration de TVA</a></li>
+                           <li><a href="../chapitre5#tresorerie" target="_self">Trésorerie</a></li>
+						   <li><a href="../chapitre5#immobilisations" target="_self">Immobilisations</a></li>
+                           <li><a href="../chapitre5#echanges" target="_self">Échanges comptables</a></li>
+						   <li><a href="../chapitre5#balance" target="_self">Balance</a></li>
+						   <li><a href="../chapitre5#ecritures" target="_self">Écritures</a></li>
+                           <li><a href="../chapitre5#grand-livre" target="_self">Grand-livre</a></li>
+                        </div>
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-gestion">6</div>
+                           Achats
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: none;">
+                        <div class="bloc">
+                           <li><a href="../chapitre6#societe" target="_self">Paramétrage</a></li>
+                           <li><a href="../chapitre6#types" target="_self">Types d'achat</a></li>
+                           <li><a href="../chapitre6#achats" target="_self">Enregistrement des commandes</a></li>
+                           <li><a href="../chapitre6#reception" target="_self">Réception des commandes</a></li>
+                           <li><a href="../chapitre6#facturation" target="_self">Facturation des achats</a></li>
+                           <li><a href="../chapitre6#decaissements" target="_self">Décaissements et lots de décaissements</a></li>
+						   <li><a href="../chapitre6#justif-achats" target="_self">Justificatifs d'achats</a></li>
+                           <li><a href="../chapitre6#stockage" target="_self">Zones de stockage</a></li>
+                        </div>
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-gestion">7</div>
+                           Ventes
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: none;">
+                        <div class="bloc">
+                           <li><a href="../chapitre7#societe" target="_self">Paramétrage</a></li>
+                           <li><a href="../chapitre7#types" target="_self">Types de vente</a></li>
+                           <li><a href="../chapitre7#ventes" target="_self">Enregistrer une vente</a></li>
+                           <li><a href="../chapitre7#factures" target="_self">Facturer une vente</a></li>
+                           <li><a href="../chapitre7#expeditions" target="_self">Expédier une vente</a></li>
+                           <li><a href="../chapitre7#avoirs" target="_self">Réaliser un avoir</a></li>
+                           <li><a href="../chapitre7#livraisons" target="_self">Enregistrer une livraison</a></li>
+                           <li><a href="../chapitre7#encaissements" target="_self">Enregistrer un encaissement</a></li>
+                           <li><a href="../chapitre7#remises" target="_self">Remises en banque</a></li>
+                        </div>
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-all">8</div>
+                           Stocks, tiers et RH
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: none;">
+                        <div class="bloc">
+                           <li><a href="../chapitre8#categories" target="_self">Catégories, profils et articles</a></li>
+						   <li><a href="../chapitre8#conditionnement" target="_self">Unités et conditionnements</a></li>
+                           <li><a href="../chapitre8#stocks" target="_self">Gestion des stocks et création de matières</a></li>
+                           <li><a href="../chapitre8#expeditions" target="_self">Expéditions, livraisons et facturation</a></li>
+                           <li><a href="../chapitre8#inventaires" target="_self">Inventaire des stocks</a></li>
+                           <li><a href="../chapitre8#equipements" target="_self">Gestion des équipements</a></li>
+                           <li><a href="../chapitre8#tiers" target="_self">Gestion des tiers et des équipiers</a></li>
+						   <li><a href="../chapitre8#salaires" target="_self">Gestion des salaires et des contrats de travail</a></li>
+                        </div>
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-all">9</div>
+                           Production
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: none;">
+                        <div class="bloc">
+                           <li><a href="../chapitre9#activites" target="_self">Activités agricoles</a></li>
+                           <li><a href="../chapitre9#productions" target="_self">Création des productions dans une campagne</a></li>
+                           <li><a href="../chapitre9#interventions" target="_self">Enregistrement d'interventions</a></li>
+                           <li><a href="../chapitre9#planification" target="_self">Planification d'interventions</a></li>
+						   <li><a href="../chapitre9#zero" target="_self">Utilisation de l'application mobile</a></li>
+                           <li><a href="../chapitre9#cahier" target="_self">Impression des documents réglementaires</a></li>
+						   <li><a href="../chapitre9#suivi" target="_self">Indicateurs et suivi des activités</a></li>
+						   <li><a href="../chapitre9#couts-prod" target="_self">Coûts de production détaillés</a></li>
+                        </div>
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-all">10</div>
+                           Outils
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: none;">
+                        <div class="bloc marge-basse">
+                           <li><a href="../chapitre10#fichiers" target="_self">Importation de fichiers CSV</a></li>
+                           <li><a href="../chapitre10#imports" target="_self">Import de données dans <strong>Eky</strong>agri | <strong>Eky</strong>viti</a></li>
+                           <li><a href="../chapitre10#extractions" target="_self">Extraction de données au format CSV</a></li>
+						   <li><a href="../chapitre10#ged" target="_self">Gestion des documents archivés</a></li>
+						   <li><a href="../chapitre10#connexions" target="_self">Connexions partenaires</a></li>
+                        </div>
+                     </ul>
+                  </li>
+				  <li>
+				  <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-perf">11</div>
+                           Performance
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: none;">
+                        <div class="bloc">
+                           <li><a href="../performance#config" target="_self">Instructions de configuration</a></li>
+						   <li><a href="../performance#activites" target="_self">Paramétrage des activités</a></li>
+						   <li><a href="../performance#budgets" target="_self">Budgets prévisionnels</a></li>
+                           <li><a href="../performance#couts-prod" target="_self">Coûts de production</a></li>
+                           <li><a href="../performance#marges" target="_self">Marges</a></li>
+						   <li><a href="../performance#seuils" target="_self">Seuils de commercialisation</a></li>
+						   <li><a href="../performance#modeles" target="_self">Modèles d'interventions</a></li>
+						   <li><a href="../performance#itineraires" target="_self">Itinéraires culturaux</a></li>
+						   <li><a href="../performance#plan-charges" target="_self">Plan de charges</a></li>
+						   <li><a href="../performance#scenarios" target="_self">Élaboration de scénarios</a></li>
+                        </div>
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-viti">12</div>
+                           Ekyviti
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: none;">
+                        <div class="bloc">
+                           <li><a href="../ekyviti#cvi" target="_self">Préparation et import des données cadastrales du CVI</a></li>
+                           <li><a href="../ekyviti#conversion" target="_self">Conversion du parcellaire cadastral</a></li>
+                           <li><a href="../ekyviti#zones" target="_self">Paramétrage et modification des zones cultivables</a></li>
+                           <li><a href="../ekyviti#parcelles" target="_self">Préparation et conversion du parcellaire cultural</a></li>
+						   <li><a href="../ekyviti#no-cvi" target="_self">Création des cultures sans CVI</a></li>
+                           <li><a href="../ekyviti#indicateurs" target="_self">Consultation et actualisation des indicateurs</a></li>
+						   <li><a href="../ekyviti#vendange" target="_self">Réception de vendange avec Duke</a></li>
+						   <li><a href="../ekyviti#baqio" target="_self">Connexion partenaire avec la solution Baqio</a></li>
+                        </div>
+                     </ul>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+      <div class="config margin-config config-x4">
+         <p>
+            <img src="../images/commun/parcours.svg" height="45" alt="Icône parcours"/>
+         </p>
+         <p class="majuscule">
+            configuration à faire pour
+            <img class="align-icone icone-marge-gauche icone-marge-droite" src="../images/commun/tacheE.svg" alt="E" width="20">
+            et
+            <img class="align-icone icone-marge-gauche icone-marge-droite" src="../images/commun/tacheF.svg" alt="F" width="20">
+            production végétale
+         </p>
+      </div>
+      <p class="texte aerateur-haut">
+         <strong>Dans ce chapitre, on vous explique&nbsp;:</strong>
+      </p>
+      <div class="divTableOutils marge">
+         <div class="divTableBody">
+            <div class="divTableRow">
+               <div class="divTableCellListe" style="width: 14px">
+                  <img src="../images/commun/caret-right.svg" alt="Flèche" height="15">
+               </div>
+               <div class="divTableCellListe" style="width: auto">
+                  Comment ajouter vos <a href="#activites" class="avoid-clicks">activités agricoles</a>
+               </div>
+            </div>
+            <div class="divTableRow">
+               <div class="divTableCellListe">
+                  <img src="../images/commun/caret-right.svg" alt="Flèche" height="15">
+               </div>
+               <div class="divTableCellListe">
+                  Comment <a href="#zones" class="avoid-clicks">dessiner vos zones cultivables</a> ou <a href="#fichiers" class="avoid-clicks">intégrer des fichiers géographiques</a>
+               </div>
+            </div>
+            <div class="divTableRow">
+               <div class="divTableCellListe">
+                  <img src="../images/commun/caret-right.svg" alt="Flèche" height="15">
+               </div>
+               <div class="divTableCellListe">
+                  Comment ajouter des <a href="#batiments" class="avoid-clicks">bâtiments et des zones de stockage</a>
+               </div>
+            </div>
+            <div class="divTableRow">
+               <div class="divTableCellListe">
+                  <img src="../images/commun/caret-right.svg" alt="Flèche" height="15">
+               </div>
+               <div class="divTableCellListe">
+                  Comment <a href="#decoupage" class="avoid-clicks">découper</a> des bâtiments et des zones de stockage
+               </div>
+            </div>
+            <div class="divTableRow">
+               <div class="divTableCellListe">
+                  <img src="../images/commun/caret-right.svg" alt="Flèche" height="15">
+               </div>
+               <div class="divTableCellListe">
+                  Comment ajouter des <a href="#equipements" class="avoid-clicks">équipements</a>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="saut-page"></div>
+      <h2 class="texte aerateur">Glossaire du chapitre</h2>
+      <div class="divTableGlossaire marge">
+         <div class="divTableBody">
+            <div class="divTableRow">
+               <div class="divTableCellGlossaire1" style="width: auto">
+                  Fond de carte
+               </div>
+               <div class="divTableCellGlossaire2" style="width: 100%">
+                  ensemble des informations géographiques, routières ou administratives affichées dans la carte
+               </div>
+            </div>
+            <div class="divTableRow">
+               <div class="divTableCellGlossaire1">
+                  Bâtiment
+               </div>
+               <div class="divTableCellGlossaire2">
+                  un lieu &#40;bâtiment ou surface&#41; qui permet de stocker des équipements, des semences, des récoltes, des intrants ou des animaux
+               </div>
+            </div>
+            <div class="divTableRow">
+               <div class="divTableCellGlossaire1">
+                  Découpe de bâtiment
+               </div>
+               <div class="divTableCellGlossaire2">
+                  une subdivision d'un bâtiment, une salle, un local ou une partie d'une surface
+               </div>
+            </div>
+            <div class="divTableRow">
+               <div class="divTableCellGlossaire1">
+                  Équipement
+               </div>
+               <div class="divTableCellGlossaire2">
+                  tous les outils significatifs de production agricole dont on veut suivre le coût d'utilisation et d'entretien
+               </div>
+            </div>
+         </div>
+      </div>
+	  <div class="warn-fond aerateur-haut aerateur-bas">
+         <div class="floating-box-warn">
+            <img src="../images/commun/attention.svg" width="100" alt="Attention"/>
+         </div>
+         <div class="info-txt">
+            <span class="titre-advice">Chapitre en cours de mise à jour<br /></span>
+            <p class="texte-advice">
+               En raison d'une refonte complète de l'assistant de démarrage, de nombreuses informations délivrées dans ce chapitre risquent de ne pas correspondre avec les étapes permettant de configurer <strong>Eky</strong>agri | <strong>Eky</strong>viti. Progressivement, les procédures de création des activités, des bâtiments, des équipiers et des équipements seront actualisées.
+            </p>
+         </div>
+      </div>
+      <h6>Guide de prise en main • Exploitation • Activités</h6>
+      <a class="slice-process" id="activites"></a>
+      <h2 class="texte aerateur">a - Activités de l'exploitation</h2>
+      <p class="texte">
+         Les activités agricoles dans <strong>Eky</strong>agri correspondent à la maîtrise et à l'exploitation d'un cycle biologique de caractère végétal ou animal et constituent une ou plusieurs étapes nécessaires à son déroulement.
+      </p>
+      <div class="divTableActivites marge aerateur-bas">
+         <div class="divTableBody">
+            <div class="divTableRow">
+               <div class="divTableCellActivites1" style="width: auto">
+                  Vous avez intégré TelePAC ?
+               </div>
+               <div class="divTableCellActivites2" style="width: auto">
+                  &nbsp;
+               </div>
+            </div>
+            <div class="divTableRow">
+               <div class="divTableCellActivites1">
+                  Oui
+               </div>
+               <div class="divTableCellActivites2">
+                  Vous trouvez, dans le panneau des activités, celles déclarées à la PAC. Vous pouvez en ajouter d'autres si vous le souhaitez.
+               </div>
+            </div>
+            <div class="divTableRow">
+               <div class="divTableCellActivites1">
+                  Non
+               </div>
+               <div class="divTableCellActivites2">
+                  Vous pouvez créer vos activités dès maintenant.
+               </div>
+            </div>
+         </div>
+      </div>
+      <p class="texte max-img-inline">
+         <img src="../images/chapitre3/activite2.png" class="contour-img" alt="Activités">
+      </p>
+      <p align="center" class="texte legende">
+         Liste des activités après l'import d'un fichier TelePAC
+      </p>
+      <p class="texte aerateur-haut">Notez que vous ne pouvez pas modifier ou supprimer d'activités issues du chargement d'un fichier TelePAC dans l'assistant de démarrage.</p>
+      <p class="texte">
+         Si vous devez créer des activités, suivez le processus suivant&nbsp;:
+      </p>
+      <h3 align="center" class="texte aerateur procedure">1 – Procédure de création d'activités</h3>
+      <p class="texte">
+         Le processus suivant vous montre comment créer vos activités à ce stade de la configuration. Vous pourrez aussi les créer plus tard directement dans l'application.
+      </p>
+      <div class="idea-fond aerateur-haut aerateur-bas">
+         <div class="floating-box-idea">
+            <img src="../images/commun/astuce.svg" width="100" alt="Astuce"/>
+         </div>
+         <div class="info-txt">
+            <span class="titre-advice">Cohérence des activités<br /></span>
+            <p class="texte-advice">Dans l'idéal, il est nécessaire de créer une activité par espèce cultivée et par système de production &#40;conventionnel et/ou bio&#41;.</p>
+         </div>
+      </div>
+      <div class="floating-box process">
+         <img src="../images/commun/step1.svg" alt="1" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Ajoutez une activité</span>
+         <p>
+            Sélectionnez une famille d'activités, production animale ou végétale dans la liste déroulante, puis sélectionnez une variété parmi celles proposées. Si vous ne trouvez pas la variété souhaitée, contactez le support par email à 
+            <a href="mailto:support@ekylibre.com">support@ekylibre.com</a>
+            ou par le service de discussion instantanée accessible en cliquant sur le bouton situé en bas à droite de l'assistant de démarrage
+            &#40;Chat ou Aide&#41;. 
+         </p>
+         <p class="max-img-process">
+            <img src="../images/chapitre3/activite1.png" class="contour-img" alt="Activités">
+         </p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step2.svg" alt="2" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Nommez l'activité</span>
+         <p>
+            Entrez un nom significatif comme par exemple &#171; Blé dur d'hiver &#187; et cliquez sur le bouton "Ajouter". Chaque nouvelle activité vient enrichir la liste des activités. Répétez ce processus pour chaque nouvelle activité que vous souhaitez ajouter à votre ferme.
+         </p>
+      </div>
+      <div class="affichage-large">
+         <p align="center" class="aerateur-haut">
+            Cliquez sur
+            <span class="btn-blue">Suivant</span>
+            pour passer à l'étape suivante de l'assistant de démarrage.
+         </p>
+      </div>
+      <div class="affichage-mobile">
+         <p align="center" class="aerateur-haut">
+            <span class="btn-blue">Suivant</span>
+         </p>
+         <p align="center" class="texte">Cliquez sur "Suivant" pour passer à l'étape suivante de l'assistant de démarrage.</p>
+      </div>
+      <h6>Guide de prise en main • Exploitation • Création zones cultivables</h6>
+      <a class="slice-process" id="zones"></a>
+      <h2 class="texte aerateur">b - Création des zones cultivables à la main ou avec des fichiers géographiques</h2>
+      <p class="texte max-img-inline aerateur-bas">
+         <img src="../images/chapitre3/barre-progression1.png" class="contour-img" alt="Barre de progression">
+      </p>
+      <p class="texte">
+         Si vous avez intégré la déclaration TelePAC et que vous n'avez pas besoin d'ajouter de nouvelles zones cultivables, vous pouvez passer directement à la section <a href="#batiments" class="avoid-clicks">&#171;&nbsp;Création des bâtiments et des zones de stockage&nbsp;&#187;</a> de ce chapitre.
+      </p>
+      <p class="texte">
+         Sinon, vous pouvez créer vos zones cultivables de deux manières différentes&nbsp;:
+         <br />
+         1. À la main avec les outils de dessin&nbsp;;
+         <br />
+         2. Avec l'aide de fichiers géographiques.
+      </p>
+      <p class="texte">
+         Vous pouvez aussi mixer les deux méthodes.
+      </p>
+      <div class="warn-fond aerateur-haut aerateur-bas">
+         <div class="floating-box-warn">
+            <img src="../images/commun/attention.svg" width="100" alt="Attention"/>
+         </div>
+         <div class="info-txt">
+            <span class="titre-advice">Attention pour la PAC<br /></span>
+            <p class="texte-advice">
+               Le dessin à la main ou les relevés satellites &#40;GPS&#41; peuvent ne pas correspondre exactement aux zones géographiques précises déclarées à la PAC. Attention aux surfaces et limites qui ne seraient pas valables pour réaliser votre télédéclaration sur le site des téléservices des aides de la PAC.
+            </p>
+         </div>
+      </div>
+      <h2 class="texte aerateur">1 - Présentation de la carte et de ses outils</h2>
+      <p class="texte">
+         Dans <strong>Eky</strong>agri toutes les cartes sont dotées des mêmes outils qui, selon le contexte, permettent de se déplacer et zoomer ou de modifier des zones dessinées correspondant à des zones de culture ou de stockage.
+      </p>
+      <p class="texte">
+         Si votre ferme a été géolocalisée via votre déclaration PAC ou votre adresse, la carte s'affiche centrée sur votre exploitation ou votre pays si vous l'avez précisé à l'étape "Bienvenue" de l'assistant de démarrage.
+      </p>
+      <p class="texte max-img-inline">
+         <img src="../images/chapitre3/zones-cultivables1.png" class="contour-img" alt="Zones cultivables">
+      </p>
+      <p align="center" class="texte legende aerateur-bas">
+         Le panneau &#171; Zones cultivables &#187; affichant vos zones cultivables.
+      </p>
+      <p class="texte">
+         Si votre ferme n'a pas été géolocalisée, la carte sera centrée sur la France&nbsp;:
+      </p>
+      <p class="texte max-img-inline">
+         <img src="../images/chapitre3/zones-cultivables2.png" class="contour-img" alt="Zones cultivables">
+      </p>
+      <p align="center" class="texte legende aerateur-bas">
+         Le panneau &#171; Zones cultivables &#187; centré sur la France.
+      </p>
+      <div class="divTableOutils marge">
+         <div class="divTableBody">
+            <div class="divTableRow">
+               <div class="divTableCellLayers" style="width: 40px">
+                  <img src="../images/commun/layers.svg" alt="Fonds de carte et couches" height="30" width="30" class="align-icone">
+               </div>
+               <div class="divTableCellLayers" style="width: auto">
+                  Le bouton "Fonds de carte et couches" en haut à droite permet de sélectionner d'autres fonds de carte et d'afficher ou de masquer vos zones cultivables &#40;ou vos bâtiments/zones de stockage&#41; en fonction de votre progression dans l'assistant de démarrage.
+                  <p align="center" class="aerateur-bas">
+                     <img src="../images/chapitre3/menu1.png" alt="Activités">
+                  </p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <p class="texte">
+         La barre d'outils de la carte permet de naviguer et d'ajouter, de modifier ou de supprimer des zones géographiques en complément de la main<img src="../images/commun/hand-o.svg" alt="Main" height="20" class="align-icone icone-marge-gauche icone-marge-droite">qui permet de déplacer la carte.
+      </p>
+      <div class="divTableOutils marge">
+         <div class="divTableBody">
+            <div class="divTableRow">
+               <div class="divTableCellOutils" style="width: 40px">
+                  <img src="../images/commun/plus.svg" alt="Zoom avant" height="30" width="30" class="align-icone">
+               </div>
+               <div class="divTableCellOutils" style="width: auto">
+                  Le bouton "zoom plus" permet de faire un zoom avant
+               </div>
+            </div>
+            <div class="divTableRow">
+               <div class="divTableCellOutils">
+                  <img src="../images/commun/minus.svg" alt="Zoom arrière" height="30" width="30" class="align-icone">
+               </div>
+               <div class="divTableCellOutils">
+                  Le bouton "zoom moins" permet de faire un zoom arrière
+               </div>
+            </div>
+            <div class="divTableRow">
+               <div class="divTableCellOutils">
+                  <img src="../images/commun/arrows-alt.svg" alt="Mode plein écran" height="30" width="30" class="align-icone">
+               </div>
+               <div class="divTableCellOutils">
+                  Le bouton "agrandissement" permet d'afficher la carte en plein écran. Cliquez à nouveau sur ce bouton ou pressez la touche "esc" de votre clavier pour revenir à un affichage normal 
+               </div>
+            </div>
+            <div class="divTableRow">
+               <div class="divTableCellOutils">
+                  <img src="../images/commun/star-o.svg" alt="Outil de création" height="30" width="30" class="align-icone">
+               </div>
+               <div class="divTableCellOutils">
+                  Le bouton "étoile" permet de créer des formes représentant les zones cultivables de votre exploitation
+               </div>
+            </div>
+            <div class="divTableRow">
+               <div class="divTableCellOutils">
+                  <img src="../images/commun/pencil.svg" alt="Outil de modification" height="30" width="30" class="align-icone">
+               </div>
+               <div class="divTableCellOutils">
+                  Le bouton "crayon" permet de modifier toutes les zones existantes
+               </div>
+            </div>
+            <div class="divTableRow">
+               <div class="divTableCellOutils">
+                  <img src="../images/commun/close.svg" alt="Outil de suppression" height="30" width="30" class="align-icone">
+               </div>
+               <div class="divTableCellOutils">
+                  Le bouton "croix" permet de supprimer toutes les zones existantes
+               </div>
+            </div>
+            <div class="divTableRow">
+               <div class="divTableCellOutils">
+                  <img src="../images/commun/download.svg" alt="Bouton de téléchargement" height="30" width="30" class="align-icone">
+               </div>
+               <div class="divTableCellOutils">
+                  Le bouton "téléchargement" permet d'importer des zones à partir d'un logiciel tiers, au format Keyhole Markup Language &#40;.kml&#41;.
+               </div>
+            </div>
+         </div>
+      </div>
+      <p class="texte aerateur-haut">
+         De préférence sur ordinateur pour bénéficier de la précision de la souris &#40;il est difficile voire impossible de dessiner avec les doigts&#41;, commencez le dessin de vos zones cultivables.
+      </p>
+      <p class="texte aerateur-haut aerateur-bas" align="center">
+         <img  src="../images/chapitre3/desktop-pref.png" width="500" alt="Ordinateur, téléphone, tablette">
+      </p>
+      <div class="aerateur-bas">
+         <p>&nbsp;</p>
+      </div>
+      <h2 class="texte aerateur">2 - Processus de création des zones cultivables à la main</h2>
+      <h3 align="center" class="texte aerateur procedure">1 - Procédure de création des zones dessinées</h3>
+      <p class="texte">
+         Ce processus vous guide pour utiliser les outils de dessin des zones géographiques sur la carte. Il est valable pour tous types de zones&nbsp;: zones cultivables, bâtiments, zones de stockage.
+      </p>
+      <div class="info-fond aerateur-haut aerateur-bas">
+         <div class="floating-box-info">
+            <img src="../images/commun/info.svg" width="100" alt="Info"/>
+         </div>
+         <div class="info-txt">
+            <span class="titre-advice">Précision du dessin<br /></span>
+            <p class="texte-advice">
+               Tâchez d'avoir votre cadastre à portée de main ou d'utiliser des fonds de carte facilement décryptables à l'œil pour localiser vos zones cultivables. Ébauchez leurs contours avec le fond de carte Esri World Imagery, puis affinez-les en utilisant le fond de carte Thunderforest Landscape.
+            </p>
+         </div>
+      </div>
+      <div class="floating-box process">
+         <img src="../images/commun/step1.svg" alt="1" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Passez en vue satellitaire</span>
+         <p>
+            Cliquez sur le bouton "Fonds de carte et couches"&nbsp;:
+            <img src="../images/commun/layers.svg" alt="Couches" height="30" class="align-outil">
+         </p>
+         <p>
+            Dans le menu "Fonds de carte et couches", sélectionnez Esri World Imagery.
+         </p>
+         <p align="center">
+            <img src="../images/chapitre3/menu2.png" alt="Menu déployé" class="contour-img max-img-process">
+         </p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step2.svg" alt="2" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Zoomez sur la carte</span>
+         <p>
+            Pour cadrer l'endroit que vous souhaitez sur la carte, vous disposez du zoom<img src="../images/commun/plus.svg" alt="Zoom plus" height="20" class="align-icone icone-marge-gauche">
+            <img src="../images/commun/minus.svg" alt="Zoom moins" height="20" class="align-icone icone-marge-gauche icone-marge-droite">et de la main<img src="../images/commun/hand-rock-o.svg" alt="Icône édition" height="20" class="align-icone icone-marge-gauche">. Déplacez-vous sur la carte dans la région souhaitée et alternez zoom et déplacements pour obtenir le cadrage optimal avec le niveau de détail voulu.
+         </p>
+         <p class="max-img-process">
+            <img src="../images/chapitre3/dessin1.png" class="contour-img" alt="Dessin de la forme">
+         </p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step3.svg" alt="3" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Ajoutez une zone</span>
+         <p>
+            Cliquez sur le bouton "étoile"&nbsp;:
+            <img src="../images/commun/star-o.svg" alt="Icône étoile" height="30" class="align-outil icone-marge-gauche icone-marge-droite">
+         </p>
+         <p>
+            Un menu horizontal s'affiche à droite du bouton "étoile" avec les commandes "Terminer", "Supprimer le dernier point" et "Annuler.
+         </p>
+         <p align="center">
+            <img src="../images/chapitre3/btn-etoile.png" alt="Menu déployé">
+         </p>
+         <p align="center">
+            Menu du bouton &#171;Étoile &#187;
+         </p>
+         <p>
+            Cliquez sur la carte pour poser un premier point, puis déplacez le curseur jusqu'à un autre endroit et posez un autre point.
+         </p>
+         <p class="max-img-process">
+            <img src="../images/chapitre3/dessin2.png" class="contour-img" alt="Dessin de la forme">
+         </p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step4.svg" alt="4" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Construisez la zone</span>
+         <p>
+            Cliquez successivement à des endroits différents pour poser de nouveaux points qui délimiteront la nouvelle zone.
+         </p>
+         <p>
+            Cliquez sur "Supprimer le dernier point" pour effacer le dernier point posé et revenir en arrière.
+         </p>
+         <p>
+            Cliquez sur "Annuler" pour abandonner le dessin de la zone.
+         </p>
+      </div>
+      <div class="info-fond aerateur-haut">
+         <div class="floating-box-info">
+            <img src="../images/commun/info.svg" width="100" alt="Info"/>
+         </div>
+         <div class="info-txt">
+            <span class="titre-advice">Zoom et déplacement dans la carte durant le dessin<br /></span>
+            <p class="texte-advice">
+               Durant la réalisation du dessin il est toujours possible de se déplacer dans la carte et de zoomer ou dézoomer.
+            </p>
+         </div>
+      </div>
+      <div class="floating-box process"></div>
+      <div class="process-txt">
+         <p class="max-img-process">
+            <img src="../images/chapitre3/dessin3.png" class="contour-img" alt="Dessin de la forme">
+         </p>
+      </div>
+      <div class="floating-box process">
+         <img src="../images/commun/step5.svg" alt="5" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Fermez la zone</span>
+         <p>
+            Cliquez sur le point de départ pour fermer le tracé ou cliquez sur le bouton "Terminer".
+         </p>
+         <p>
+            La zone s'affiche alors en violet.
+         </p>
+         <p>
+            Le survol du point de départ avec la souris est symbolisé par le changement d'aspect du curseur<img src="../images/commun/hand-pointer-o.svg" alt="Icône édition" height="20" class="align-icone icone-marge-gauche">.
+         </p>
+         <p>
+            La liste des zones à droite de la carte se complète automatiquement avec la nouvelle zone créée.
+         </p>
+         <p class="max-img-process">
+            <img src="../images/chapitre3/dessin4.png" class="contour-img" alt="Dessin de la forme">
+         </p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step6.svg" alt="6" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Nommez la zone</span>
+         <p>
+            Cliquez sur la zone et entrez son nom dans la boîte de dialogue. Le nom dans la liste change automatiquement.
+         </p>
+         <p>
+            Le nom de la zone est aussi un lien qui permet de centrer automatiquement l'affichage de la zone sur la carte.
+         </p>
+         <p class="max-img-process">
+            <img src="../images/chapitre3/dessin5.png" class="contour-img" alt="Dessin de la forme">
+         </p>
+      </div>
+      <br />
+      <h3 align="center" class="texte aerateur procedure">2 - Modifier une zone</h3>
+      <p class="texte">
+         Ce processus vous guide pour modifier les zones.
+      </p>
+      <div class="floating-box process">
+         <img src="../images/commun/step1.svg" alt="1" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Modifier la position d'un point</span>
+         <p>
+            Cliquez sur le bouton "crayon"&nbsp;:
+            <img src="../images/commun/pencil.svg" alt="Icône édition" height="30" class="align-outil icone-marge-gauche icone-marge-droite">
+         </p>
+         <p>
+            Un menu horizontal s'affiche à sa droite avec les commandes "Sauver" et "Annuler".
+         </p>
+         <p align="center">
+            <img src="../images/chapitre3/btn-crayon.png" alt="Menu déployé">
+         </p>
+         <p>
+            Modifiez la zone en changeant la position d'un ou de plusieurs points sur la carte. Le survol de la forme ou d'un point est symbolisé par le changement d'aspect du curseur<img src="../images/commun/hand-pointer-o.svg" alt="Icône édition" height="20" class="align-icone icone-marge-gauche">. Cliquez-glissez pour modifier la position d'un point<img src="../images/commun/hand-rock-o.svg" alt="Icône édition" height="20" class="align-icone icone-marge-gauche">.
+         </p>
+         <p>
+            Validez la modification en cliquant sur "Sauver" ou sur "Annuler" pour abandonner l'opération dans le petit menu horizontal.
+         </p>
+         <p class="max-img-process">
+            <img src="../images/chapitre3/dessin6.png" class="contour-img" alt="Édition de la forme">
+         </p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step2.svg" alt="2" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Supprimer un point</span>
+         <p>
+            Pour supprimer un point, réalisez un Ctrl+clic gauche sur le point &#40;Cmd+clic sur MacOS&#41;.
+         </p>
+         <p>
+            Cliquez sur "Sauver" pour valider la modification ou sur "Annuler" pour abandonner l'opération dans le petit menu horizontal.
+         </p>
+      </div>
+      <br />
+      <h3 align="center" class="texte aerateur procedure">3 - Supprimer une zone</h3>
+      <p class="texte">
+         Ce processus vous guide pour supprimer les zones.
+      </p>
+      <div class="floating-box process">
+         <img src="../images/commun/step1.svg" alt="1" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Supprimer une zone</span>
+         <p>
+            Cliquez sur le bouton "croix"&nbsp;:
+            <img src="../images/commun/close.svg" alt="Icône édition" height="30" class="align-outil">
+         </p>
+         <p>
+            Un menu horizontal s'affiche à sa droite avec les commandes "Sauver" et "Annuler".
+         </p>
+         <p align="center">
+            <img src="../images/chapitre3/btn-delete.png" alt="Menu déployé">
+         </p>
+         <p>
+            Cliquez sur la zone dans la carte pour la supprimer. Cliquez sur "Sauver" pour valider la modification ou sur "Annuler" pour abandonner l'opération.
+         </p>
+         <p>
+            Vous pouvez également supprimer une zone en cliquant sur le bouton<img src="../images/commun/delete1.svg" alt="Delete" height="20" class="align-icone icone-marge-gauche icone-marge-droite">à droite de son nom, dans la liste puis confirmez votre choix&nbsp;: cliquez sur "Supprimer" pour valider la suppression de la zone ou cliquez sur<img src="../images/commun/delete2.svg" alt="Delete" height="20" class="align-icone icone-marge-gauche icone-marge-droite">pour abandonner l'opération.
+         </p>
+      </div>
+      <a class="slice-process" id="fichiers"></a>
+      <h2 class="texte aerateur">3 - Création des zones cultivables par intégration de fichiers</h2>
+      <p class="texte">
+         Grâce à la géolocalisation, des informations &#40;comme par exemple des tracés de parcelles&#41; peuvent être récoltées à partir d'appareils ou d'applications mobiles fonctionnant sur téléphone ou tablette. Ces informations peuvent être enregistrées par votre appareil ou application mobile dans un fichier.
+      </p>
+      <div class="info-fond aerateur-haut aerateur-bas">
+         <div class="floating-box-info">
+            <img src="../images/commun/info.svg" width="100" alt="Info"/>
+         </div>
+         <div class="info-txt">
+            <span class="titre-advice">Différents types de fichiers SIG<br /></span>
+            <p class="texte-advice">
+               Un format de données SIG &#40;Système d'information géographique&#41; est une représentation informatique de l'information géographique, fournissant éventuellement des indications sur la manière dont elle est géoréférencée. Il existe de nombreux types de fichiers géographiques.
+               <br />
+               <strong>Eky</strong>agri | <strong>Eky</strong>viti accepte le format Keyhole Markup Language &#40;.kml&#41;.
+            </p>
+         </div>
+      </div>
+      <p class="texte aerateur-bas">
+         Vous pouvez utiliser un ou plusieurs fichiers géographiques successivement, que vous ayez utilisé un fichier TelePAC avant cela ou non.
+      </p>
+      <h3 align="center" class="texte aerateur procedure">1 - Procédure d'utilisation des fichiers de données géographiques</h3>
+      <p class="texte">
+         Ce processus vous guide pour intégrer les fichiers de données géographiques dans l'application. 
+      </p>
+      <div class="floating-box process">
+         <img src="../images/commun/step1.svg" alt="1" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Sélectionnez le fichier</span>
+         <p>
+            Cliquez sur le bouton "téléchargement"&nbsp;:
+            <img src="../images/commun/download.svg" alt="Téléchargement" height="30" class="align-outil">
+         </p>
+         <p>
+            Sélectionnez le type de fichier à utiliser.
+         </p>
+         <p class="max-img-process">
+            <img src="../images/chapitre3/import1.png" class="contour-img" alt="Importation d'un fichier géographique">
+         </p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step2.svg" alt="2" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Intégrez le fichier</span>
+         <p>
+            Cliquez sur le bouton "Parcourir…" pour sélectionner votre fichier sur votre ordinateur ou votre tablette. Le nom du fichier s'affiche. Cliquez sur "Importer".
+         </p>
+         <p class="max-img-process">
+            <img src="../images/chapitre3/import2.png" class="contour-img" alt="Importation d'un fichier géographique">
+         </p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step3.svg" alt="3" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Affichez les zones après intégration</span>
+         <p>
+            Notez que les chiffres dans les pastilles blanches sur la carte<img src="../images/chapitre3/numero-carte.svg" alt="Pastille" height="30" class="align-outil">indiquent le nombre de zones cultivables localisées à cet endroit.
+         </p>
+         <p class="max-img-process">
+            <img src="../images/chapitre3/import3.png" class="contour-img" alt="Importation d'un fichier géographique">
+         </p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step4.svg" alt="4" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Zoomez la carte</span>
+         <p>
+            Pour vérifier et voir le détail des zones, utilisez le bouton "zoom plus"&nbsp;:
+            <img src="../images/commun/plus.svg" alt="Zoom avant" height="30" class="align-outil">
+         </p>
+         <p class="max-img-process">
+            <img src="../images/chapitre3/import4.png" class="contour-img" alt="Importation d'un fichier géographique">
+         </p>
+      </div>
+      <div class="affichage-large">
+         <p align="center" class="aerateur-haut">
+            Cliquez sur
+            <span class="btn-blue">Suivant</span>
+            pour passer à l'étape suivante de l'assistant de démarrage.
+         </p>
+      </div>
+      <div class="affichage-mobile">
+         <p align="center" class="aerateur-haut">
+            <span class="btn-blue">Suivant</span>
+         </p>
+         <p align="center" class="texte">Cliquez sur "Suivant" pour passer à l'étape suivante de l'assistant de démarrage.</p>
+      </div>
+      <h6>Guide de prise en main • Exploitation • Création des bâtiments</h6>
+      <a class="slice-process" id="batiments"></a>
+      <h2 class="texte aerateur">c - Création des bâtiments et des zones de stockage</h2>
+      <p class="texte aerateur-bas max-img-inline">
+         <img src="../images/chapitre3/barre-progression2.png" class="contour-img" alt="Barre de progression">
+      </p>
+      <p class="texte">
+         <strong>Eky</strong>agri permet d'ajouter des bâtiments et des zones de stockage sur la carte qui permettront plus tard les <strong>réceptions de marchandises ou d'équipements, la réalisation des inventaires et l'enregistrement de certaines interventions</strong>. Tous les types de bâtiments/zones de stockage peuvent être créés.
+      </p>
+      <div class="affichage-large"></div>
+      <div class="affichage-mobile">
+         <p align="center">
+            <img src="../images/commun/scroll.svg" alt="Scroll" height="40" class="">
+            <br />
+            Glissez pour parcourir le tableau
+         </p>
+      </div>
+      <div class="saut-page"></div>
+      <div class="contour-gris texte aerateur-haut aerateur-bas" name="Bâtiments">
+         <div class="tableaux">
+            <p align="center" class="texte titre-advice">
+               Exemples de bâtiments/zones de stockage
+            </p>
+         </div>
+         <div class="scroll">
+            <div class="tableau texte-tableau">
+               <div class="divTable">
+                  <div class="divTableBody">
+                     <div class="divTableRow">
+                        <div class="divTableCellBat1">
+                           <img src="../images/chapitre3/type_bat1.png" alt="Habitation" width="130">
+                        </div>
+                        <div class="divTableCellBat2">
+                           <p>Des immeubles d'habitation ou des locaux techniques pour protéger une armoire à médicaments et/ou une réserve de produits phytosanitaires.</p>
+                        </div>
+                     </div>
+                     <div class="divTableRow">
+                        <div class="divTableCellBat1">
+                           <img src="../images/chapitre3/type_bat2.png" alt="Hangar" width="130">
+                        </div>
+                        <div class="divTableCellBat2">
+                           <p>Des hangars pour abriter des équipements &#40;tracteurs, remorques, charrues, pulvérisateurs, semoirs, épandeurs, etc.&#41; et des intrants.</p>
+                        </div>
+                     </div>
+                     <div class="divTableRow">
+                        <div class="divTableCellBat1">
+                           <img src="../images/chapitre3/type_bat3.png" alt="Silos" width="130">
+                        </div>
+                        <div class="divTableCellBat2">
+                           <p> Des séchoirs à grains ou à tabac et des silos pour stocker les produits de récolte &#40;ensilage&#41;. </p>
+                        </div>
+                     </div>
+                     <div class="divTableRow">
+                        <div class="divTableCellBat1">
+                           <img src="../images/chapitre3/type_bat4.png" alt="Granges" width="130">
+                        </div>
+                        <div class="divTableCellBat2">
+                           <p>Des granges pour entreposer des outils et stocker du fourrage et/ou des aliments pour les animaux.</p>
+                        </div>
+                     </div>
+                     <div class="divTableRow">
+                        <div class="divTableCellBat1">
+                           <img src="../images/chapitre3/type_bat5.png" alt="Étables" width="130">
+                        </div>
+                        <div class="divTableCellBat2">
+                           <p>
+                              Des étables, des bergeries, des poulaillers pour héberger des aires d'élevage ou de couchage pour les animaux.
+                           </p>
+                        </div>
+                     </div>
+                     <div class="divTableRow">
+                        <div class="divTableCellBat3">
+                           <img src="../images/chapitre3/type_bat6.png" alt="Aires de stockage" width="130">
+                        </div>
+                        <div class="divTableCellBat4">
+                           <p>
+                              Des aires de stockage &#40;couvertes ou extérieures&#41; pour entreposer des intrants et/ou de la fumure organique.
+                           </p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="info-fond aerateur-haut aerateur-bas">
+         <div class="floating-box-info">
+            <img src="../images/commun/info.svg" width="100" alt="Info"/>
+         </div>
+         <div class="info-txt">
+            <span class="titre-advice">Silos à grains et silos à aliments<br /></span>
+            <p class="texte-advice">
+               Pour les silos, définissez une zone de stockage que vous nommerez silo indépendamment d'un silo à grains et/ou à aliments créé en tant qu'équipement pour des considérations comptables &#40;investissement amortissable&#41;. Vous pourrez ensuite rattacher cet équipement à cette aire de stockage.
+            </p>
+         </div>
+      </div>
+      <p class="texte">
+         Si vous avez utilisé les outils de dessin pour créer vos zones cultivables, l'interface pour dessiner les bâtiments/zones de stockage est strictement identique.
+      </p>
+      <div class="divTableOutils marge">
+         <div class="divTableBody">
+            <div class="divTableRow">
+               <div class="divTableCellLayers" style="width: 40px">
+                  <img src="../images/commun/layers.svg" alt="Fonds de carte et couches" height="30" width="30" class="align-icone">
+               </div>
+               <div class="divTableCellLayers" style="width: auto">
+                  Le bouton "Fonds de carte et couches" en haut à droite permet de sélectionner d'autres fonds de carte et d'afficher ou de masquer vos zones cultivables &#40;ou vos bâtiments/zones de stockage&#41; en fonction de votre progression dans l'assistant de démarrage.
+                  <p align="center" class="aerateur-bas">
+                     <img src="../images/chapitre3/menu1.png" alt="Activités">
+                  </p>
+               </div>
+            </div>
+         </div>
+      </div>
+      <p class="texte">
+         La barre d'outils de la carte permet de naviguer et d'ajouter, de modifier ou de supprimer des zones géographiques en complément de la main<img src="../images/commun/hand-o.svg" alt="Main" height="20" class="align-icone icone-marge-gauche icone-marge-droite">qui permet de déplacer la carte.
+      </p>
+      <div class="divTableOutils marge">
+         <div class="divTableBody">
+            <div class="divTableRow">
+               <div class="divTableCellOutils" style="width: 40px">
+                  <img src="../images/commun/plus.svg" alt="Zoom avant" height="30" width="30" class="align-icone">
+               </div>
+               <div class="divTableCellOutils" style="width: auto">
+                  Le bouton "zoom plus" permet de faire un zoom avant
+               </div>
+            </div>
+            <div class="divTableRow">
+               <div class="divTableCellOutils">
+                  <img src="../images/commun/minus.svg" alt="Zoom arrière" height="30" width="30" class="align-icone">
+               </div>
+               <div class="divTableCellOutils">
+                  Le bouton "zoom moins" permet de faire un zoom arrière
+               </div>
+            </div>
+            <div class="divTableRow">
+               <div class="divTableCellOutils">
+                  <img src="../images/commun/arrows-alt.svg" alt="Mode plein écran" height="30" width="30" class="align-icone">
+               </div>
+               <div class="divTableCellOutils">
+                  Le bouton "agrandissement" permet d'afficher la carte en plein écran. Cliquez à nouveau sur ce bouton ou pressez la touche "esc" de votre clavier pour revenir à un affichage normal 
+               </div>
+            </div>
+            <div class="divTableRow">
+               <div class="divTableCellOutils">
+                  <img src="../images/commun/star-o.svg" alt="Outil de création" height="30" width="30" class="align-icone">
+               </div>
+               <div class="divTableCellOutils">
+                  Le bouton "étoile" permet de dessiner des formes représentant les bâtiments/zones de stockage de votre exploitation
+               </div>
+            </div>
+            <div class="divTableRow">
+               <div class="divTableCellOutils">
+                  <img src="../images/commun/pencil.svg" alt="Outil de modification" height="30" width="30" class="align-icone">
+               </div>
+               <div class="divTableCellOutils">
+                  Le bouton "crayon" permet d'éditer tous les bâtiments/zones de stockage existants
+               </div>
+            </div>
+            <div class="divTableRow">
+               <div class="divTableCellOutils">
+                  <img src="../images/commun/close.svg" alt="Outil de suppression" height="30" width="30" class="align-icone">
+               </div>
+               <div class="divTableCellOutils">
+                  Le bouton "croix" permet de supprimer tous les bâtiments/zones de stockage existants
+               </div>
+            </div>
+            <div class="divTableRow">
+               <div class="divTableCellOutils">
+                  <img src="../images/commun/download.svg" alt="Bouton de téléchargement" height="30" width="30" class="align-icone">
+               </div>
+               <div class="divTableCellOutils">
+                  Le bouton "téléchargement" permet d'importer des zones à partir d'un logiciel tiers, au format Keyhole Markup Language &#40;.kml&#41;.
+               </div>
+            </div>
+         </div>
+      </div>
+      <p class="texte aerateur-haut">
+         De préférence sur ordinateur pour bénéficier de la précision de la souris &#40;il est difficile voire impossible de dessiner avec les doigts&#41;, commencez le dessin de vos bâtiments/zones de stockage.
+      </p>
+      <p class="texte aerateur-haut" align="center">
+         <img  src="../images/chapitre3/desktop-pref.png" width="500" alt="Ordinateur, téléphone, tablette">
+      </p>
+      <h3 align="center" class="texte aerateur procedure">1 - Procédure de création des zones à la main</h3>
+      <p class="texte">
+         Ce processus vous guide pour utiliser les outils de dessin des zones géographiques sur la carte. Il est valable pour tous types de zones&nbsp;: bâtiments, silos, aires de stockage.
+      </p>
+      <div class="info-fond aerateur-haut aerateur-bas">
+         <div class="floating-box-info">
+            <img src="../images/commun/info.svg" width="100" alt="Info"/>
+         </div>
+         <div class="info-txt">
+            <span class="titre-advice">Précision du dessin<br /></span>
+            <p class="texte-advice">
+               Tâchez d'avoir votre cadastre à portée de main ou d'utiliser des fonds de carte facilement décryptables à l'œil pour localiser vos bâtiments et zones de stockage. Ébauchez leurs contours avec le fond de carte Esri World Imagery, puis affinez-les en utilisant le fond de carte Thunderforest Landscape.
+            </p>
+         </div>
+      </div>
+      <div class="floating-box process">
+         <img src="../images/commun/step1.svg" alt="1" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Passez en vue satellitaire</span>
+         <p>
+            Cliquez sur le bouton "Fonds de carte et couches"&nbsp;:
+            <img src="../images/commun/layers.svg" alt="Couches" height="30" class="align-outil">
+         </p>
+         <p>
+            Dans le menu "Fonds de carte et couches", sélectionnez Esri World Imagery. Décochez "Zones cultivables" si vous souhaitez les masquer.
+         </p>
+         <p align="center">
+            <img src="../images/chapitre3/menu3.png" alt="Menu déployé" class="contour-img max-img-process">
+         </p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step2.svg" alt="2" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Zoomez sur la carte</span>
+         <p>
+            L'affichage de la carte est centré par défaut sur l'adresse de l'exploitation. Pour vous déplacer dans la région souhaitée et vous permettre d'obtenir le cadrage optimal avec le niveau de détail voulu, vous disposez du zoom<img src="../images/commun/plus.svg" alt="Zoom plus" height="20" class="align-icone icone-marge-gauche"><img src="../images/commun/minus.svg" alt="Zoom moins" height="20" class="align-icone icone-marge-gauche icone-marge-droite">et de la main<img src="../images/commun/hand-rock-o.svg" alt="Icône édition" height="20" class="align-icone icone-marge-gauche">.
+         </p>
+         <p class="max-img-process">
+            <img src="../images/chapitre3/batiments1.png" class="contour-img" alt="Dessin de la forme">
+         </p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step3.svg" alt="3" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Ajoutez une zone</span>
+         <p>
+            Cliquez sur le bouton "étoile"&nbsp;:
+            <img src="../images/commun/star-o.svg" alt="Icône étoile" height="30" class="align-outil">
+         </p>
+         <p>
+            Un menu horizontal s'affiche à droite du bouton "étoile" avec les commandes "Terminer", "Supprimer le dernier point" et "Annuler".
+         </p>
+         <p align="center">
+            <img src="../images/chapitre3/btn-etoile.png" alt="Menu déployé">
+         </p>
+         <p>
+            Cliquez sur la carte pour poser un premier point puis déplacez le curseur jusqu'à un autre endroit et posez un autre point.
+         </p>
+         <p class="max-img-process">
+            <img src="../images/chapitre3/batiments2.png" class="contour-img" alt="Dessin de la forme">
+         </p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step4.svg" alt="4" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Construisez la zone</span>
+         <p>
+            Cliquez successivement à des endroits différents pour poser de nouveaux points qui délimiteront la nouvelle zone.
+         </p>
+         <p>
+            Cliquez sur "Supprimer le dernier point" pour effacer le dernier point posé et revenir en arrière.
+         </p>
+         <p>
+            Cliquez sur "Annuler" pour abandonner le dessin de la zone.
+         </p>
+      </div>
+      <div class="info-fond aerateur-haut">
+         <div class="floating-box-info">
+            <img src="../images/commun/info.svg" width="100" alt="Info"/>
+         </div>
+         <div class="info-txt">
+            <span class="titre-advice">Zoom et déplacement dans la carte durant le dessin<br /></span>
+            <p class="texte-advice">
+               Durant la réalisation du dessin il est toujours possible de se déplacer dans la carte et de zoomer ou dézoomer.
+            </p>
+         </div>
+      </div>
+      <div class="floating-box process"></div>
+      <div class="process-txt">
+         <p class="max-img-process">
+            <img src="../images/chapitre3/batiments3.png" class="contour-img" alt="Dessin de la forme">
+         </p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step5.svg" alt="5" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Fermez la zone</span>
+         <p>
+            Cliquez sur le point de départ pour fermer le tracé ou cliquez sur le bouton "Terminer".
+         </p>
+         <p>
+            La zone s'affiche alors en violet.
+         </p>
+         <p>
+            Le survol du point de départ est symbolisé par le changement d'aspect du curseur<img src="../images/commun/hand-pointer-o.svg" alt="Icône édition" height="20" class="align-icone icone-marge-gauche">.
+         </p>
+         <p>
+            La liste des bâtiments/zones de stockage est automatiquement enrichie avec la nouvelle zone créée.
+         </p>
+         <p class="max-img-process">
+            <img src="../images/chapitre3/batiments4.png" class="contour-img" alt="Dessin de la forme">
+         </p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step6.svg" alt="6" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Nommez la zone</span>
+         <p>
+            Cliquez sur celle-ci et saisissez son nom dans la boîte de dialogue. Le nom dans la liste change automatiquement.
+         </p>
+         <p>
+            Le nom de la zone est aussi un lien qui permet de centrer automatiquement l'affichage de la zone sur la carte.
+         </p>
+         <p class="max-img-process">
+            <img src="../images/chapitre3/batiments5.png" class="contour-img" alt="Dessin de la forme">
+         </p>
+      </div>
+      <br />
+      <h3 align="center" class="texte aerateur procedure">2 - Modifier une zone</h3>
+      <p class="texte">
+         Ce processus vous guide pour modifier les zones.
+      </p>
+      <div class="floating-box process">
+         <img src="../images/commun/step1.svg" alt="1" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Modifier la position d'un point</span>
+         <p>
+            Cliquez sur le bouton "crayon"&nbsp;:
+            <img src="../images/commun/pencil.svg" alt="Icône édition" height="30" class="align-outil">
+         </p>
+         <p>
+            Un menu horizontal s'affiche à sa droite avec les commandes "Sauver" et "Annuler".
+         </p>
+         <p align="center">
+            <img src="../images/chapitre3/btn-crayon.png" alt="Menu déployé">
+         </p>
+         <p>
+            Modifiez la forme en changeant la position d'un ou de plusieurs points sur la carte&nbsp;: le survol de la forme ou d'un point est symbolisé par le changement d'aspect du curseur<img src="../images/commun/hand-pointer-o.svg" alt="Icône curseur" height="20" class="align-icone icone-marge-gauche">. Cliquez-glissez pour modifier la position d'un point<img src="../images/commun/hand-rock-o.svg" alt="Icône curseur grab" height="20" class="align-icone icone-marge-gauche">.
+         </p>
+         <p>
+            Validez la modification en cliquant sur "Sauver" ou sur "Annuler" pour abandonner l'opération dans le petit menu horizontal.
+         </p>
+         <p class="max-img-process">
+            <img src="../images/chapitre3/batiments6.png" class="contour-img" alt="Édition de la forme">
+         </p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step2.svg" alt="2" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Supprimer un point</span>
+         <p>
+            Pour supprimer un point, réalisez un Ctrl+clic gauche sur le point &#40;Cmd+clic sur MacOS&#41;.
+         </p>
+         <p>
+            Cliquez sur "Sauver" pour valider la modification ou sur "Annuler" pour abandonner l'opération dans le petit menu horizontal.
+         </p>
+      </div>
+      <br />
+      <h3 align="center" class="texte aerateur procedure">3 - Supprimer une zone</h3>
+      <p class="texte">
+         Ce processus vous guide pour supprimer les zones.
+      </p>
+      <div class="floating-box process">
+         <img src="../images/commun/step1.svg" alt="1" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Supprimer une zone</span>
+         <p>
+            Cliquez sur le bouton "croix"&nbsp;:
+            <img src="../images/commun/close.svg" alt="Icône édition" height="30" class="align-outil">
+         </p>
+         <p>
+            Un menu horizontal s'affiche à sa droite avec les commandes "Sauver" et "Annuler".
+         </p>
+         <p align="center">
+            <img src="../images/chapitre3/btn-delete.png" alt="Menu déployé">
+         </p>
+         <p>
+            Cliquez sur la forme dans la carte pour la supprimer. Cliquez sur "Sauver" pour valider la modification ou sur "Annuler" pour abandonner l'opération dans le petit menu horizontal.
+         </p>
+         <p>
+            Vous pouvez également supprimer une zone en cliquant sur le bouton<img src="../images/commun/delete1.svg" alt="Delete" height="20" class="align-icone icone-marge-gauche icone-marge-droite">à droite de son nom, dans la liste puis confirmez votre choix&nbsp;: cliquez sur "Supprimer" pour valider la suppression de la zone ou cliquez sur<img src="../images/commun/delete2.svg" alt="Delete" height="20" class="align-icone icone-marge-gauche icone-marge-droite">pour abandonner l'opération.
+         </p>
+      </div>
+      <div class="affichage-large">
+         <p align="center" class="aerateur-haut">
+            Cliquez sur
+            <span class="btn-blue">Suivant</span>
+            pour passer à l'étape suivante de l'assistant de démarrage.
+         </p>
+      </div>
+      <div class="affichage-mobile">
+         <p align="center" class="aerateur-haut">
+            <span class="btn-blue">Suivant</span>
+         </p>
+         <p align="center" class="texte">Cliquez sur "Suivant" pour passer à l'étape suivante de l'assistant de démarrage.</p>
+      </div>
+      <h6>Guide de prise en main • Exploitation • Découpage des bâtiments</h6>
+      <a class="slice-process" id="decoupage"></a>
+      <h2 class="texte aerateur">d – Découpage des bâtiments &#40;et zones de stockage&#41;</h2>
+      <p class="texte aerateur-bas max-img-inline">
+         <img src="../images/chapitre3/barre-progression3.png" class="contour-img" alt="Barre de progression">
+      </p>
+      <p class="texte">
+         Le découpage des bâtiments permet de générer les subdivisions d'un bâtiment ou d'une zone de stockage. Cette étape est indispensable pour réaliser les approvisionnements et gérer les emplacements de tous les éléments stockés &#40;intrants, produits de récolte, équipements&#41; en vue des inventaires. Notez qu'une découpe de bâtiment peut couvrir la surface totale d'un bâtiment et dans ce cas, il n'est pas nécessaire de la redessiner.
+      </p>
+      <p class="texte">
+         L'interface pour découper les bâtiments et les zones de stockage est strictement identique à celle utilisée pour dessiner les bâtiments dans la section <a href="#batiments" class="avoid-clicks">&#171;&nbsp;Création des bâtiments et des zones de stockage&nbsp;&#187;</a>. 
+      </p>
+      <p class="texte">
+         De préférence sur ordinateur pour bénéficier de la précision de la souris &#40;il est difficile voire impossible de dessiner avec les doigts&#41;, commencez le dessin de vos découpes de bâtiment.
+      </p>
+      <p class="texte aerateur-haut aerateur-bas" align="center">
+         <img  src="../images/chapitre3/desktop-pref.png" width="500" alt="Ordinateur, téléphone, tablette">
+      </p>
+      <div class="aerateur-bas">
+         <p>&nbsp;</p>
+      </div>
+      <div class="info-fond aerateur-haut aerateur-bas">
+         <div class="floating-box-info">
+            <img src="../images/commun/info.svg" width="100" alt="Info"/>
+         </div>
+         <div class="info-txt">
+            <span class="titre-advice">Précision du dessin<br /></span>
+            <p class="texte-advice">
+               La précision du dessin à la main peut être rendue difficile pour le dessin des découpes de bâtiment en raison d'un zoom limité par le fond de carte choisi. Elle n'est pas primordiale car elle n'impacte pas directement les outils de gestion d'<strong>Eky</strong>agri.
+            </p>
+         </div>
+      </div>
+      <h3 align="center" class="texte aerateur procedure">1 - Procédure de création des découpes de bâtiment</h3>
+      <p class="texte">
+         Ce processus vous guide pour subdiviser vos bâtiments et vos zones de stockage.
+      </p>
+      <div class="floating-box process">
+         <img src="../images/commun/step1.svg" alt="1" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Passez en vue satellitaire</span>
+         <p>
+            Cliquez sur le bouton "Fonds de carte et couches"&nbsp;:
+            <img src="../images/commun/layers.svg" alt="Couches" height="30" class="align-outil">
+         </p>
+         <p>
+            Dans le menu "Fonds de carte et couches", sélectionnez Esri World Imagery ou Thunderforest Landscape pour un zoom optimal. Décochez "Bâtiments" si vous souhaitez les masquer.
+         </p>
+         <p align="center">
+            <img src="../images/chapitre3/menu4.png" alt="Menu déployé" class="contour-img max-img-process">
+         </p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step2.svg" alt="2" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Sélectionnez un bâtiment</span>
+         <p>
+            Au-dessus de la carte sont listés les bâtiments existants dans des onglets. Cliquez sur le nom d'un bâtiment pour masquer les autres sur la carte. Dans la carte et dans la liste, le bâtiment sélectionné prend la dénomination "Zone principale du bâtiment" car il est automatiquement une découpe par défaut.
+         </p>
+      </div>
+      <div class="floating-box process">
+         <img src="../images/commun/step3.svg" alt="3" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Dessinez la découpe de bâtiment</span>
+         <p>
+            Dans la carte et avec les outils de dessin, tracez et fermez la nouvelle découpe sur la zone principale du bâtiment.
+         </p>
+         <p>
+            La nouvelle découpe s'affiche alors en violet.
+         </p>
+         <p>
+            Chaque subdivision créée vient enrichir la liste à droite.
+         </p>
+      </div>
+      <div class="warn-fond aerateur-haut aerateur-bas">
+         <div class="floating-box-warn">
+            <img src="../images/commun/attention.svg" width="100" alt="Attention"/>
+         </div>
+         <div class="info-txt">
+            <span class="titre-advice">Attention avec les niveaux<br /></span>
+            <p class="texte-advice">Vous pouvez assigner un niveau &#40;sous-sol ou étage&#41; à chaque découpe de bâtiment mais cette option n'est pas gérée dans la version actuelle d'<strong>Eky</strong>agri et seul le rez-de chaussée est pris en charge &#40;ceci n'a cependant aucune conséquence pour les outils de gestion de l'application&#41;.</p>
+         </div>
+      </div>
+      <div class="floating-box process">
+         <img src="../images/commun/step4.svg" alt="4" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Répétez l'opération pour chaque nouvelle découpe</span>
+         <p>
+            Notez que les chiffres dans les pastilles blanches sur un bâtiment<img src="../images/chapitre3/numero-bat.svg" alt="Pastille" height="30" class="align-outil">indiquent le nombre de subdivisions dessinées pour ce bâtiment.
+         </p>
+         <p class="max-img-process">
+            <img src="../images/chapitre3/decoupage.png" class="contour-img" alt="Découpe du bâtiment">
+         </p>
+      </div>
+      <div class="info-fond aerateur-haut aerateur-bas">
+         <div class="floating-box-info">
+            <img src="../images/commun/info.svg" width="100" alt="Info"/>
+         </div>
+         <div class="info-txt">
+            <span class="titre-advice">Simplifiez vos découpes de bâtiment<br /></span>
+            <p class="texte-advice">Supprimez la zone principale si elle est complètement recouverte par l'ensemble des découpes de bâtiment qui s'y rattachent.</p>
+         </div>
+      </div>
+      <div class="affichage-large">
+         <p align="center" class="aerateur-haut">
+            Cliquez sur
+            <span class="btn-blue">Suivant</span>
+            pour passer à l'étape suivante de l'assistant de démarrage.
+         </p>
+      </div>
+      <div class="affichage-mobile">
+         <p align="center" class="aerateur-haut">
+            <span class="btn-blue">Suivant</span>
+         </p>
+         <p align="center" class="texte">Cliquez sur "Suivant" pour passer à l'étape suivante de l'assistant de démarrage.</p>
+      </div>
+      <h6>Guide de prise en main • Exploitation • Création des équipements</h6>
+      <a class="slice-process" id="equipements"></a>
+      <h2 class="texte aerateur">e - Création des équipements</h2>
+      <p class="texte aerateur-bas max-img-inline">
+         <img src="../images/chapitre3/barre-progression4.png" class="contour-img" alt="Barre de progression">
+      </p>
+      <p class="texte">
+         <strong>Eky</strong>agri vous permet de saisir les équipements de votre exploitation et de les associer éventuellement à vos découpes de bâtiment, à vos aires de stockage ou à vos zones cultivables.
+      </p>
+      <div class="info-fond aerateur-haut">
+         <div class="floating-box-warn">
+            <img src="../images/commun/info.svg" width="100" alt="Info"/>
+         </div>
+         <div class="info-txt">
+            <span class="titre-advice">Enregistrement des équipements<br /></span>
+            <p class="texte-advice">Les types d'équipement proposés ici correspondent aux principales familles de matériel agricole recensées dans la profession &#40;cette liste est cependant étendue une fois dans l'application&#41;. Notez que si cette étape vous semble fastidieuse à ce stade du démarrage &#40;parc important&#41;, vous pouvez la passer et compléter la saisie des équipements plus tard.</p>
+         </div>
+      </div>
+      <div class="warn-fond aerateur-haut aerateur-bas">
+         <div class="floating-box-warn">
+            <img src="../images/commun/attention.svg" width="100" alt="Attention"/>
+         </div>
+         <div class="info-txt">
+            <span class="titre-advice">Équipements et coûts d'utilisation<br /></span>
+            <p class="texte-advice">
+               En fonction du niveau de traçabilité attendu et si vous souhaitez affecter un coût horaire à des équipements d'un même type afin d'estimer le montant des interventions &#40;comme par exemple différents tracteurs&#41;, nous vous conseillons de procéder préalablement à la création de nouveaux articles comme expliqué dans le <a href="../chapitre8#equipements" target="_self" class="avoid-clicks">chapitre 8 - Stocks, tiers et RH</a>.
+            </p>
+         </div>
+      </div>
+      <h3 align="center" class="texte aerateur procedure">A - Procédure de création des équipements</h3>
+      <p class="texte">
+         Ce processus vous guide pour créer des équipements dans l'assistant de démarrage.
+      </p>
+      <div class="floating-box process">
+         <img src="../images/commun/step1.svg" alt="1" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Nommez l'équipement</span>
+         <p>
+            Saisissez un nom ou une description de l'équipement comme par exemple "Tracteur JD 5115R 125 ch".
+         </p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step2.svg" alt="2" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Choisissez le type d'équipement</span>
+         <br />
+         <p>
+            Sélectionnez le type d'équipement correspondant dans la liste déroulante.
+         </p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step3.svg" alt="3" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Choisissez un emplacement</span>
+         <br />
+         <p>
+            En option, associez l'équipement à son emplacement principal &#40;une découpe de bâtiment, une aire de stockage ou une zone cultivable disponible dans la liste déroulante&#41;.
+         </p>
+         <p>
+            Répétez l'opération pour chaque nouvel équipement. Chaque nouvel équipement vient enrichir la liste des équipements.
+         </p>
+         <p class="max-img-process">
+            <img src="../images/chapitre3/equipements.png" class="contour-img" alt="Équipements">
+         </p>
+      </div>
+      <div class="affichage-large">
+         <p align="center" class="aerateur-haut">
+            Cliquez sur
+            <span class="btn-blue">Suivant</span>
+            pour passer à l'étape suivante de l'assistant de démarrage.
+         </p>
+      </div>
+      <div class="affichage-mobile">
+         <p align="center" class="aerateur-haut">
+            <span class="btn-blue">Suivant</span>
+         </p>
+         <p align="center" class="texte">Cliquez sur "Suivant" pour passer à l'étape suivante de l'assistant de démarrage.</p>
+      </div>
+      <h6>Guide de prise en main • Exploitation • Confirmation de la configuration</h6>
+      <a class="slice-process" id="validation"></a>
+      <h2 class="texte aerateur">f - Confirmation de la configuration de démarrage</h2>
+      <p class="texte aerateur-bas max-img-inline">
+         <img src="../images/chapitre3/barre-progression5.png" class="contour-img" alt="Barre de progression">
+      </p>
+      <div class="affichage-large">
+         <p class="texte">
+            Ce panneau permet de valider la configuration de votre ferme.
+         </p>
+         <p class="texte">Cliquez sur <span class="btn-blue">Terminer la configuration</span> pour enregistrer vos données dans l'application.</p>
+      </div>
+      <div class="affichage-mobile">
+         <p class="texte aerateur-haut">Ce panneau permet de valider la configuration de votre ferme. Cliquez sur</p>
+         <p align="center">
+            <span class="btn-blue">Terminer&nbsp;la&nbsp;configuration</span>
+         </p>
+         <p class="texte">pour enregistrer vos données dans l'application.</p>
+      </div>
+      <div class="affichage-large">
+         <p class="texte">
+            Si vous souhaitez revenir en arriere, vous pouvez soit cliquer sur le bouton "Précédent", soit cliquer directement sur l'étape &#40;via les boutons de la barre de progression<img src="../images/chapitre3/etape.svg" alt="Étape de la barre de progession" height="26" class="bouton">&#41; que vous voulez revoir ou corriger.
+         </p>
+      </div>
+      <div class="affichage-mobile">
+         <p class="texte aerateur-haut">Si vous souhaitez revenir en arriere, vous pouvez soit cliquer sur le bouton "Précédent", soit cliquer directement sur l'étape &#40;les boutons de la barre de progression&#41;</p>
+         <p align="center">
+            <img src="../images/chapitre3/etape.svg" alt="Étape de la barre de progession" height="26" class="bouton">
+         </p>
+         <p class="texte">que vous voulez revoir ou corriger.</p>
+      </div>
+      <p class="texte">
+         Cliquez sur le bouton <span class="btn-red">Effacer et recommencer l'assistant</span> pour réinitialiser l'ensemble de vos paramètres.
+      </p>
+      <p class="texte max-img-inline">
+         <img src="../images/chapitre3/confirmation.png" class="contour-img" alt="Confirmation">
+      </p>
+      <p class="texte aerateur-bas max-img-inline">
+         <img src="../images/chapitre3/barre-progression6.png" class="contour-img" alt="Barre de progression">
+      </p>
+      <p class="texte">
+         Soyez patient&#40;e&#41;, la configuration d'une ferme ou d'un domaine peut prendre un peu de temps &#40;une voire plusieurs minutes&#41;.
+      </p>
+      <p class="texte max-img-inline">
+         <img src="../images/chapitre3/configuration1.png" class="contour-img" alt="Configuration">
+      </p>
+      <p class="texte">
+         Un message vous prévient dès que la configuration est terminée.
+      </p>
+      <p class="texte max-img-inline">
+         <img src="../images/chapitre3/configuration2.png" class="contour-img" alt="Configuration">
+      </p>
+      <div class="info-fond aerateur-haut aerateur-bas">
+         <div class="floating-box-info">
+            <img src="../images/commun/attention.svg" width="100" alt="Attention"/>
+         </div>
+         <div class="info-txt">
+            <span class="titre-advice">En cas de problème<br /></span>
+            <p span="span" class="texte-advice">
+               Si une erreur survient durant la configuration, nous vous recommandons de faire appel au service support en le joignant&nbsp;:
+            </p>
+            <div class="divTableListe">
+               <div class="divTableBody">
+                  <div class="divTableRow">
+                     <div class="divTableCellListe" style="width: 10px">
+                        <img src="../images/commun/circle.svg" alt="Puce" height="15">
+                     </div>
+                     <div class="divTableCellListe" style="width: auto">
+                        Par email à l'adresse 
+                        <a href="mailto:support@ekylibre.com">support@ekylibre.com</a>
+                     </div>
+                  </div>
+                  <div class="divTableRow">
+                     <div class="divTableCellListe">
+                        <img src="../images/commun/circle.svg" alt="Puce" height="15">
+                     </div>
+                     <div class="divTableCellListe">
+                        Par le service de discussion instantanée accessible en cliquant sur le bouton "Chat" situé en bas à droite des pages du site 
+                        <a href="https://ekylibre.com" title="Ekylibre" target="_blank">Ekylibre</a> &#40;ou sur "Aide" en dehors des heures de bureau pour laisser un message&#41;
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="centre">
+               <img src="../images/commun/chat.svg" width="80" alt="Chat" class="chat-help"><img src="../images/commun/aide.svg" width="80" alt="Aide" class="chat-help">
+            </div>
+         </div>
+      </div>
+	  <h6>Guide de prise en main • Exploitation • Création mot de passe</h6>
+      <a class="slice-process" id="password"></a>
+      <h2 class="texte aerateur">g - Création du mot de passe initial</h2>
+	  <div class="floating-box process">
+         <img src="../images/commun/step1.svg" alt="1" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Accédez à votre ferme ou à votre domaine</span>
+		 <p>Lors de la première connexion, il est nécessaire de créer un mot de passe qui vous permettra ensuite de vous identifier et d'accéder à votre ferme ou à votre domaine &#40;une fois associé à votre adresse email&#41;.</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre3/password1.png" class="contour-img" alt="Écran d'accueil" />
+         </p>
+      </div>
+	  <div class="saut-page"></div>
+	  <div class="colonne-left-pw">
+         <div class="floating-box-left process-mob-left">
+            <img src="../images/commun/step2.svg" alt="2" width="52" />
+         </div>
+         <div class="process-txt-left">
+            <span class="titre-advice" style="white-space: nowrap">Démarrez la procédure de création</span>
+            <p style="white-space: normal">Dans le formulaire d'indentification, cliquez sur le lien "Mot de passe oublié&nbsp;?".</p>
+            <p class="process-img-left">
+               <img src="../images/chapitre3/password2.png" class="contour-img" alt="Mot de passe oublié" />
+            </p>
+         </div>
+      </div>
+      <div class="colonne-right-pw">
+         <div class="floating-box-right process-mob-right" style="height: 52px">
+         </div>
+         <div class="process-txt-right">
+            <span class="titre-advice-right">&nbsp;</span>
+            <p class="process-desc-right">Saisissez votre adresse email, puis cliquez sur le bouton d'envoi des instructions.</p>
+            <p class="process-img-right">
+               <img src="../images/chapitre3/password3.png" class="contour-img" alt="Envoi instructions" />
+            </p>
+         </div>
+      </div>
+	  <p style="clear: both"></p>
+	  <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step3.svg" alt="3" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Consultez votre messagerie</span>
+		 <p>Un email est alors envoyé à l'adresse saisie à l'étape précédente. Il contient un lien temporaire intitulé "Changer mon mot de passe" qui permet d'être redirigé&#40;e&#41; vers la page web de création d'un nouveau mot de passe.</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre3/password4.png" class="contour-img" alt="Email des instructions" />
+         </p>
+      </div>
+	  <div class="colonne-left-pw">
+         <div class="floating-box-left process-mob-left">
+            <img src="../images/commun/step4.svg" alt="4" width="52" />
+         </div>
+         <div class="process-txt-left">
+            <span class="titre-advice" style="white-space: nowrap">Enregistrez le nouveau mot de passe</span>
+            <p style="white-space: normal">Dès que le formulaire est affiché, saisissez le même mot de passe à deux reprises.</p>
+            <p class="process-img-left">
+               <img src="../images/chapitre3/password5.png" class="contour-img" alt="Saisie du mot de passe" />
+            </p>
+         </div>
+      </div>
+      <div class="colonne-right-pw">
+         <div class="floating-box-right process-mob-right" style="height: 52px">
+         </div>
+         <div class="process-txt-right">
+            <span class="titre-advice-right">&nbsp;</span>
+            <p class="process-desc-right">Cliquez ensuite sur le bouton "Changer mon mot de passe" pour accéder à votre instance.</p>
+            <p class="process-img-right">
+               <img src="../images/chapitre3/password6.png" class="contour-img" alt="Changement du mot de passe" />
+            </p>
+         </div>
+      </div>
+	  <p style="clear: both"></p>
+	  <div class="info-fond aerateur">
+         <div class="floating-box-info">
+            <img src="../images/commun/info.svg" width="100" alt="Info"/>
+         </div>
+         <div class="info-txt">
+            <span class="titre-advice">Mot de passe et confidentialité<br /></span>
+            <p class="texte-advice">
+               Un mot de passe est personnel et nous vous conseillons vivement de ne pas le communiquer à un tiers. Si vous souhaitez que d'autres personnes accèdent à votre ferme ou à votre domaine pour enregistrer des réceptions, des interventions ou vérifier votre comptabilité, la manière la plus sûre de le faire est expliquée dans le <a href="../chapitre4/#acces" class="avoid-clicks" target="_self">chapitre 4 - Interface et accès</a>.
+            </p>
+         </div>
+      </div>
+	  <p class="texte margin-top">Plus tard, vous pourrez à tout moment accéder à votre <a href="../chapitre4/#compte" class="avoid-clicks" target="_self">compte administrateur</a> depuis le module "Configuration", pour définir vos préférences, modifier votre mot de passe, gérer votre abonnement et télécharger vos factures.</p>
+	  <div class="info-fond aerateur-haut aerateur-bas">
+         <div class="floating-box-info">
+            <img src="../images/commun/info.svg" width="100" alt="Info"/>
+         </div>
+         <div class="info-txt">
+            <span class="titre-advice">Créez un favori<br /></span>
+            <p span="span" class="texte-advice">
+               Une fois que vous avez accédé à votre ferme ou à votre domaine, enregistrez son adresse dans les favoris de votre navigateur&nbsp;:
+            </p>
+            <p>
+               Pour Chrome et Firefox, cliquez sur l'étoile<img src="../images/chapitre3/star.svg" alt="Étoile" height="20" class="align-icone icone-marge-gauche icone-marge-droite">à droite de l'adresse ou pour Safari sur le bouton de partage 
+               <img src="../images/chapitre3/share.svg" alt="Partager" height="18" class="align-icone icone-marge-gauche icone-marge-droite">
+               à droite de l'adresse pour le mettre dans vos favoris.
+            </p>
+            <p>
+               ou
+            </p>
+            <p>
+               1. Repérer le petit cadenas<img src="../images/commun/lock.svg" alt="Cadenas" height="20" class="align-icone icone-marge-gauche icone-marge-droite">à gauche de l'adresse dans la barre d'adresse&nbsp;;
+               <br />
+               2. Cliquez EN RESTANT APPUYÉ sur le cadenas&nbsp;;
+               <br />
+               3. Faites glisser vers votre bureau pour créer un fichier de connexion.
+            </p>
+            Avec Edge Windows, cliquez sur l'étoile<img src="../images/chapitre3/star.svg" alt="Étoile" height="20" class="align-icone icone-marge-gauche icone-marge-droite">à droite de l'adresse pour le mettre dans vos favoris.
+         </div>
+      </div>
+	  <div class="pdf">
+      <p align="right" class="texte aerateur-top aerateur-bas">Passez au <a class="avoid-clicks" href="../chapitre4">chapitre suivant</a> de ce guide.</p>
+	  </div>
+      <div class="navishort aerateur-haut">
+         <div class="divTable">
+            <div class="divTableBody">
+               <div class="divTableRow">
+                  <div class="divTableCellCenter" style="width: auto">
+                     &nbsp;
+                  </div>
+                  <div class="divTableCellRight" style="width: 150px">
+                     <span><a href="../chapitre2" target="_self">PARCELLAIRE</a></span>
+                  </div>
+                  <div class="divTableCellCenter" style="width: 40px">
+                     <a href="../chapitre2" target="_self"><img src="../images/commun/arrow-left.svg" width="40" alt="Parcellaire"></a>
+                  </div>
+                  <div class="divTableCellCenter" style="width: 40px">
+                     <a href="../chapitre4" target="_self"><img src="../images/commun/arrow-right.svg" width="40" alt="Interface et accès"></a>
+                  </div>
+                  <div class="divTableCellLeft" style="width: 150px">
+                     <span><a href="../chapitre4" target="_self">INTERFACE ET ACCÈS</a></span>
+                  </div>
+                  <div class="divTableCellCenter" style="width: auto">&nbsp;</div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="footer"><img src="../images/commun/frise.png" alt="Frise" /></div>
+	  <div class="navigation">
+         <div id="breadcrumb">
+            <ul class="breadcrumb">
+               <li>
+                  <a href="../ekyviti">
+                  <i class="fa-solid fa-lg fa-grapes"></i>
+                  <span class="text">&nbsp;Ekyviti</span>
+                  </a>
+               </li>
+			   <li>
+                  <a href="../performance">
+                  <i class="fa-solid fa-lg fa-chart-line-up"></i>
+                  <span class="text">&nbsp;Performance</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="../chapitre10">
+                  <i class="fa-solid fa-lg fa-wand-magic-sparkles"></i>
+                  <span class="text">&nbsp;Outils</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="../chapitre9">
+                  <i class="fa-solid fa-lg fa-farm"></i>
+                  <span class="text">&nbsp;Production</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="../chapitre8">
+                  <i class="fa-solid fa-lg fa-warehouse-full"></i>
+                  <span class="text">&nbsp;Stocks, tiers et RH</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="../chapitre7">
+                  <i class="fa-solid fa-lg fa-chart-column"></i>
+                  <span class="text">&nbsp;Ventes</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="../chapitre6">
+                  <i class="fa-solid fa-lg fa-cart-shopping"></i>
+                  <span class="text">&nbsp;Achats</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="../chapitre5">
+                  <i class="fa-solid fa-lg fa-calculator"></i>
+                  <span class="text">&nbsp;Comptabilité</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="../chapitre4">
+                  <i class="fa-solid fa-lg fa-desktop"></i>
+                  <span class="text">&nbsp;Interface et accès</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="../chapitre3">
+                  <i class="top-marker"></i><i class="fa-solid fa-lg fa-tractor"></i>
+                  <span class="text">&nbsp;Exploitation</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="../chapitre2">
+                  <i class="fas fa-lg fa-wheat"></i>
+                  <span class="text">&nbsp;Parcellaire</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="../chapitre1">
+                  <i class="fa-solid fa-lg fa-flag-checkered"></i>
+                  <span class="text">&nbsp;Introduction</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="../demarrage">
+                  <i class="fa-solid fa-lg fa-house"></i>
+                  </a>
+               </li>
+            </ul>
+         </div>
+         <div id="arrow"><i class="fa-solid fa-lg fa-caret-left"></i></div>
+      </div>
+   </article>
+   <aside></aside>
+</div>
+      <!-- !PAGE CONTENT! -->
+      <script src="/javascripts/iscroll.js"></script>
+      <script src="/javascripts/drawer.js"></script>
+      <script src="/javascripts/popup.js"></script>
+      <script src="/javascripts/breadcrumbs.js"></script>
+      <script src="/javascripts/backtotop.js"></script>
+      <script src="/javascripts/zoom-vanilla.js"></script>
+      <script src="/javascripts/toggle.js"></script>
+      <script>
+         $(document).ready(function() {
+         $('.drawer').drawer();
+         });
+      </script>
+      <script>
+         $(function() {
+          /**
+          * Smooth scrolling to page anchor on click
+          **/
+          $("a[href*='#']:not([href='#'])").click(function() {
+              if (
+                  location.hostname == this.hostname
+                  && this.pathname.replace(/^\//,"") == location.pathname.replace(/^\//,"")
+              ) {
+                  var anchor = $(this.hash);
+                  anchor = anchor.length ? anchor : $("[name=" + this.hash.slice(1) +"]");
+                  if ( anchor.length ) {
+                      $("html, body").animate( { scrollTop: anchor.offset().top }, 500);
+                  }
+                  }
+              });
+           });
+      </script>
+	  <!--<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>-->
+	  <!--<script src="/javascripts/docsearch.js"></script>-->
+	  <!--<script>docsearch({container: '#docsearch',appId: 'JCIFZS1SXO',apiKey:'d7102eaca1a7f74822fa7677a517411d',indexName:'ekylibre'});</script>-->
+	  <script>
+  	  $(window).load(function() {
+	  $('#loading').hide();
+	  $('html').css({'overflow-y': 'visible'});
+	  });
+	  </script>
+   </body>
+   <script>
+      $(function() {
+      $(".content").click(function() {
+        return false;
+      });
+      });
+   </script>
+   <script language="JavaScript">
+      function ChangeUrl(formulaire)
+      {
+      if (formulaire.ListeUrl.selectedIndex != 0)
+        {
+        var url ;
+        url = formulaire.ListeUrl.options[formulaire.ListeUrl.selectedIndex].value;
+        window.open(url,'_self');
+        $('#fade, .popup_block').fadeOut();
+      $('#fade, a.close').remove();
+      $(formulaire.ListeUrl).val("");
+      $('html').css({'overflow-y': 'visible'});
+      }
+      }
+   </script>
+</html>

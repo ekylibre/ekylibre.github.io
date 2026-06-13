@@ -47,6 +47,14 @@
     <link href="/stylesheets/fontawesome.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lato:300,300italic,400' rel='stylesheet' type='text/css'>
+    <style>
+      .nav-lang-switcher { padding: 15px; line-height: 20px; font-weight: 700; letter-spacing: 0.05em; }
+      .nav-lang-switcher a, .nav-lang-switcher span { color: inherit; padding: 0 4px; text-decoration: none; }
+      .nav-lang-switcher a { opacity: 0.55; }
+      .nav-lang-switcher a:hover, .nav-lang-switcher a:focus { opacity: 1; text-decoration: underline; }
+      .nav-lang-switcher span[aria-current] { opacity: 1; }
+      .nav-lang-switcher .lang-sep { opacity: 0.35; }
+    </style>
   </head>
 
   <body>
@@ -65,14 +73,19 @@
         <div class="collapse navbar-collapse" id="navbar">
           <ul class="nav navbar-nav navbar-right main-nav">
             <li><a href="/">Home</a></li>
-            <li><a href="/fr/demarrage">User Doc FR</a></li>
+            <li><a href="/fr/user-doc/demarrage">User Doc FR</a></li>
             <li><a href="/api">API Doc</a></li>
             <li><a href="/faq">FAQ</a></li>
             <li><a href="https://discord.gg/BSpD6hq7qR">Forum</a></li>
-            <li><a href="https://demo-innovation.ekylibre.io">Demo</a></li>
+            <li><a href="https://demo.ekylibre-dev.com">Demo</a></li>
             <li><a href="https://github.com/ekylibre"><i class="fab fa-github"></i></a></li>
             <li><a href="https://twitter.com/ekylibre"><i class="fab fa-twitter"></i></a></li>
             <li><a href="https://discord.gg/BSpD6hq7qR"><i class="fab fa-discord"></i></a></li>
+            <li class="nav-lang-switcher" role="navigation" aria-label="Language">
+              
+                <span aria-current="page" lang="en">EN</span><span class="lang-sep" aria-hidden="true">|</span><a href="/fr/" hreflang="fr" lang="fr">FR</a>
+              
+            </li>
           </ul>
         </div>
       </div>

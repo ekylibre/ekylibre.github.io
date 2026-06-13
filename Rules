@@ -2,10 +2,13 @@
 passthrough '/fonts/**'
 passthrough '/javascripts/**'
 passthrough '/stylesheets/**'
-passthrough '/fr/images/**/*'
-passthrough '/fr/imports/**'
-passthrough '/fr/*.txt'
-passthrough '/fr/*.xml'
+passthrough '/fr/user-doc/images/**/*'
+passthrough '/fr/user-doc/imports/**'
+
+compile '/fr/index.*' do
+  layout '/start.*'
+  write '/fr/index.html'
+end
 
 compile '/fr/**/*.md' do
   filter :kramdown

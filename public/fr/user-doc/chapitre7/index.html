@@ -1,0 +1,1650 @@
+<!doctype html>
+<html lang="fr">
+   <head>
+      <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+      <meta name="format-detection" content="telephone=no">
+      <meta property="og:url" content="https://doc.ekylibre.com/" />
+      <meta property="og:title" content="Guide de prise en main Ekylibre" />
+      <meta property="og:description" content="Ce guide a pour but d'aider l'utilisateur à configurer correctement les applications développées par Ekylibre pour gérer son exploitation agricole ou viticole. Il rassemble les informations et les procédures essentielles à connaître pour maîtriser les fonctionnalités disponibles dans les différents modules de la solution." />
+      <meta property="og:image" content="https://doc.ekylibre.com/fr/images/commun/ekylibre.png" />
+      <title>Ekylibre : guide de prise en main</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="preload" href="../images/commun/brand.svg" as="image" type="image/svg+xml"/>
+      <link rel="shortcut icon" href="../images/commun/favicon.ico" />
+      <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="/stylesheets/w3school.css" />
+      <link rel="stylesheet" href="/stylesheets/quickstart.css" />
+      <link rel="stylesheet" href="/stylesheets/ekylibre.css" />
+      <link rel="stylesheet" href="/stylesheets/drawer.css" />
+      <link rel="stylesheet" href="/stylesheets/jquery.qtip.css" />
+      <link rel="stylesheet" href="/stylesheets/chronoline.css" />
+      <link rel="stylesheet" href="/stylesheets/fontawesome.css" />
+	  <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />-->
+	  <link rel="stylesheet" href="/stylesheets/docsearch.css" />
+      <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-58304754-1', 'auto');ga('send', 'pageview');</script>
+      <!-- Start of ekylibrehelp Zendesk Widget script -->
+      <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=8e03812d-d038-4a8c-8412-d85571f9fdbe"> </script>
+      <!-- End of ekylibrehelp Zendesk Widget script -->
+      <script src="/javascripts/jquery.js"></script>
+      <script src="/javascripts/jquery.qtip.js"></script>
+      <script src="/javascripts/chronoline.js"></script>
+      <script src="/javascripts/raphael-min.js"></script>
+	  <script src="/javascripts/justgage.js"></script>
+      <style>
+         .nav-lang-switcher { display: inline-block; margin-right: 1rem; font-weight: 700; letter-spacing: 0.05em; }
+         .nav-lang-switcher a, .nav-lang-switcher span { color: inherit; padding: 0 4px; text-decoration: none; }
+         .nav-lang-switcher a { opacity: 0.6; }
+         .nav-lang-switcher a:hover, .nav-lang-switcher a:focus { opacity: 1; text-decoration: underline; }
+         .nav-lang-switcher span[aria-current] { opacity: 1; }
+         .nav-lang-switcher .lang-sep { opacity: 0.4; }
+      </style>
+   </head>
+   <body class="drawer drawer--top">
+      <a href="javascript:void(0);" id="scroll" title="Scroll to Top" style="display: none;">Top<span></span></a>
+      <div class="conteneur">
+         <div class="ekylibre affichage-print"><img src="../images/commun/brand.svg" alt="Ekylibre" class="logo-entete"></div>
+         <header role="banner">
+            <button type="button" class="drawer-toggle drawer-hamburger">
+            <span class="sr-only">Menu</span>
+            <span class="drawer-hamburger-icon"></span>
+            </button>
+            <div id="shadow"></div>
+            <nav class="drawer-nav" role="navigation">
+               <ul class="drawer-menu columns">
+                  <li><a class="drawer-menu-item" href="../chapitre1"><span data-descr="[Prérequis - Tâches visées - Abonnement - Démarrage]">Introduction</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i></a></li>
+                  <li><a class="drawer-menu-item" href="../chapitre2"><span data-descr="[Récupération et import de la déclaration TelePAC - Utilisation du RPG]">Parcellaire</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i><br></a></li>
+                  <li><a class="drawer-menu-item" href="../chapitre3"><span data-descr="[Activités - Zones de stockage - Équipements - Accès initial]">Exploitation</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i></a></li>
+                  <li><a class="drawer-menu-item" href="../chapitre4"><span data-descr="[Espace de travail - Personnalisation - Utilisateurs et droits - Duke]">Interface et accès</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i></a></li>
+                  <li><a class="drawer-menu-item" href="../chapitre5"><span data-descr="[Journaux - Exercices - Synthèses - Immobilisations - TVA - Trésorerie]">Comptabilité</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i></a></li>
+                  <li><a class="drawer-menu-item" href="../chapitre6"><span data-descr="[Commandes - Réceptions - Facturation - Décaissements]">Achats</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i></a></li>
+                  <li><a class="drawer-menu-item" href="../chapitre7"><span data-descr="[Devis - Expéditions - Livraisons - Encaissements - Remises en banque]">Ventes</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i></a></li>
+                  <li><a class="drawer-menu-item" href="../chapitre8"><span data-descr="[Articles - Inventaires - Équipements - Contacts - Équipiers - Salaires]">Stocks, tiers et RH</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i></a></li>
+                  <li><a class="drawer-menu-item" href="../chapitre9"><span data-descr="[Activités - Assolement - Interventions - Calcul IFT - Planification - Traçabilité]">Production</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i></a></li>
+                  <li><a class="drawer-menu-item" href="../chapitre10"><span data-descr="[Imports de données - Documents - Extractions - Connexions partenaires]">Outils</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i></a></li>
+				  <li><a class="drawer-menu-item" href="../performance"><span data-descr="[Budgets - Coûts - Marges - Seuils de commercialisation - Itinéraires culturaux]">Performance</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i></a></li>
+				  <li><a class="drawer-menu-item" href="../ekyviti"><span data-descr="[Import CVI - Conversion parcellaire - Vendange - Connexion Baqio]">Ekyviti</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i></a></li>
+               </ul>
+            </nav>
+         </header>
+         <div class="main-menu drawer-toggle">
+            <p>Menu principal</p>
+         </div>
+         <div class="affichage-large">
+            <div class="top-background w3-top">
+               <div class="divTableCellMenu w3-right w3-text-white" style="width:364px">
+                  <span class="nav-lang-switcher" role="navigation" aria-label="Langue">
+                     <a href="/" hreflang="en" lang="en">EN</a><span class="lang-sep" aria-hidden="true">|</span><span aria-current="page" lang="fr">FR</span>
+                  </span>
+                  <a href="/">Accueil</a>
+               </div>
+            </div>
+         </div>
+         <div class="affichage-mobile">
+            <div class="top-background w3-top">
+               <div class="divTableCellMenu w3-right w3-text-white" style="width:240px">
+                  <span class="nav-lang-switcher" role="navigation" aria-label="Langue">
+                     <a href="/" hreflang="en" lang="en">EN</a><span class="lang-sep" aria-hidden="true">|</span><span aria-current="page" lang="fr">FR</span>
+                  </span>
+                  <a href="/">Accueil</a>
+               </div>
+            </div>
+         </div>
+         <div class="affichage-print">
+            <div class="top-background w3-top">
+               <div class="w3-right w3-text-white" style="width:250px">GUIDE DE PRISE EN MAIN</div>
+            </div>
+         </div>
+      </div>
+      <!-- !PAGE CONTENT! -->
+	  <div id="loading">
+		<p><i class="fa-duotone fa-spinner-third fa-spin" style="font-size: 100px; top: 156px; color: #fff; z-index: 1000;"></i></p>
+	  </div>
+      <div class="tooltip">
+         <a style="display:block" href="../pdf/Ekylibre-Guide.pdf" target="_blank">
+            <div class="btn_pdf"><span class="tooltiptext2 tooltip-top">Guide format PDF</span></div>
+         </a>
+      </div>
+	  <!--
+      <div class="tooltip">
+         <a style="display:block" href="../notes-version" target="_self">
+            <div class="btn_notes-version"><span class="tooltiptext2 tooltip-top">Notes de version</span></div>
+         </a>
+      </div>
+	  -->
+      <div class="w3-content page-content scroll-spy-heading-breadcrumbs">
+   <article class="post DocSearch-content">
+      <div id="navigation">
+         <div class="divTable">
+            <div class="divTableBody">
+               <div class="divTableRow">
+                  <div class="divTableCellNavi1"><img src="../images/commun/angle-left.svg" alt="Précédent" height="13" class="align-navi icone-marge-droite"><a href="../chapitre6" title="Achats" target="_self">Achats</a></div>
+                  <div class="divTableCellNavi2">Guide de prise en main • Ventes</div>
+                  <div class="divTableCellNavi3"><a href="../chapitre8" title="Stocks, tiers et RH" target="_self">Stocks, tiers et RH</a><img src="../images/commun/angle-right.svg" alt="Suivant" height="13" class="align-navi icone-marge-gauche"></div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="image-large"><img class="chapitre" src="../images/chapitre7/ventes.png" alt="Ventes"/></div>
+      <div class="image-carre"><img class="chapitre" src="../images/chapitre7/ventes-carre.png" alt="Ventes" style="width:auto;" /></div>
+	  <div id="docsearch" class="title-chapter pdf"></div>
+      <h1 align="center" class="majuscule aerateur">7 - Ventes</h1>
+      <div class="sommaire">
+         <div class="gris">
+            <div class="contenu">
+               <ul id="toggle">
+                  <li>
+                     <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-all">1</div>
+                           Introduction
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: none;">
+                        <div class="bloc">
+                           <li><a href="../chapitre1#prerequis" target="_self">Prérequis pour utiliser l'application</a></li>
+                           <li><a href="../chapitre1#parcours" target="_self">Parcours de configuration</a></li>
+                           <li><a href="../chapitre1#quefaire" target="_self">Que faire avec <strong>Eky</strong>agri et <strong>Eky</strong>viti&nbsp;?</a></li>
+                           <li><a href="../chapitre1#preparation" target="_self">Préparation des données</a></li>
+                           <li><a href="../chapitre1#inscription" target="_self">Sélection et souscription à une offre</a></li>
+                           <li><a href="../chapitre1#demarrage" target="_self">Arrivée dans l'assistant de démarrage</a></li>
+                           <li><a href="../chapitre1#declaration" target="_self">Déclaration de l'exploitation</a></li>
+                        </div>
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-all">2</div>
+                           Parcellaire
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: none;">
+                        <div class="bloc">
+                           <li><a href="../chapitre2#gestion" target="_self">Gestion des cultures</a></li>
+                           <li><a href="../chapitre2#zones" target="_self">Création des zones cultivables</a></li>
+                           <li><a href="../chapitre2#declaration" target="_self">Récupération et utilisation des données TelePAC</a></li>
+						   <li><a href="../chapitre2#rpg" target="_self">Utilisation du registre parcellaire graphique</a></li>
+						   <li><a href="../chapitre2#no-pac" target="_self">Création des zones cultivables non déclarées à la PAC</a></li>
+                        </div>
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-all">3</div>
+                           Exploitation
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: none;">
+                        <div class="bloc">
+                           <li><a href="../chapitre3#activites" target="_self">Activités de l'exploitation</a></li>
+                           <li><a href="../chapitre3#zones" target="_self">Création des zones cultivables &#40;sans TelePAC&#41;</a></li>
+                           <li><a href="../chapitre3#batiments" target="_self">Création des bâtiments et des zones de stockage</a></li>
+                           <li><a href="../chapitre3#decoupage" target="_self">Découpage des bâtiments et des zones de stockage</a></li>
+                           <li><a href="../chapitre3#equipements" target="_self">Création des équipements</a></li>
+                           <li><a href="../chapitre3#validation" target="_self">Confirmation de la configuration de démarrage</a></li>
+						   <li><a href="../chapitre3#password" target="_self">Création du mot de passe initial</a></li>
+                        </div>
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-all">4</div>
+                           Interface et accès
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: none;">
+                        <div class="bloc">
+                           <li><a href="../chapitre4#espace" target="_self">Présentation de l'espace de travail</a></li>
+                           <li><a href="../chapitre4#modules" target="_self">Navigation et accès aux différents modules</a></li>
+						   <li><a href="../chapitre4#compte" target="_self">Gestion du compte administrateur</a></li>
+						   <li><a href="../chapitre4#perso" target="_self">Personnalisation des tableaux de bord</a></li>
+						   <li><a href="../chapitre4#etiquettes" target="_self">Paramétrage des étiquettes</a></li>
+						   <li><a href="../chapitre4#champs" target="_self">Création de champs personnalisés</a></li>
+						   <li><a href="../chapitre4#formats" target="_self">Formats de nommage</a></li>
+						   <li><a href="../chapitre4#sequences" target="_self">Configuration des séquences</a></li>
+						   <li><a href="../chapitre4#acces" target="_self">Accès et rôles d'utilisateur</a></li>
+						   <li><a href="../chapitre4#duke" target="_self">Duke, l'assistant vocal intelligent</a></li>
+                        </div>
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-gestion">5</div>
+                           Comptabilité
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: none;">
+                        <div class="bloc">
+                           <li><a href="../chapitre5#introduction" target="_self">Introduction</a></li>
+                           <li><a href="../chapitre5#societe" target="_self">Paramétrage</a></li>
+						   <li><a href="../chapitre5#journaux" target="_self">Journaux</a></li>
+                           <li><a href="../chapitre5#exercice" target="_self">Exercices comptables</a></li>
+                           <li><a href="../chapitre5#plan" target="_self">Plan de comptes</a></li>
+                           <li><a href="../chapitre5#tva" target="_self">Taux et déclaration de TVA</a></li>
+                           <li><a href="../chapitre5#tresorerie" target="_self">Trésorerie</a></li>
+						   <li><a href="../chapitre5#immobilisations" target="_self">Immobilisations</a></li>
+                           <li><a href="../chapitre5#echanges" target="_self">Échanges comptables</a></li>
+						   <li><a href="../chapitre5#balance" target="_self">Balance</a></li>
+						   <li><a href="../chapitre5#ecritures" target="_self">Écritures</a></li>
+                           <li><a href="../chapitre5#grand-livre" target="_self">Grand-livre</a></li>
+                        </div>
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-gestion">6</div>
+                           Achats
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: none;">
+                        <div class="bloc">
+                           <li><a href="../chapitre6#societe" target="_self">Paramétrage</a></li>
+                           <li><a href="../chapitre6#types" target="_self">Types d'achat</a></li>
+                           <li><a href="../chapitre6#achats" target="_self">Enregistrement des commandes</a></li>
+                           <li><a href="../chapitre6#reception" target="_self">Réception des commandes</a></li>
+                           <li><a href="../chapitre6#facturation" target="_self">Facturation des achats</a></li>
+                           <li><a href="../chapitre6#decaissements" target="_self">Décaissements et lots de décaissements</a></li>
+						   <li><a href="../chapitre6#justif-achats" target="_self">Justificatifs d'achats</a></li>
+                           <li><a href="../chapitre6#stockage" target="_self">Zones de stockage</a></li>
+                        </div>
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-gestion">7</div>
+                           Ventes
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-up"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: block;">
+                        <div class="bloc">
+                           <li><a href="#societe" target="_self">Paramétrage</a></li>
+                           <li><a href="#types" target="_self">Types de vente</a></li>
+                           <li><a href="#ventes" target="_self">Enregistrer une vente</a></li>
+                           <li><a href="#factures" target="_self">Facturer une vente</a></li>
+                           <li><a href="#expeditions" target="_self">Expédier une vente</a></li>
+                           <li><a href="#avoirs" target="_self">Réaliser un avoir</a></li>
+                           <li><a href="#livraisons" target="_self">Enregistrer une livraison</a></li>
+                           <li><a href="#encaissements" target="_self">Enregistrer un encaissement</a></li>
+                           <li><a href="#remises" target="_self">Remises en banque</a></li>
+                        </div>
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-all">8</div>
+                           Stocks, tiers et RH
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: none;">
+                        <div class="bloc">
+                           <li><a href="../chapitre8#categories" target="_self">Catégories, profils et articles</a></li>
+						   <li><a href="../chapitre8#conditionnement" target="_self">Unités et conditionnements</a></li>
+                           <li><a href="../chapitre8#stocks" target="_self">Gestion des stocks et création de matières</a></li>
+                           <li><a href="../chapitre8#expeditions" target="_self">Expéditions, livraisons et facturation</a></li>
+                           <li><a href="../chapitre8#inventaires" target="_self">Inventaire des stocks</a></li>
+                           <li><a href="../chapitre8#equipements" target="_self">Gestion des équipements</a></li>
+                           <li><a href="../chapitre8#tiers" target="_self">Gestion des tiers et des équipiers</a></li>
+						   <li><a href="../chapitre8#salaires" target="_self">Gestion des salaires et des contrats de travail</a></li>
+                        </div>
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-all">9</div>
+                           Production
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: none;">
+                        <div class="bloc">
+                           <li><a href="../chapitre9#activites" target="_self">Activités agricoles</a></li>
+                           <li><a href="../chapitre9#productions" target="_self">Création des productions dans une campagne</a></li>
+                           <li><a href="../chapitre9#interventions" target="_self">Enregistrement d'interventions</a></li>
+                           <li><a href="../chapitre9#planification" target="_self">Planification d'interventions</a></li>
+						   <li><a href="../chapitre9#zero" target="_self">Utilisation de l'application mobile</a></li>
+                           <li><a href="../chapitre9#cahier" target="_self">Impression des documents réglementaires</a></li>
+						   <li><a href="../chapitre9#suivi" target="_self">Indicateurs et suivi des activités</a></li>
+						   <li><a href="../chapitre9#couts-prod" target="_self">Coûts de production détaillés</a></li>
+                        </div>
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-all">10</div>
+                           Outils
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: none;">
+                        <div class="bloc marge-basse">
+                           <li><a href="../chapitre10#fichiers" target="_self">Importation de fichiers CSV</a></li>
+                           <li><a href="../chapitre10#imports" target="_self">Import de données dans <strong>Eky</strong>agri | <strong>Eky</strong>viti</a></li>
+                           <li><a href="../chapitre10#extractions" target="_self">Extraction de données au format CSV</a></li>
+						   <li><a href="../chapitre10#ged" target="_self">Gestion des documents archivés</a></li>
+						   <li><a href="../chapitre10#connexions" target="_self">Connexions partenaires</a></li>
+                        </div>
+                     </ul>
+                  </li>
+				  <li>
+				  <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-perf">11</div>
+                           Performance
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: none;">
+                        <div class="bloc">
+                           <li><a href="../performance#config" target="_self">Instructions de configuration</a></li>
+						   <li><a href="../performance#activites" target="_self">Paramétrage des activités</a></li>
+						   <li><a href="../performance#budgets" target="_self">Budgets prévisionnels</a></li>
+                           <li><a href="../performance#couts-prod" target="_self">Coûts de production</a></li>
+                           <li><a href="../performance#marges" target="_self">Marges</a></li>
+						   <li><a href="../performance#seuils" target="_self">Seuils de commercialisation</a></li>
+						   <li><a href="../performance#modeles" target="_self">Modèles d'interventions</a></li>
+						   <li><a href="../performance#itineraires" target="_self">Itinéraires culturaux</a></li>
+						   <li><a href="../performance#plan-charges" target="_self">Plan de charges</a></li>
+						   <li><a href="../performance#scenarios" target="_self">Élaboration de scénarios</a></li>
+                        </div>
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-viti">12</div>
+                           Ekyviti
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: none;">
+                        <div class="bloc">
+                           <li><a href="../ekyviti#cvi" target="_self">Préparation et import des données cadastrales du CVI</a></li>
+                           <li><a href="../ekyviti#conversion" target="_self">Conversion du parcellaire cadastral</a></li>
+                           <li><a href="../ekyviti#zones" target="_self">Paramétrage et modification des zones cultivables</a></li>
+                           <li><a href="../ekyviti#parcelles" target="_self">Préparation et conversion du parcellaire cultural</a></li>
+						   <li><a href="../ekyviti#no-cvi" target="_self">Création des cultures sans CVI</a></li>
+                           <li><a href="../ekyviti#indicateurs" target="_self">Consultation et actualisation des indicateurs</a></li>
+						   <li><a href="../ekyviti#vendange" target="_self">Réception de vendange avec Duke</a></li>
+						   <li><a href="../ekyviti#baqio" target="_self">Connexion partenaire avec la solution Baqio</a></li>
+                        </div>
+                     </ul>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+      <p class="texte aerateur-haut">
+         <strong>Dans ce chapitre, on vous explique&nbsp;:</strong>
+      </p>
+      <div class="divTableListe marge">
+         <div class="divTableBody">
+            <div class="divTableRow">
+               <div class="divTableCellListe" style="width: 14px">
+                  <img src="../images/commun/caret-right.svg" alt="Flèche" height="15">
+               </div>
+               <div class="divTableCellListe" style="width: auto">
+                  Comment paramétrer des <a href="#types" class="avoid-clicks">types de vente</a> avec un délai et un mode d'encaissement personnalisés
+               </div>
+            </div>
+            <div class="divTableRow">
+               <div class="divTableCellListe" style="width: 14px">
+                  <img src="../images/commun/caret-right.svg" alt="Flèche" height="15">
+               </div>
+               <div class="divTableCellListe" style="width: auto">
+                  Comment enregistrer des <a href="#ventes" class="avoid-clicks">ventes</a> à partir de devis, pour générer des <a href="#commandes" class="avoid-clicks">commandes</a> et produire des <a href="#factures" class="avoid-clicks">factures</a>
+               </div>
+            </div>
+            <div class="divTableRow">
+               <div class="divTableCellListe" style="width: 14px">
+                  <img src="../images/commun/caret-right.svg" alt="Flèche" height="15">
+               </div>
+               <div class="divTableCellListe" style="width: auto">
+                  Comment créer des <a href="#avoirs" class="avoid-clicks">avoirs</a> sur factures
+               </div>
+            </div>
+            <div class="divTableRow">
+               <div class="divTableCellListe" style="width: 14px">
+                  <img src="../images/commun/caret-right.svg" alt="Flèche" height="15">
+               </div>
+               <div class="divTableCellListe" style="width: auto">
+                  Comment procéder à des <a href="#expeditions" class="avoid-clicks">expéditions</a> de marchandises et organiser des <a href="#livraisons" class="avoid-clicks">livraisons</a>
+               </div>
+            </div>
+            <div class="divTableRow">
+               <div class="divTableCellListe" style="width: 14px">
+                  <img src="../images/commun/caret-right.svg" alt="Flèche" height="15">
+               </div>
+               <div class="divTableCellListe" style="width: auto">
+                  Comment réaliser des <a href="#encaissements" class="avoid-clicks">encaissements</a> et des <a href="#remises" class="avoid-clicks">remises en banque</a>
+               </div>
+            </div>
+         </div>
+      </div>
+	  <div class="saut-page"></div>
+      <h2 class="texte aerateur">Glossaire du chapitre</h2>
+      <div class="divTableGlossaire marge aerateur-bas">
+         <div class="divTableBody">
+            <div class="divTableRow">
+               <div class="divTableCellGlossaire1">
+                  CSV
+               </div>
+               <div class="divTableCellGlossaire2">
+                  un fichier CSV est un fichier texte où chaque ligne du texte correspond à une ligne d'un tableau et les virgules correspondent aux séparations entre les colonnes
+               </div>
+            </div>
+			<div class="divTableRow">
+               <div class="divTableCellGlossaire1">
+                  Fenêtre modale
+               </div>
+               <div class="divTableCellGlossaire2">
+                  fenêtre qui prend le contrôle total du clavier et de l'écran. Elle est en général associée à une question ou à une sélection à laquelle il est impératif que l'utilisateur réponde avant de poursuivre, ou de modifier quoi que ce soit
+               </div>
+            </div>
+            <div class="divTableRow">
+               <div class="divTableCellGlossaire1">
+                  ODF
+               </div>
+               <div class="divTableCellGlossaire2">
+                  OpenDocument est un format de fichier ouvert conçu pour les applications bureautiques&nbsp;: traitements de texte, tableurs, présentations
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="idea-fond aerateur-haut aerateur-bas">
+         <div class="floating-box-idea">
+            <img src="../images/commun/astuce.svg" width="100" alt="Astuce"/>
+         </div>
+         <div class="info-txt">
+            <span class="titre-advice">Enregistrer une vente<br /></span>
+            <p class="texte-advice">Deux méthodes vous permettent d'enregistrer des ventes dans <strong>Eky</strong>agri&nbsp;: la première consiste à suivre les différentes étapes décrites dans ce chapitre, la seconde consiste à enregistrer une expédition, puis la facturer comme expliqué dans le <a href="../chapitre8#expeditions" class="avoid-clicks">chapitre 8 - Stocks, tiers et RH</a>. Lorsque vous aurez pris en main l'application, choisissez celle qui vous convient le mieux. Notez cependant que le choix d'un <strong>type de vente</strong> n'est possible qu'avec la première méthode.</p>
+            <br />
+            <img src="../images/chapitre7/schema-vente.png" alt="Schéma vente"/>
+         </div>
+      </div>
+      <div class="info-fond aerateur-haut aerateur-bas">
+         <div class="floating-box-info">
+            <img src="../images/commun/info.svg" width="100" alt="Info"/>
+         </div>
+         <div class="info-txt">
+            <span class="titre-advice">Réglementation 1<sup>er</sup> octobre 2019<br /></span>
+            <p class="texte-advice">
+               Toutes les factures émises à compter du 1<sup>er</sup> octobre 2019 doivent comporter deux mentions obligatoires supplémentaires. Il faut désormais mentionner non plus seulement l'adresse des parties &#40;le siège social du vendeur et le siège social ou le domicile de l'acheteur&#41;, mais également l'adresse de facturation si elle est différente de celle du siège social. Il convient aussi d'ajouter le numéro de bon de commande lorsqu'il a été préalablement établi par l'acheteur. <strong>Eky</strong>agri répond à ces nouvelles exigences.
+            </p>
+         </div>
+      </div>
+	  <h6>Guide de prise en main • Ventes • Paramétrage</h6>
+      <a class="slice-process" id="societe"></a>
+      <h2 class="texte aerateur">a - Paramétrage</h2>
+      <div class="config margin-config config-x2">
+         <p>
+            <img src="../images/commun/parcours.svg" height="45" alt="Icône parcours"/>
+         </p>
+         <p class="majuscule">
+            configuration à faire pour
+            <img class="align-icone icone-marge-gauche icone-marge-droite" src="../images/commun/tacheC.svg" width="20" alt="C" />
+            et
+            <img class="align-icone icone-marge-gauche" src="../images/commun/tacheE.svg" width="20" alt="E" />
+         </p>
+      </div>
+      <p class="texte">Ce paramétrage optionnel vous permet d'activer ou non la répartition des ventes sur les activités et de définir les conditions de vente.</p>
+	  <h6>Guide de prise en main • Ventes • Paramétrage</h6>
+      <a class="slice-process" id="parametrage"></a>
+      <h3 align="center" class="texte aerateur procedure">1 – Procédure pour paramétrer la société</h3>
+      <p class="texte">
+         Le processus suivant vous guide pour configurer certaines préférences en rapport avec les ventes.
+      </p>
+      <div class="floating-box process">
+         <img src="../images/commun/step1.svg" alt="1" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Affichez les paramètres de votre exploitation</span>
+         <p>Cliquez sur le lien "Configuration" dans le "Menu principal" ou sur le bouton "Configuration" de la page d'accueil&nbsp;:</p>
+         <p align="center"><img src="../images/chapitre7/wrench.svg" alt="Configuration" width="60"></p>
+         <p>Dans la barre latérale du module, cliquez sur "Société" dans la section "Préférences" symbolisée par l'icône d'un personnage<img src="../images/commun/user.svg" alt="Utilisateur" height="20" class="align-icone icone-marge-gauche">&nbsp;.</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/societe1.png" class="contour-img" alt="Paramétrage société" data-action="zoom" />
+         </p>
+      </div>
+      <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step2.svg" alt="2" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">En option&nbsp;: personnalisez vos factures</span>
+         <p>Pour personnaliser vos factures de ventes avec le logo ou un visuel de votre exploitation, cliquez sur le bouton "Parcourir…" à droite du libellé "Photo".</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/societe2.png" class="contour-img" alt="Parcourir" data-action="zoom" />
+         </p>
+		 <p>Sélectionnez une image ou un logo au format JPEG, PNG ou SVG &#40;ce dernier type de format de fichier est à privilégier pour les logos vectoriels&#41;.</p>
+		 <p class="max-img-process">
+            <img src="../images/chapitre7/societe3.png" class="contour-img" alt="Sélection fichier" data-action="zoom" />
+         </p>
+		 <p>Cliquez sur <span class="btn-blue">Modifier</span> pour valider l'opération.</p>
+         <p>Après enregistrement, le logo ou le visuel de votre exploitation est automatiquement affiché dans la fiche de la société et apparaîtra sur toutes vos factures de ventes au-dessus de votre adresse&nbsp;:</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/societe4.png" class="contour-img" alt="Affichage logo" data-action="zoom" />
+         </p>
+		 <p class="max-img-process">
+            <img src="../images/chapitre7/societe5.png" class="contour-img" alt="Facture de vente" data-action="zoom" />
+         </p>
+      </div>
+	  <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step3.svg" alt="3" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">En option&nbsp;: activez les outils d'analyse</span>
+         <p>Dans la section "Préférences analytiques", cochez la case<img src="../images/commun/check-square.svg" alt="Case à cocher" height="18" class="align-icone icone-marge-gauche icone-marge-droite">à droite de "Répartir les ventes et les achats sur les activités" pour rattacher, de manière facultative, les ventes aux différentes activités &#40;la fonctionnalité n'est pas encore efficiente pour les équipes&#41;.</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/societe6.png" class="contour-img" alt="Préférences analytiques" data-action="zoom" />
+         </p>
+         <p>Lors de l'enregistrement d'une vente, une liste déroulante vous permettra de sélectionner une activité parmi celles ouvertes&nbsp;:</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/societe7.png" class="contour-img" alt="Liste activités" data-action="zoom" />
+         </p>
+		 <p>Cliquez sur <span class="btn-blue">Modifier</span> pour valider l'opération.</p>
+      </div>
+	  <a class="slice-intra" id="pref-vente"></a>
+	  <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step4.svg" alt="4" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">En option&nbsp;: activez la mise à jour du catalogue de prix de vente</span>
+         <p>Dans la section "Préférences de vente", cochez la case<img src="../images/commun/check-square.svg" alt="Case à cocher" height="18" class="align-icone icone-marge-gauche icone-marge-droite">à droite de "Mettre à jour le catalogue de prix de vente après facturation" pour actualiser, sur demande, le prix d'un article dans un catalogue.</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/societe8.png" class="contour-img" alt="Catalogue de prix de vente" data-action="zoom" />
+         </p>
+		 <p>Cliquez sur <span class="btn-blue">Modifier</span> pour valider l'opération.</p>
+      </div>
+	  <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step5.svg" alt="4" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">En option&nbsp;: spécifiez les conditions de vente</span>
+         <p>Dans la section "Préférences de vente", renseignez le champ "Conditions de vente" pour faire apparaître la mention de votre choix sur les factures de ventes générées au format PDF.</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/societe9.png" class="contour-img" alt="Conditions de vente" data-action="zoom" />
+         </p>
+		 <p class="max-img-process">
+            <img src="../images/chapitre7/societe10.png" class="contour-img" alt="Facture de vente" data-action="zoom" />
+         </p>
+		 <p>Cliquez sur <span class="btn-blue">Modifier</span> pour valider l'opération.</p>
+      </div>
+	  <h6>Guide de prise en main • Ventes • TVA catégorie comptable</h6>
+      <a class="slice-process" id="tva-categorie"></a>
+	  <h3 align="center" class="texte aerateur procedure">2 – Procédure pour configurer la liste des taxes</h3>
+	  <p class="texte">Ce paramétrage optionnel vous permet de restreindre la liste des taxes affichées pour simplifier la saisie d'une ligne de vente.</p>
+      <p class="texte">
+         Le processus suivant vous guide pour assigner un ou plusieurs taux de TVA à la catégorie comptable d'un article.
+      </p>
+      <div class="floating-box process">
+         <img src="../images/commun/step1.svg" alt="1" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Affichez la liste des articles</span>
+         <p>Cliquez sur le lien "Configuration" dans le "Menu principal" ou sur le bouton "Configuration" de la page d'accueil&nbsp;:</p>
+         <p align="center"><img src="../images/chapitre6/wrench.svg" alt="Configuration" width="60"></p>
+         <p>Dans la barre latérale du module, cliquez sur "Articles" dans la section "Catalogue d'articles" symbolisée par l'icône d'un épi<img src="../images/chapitre6/wheat.svg" alt="Épi" height="20" class="align-icone icone-marge-gauche">.</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/tva-categorie1.png" class="contour-img" alt="Liste articles" data-action="zoom" />
+         </p>
+      </div>
+      <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step2.svg" alt="2" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Sélectionnez une catégorie comptable</span>
+         <p>Dans la liste des article, cliquez sur la catégorie à paramétrer dans la colonne "Catégorie".</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/tva-categorie2.png" class="contour-img" alt="Liste articles" data-action="zoom" />
+         </p>
+      </div>
+      <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step3.svg" alt="3" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Modifiez la catégorie comptable</span>
+         <p>Cliquez ensuite sur le bouton<img src="../images/commun/modifier2.svg" alt="Modifier" height="25" class="align-btn-gris icone-marge-gauche icone-marge-droite">en haut à gauche de la fenêtre principale.</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/tva-categorie3.png" class="contour-img" alt="Modification catégorie" data-action="zoom" />
+         </p>
+      </div>
+      <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step4.svg" alt="4" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Ajoutez un ou plusieurs taux de TVA</span>
+         <p>Dans la section "Ventes", cliquez sur "<span style="color:#487bd4">Ajouter une taxe de vente</span>" et choisissez un taux de TVA parmi ceux qui sont disponibles.</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/tva-categorie4.png" class="contour-img" alt="Ajout taux de TVA" data-action="zoom" />
+         </p>
+		 <p class="max-img-process">
+            <img src="../images/chapitre7/tva-categorie5.png" class="contour-img" alt="Sélection taux de TVA" data-action="zoom" />
+         </p>
+		 <p>En fonction de vos débouchés, répétez cette opération pour ajouter un second taux de TVA, comme par exemple si une partie de la récolte de colza est destinée à l'alimentation et l'autre vendue pour produire du biocarburant.</p>
+		 <p class="max-img-process">
+            <img src="../images/chapitre7/tva-categorie6.png" class="contour-img" alt="Sélection taux de TVA" data-action="zoom" />
+         </p>
+		 <p >Cliquez sur <span class="btn-blue">Modifier</span> pour valider l'opération.</p>
+		 <p class="aerateur-haut">La section "Taxations" de la catégorie comptable est automatiquement mise à jour avec les 2 taux de TVA sélectionnés.</p>
+		 <p class="max-img-process">
+            <img src="../images/chapitre7/tva-categorie7.png" class="contour-img" alt="Sélection taux de TVA" data-action="zoom" />
+         </p>
+      </div>
+      <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step5.svg" alt="5" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Enregistrez une vente</span>
+         <p>Par défaut, lors de la saisie d'une ligne de vente, aucun filtrage n'est réalisé et toutes les taxes actives et disponibles sont affichées&nbsp;:</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/tva-categorie8.png" class="contour-img" alt="Ajout taux de TVA" data-action="zoom" />
+         </p>
+		 <p>Après modification de la catégorie comptable de l'article, seuls les taux de TVA attribués sont proposés dans la liste déroulante des taxes&nbsp;:</p>
+		 <p class="max-img-process">
+            <img src="../images/chapitre7/tva-categorie9.png" class="contour-img" alt="Sélection taux de TVA" data-action="zoom" />
+         </p>
+		 <p>Notez que si un taux unique a été choisi lors de la modification, la saisie est sécurisée et permet d'éviter tout risque potentiel d'erreur de sélection de la TVA.</p>
+		 <p>Cette taxe est automatiquement affectée à la recette d'un article dans le calcul du <a href="../performance/#budgets" target="_self" class="avoid-clicks">budget prévisionnel</a> d'une activité, pour gérer la trésorerie en TTC et anticiper les liquidités disponibles.</p>
+      </div>
+      <h6>Guide de prise en main • Ventes • Types de vente</h6>
+      <a class="slice-process" id="types"></a>
+      <h2 class="texte aerateur">b - Types de vente</h2>
+      <div class="config margin-config config-x2">
+         <p>
+            <img src="../images/commun/parcours.svg" height="45" alt="Icône parcours"/>
+         </p>
+         <p class="majuscule">
+            configuration à faire pour
+            <img class="align-icone icone-marge-gauche" src="../images/commun/tacheC.svg" width="20" alt="C" />
+         </p>
+      </div>
+      <p class="texte">
+         Si vous utilisez <strong>Eky</strong>agri | <strong>Eky</strong>viti pour réaliser la gestion commerciale et l'émission des factures de ventes, nous vous conseillons de paramétrer préalablement, si nécessaire, vos différents types de vente dans l'application.
+      </p>
+      <p class="texte">
+         Un type de vente par défaut &#40;"Vente standard"&#41; est déjà configuré mais vous pouvez le modifier ou en créer de nouveaux en paramétrant les conditions de règlement, le mode d'encaissement et en choisissant le journal qui enregistrera l'ensemble des recettes dans le brouillard comptable.
+      </p>
+	  <h6>Guide de prise en main • Ventes • Types de vente</h6>
+      <a class="slice-process" id="type-vente"></a>
+      <h3 align="center" class="texte aerateur procedure">1 – Procédure pour paramétrer un type de vente</h3>
+      <p class="texte">
+         Le processus suivant vous guide pour créer un nouveau type de vente.
+      </p>
+      <div class="floating-box process">
+         <img src="../images/commun/step1.svg" alt="1" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Affichez les types de vente</span>
+         <p>
+            Cliquez sur le lien "Configuration" dans le "Menu principal" ou sur le bouton "Configuration" de la page d'accueil&nbsp;:
+         </p>
+         <p align="center"><img src="../images/chapitre7/wrench.svg" alt="Configuration" width="60"></p>
+         <p>Dans la barre latérale du module, cliquez sur "Types de vente" dans la section "Ventes/Achats" symbolisée par l'icône d'un histogramme<img src="../images/chapitre7/bar-chart.svg" alt="histogramme" height="20" class="align-icone icone-marge-gauche">.</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/type-vente1.png" class="contour-img" alt="Types de vente" data-action="zoom" />
+         </p>
+		 <p>Tous les types de vente déjà créés ou mis à disposition sont listés ici.</p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step2.svg" alt="2" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Créez un type de vente</span>
+         <p>Cliquez sur le bouton<img class="btn-gris icone-marge-gauche icone-marge-droite" src="../images/commun/nouveau.svg" alt="+ Nouveau">en haut à gauche de la fenêtre principale.</p>
+		 <p class="max-img-process">
+            <img src="../images/chapitre7/type-vente2.png" class="contour-img" alt="Nouveau type de vente" data-action="zoom" />
+         </p>
+         <p>Nommez de façon explicite le nouveau type de vente et cochez la case<img src="../images/commun/check-square.svg" alt="Case à cocher" height="18" class="align-icone icone-marge-gauche icone-marge-droite">pour l'activer. Cochez la case<img src="../images/commun/check-square.svg" alt="Case à cocher" height="18" class="align-icone icone-marge-gauche icone-marge-droite">à droite de "Par défaut" si vous estimez que ce type de vente sera le plus fréquemment utilisé &nbsp;: il deviendra alors le bouton principal dans la fenêtre de création d'une nouvelle vente à la place de "Vente standard".</p>
+         <p>Notez que le "<strong>Délai d'expiration</strong>" est la durée de validité d'un devis &#40;ce délai est fixé par défaut à 30 jours mais vous pouvez le modifier&#41;. Lors de la création d'une nouvelle vente, il est utilisé pour le calcul de la date d'expiration indiquée lors de l'impression d'un "Devis brouillon", d'un "Devis envoyé" ou d'une "Commande" au format PDF.</p>
+         <p>Dans la section <strong>comptabilité</strong>, sélectionnez le journal de votre choix&nbsp;: vous pouvez par exemple disposer d'un journal comptable pour les ventes réalisées en France et un second pour les ventes effectuées à l'étranger. Vous pouvez également sélectionner un journal créé pour rassembler les écritures issues d'achats et de ventes réalisés avec une même coopérative.</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/type-vente3.png" class="contour-img" alt="Nouveau type de vente" data-action="zoom" />
+         </p>
+         <p>Cliquez sur <span class="btn-blue">Créer</span> pour valider l'opération.</p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step3.svg" alt="3" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Vérifiez le type de vente</span>
+         <p>Vérifiez le récapitulatif des éléments définissant le nouveau type de vente. Vous pouvez le modifier le cas échéant.
+         </p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/type-vente4.png" class="contour-img" alt="Nouveau type de vente" data-action="zoom" />
+         </p>
+         <p>Pour des ventes au comptant et réglées en espèces ou par chèque, le récapitulatif diffèrera avec l'enregistrement des écritures dans le journal de vente avec un délai d'encaissement fixé à 0 jour&nbsp;:
+         </p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/type-vente5.png" class="contour-img" alt="Nouveau type de vente" data-action="zoom" />
+         </p>
+      </div>
+	  <div class="saut-page"></div>
+      <h6>Guide de prise en main • Ventes • Introduction</h6>
+      <a class="slice-process" id="ventes"></a>
+      <h2 class="texte aerateur">c - Enregistrer une vente</h2>
+      <div class="config margin-config config-x2">
+         <p>
+            <img src="../images/commun/parcours.svg" height="45" alt="Icône parcours"/>
+         </p>
+         <p class="majuscule">
+            procédure à savoir pour
+            <img class="align-icone icone-marge-gauche" src="../images/commun/tacheC.svg" width="20" alt="C" />
+         </p>
+      </div>
+      <div class="warn-fond aerateur-haut aerateur-bas stocks-orange">
+         <div class="floating-box-warn">
+            <img src="../images/commun/attention.svg" width="100" alt="Attention"/>
+         </div>
+         <div class="info-txt">
+            <span class="titre-advice">Prérequis pour la saisie des ventes<br /></span>
+            <p class="texte-advice">Ce chapitre ne traite pas de la création des articles et des clients &#40;vous pouvez cependant les ajouter à la volée&#41;. Référez-vous au <a href="../chapitre8" class="avoid-clicks" target="_self">chapitre 8 - Stocks, tiers et RH</a> pour connaître les procédures à suivre concernant ces deux prérequis.</p>
+         </div>
+	  </div>
+	  <div class="info-fond aerateur-haut aerateur-bas compta-green">
+         <div class="floating-box-info">
+            <img src="../images/commun/info.svg" width="100" alt="Info"/>
+         </div>
+         <div class="info-txt">
+            <span class="titre-advice">Exercice comptable<br /></span>
+            <p class="texte-advice">
+               La gestion des ventes nécessite qu'un exercice comptable soit déjà ouvert à la date d'enregistrement d'une nouvelle vente, même si vous ne gérez pas votre comptabilité dans <strong>Eky</strong>agri | <strong>Eky</strong>viti. La procédure d'ouverture d'un exercice comptable est expliquée dans le <a href="../chapitre5#exercice" class="avoid-clicks">chapitre 5 - Comptabilité</a>.
+            </p>
+	  	 </div>
+      </div>
+      <p class="texte">Dans <strong>Eky</strong>agri | <strong>Eky</strong>viti, l'enregistrement d'une vente passe par plusieurs étapes successives qui commencent à partir de la création d'un "Devis brouillon". Ce devis &#40;une fois envoyé et s'il est accepté&#41; sera converti en "Commande" puis en "Facture" par vos soins en fonction de la conclusion ou non de la vente. L'écriture comptable d'une vente dans le brouillard des journaux concernés n'est enregistrée qu'à partir du moment où son statut a basculé sur "Facture".</p>
+      <p class="texte">Exemples de l'évolution du statut d'une vente&nbsp;:</p>
+      <p class="texte"><span class="step step-orange">&nbsp;Devis brouillon&nbsp;</span><img src="../images/chapitre7/arrow-right.svg" alt="Flèche" height="20" class="align-icone icone-marge-gauche icone-marge-droite"><span class="step step-rouge">&nbsp;Abandonné&nbsp;</span></p>
+      <p class="texte"><span class="step step-orange">&nbsp;Devis brouillon&nbsp;</span><img src="../images/chapitre7/arrow-right.svg" alt="Flèche" height="20" class="align-icone icone-marge-gauche icone-marge-droite"><span class="step step-orange">&nbsp;Devis envoyé&nbsp;</span><img src="../images/chapitre7/arrow-right.svg" alt="Flèche" height="20" class="align-icone icone-marge-gauche icone-marge-droite"><span class="step step-rouge">&nbsp;Devis refusé&nbsp;</span></p>
+      <p class="texte"><span class="step step-orange">&nbsp;Devis brouillon&nbsp;</span><img src="../images/chapitre7/arrow-right.svg" alt="Flèche" height="20" class="align-icone icone-marge-gauche icone-marge-droite"><span class="step step-orange">&nbsp;Devis envoyé&nbsp;</span><img src="../images/chapitre7/arrow-right.svg" alt="Flèche" height="20" class="align-icone icone-marge-gauche icone-marge-droite"><span class="step step-vert">&nbsp;Commande&nbsp;</span><img src="../images/chapitre7/arrow-right.svg" alt="Flèche" height="20" class="align-icone icone-marge-gauche icone-marge-droite"><span class="step step-vert">&nbsp;Facture&nbsp;</span></p>
+      <p class="texte"><span class="step step-orange">&nbsp;Devis brouillon&nbsp;</span><img src="../images/chapitre7/arrow-right.svg" alt="Flèche" height="20" class="align-icone icone-marge-gauche icone-marge-droite"><span class="step step-orange">&nbsp;Devis envoyé&nbsp;</span><img src="../images/chapitre7/arrow-right.svg" alt="Flèche" height="20" class="align-icone icone-marge-gauche icone-marge-droite"><span class="step step-vert">&nbsp;Facture&nbsp;</span></p>
+      <p class="texte"><span class="step step-orange">&nbsp;Devis brouillon&nbsp;</span><img src="../images/chapitre7/arrow-right.svg" alt="Flèche" height="20" class="align-icone icone-marge-gauche icone-marge-droite"><span class="step step-vert">&nbsp;Facture&nbsp;</span></p>
+      <p class="texte">En pratique, il n'est donc pas obligatoire de valider chaque étape de l'évolution du statut de la vente pour enregistrer une facture, notamment si vous n'adressez pas de devis à votre client.</p>
+	  <div class="saut-page"></div>
+	  <div class="tabs marge aerateur-haut">
+         <div class="tab">
+            <input type="checkbox" name="ekyviti" id="chck1">
+            <label class="tab-label" for="chck1">Note aux utilisateurs d'Ekyviti</label>
+            <div class="tab-content">
+               Pour les utilisateurs de la solution de gestion commerciale Baqio, les explications concernant le paramétrage et le processus de synchronisation des ventes sont documentées dans la section <a href="../ekyviti#baqio" target="_self">&#171;&nbsp;Connexion partenaire avec la solution Baqio&nbsp;&#187;</a> du chapitre <strong>Eky</strong>viti.
+            </div>
+         </div>
+      </div>
+	  <h6>Guide de prise en main • Ventes • Enregistrer une vente</h6>
+	  <a class="slice-process" id="nelle-vente"></a>
+      <h3 align="center" class="texte aerateur procedure">1 – Procédure pour enregistrer une vente</h3>
+      <p class="texte">
+         Le processus suivant vous guide pour enregistrer une nouvelle vente.
+      </p>
+      <div class="floating-box process">
+         <img src="../images/commun/step1.svg" alt="1" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Accédez aux ventes</span>
+		 <p>Cliquez sur le lien "Ventes" dans le "Menu principal" ou sur le bouton "Ventes" de la page d'accueil&nbsp;:</p>
+         <p align="center"><img src="../images/chapitre7/ventes.svg" alt="Ventes" width="60"></p>
+         <p>Dans la barre latérale du module, cliquez sur "Ventes" dans la section "Ventes" symbolisée par l'icône d'un histogramme<img src="../images/chapitre7/bar-chart.svg" alt="histogramme" height="20" class="align-icone icone-marge-gauche">.</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/vente1.png" class="contour-img" alt="Liste des ventes" data-action="zoom" />
+         </p>
+         <p>Toutes les ventes déjà enregistrées sont listées ici.</p>
+		 <p>Plusieurs commandes présentes dans la liste sous la forme d'icônes sont à votre disposition &#40;la présence ou l'absence de ces icônes dans une ligne vous renseigne sur la possibilité de réaliser ou non l'opération qui lui est associée&#41;&nbsp;:</p>
+		 <p><img src="../images/commun/crayon.svg" alt="Modifier" height="20" class="align-icone icone-marge-droite">permet de modifier une vente.</p>
+         <p><img src="../images/commun/undo.svg" alt="Créer un avoir" height="20" class="align-icone icone-marge-droite">permet de créer un avoir sur une facture.</p>
+         <p><img src="../images/commun/times-blue.svg" alt="Supprimer" height="20" class="align-icone icone-marge-droite">permet de supprimer une vente.</p>
+		 <p>Des indicateurs en couleur caractérisent également le statut de chaque vente&nbsp;:</p>
+         <p><img src="../images/commun/statut-vert.svg" alt="Statut vert" height="20" class="align-icone icone-marge-droite">signale une vente facturée et payée.</p>
+         <p><img src="../images/commun/statut-orange.svg" alt="Statut orange" height="20" class="align-icone icone-marge-droite">signale une vente dont l'encaissement ne correspond pas au montant de la facture.</p>
+         <p><img src="../images/commun/statut-rouge.svg" alt="Statut rouge" height="20" class="align-icone icone-marge-droite">signale un devis en cours/expiré/abandonné ou une facture impayée.</p>
+         <p>Notez que la couleur de ces trois indicateurs n'est pas forcément liée au statut de la vente &#40;"Devis brouillon", "Devis envoyé", "Devis refusé", "Commande", "Facture", "Abandonné"&#41; comme expliqué plus loin.</p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step2.svg" alt="2" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Créez une nouvelle vente</span>
+         <p>Cliquez sur le bouton<img class="btn-gris icone-marge-gauche icone-marge-droite" src="../images/commun/nouveau.svg" alt="+ Nouveau">en haut à gauche de la fenêtre principale…</p>
+		 <p class="max-img-process">
+            <img src="../images/chapitre7/vente2.png" class="contour-img" alt="Créer une nouvelle vente" data-action="zoom" />
+         </p>
+         <p>…&nbsp;ou sélectionnez un type de vente dans la liste déroulante, si vous en avez paramétré un ou plusieurs complémentaires à celui défini par défaut &#40;"Vente standard"&#41;.</p>
+		 <p>Le choix d'un "Type de vente" parmi ceux qui ont été préalablement configurés permettra de <strong>générer une facture incluant les prix en vigueur du catalogue de vente</strong> rattaché au type de vente sélectionné.</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/vente2-alt.png" class="contour-img" alt="Créer une nouvelle vente" data-action="zoom" />
+         </p>
+		 <p>Notez que le type de vente associé à la création de la nouvelle vente n'est plus modifiable par la suite.</p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step3.svg" alt="3" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Renseignez la nouvelle vente</span>
+         <p>Sélectionnez un client dans la liste déroulante ou créez-en un nouveau à la volée.</p>
+      </div>
+      <div class="warn-fond">
+         <div class="floating-box-warn">
+            <img src="../images/commun/attention.svg" width="100" alt="Attention"/>
+         </div>
+         <div class="info-txt">
+            <span class="titre-advice">Adresse pour la livraison<br /></span>
+            <p class="texte-advice">
+               Si vous souhaitez réaliser l'expédition d'une vente &#40;une étape indispensable dans le processus de vente pour gérer vos stocks automatiquement&#41; et pouvoir ensuite enregistrer une livraison des produits vendus, la saisie d'une adresse dans le champ "Adresse pour la livraison" est obligatoire. Enregistrez de préférence l'adresse du client lors de la création du tiers pour un remplissage automatique lors de futures ventes.
+            </p>
+         </div>
+      </div>
+      <div class="process-txt">
+         <p>Cliquez sur <span class="btn-blue">Ajouter&nbsp;un&nbsp;élément</span> pour créer une première ligne de vente.</p>
+		 <p>Saisissez un mot-clef dans le champ "Article" pour filtrer les résultats affichés et choisissez le produit vendu. Sélectionnez un conditionnement, puis renseignez la quantité, le prix unitaire HT et le taux de TVA à appliquer.</p>
+		 <p class="max-img-process">
+            <img src="../images/chapitre7/vente3.png" class="contour-img" alt="Créer une nouvelle vente" data-action="zoom" />
+         </p>
+		 <p>Si "Mettre à jour le catalogue de prix de vente après facturation" a été activé dans les <a href="#pref-vente" class="avoid-clicks">&#171;&nbsp;Préférences de vente&nbsp;&#187;</a> de la société, une option permet de mettre à jour ou non le montant saisi dans la ligne de vente. Cochez la case<img src="../images/commun/check-square.svg" alt="Case à cocher" height="18" class="align-icone icone-marge-gauche icone-marge-droite">pour enregistrer le nouveau prix de l'article et actualiser le catalogue.</p>
+		 <p class="max-img-process">
+            <img src="../images/chapitre7/maj-catalogue1.png" class="contour-img" alt="Mise à jour du prix" data-action="zoom" />
+         </p>
+		 <p>Notez que le délai d'encaissement affiché est celui qui est associé au <a href="#types" class="avoid-clicks">type de vente</a> sélectionné à l'étape n<sup>o</sup>&nbsp;2. Il ne peut pas être modifié lors de la saisie de la vente.</p>
+		 <p>Choisissez un conditionnement ou <a href="../chapitre8#conditionnement" target="_self" class="avoid-clicks">créez-en un nouveau</a> à la volée en sélectionnant "Ajouter un nouvel enregistrement" dans la liste déroulante "Conditionnement".</p>
+		 <p class="max-img-process">
+            <img src="../images/chapitre7/asso-cond1.png" class="contour-img" alt="Associer conditionnement" data-action="zoom" />
+         </p>
+	  </div>
+	  <div class="info-fond aerateur-haut">
+         <div class="floating-box-info">
+            <img src="../images/commun/info.svg" width="100" alt="Info"/>
+         </div>
+         <div class="info-txt">
+            <span class="titre-advice">Nombre de décimales<br /></span>
+            <p class="texte-advice">Notez que la saisie du prix unitaire est autorisée avec un maximum de 4 décimales, alors que celle des montants HT ou TTC est dynamiquement limitée à 2 chiffres après la virgule. Ces limitations sont fixées afin de prévenir les erreurs potentielles d'arrondi pouvant survenir lors du calcul automatique de la balance comptable.</p>
+         </div>
+      </div>
+	  <div class="process-txt">
+         <p>Procédez de la même manière pour ajouter successivement de nouvelles lignes de vente avec les informations requises.</p>
+		 <p>Pour ajouter d'éventuels frais de port, sélectionnez "Transport de biens et de personnel" dans la liste déroulante &#40;l'article de référence et de nature "Services" doit être importé avant&#41;.</p>
+         <p>Cochez la case<img src="../images/commun/check-square.svg" alt="Case à cocher" height="18" class="align-icone icone-marge-gauche icone-marge-droite">à droite de "Devis au format lettre" pour afficher des champs complémentaires dans le formulaire de saisie et personnaliser le devis.</p>
+		 <p class="max-img-process">
+            <img src="../images/chapitre7/devis-lettre.png" class="contour-img" alt="Devis format lettre" data-action="zoom" />
+         </p>
+         <p>Cliquez sur le symbole<img src="../images/commun/align-justify.svg" alt="Annotation" height="20" class="align-icone icone-marge-gauche">, pour afficher un champ libre permettant d'insérer un commentaire à la ligne de vente. Cette mention apparaîtra lors de la génération de la facture au format PDF.</p>
+         <p>Notez que si vous avez activé la répartition des ventes dans les préférences analytiques des <a href="#societe" class="avoid-clicks" target="_self">paramètres de la société</a>, une liste déroulante vous permet de sélectionner une activité parmi celles ouvertes.</p>
+         <p>Cliquez sur <span class="btn-blue">Créer</span> pour valider l'opération.</p>
+      </div>
+	  <div class="info-fond aerateur-haut aerateur-bas">
+         <div class="floating-box-info">
+            <img src="../images/commun/info.svg" width="100" alt="Info"/>
+         </div>
+         <div class="info-txt">
+            <span class="titre-advice">Facturation, charges et retenues<br /></span>
+            <p class="texte-advice">Lors de l'édition d'une <strong>facture à destination d'une coopérative</strong>, si le montant de la vente est défalqué par un approvisionnement, des prestations, des charges ou des taxes et que toutes les lignes doivent figurer dans le même document, ajoutez chaque élément complémentaire avec un montant &#40;prix unitaire HT&#41; négatif afin que la facture enregistrée dans l'application corresponde à la facture d'apport émise par l'acheteur. <strong>Notez que cette opération nécessite la <a href="../chapitre8#coop" class="avoid-clicks">création d'articles spécifiques</a> pour une passage correct des écritures en comptabilité</strong>.</p>
+         </div>
+      </div>
+      <div class="info-fond aerateur-haut aerateur-bas">
+         <div class="floating-box-info">
+            <img src="../images/commun/info.svg" width="100" alt="Info"/>
+         </div>
+         <div class="info-txt">
+            <span class="titre-advice">Catalogue de prix<br /></span>
+            <p class="texte-advice">Chaque nouvel élément vendu une première fois enrichit le catalogue de prix "Vente" avec un enregistrement du prix saisi dans la ligne de vente. Lors de la création d'une nouvelle vente avec cette même variante, le prix de celle-ci est automatiquement renseigné à partir du catalogue. Ce prix reste modifiable directement dans le champ concerné ou dans le catalogue depuis la section "Produit" du module "Configuration". Notez que la saisie d'un prix différent dans une ligne de vente ne remplace pas celui déjà enregistré dans le catalogue.</p>
+         </div>
+      </div>
+      <div class="floating-box process">
+         <img src="../images/commun/step4.svg" alt="4" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Affichez le devis</span>
+         <p>La vente possède initialement un statut "Devis brouillon" tant que le devis n'a pas été accepté/refusé/abandonné ou qu'il n'a pas été transformé en "Commande" puis en "Facture". Déposez vos justificatifs &#40;documents numérisés au format JPEG, fichiers PDF&#41; par glisser-déposer ou en parcourant votre disque dur après avoir cliqué sur l'icône représentant un trombone<img src="../images/commun/paperclip.svg" alt="Trombonne" height="20" class="align-icone icone-marge-gauche">.</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/vente4.png" class="contour-img" alt="Créer une nouvelle vente" data-action="zoom" />
+         </p>
+         <p>Cliquez sur le bouton<img src="../images/commun/modifier2.svg" alt="Modifier" height="25" class="align-btn-gris icone-marge-gauche icone-marge-droite">pour revenir à l'étape précédente et modifier la vente &#40;client, adresse, lignes de vente&#41;.</p>
+      </div>
+      <div class="warn-fond aerateur-haut">
+         <div class="floating-box-warn">
+            <img src="../images/commun/attention.svg" width="100" alt="Attention"/>
+         </div>
+         <div class="info-txt">
+            <span class="titre-advice">Modifier un devis<br /></span>
+            <p class="texte-advice">
+               Notez que seul le "Devis brouillon" est modifiable. Pour rectifier un "Devis envoyé", il faut revenir au statut "Devis brouillon" en cliquant sur le bouton correspondant. Lorsque le devis sera transformé en "Facture", il ne sera plus possible de le corriger.
+            </p>
+            <span class="step step-orange">&nbsp;Devis envoyé&nbsp;</span><img src="../images/chapitre7/arrow-right.svg" alt="Flèche" height="20" class="align-icone icone-marge-gauche icone-marge-droite"><span class="step step-orange">&nbsp;Devis brouillon&nbsp;</span>
+         </div>
+      </div>
+      <h6>Guide de prise en main • Ventes • Transformer un devis en commande</h6>
+      <a class="slice-process" id="commandes"></a>
+      <h3 align="center" class="texte aerateur procedure">2 – Procédure pour transformer un devis en commande</h3>
+      <p class="texte">Le processus suivant vous guide pour transformer un devis en commande.</p>
+      <div class="floating-box process">
+         <img src="../images/commun/step1.svg" alt="1" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Accédez aux ventes</span>
+		 <p>Cliquez sur le lien "Ventes" dans le "Menu principal" ou sur le bouton "Ventes" de la page d'accueil&nbsp;:</p>
+         <p align="center"><img src="../images/chapitre7/ventes.svg" alt="Ventes" width="60"></p>
+         <p>Dans la barre latérale du module, cliquez sur "Ventes" dans la section "Ventes" symbolisée par l'icône d'un histogramme<img src="../images/chapitre7/bar-chart.svg" alt="histogramme" height="20" class="align-icone icone-marge-gauche">.</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/vente1.png" class="contour-img" alt="Liste des ventes" data-action="zoom" />
+         </p>
+         <p>Toutes les ventes déjà enregistrées sont listées ici.</p>
+         <p>Cliquez sur le numéro de la vente &#40;encore avec le statut de devis&#41; pour la transformer en commande.</p>
+         <p>Notez que les numéros sont précédés d'un <strong>"V"</strong> pour identifier un devis ou une commande et d'un <strong>"F"</strong> pour désigner une facture.</p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step2.svg" alt="2" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Modifiez le statut de la vente</span>
+         <p>Modifiez le statut de la vente en cliquant successivement sur les étapes en couleur et en validant votre choix&nbsp;:<br /><span class="step step-orange">&nbsp;Devis brouillon&nbsp;</span><img src="../images/chapitre7/arrow-right.svg" alt="Flèche" height="20" class="align-icone icone-marge-gauche icone-marge-droite"><span class="step step-orange">&nbsp;Devis envoyé&nbsp;</span><img src="../images/chapitre7/arrow-right.svg" alt="Flèche" height="20" class="align-icone icone-marge-gauche icone-marge-droite"><span class="step step-vert">&nbsp;Commande&nbsp;</span></p>
+         <p>Utilisez les statuts <span class="step step-rouge">&nbsp;Devis refusé&nbsp;</span> &#40;actif après l'envoi du devis&#41; ou <span class="step step-rouge">&nbsp;Abandonné&nbsp;</span> pour annuler l'enregistrement de la vente.</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/commande.png" class="contour-img" alt="Passer le devis en commande" data-action="zoom" />
+         </p>
+      </div>
+	  <div class="saut-page"></div>
+      <div class="warn-fond aerateur-haut">
+         <div class="floating-box-warn">
+            <img src="../images/commun/attention.svg" width="100" alt="Attention"/>
+         </div>
+         <div class="info-txt">
+            <span class="titre-advice">Modifier une commande<br /></span>
+            <p class="texte-advice">
+               Notez que seul le "Devis brouillon" est modifiable. Pour rectifier une "Commande", il faut revenir au statut "Devis brouillon" en cliquant sur le bouton correspondant. Lorsque la commande sera transformée en "Facture", il ne sera plus possible de la corriger.
+            </p>
+            <span class="step step-vert">&nbsp;Commande&nbsp;</span><img src="../images/chapitre7/arrow-right.svg" alt="Flèche" height="20" class="align-icone icone-marge-gauche icone-marge-droite"><span class="step step-orange">&nbsp;Devis brouillon&nbsp;</span>
+         </div>
+      </div>
+      <h6>Guide de prise en main • Ventes • Transformer une commande en facture</h6>
+      <a class="slice-process" id="factures"></a>
+      <h2 class="texte aerateur">d - Facturer une vente</h2>
+      <h6>Guide de prise en main • Ventes • Transformer une commande en facture</h6>
+	  <a class="slice-process" id="nelle-facture"></a>
+      <h3 align="center" class="texte aerateur procedure">1 – Procédure pour transformer une commande en facture</h3>
+      <p class="texte">Le processus suivant vous guide pour transformer une commande en facture.</p>
+      <div class="floating-box process">
+         <img src="../images/commun/step1.svg" alt="1" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Accédez aux ventes</span>
+		 <p>Cliquez sur le lien "Ventes" dans le "Menu principal" ou sur le bouton "Ventes" de la page d'accueil&nbsp;:</p>
+         <p align="center"><img src="../images/chapitre7/ventes.svg" alt="Ventes" width="60"></p>
+         <p>Dans la barre latérale du module, cliquez sur "Ventes" dans la section "Ventes" symbolisée par l'icône d'un histogramme<img src="../images/chapitre7/bar-chart.svg" alt="histogramme" height="20" class="align-icone icone-marge-gauche">.</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/vente1.png" class="contour-img" alt="Liste des ventes" data-action="zoom" />
+         </p>
+         <p>Toutes les ventes déjà enregistrées sont listées ici.</p>
+         <p>Cliquez ensuite sur le numéro de la vente &#40;encore avec le statut de commande&#41; pour la transformer en facture.</p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step2.svg" alt="2" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Modifiez le statut de la commande</span>
+         <p>Cliquez sur le bouton <span class="step step-orange">&nbsp;Devis brouillon&nbsp;</span> si vous devez modifier la vente <strong>avant</strong> de la passer en facture.</p>
+         <p>Modifiez le statut de la commande en cliquant sur le bouton <span class="step step-vert">&nbsp;Facture&nbsp;</span> et en validant ce choix.</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/vente5.png" class="contour-img" alt="Passer le devis en facture" data-action="zoom" />
+         </p>
+         <p>Notez que le solde négatif affiché en rouge dans la section "Affaire" &#40;égal au montant total TTC de la facture&#41; exprime une créance en attente de réglement.</p>
+      </div>
+      <div class="info-fond aerateur">
+         <div class="floating-box-info">
+            <img src="../images/commun/info.svg" width="100" alt="Info"/>
+         </div>
+         <div class="info-txt">
+            <span class="titre-advice">Passer le solde en perte<br /></span>
+            <p class="texte-advice">Cliquez sur le bouton "Passer le solde en perte" si la créance est définitivement irrécouvrable. En cas d'erreur, cliquez sur l'icône<img src="../images/commun/delete.svg" alt="Supprimer" height="20" class="align-icone icone-marge-gauche icone-marge-droite">à gauche de "Écart sur vente" dans la section "Affaire" pour annuler l'opération.</p>
+            <br />
+            <img src="../images/chapitre7/ecart-vente.png" class="contour-img" alt="Passer le devis en facture" data-action="zoom" />
+         </div>
+      </div>
+      <h6>Guide de prise en main • Ventes • Expédier une vente</h6>
+      <a class="slice-process" id="expeditions"></a>
+      <h2 class="texte aerateur">e - Expédier une vente</h2>
+      <h3 align="center" class="texte aerateur procedure">1 – Procédure pour expédier une vente</h3>
+      <div class="warn-fond aerateur-haut">
+         <div class="floating-box-warn">
+            <img src="../images/commun/attention.svg" width="100" alt="Attention"/>
+         </div>
+         <div class="info-txt">
+            <span class="titre-advice">Matière en stock<br /></span>
+            <p class="texte-advice">
+               Si vous souhaitez réaliser la création d'une expédition &#40;une étape indispensable dans le processus de vente pour gérer vos stocks automatiquement&#41;, les produits doivent être préalablement stockés <strong>à la suite de l'enregistrement d'une intervention</strong>, c'est-à-dire soit issus d'une production végétale ou animale &#40;récolte, traite, ramassage d'œufs&#41;, soit appartenir à l'exploitation &#40;animaux, engrais, semences, etc.&#41;.
+            </p>
+         </div>
+      </div>
+      <p class="texte">
+         Le processus suivant vous guide pour enregistrer l'expédition d'une vente.
+      </p>
+      <div class="floating-box process">
+         <img src="../images/commun/step1.svg" alt="1" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Accédez aux ventes</span>
+		 <p>Cliquez sur le lien "Ventes" dans le "Menu principal" ou sur le bouton "Ventes" de la page d'accueil&nbsp;:</p>
+         <p align="center"><img src="../images/chapitre7/ventes.svg" alt="Ventes" width="60"></p>
+         <p>Dans la barre latérale du module, cliquez sur "Ventes" dans la section "Ventes" symbolisée par l'icône d'un histogramme<img src="../images/chapitre7/bar-chart.svg" alt="histogramme" height="20" class="align-icone icone-marge-gauche">.</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/vente6.png" class="contour-img" alt="Liste des ventes" data-action="zoom" />
+         </p>
+         <p>Toutes les ventes déjà enregistrées sont listées ici.</p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step2.svg" alt="2" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Sélectionnez une vente</span>
+         <p>Cliquez sur le numéro d'une vente dont le statut est en "Commande" ou en "Facture" pour en afficher le détail, puis cliquez sur le bouton "Créer une expédition". Notez que ce bouton ne s'affiche que si vous avez saisi une adresse de livraison lors de la création de la vente.</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/vente7.png" class="contour-img" alt="Détail de la vente" data-action="zoom" />
+         </p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step3.svg" alt="3" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Renseignez le nouveau colis</span>
+         <p>Saisissez les informations requises pour le définir correctement, avec les produits déjà stockés &#40;ceux disponibles dans la liste déroulante&#41; et avec les bonnes quantités. Notez que celles-ci peuvent différer de celles saisies dans la vente initiale si une expédition partielle est réalisée.</p>
+      </div>
+      <div class="warn-fond aerateur-haut">
+         <div class="floating-box-warn">
+            <img src="../images/commun/attention.svg" width="100" alt="Attention"/>
+         </div>
+         <div class="info-txt">
+            <span class="titre-advice">Produits disponibles<br /></span>
+            <p class="texte-advice">
+               Dans la liste déroulante "Produit", ne pas utiliser le lien "Ajouter un nouvel enregistrement" car cela générerait la création d'une "Nouvelle matière" sans rapport avec les stocks existants et sans aucun lien avec la traçabilité comptable de la production végétale ou animale de l'exploitation.
+            </p>
+         </div>
+      </div>
+      <div class="process-txt">
+         <p class="max-img-process">
+            <img src="../images/chapitre7/colis-vente.png" class="contour-img" alt="Nouveau colis" data-action="zoom" />
+         </p>
+		 <p>Cochez la case<img src="../images/commun/check-square.svg" alt="Case à cocher" height="18" class="align-icone icone-marge-gauche icone-marge-droite">à droite de "Avec livraison" si une livraison du colis est envisagée et spécifiez le mode de livraison.</p>
+		 <p>Cliquez sur <span class="btn-blue">Ajouter&nbsp;un&nbsp;élément</span> si d'autre produits doivent être ajoutés à cette expédition.</p>
+         <p>Notez que la mention affichée en italique sous le libellé principal de la matière expédiée renseigne sur la quantité disponible en stock avant l'expédition et qu'il n'est pas possible de modifier le montant du prix unitaire de vente HT.</p>
+         <p>Cliquez sur <span class="btn-blue">Créer</span> pour valider l'opération ou sur <span class="btn-blue">Créer&nbsp;et&nbsp;saisir suivant</span> pour réaliser une nouvelle saisie.</p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step4.svg" alt="4" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Affichez la vente</span>
+         <p>L'application affiche maintenant la vente avec les informations de la nouvelle expédition associée à celle-ci, en bas de la fenêtre principale. Vous pouvez ajouter autant d'expéditions que nécessaire.</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/vente8.png" class="contour-img" alt="Détail de la vente" data-action="zoom" />
+         </p>
+      </div>
+      <h6>Guide de prise en main • Ventes • Réaliser un avoir</h6>
+      <a class="slice-process" id="avoirs"></a>
+      <h2 class="texte aerateur">f - Réaliser un avoir</h2>
+      <p class="texte">Un avoir est une facture d'annulation. Faire une facture d'avoir, c'est en fait annuler la part de chiffre d'affaires réalisée à l'occasion d'une précédente facture. <strong>Il est important de bien suivre vos avoirs pour ne pas vous retrouver dans la situation gênante de déclarer du chiffre d'affaires qui n'aurait pas généré de paiement, donc de trésorerie pour votre exploitation</strong>.</p>
+      <p class="texte">On peut aussi faire un avoir commercial pour résoudre un litige suite à un problème de livraison ou de qualité d'un produit ou d'une prestation jugée insuffisante. La marchandise a pourtant bien été livrée et facturée, mais vous jugez qu'à titre commercial, il est normal de diminuer le prix a posteriori pour garder de bonnes relations avec votre client. Vous établirez alors un avoir partiel du montant de la facture.</p>
+      <p align="center" class="aerateur texte procedure">1 – Procédure pour réaliser un avoir</p>
+      <p class="texte">Le processus suivant vous guide pour réaliser un avoir sur une facture.</p>
+      <div class="floating-box process">
+         <img src="../images/commun/step1.svg" alt="1" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Accédez aux ventes</span>
+		 <p>Cliquez sur le lien "Ventes" dans le "Menu principal" ou sur le bouton "Ventes" de la page d'accueil&nbsp;:</p>
+         <p align="center"><img src="../images/chapitre7/ventes.svg" alt="Ventes" width="60"></p>
+         <p>Dans la barre latérale du module, cliquez sur "Ventes" dans la section "Ventes" symbolisée par l'icône d'un histogramme<img src="../images/chapitre7/bar-chart.svg" alt="histogramme" height="20" class="align-icone icone-marge-gauche">.</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/vente1.png" class="contour-img" alt="Liste des ventes" data-action="zoom" />
+         </p>
+         <p>Toutes les ventes déjà enregistrées sont listées ici.</p>
+      </div>
+	  <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step2.svg" alt="2" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Créez l'avoir sur facture</span>
+         <p>Cliquez sur l'icône<img src="../images/commun/undo.svg" alt="Annuler" height="20" class="align-icone icone-marge-gauche icone-marge-droite">en face du numéro de la facture choisie ou cliquez sur le bouton "Faire un avoir" dans la vue détaillée de la facture.</p>
+		 <p class="max-img-process">
+            <img src="../images/chapitre7/avoir1.png" class="contour-img" alt="Faire un avoir" data-action="zoom" />
+         </p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step3.svg" alt="3" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Renseignez l'avoir sur facture</span>
+         <p>Saisissez soit une quantité, soit un montant HT, soit un montant TTC dans l'un des trois champs disponibles pour créer un avoir partiel ou total. Notez que si l'avoir est exprimé par un montant, celui-ci doit être renseigné avec une valeur <strong>négative</strong>.</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/avoir2.png" class="contour-img" alt="Création de l'avoir" data-action="zoom" />
+         </p>
+         <p>Cliquez sur <span class="btn-blue">Créer</span> pour valider l'opération.</p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step4.svg" alt="4" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Affichez la création de la facture d'avoir</span>
+         <p>La nouvelle facture d'avoir est automatiquement générée et affichée par l'application avec les références de la facture initiale dans la section "Affaire".</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/avoir3.png" class="contour-img" alt="Facture d'avoir" data-action="zoom" />
+         </p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step5.svg" alt="5" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Vérifiez la facture de vente initiale</span>
+         <p>Affichez la vente concernée par l'avoir pour vérifier son écriture dans la section "Affaire" et pour constater la création d'un nouveau tableau des "Avoirs" en bas de la fenêtre principale.</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/vente9.png" class="contour-img" alt="Facture avec avoir" data-action="zoom" />
+         </p>
+      </div>
+      <h6>Guide de prise en main • Ventes • Créer une livraison</h6>
+      <a class="slice-process" id="livraisons"></a>
+      <h2 class="texte aerateur">g - Enregistrer une livraison</h2>
+      <p class="texte"><strong>Eky</strong>agri et <strong>Eky</strong>viti permettent de gérer certains aspects logistiques, notamment la livraison des commandes aux clients. On entend par "Livraison" le mouvement physique d'un ou de plusieurs colis sortants de l'exploitation &#40;expéditions&#41; avec une traçabilité dans les factures correspondantes. Les stocks de matières ne sont en aucun cas impactés par les livraisons de colis.</p>
+      <h3 align="center" class="texte aerateur procedure">1 – Procédure pour créer une livraison</h3>
+      <p class="texte">Le processus suivant vous guide pour réaliser la livraison d'une expédition.</p>
+      <div class="floating-box process">
+         <img src="../images/commun/step1.svg" alt="1" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Affichez les livraisons</span>
+         <p>
+            Cliquez sur le lien "Stocks" dans le "Menu principal" ou sur le bouton "Stocks" de la page d'accueil&nbsp;:
+         </p>
+         <p align="center"><img src="../images/chapitre7/stocks.svg" alt="Stocks" width="60"></p>
+		 <p>Dans la barre latérale du module, cliquez sur "Livraisons" dans la section "Livraisons" symbolisée par l'icône d'un camion<img src="../images/chapitre7/truck.svg" alt="Camion" height="20" class="align-icone icone-marge-gauche">.</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/livraison1.png" class="contour-img" alt="Liste des livraisons" data-action="zoom" />
+         </p>
+		 <p>Toutes les livraisons déjà enregistrées sont listées ici.</p>
+		 <p>Plusieurs commandes présentes dans la liste sous la forme d'icônes sont à votre disposition&nbsp;:</p>
+		 <p><img src="../images/commun/crayon.svg" alt="Modifier" height="20" class="align-icone icone-marge-droite">permet de modifier une livraison.</p>
+         <p><img src="../images/commun/times-blue.svg" alt="Supprimer" height="20" class="align-icone icone-marge-droite">permet de supprimer une livraison.</p>
+		 <p>Des indicateurs en couleur caractérisent également le statut de chaque livraison&nbsp;:</p>
+         <p><img src="../images/commun/statut-vert.svg" alt="Statut vert" height="20" class="align-icone icone-marge-droite">indique une livraison avec le statut "Terminée".</p>
+         <p><img src="../images/commun/statut-orange.svg" alt="Statut orange" height="20" class="align-icone icone-marge-droite">indique une livraison avec le statut "Commandée", "En préparation", "Prête" ou "Commencée".</p>
+         <p><img src="../images/commun/statut-rouge.svg" alt="Statut rouge" height="20" class="align-icone icone-marge-droite">indique une livraison avec le statut "Brouillon".</p>
+      </div>
+      <div class="warn-fond aerateur-haut aerateur-bas">
+         <div class="floating-box-warn">
+            <img src="../images/commun/attention.svg" width="100" alt="Attention"/>
+         </div>
+         <div class="info-txt">
+            <span class="titre-advice">Sélection des colis à livrer<br /></span>
+            <p class="texte-advice">Vous ne pouvez pas créer de livraisons avec les colis souhaités tant que leur expédition n'a pas été enregistrée auparavant dans une "Vente".</p>
+         </div>
+      </div>
+      <div class="floating-box process">
+         <img src="../images/commun/step2.svg" alt="2" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Créez une livraison</span>
+		 <p>Cliquez sur le bouton<img class="btn-gris icone-marge-gauche icone-marge-droite" src="../images/commun/nouveau.svg" alt="+ Nouveau">en haut à gauche de la fenêtre principale.</p>
+		 <p class="max-img-process">
+            <img src="../images/chapitre7/livraison2.png" class="contour-img" alt="Nouvelle livraison" data-action="zoom" />
+         </p>
+         <p>Sélectionnez un ou plusieurs colis à l'aide des cases à cocher<img src="../images/commun/check-square.svg" alt="Case à cocher" height="18" class="align-icone icone-marge-gauche icone-marge-droite">pour procéder à une livraison unique ou groupée de plusieurs colis &#40;ou pour organiser une tournée de livraison&#41;.</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/livraison3.png" class="contour-img" alt="Liste des livraisons" data-action="zoom" />
+         </p>
+         <p>Cliquez sur <span class="btn-blue">Créer</span> pour valider l'opération.</p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step3.svg" alt="3" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Affichez le statut de la livraison</span>
+         <p>Une fois créée, la livraison prend le statut de "Brouillon" et va pouvoir évoluer en fonction de son avancement. Déposez vos justificatifs &#40;documents numérisés au format JPEG, fichiers PDF&#41; par glisser-déposer ou en parcourant votre disque dur après avoir cliqué sur l'icône représentant un trombone<img src="../images/commun/paperclip.svg" alt="Trombonne" height="20" class="align-icone icone-marge-gauche">.</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/livraison4.png" class="contour-img" alt="Statut de la livraison" data-action="zoom" />
+         </p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step4.svg" alt="4" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Modifiez le statut de la livraison</span>
+         <p>Modifiez le statut de la livraison en cliquant successivement sur les étapes en couleur&nbsp;:<br /><span class="step step-orange">&nbsp;Brouillon&nbsp;</span><img src="../images/chapitre7/arrow-right.svg" alt="Flèche" height="20" class="align-icone icone-marge-gauche icone-marge-droite"><span class="step step-orange">&nbsp;Commandée&nbsp;</span><img src="../images/chapitre7/arrow-right.svg" alt="Flèche" height="20" class="align-icone icone-marge-gauche icone-marge-droite"><span class="step step-orange">&nbsp;En préparation&nbsp;</span><img src="../images/chapitre7/arrow-right.svg" alt="Flèche" height="20" class="align-icone icone-marge-gauche icone-marge-droite"><span class="step step-orange">&nbsp;Prête&nbsp;</span><img src="../images/chapitre7/arrow-right.svg" alt="Flèche" height="20" class="align-icone icone-marge-gauche icone-marge-droite"><span class="step step-orange">&nbsp;Commencée&nbsp;</span><img src="../images/chapitre7/arrow-right.svg" alt="Flèche" height="20" class="align-icone icone-marge-gauche icone-marge-droite"><span class="step step-vert">&nbsp;Terminée&nbsp;</span></p>
+		 <p>Validez chaque changement de statut dans la <span class="tooltip">fenêtre modale<span class="tooltiptext tooltip-top">Voir glossaire</span></span> prévue à cet effet&nbsp;:</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/livraison5.png" class="contour-img" alt="Modification du statut de la livraison" data-action="zoom" />
+         </p>
+		 <p>Notez qu'une fois confirmés, les statuts <span class="step step-orange">&nbsp;Prête&nbsp;</span> et <span class="step step-vert">&nbsp;Terminée&nbsp;</span> ne permettent plus de revenir à une étape précédente.</p>
+		 <p class="max-img-process">
+            <img src="../images/chapitre7/livraison6.png" class="contour-img" alt="Modification du statut de la livraison" data-action="zoom" />
+         </p>
+         <p>Cliquez sur le bouton<img src="../images/commun/imprimer.svg" alt="Imprimer" height="25" class="align-btn-gris icone-marge-gauche icone-marge-droite">pour générer un bon de livraison au format PDF.</p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step5.svg" alt="5" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Vérifiez la facture de vente initiale</span>
+         <p>Affichez la vente associée à la livraison pour vérifier que son enregistrement a bien été consigné dans la section "Expéditions".</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/livraison7.png" class="contour-img" alt="Factures avec informations de livraison" data-action="zoom" />
+         </p>
+      </div>
+      <h6>Guide de prise en main • Ventes • Encaissements</h6>
+	  <a class="slice-process" id="encaissements"></a>
+      <h2 class="texte aerateur">h - Réaliser un encaissement</h2>
+	  <h6>Guide de prise en main • Ventes • Modes d'encaissement</h6>
+      <a class="slice-process" id="mode-encaissement"></a>
+      <h3 align="center" class="texte aerateur procedure">1 – Procédure pour configurer un mode d'encaissement</h3>
+      <p class="texte">
+         Le processus suivant vous guide pour paramétrer un nouveau mode d'encaissement associé à une trésorerie.
+      </p>
+      <div class="floating-box process">
+         <img src="../images/commun/step1.svg" alt="1" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Affichez les modes d'encaissement</span>
+         <p>
+            Cliquez sur le lien "Configuration" dans le "Menu principal" ou sur le bouton "Configuration" de la page d'accueil&nbsp;:
+         </p>
+         <p align="center"><img src="../images/chapitre7/wrench.svg" alt="Configuration" width="60"></p>
+         <p>Dans la barre latérale du module, cliquez sur "Modes d'encaissement" dans la section "Ventes/Achats" symbolisée par l'icône d'un histogramme<img src="../images/chapitre7/bar-chart.svg" alt="histogramme" height="20" class="align-icone icone-marge-gauche">.</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/modes-enc1.png" class="contour-img" alt="Modes d'encaissement" data-action="zoom" />
+         </p>
+		 <p>Tous les modes d'encaissement déjà configurés sont listés ici.</p>
+      </div>
+      <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step2.svg" alt="2" width="52" />
+      </div>
+	  <div class="process-txt">
+         <span class="titre-advice">Créez le nouveau mode d'encaissement</span>
+         <p>
+            <p>Cliquez sur le bouton<img class="btn-gris icone-marge-gauche icone-marge-droite" src="../images/commun/nouveau.svg" alt="+ Nouveau">en haut à gauche de la fenêtre principale.</p>
+         </p>
+	     <p>Nommez le mode d'encaissement, puis sélectionnez une trésorerie existante dans la liste déroulante ou créez-en une nouvelle à la volée.</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/modes-enc2.png" class="contour-img" alt="Modes d'encaissement" data-action="zoom" />
+         </p>
+	     <p>Assurez-vous que la case<img src="../images/commun/check-square.svg" alt="Case à cocher" height="18" class="align-icone icone-marge-gauche icone-marge-droite">est bien cochée à droite du libellé "Passer en comptabilité", afin de générer et de consigner les nouvelles écritures dans la comptabilité.</p>
+      </div>
+      <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step3.svg" alt="3" width="52" />
+      </div>
+	  <div class="process-txt">
+         <span class="titre-advice">Paramétrez le mode d'encaissement</span>
+	     <p>Cochez la case<img src="../images/commun/check-square.svg" alt="Case à cocher" height="18" class="align-icone icone-marge-gauche icone-marge-droite">à droite du libellé "Utiliser les remises en banque" si cette option est envisagée pour déposer les chèques et créditer votre compte bancaire, puis renseignez les éléments comptables requis.</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/modes-enc3.png" class="contour-img" alt="Options remises en banque" data-action="zoom" />
+         </p>
+		 <p>Cochez la case<img src="../images/commun/check-square.svg" alt="Case à cocher" height="18" class="align-icone icone-marge-gauche icone-marge-droite">à droite de l'option "Inclure une commission" quand des frais d'opération CIP sont facturés par la banque lors des paiements par carte bancaire &#40;commission interbancaire de paiement&#41;.</p>
+		 <p class="max-img-process">
+            <img src="../images/chapitre7/modes-enc4.png" class="contour-img" alt="Options des commissions CB" data-action="zoom" />
+         </p>
+		 <p>Cliquez sur <span class="btn-blue">Créer</span> pour valider l'opération.</p>
+      </div>
+	  <h6>Guide de prise en main • Ventes • Réaliser un encaissement</h6>
+      <a class="slice-process" id="nel-encaissement"></a>
+      <h3 align="center" class="texte aerateur procedure">2 – Procédure pour réaliser un encaissement</h3>
+      <p class="texte">
+         Le processus suivant vous guide pour réaliser un encaissement à partir d'une vente.
+      </p>
+      <div class="floating-box process">
+         <img src="../images/commun/step1.svg" alt="1" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Affichez le "Tableau de bord des ventes"</span>
+         <p>
+            Cliquez sur le lien "Ventes" dans le "Menu principal" ou sur le bouton "Ventes" de la page d'accueil&nbsp;:
+         </p>
+         <p align="center"><img src="../images/chapitre7/ventes.svg" alt="Ventes" width="60"></p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/tableau-bord.png" class="contour-img" alt="Tableau de bord des ventes" data-action="zoom" />
+         </p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step2.svg" alt="2" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Affichez les ventes</span>
+         <p>Dans la barre latérale du module, cliquez sur "Ventes" dans la section "Ventes" symbolisée par l'icône d'un histogramme<img src="../images/chapitre7/bar-chart.svg" alt="Caddie" height="20" class="align-icone icone-marge-gauche icone-marge-droite">pour afficher la liste des ventes.</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/vente6.png" class="contour-img" alt="Liste des ventes" data-action="zoom" />
+         </p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step3.svg" alt="3" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Sélectionnez une vente</span>
+         <p>Cliquez sur le numéro d'une vente possédant le statut de "Facture" pour en afficher le détail.</p>
+         <p>Cliquez ensuite sur le bouton <span class="btn-blue">Ajouter&nbsp;un&nbsp;encaissement</span> situé dans la section "Affaire".</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/encaissement1.png" class="contour-img" alt="Détail de la vente" data-action="zoom" />
+         </p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step4.svg" alt="4" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Renseignez l'encaissement</span>
+         <p>Sélectionnez le mode de paiement et la date d'encaissement. Notez que le montant affiché est directement issu du montant de l'affaire mais vous pouvez en saisir un différent dans le cas d'une facture payée partiellement. En option, le responsable désigné pour la remise en banque est soit l'administrateur de la ferme, soit un équipier disposant des droits requis &#40;voir le <a href="../chapitre4/#acces" class="avoid-clicks" target="_self">chapitre 4 - Interface et accès</a>&#41;.</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/encaissement2.png" class="contour-img" alt="Nouvel encaissement" data-action="zoom" />
+         </p>
+         <p>Cliquez sur <span class="btn-blue">Créer</span> pour valider l'opération.</p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step5.svg" alt="5" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Vérifiez la création de l'encaissement</span>
+         <p>Dans la section "Affaire", vérifiez que le montant de l'encaissement a bien été pris en compte. Notez que vous pouvez cumuler plusieurs encaisssements pour une même facture si cela s'avère nécessaire comme par exemple dans le cas d'un règlement échelonné en 3 ou 4 paiements.</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/encaissement3.png" class="contour-img" alt="Détail de la vente" data-action="zoom" />
+         </p>
+      </div>
+	  <h6>Guide de prise en main • Ventes • Remises en banque</h6>
+      <a class="slice-process" id="remises"></a>
+      <h2 class="texte aerateur">i - Enregistrer une remise en banque</h2>
+      <h3 align="center" class="texte aerateur procedure">1 – Procédure pour enregistrer une remise en banque</h3>
+      <p class="texte">
+         Le processus suivant vous guide pour enregistrer une remise en banque à partir d'un ou plusieurs encaissement&#40;s&#41; réalisé&#40;s&#41; par chèque.
+      </p>
+	  <div class="floating-box process">
+         <img src="../images/commun/step1.svg" alt="1" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Prérequis&nbsp;: paramétrage d'un mode d'encaissement</span>
+		 <p>Assurez-vous que la case à cocher<img src="../images/commun/check-square.svg" alt="Case à cocher" height="18" class="align-icone icone-marge-gauche icone-marge-droite">est bien activée à droite du libellé "Utiliser les remises en banque" pour disposer de la fonctionnalité lors de la création de l'opération. Sélectionnez également un compte d'attente et un journal pour définir correctement le mode d'encaissement.</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/remise1.png" class="contour-img" alt="Mode d'encaissement" data-action="zoom" />
+         </p>
+      </div>
+	  <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step2.svg" alt="2" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Accédez aux "Remises en banque"</span>
+         <p>
+            Cliquez sur le lien "Ventes" dans le "Menu principal" ou sur le bouton "Ventes" de la page d'accueil&nbsp;:
+         </p>
+		 <p align="center"><img src="../images/chapitre7/ventes.svg" alt="Ventes" width="60"></p>
+		 <p>Dans la barre latérale du module, cliquez sur "Remises en banque" dans la section "Règlements" symbolisée par l'icône d'une carte bancaire<img src="../images/chapitre7/credit-card.svg" alt="Carte bancaire" height="20" class="align-icone icone-marge-gauche">.</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/remise2.png" class="contour-img" alt="Liste remises en banque" data-action="zoom" />
+         </p>
+		 <p>Si aucun encaissement n'est enregistré dans les affaires sous forme de chèque, vous êtes immédiatemment prévenu&#40;e&#41; qu'aucun règlement n'est à remettre en banque. </p>
+		 <p class="max-img-process">
+            <img src="../images/chapitre7/remise3.png" class="contour-img" alt="Absence encaissement" data-action="zoom" />
+         </p>
+      </div>
+	  <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step3.svg" alt="3" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Créez la remise en banque</span>
+         <p>Cliquez sur le bouton<img class="btn-gris icone-marge-gauche icone-marge-droite" src="../images/commun/nouveau.svg" alt="+ Nouveau">en haut à gauche de la fenêtre principale.</p>
+         <p class="max-img-process">
+            <img src="../images/chapitre7/remise4.png" class="contour-img" alt="Nouvelle remise en banque" data-action="zoom" />
+         </p>
+		 <p>Tous les encaissements par chèques enregistrés dans les affaires sont listés ici.<br />Sélectionnez un "Responsable" et une "Trésorerie" dans les "Informations générales" afin de paramétrer correctement l'opération.</p>
+		 <p class="max-img-process">
+            <img src="../images/chapitre7/remise5.png" class="contour-img" alt="Paramétrage de la remise" data-action="zoom" />
+         </p>
+      </div>
+	  <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step4.svg" alt="4" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Enregistrez la remise en banque</span>
+		 <p>Cochez une ou plusieurs case&#40;s&#41;<img src="../images/commun/check-square.svg" alt="Case à cocher" height="18" class="align-icone icone-marge-gauche icone-marge-droite">à droite dans la colonne "À déposer" pour sélectionner un ou plusieurs encaissement&#40;s&#41; à remettre en banque.</p>
+		 <p class="max-img-process">
+            <img src="../images/chapitre7/remise6.png" class="contour-img" alt="Remises en banque à déposer" data-action="zoom" />
+         </p>
+		 <p class="aerateur-bas">Cliquez sur <span class="btn-blue">Créer</span> pour valider l'opération.</p>
+		 <p>La nouvelle remise en banque est alors automatiquement ajoutée à la liste des fonds déposés…</p>
+		 <p class="max-img-process">
+            <img src="../images/chapitre7/remise7.png" class="contour-img" alt="Liste remises en banque" data-action="zoom" />
+         </p>
+		 <p>…&nbsp;avec un enregistrement des écritures comptables dans le brouillard du journal de banque.</p>
+		 <p class="max-img-process">
+            <img src="../images/chapitre7/remise8.png" class="contour-img" alt="Journal de banque" data-action="zoom" />
+         </p>
+      </div>
+	  <div class="pdf">
+      <p align="right" class="texte aerateur-top aerateur-bas">Passez au <a class="avoid-clicks" href="../chapitre8">chapitre suivant</a> de ce guide.</p>
+	  </div>
+      <div class="navishort aerateur-haut">
+         <div class="divTable">
+            <div class="divTableBody">
+               <div class="divTableRow">
+                  <div class="divTableCellCenter" style="width: auto">&nbsp;</div>
+                  <div class="divTableCellRight" style="width: 150px"><span><a href="../chapitre6" target="_self">ACHATS</a></span></div>
+                  <div class="divTableCellCenter" style="width: 40px"><a href="../chapitre6" target="_self"><img src="../images/commun/arrow-left.svg" width="40" alt="Achats"></a></div>
+                  <div class="divTableCellCenter" style="width: 40px"><a href="../chapitre8" target="_self"><img src="../images/commun/arrow-right.svg" width="40" alt="Stocks, tiers et RH"></a></div>
+                  <div class="divTableCellLeft" style="width: 150px"><span><a href="../chapitre8" target="_self">STOCKS, TIERS ET RH</a></span></div>
+                  <div class="divTableCellCenter" style="width: auto">&nbsp;</div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="footer"><img src="../images/commun/frise.png" alt="Frise" /></div>
+	  <div class="navigation">
+         <div id="breadcrumb">
+            <ul class="breadcrumb">
+               <li>
+                  <a href="../ekyviti">
+                  <i class="fa-solid fa-lg fa-grapes"></i>
+                  <span class="text">&nbsp;Ekyviti</span>
+                  </a>
+               </li>
+			   <li>
+                  <a href="../performance">
+                  <i class="fa-solid fa-lg fa-chart-line-up"></i>
+                  <span class="text">&nbsp;Performance</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="../chapitre10">
+                  <i class="fa-solid fa-lg fa-wand-magic-sparkles"></i>
+                  <span class="text">&nbsp;Outils</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="../chapitre9">
+                  <i class="fa-solid fa-lg fa-farm"></i>
+                  <span class="text">&nbsp;Production</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="../chapitre8">
+                  <i class="fa-solid fa-lg fa-warehouse-full"></i>
+                  <span class="text">&nbsp;Stocks, tiers et RH</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="../chapitre7">
+                  <i class="top-marker"></i><i class="fa-solid fa-lg fa-chart-column"></i>
+                  <span class="text">&nbsp;Ventes</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="../chapitre6">
+                  <i class="fa-solid fa-lg fa-cart-shopping"></i>
+                  <span class="text">&nbsp;Achats</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="../chapitre5">
+                  <i class="fa-solid fa-lg fa-calculator"></i>
+                  <span class="text">&nbsp;Comptabilité</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="../chapitre4">
+                  <i class="fa-solid fa-lg fa-desktop"></i>
+                  <span class="text">&nbsp;Interface et accès</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="../chapitre3">
+                  <i class="fa-solid fa-lg fa-tractor"></i>
+                  <span class="text">&nbsp;Exploitation</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="../chapitre2">
+                  <i class="fas fa-lg fa-wheat"></i>
+                  <span class="text">&nbsp;Parcellaire</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="../chapitre1">
+                  <i class="fa-solid fa-lg fa-flag-checkered"></i>
+                  <span class="text">&nbsp;Introduction</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="../demarrage">
+                  <i class="fa-solid fa-lg fa-house"></i>
+                  </a>
+               </li>
+            </ul>
+         </div>
+         <div id="arrow"><i class="fa-solid fa-lg fa-caret-left"></i></div>
+      </div>
+   </article>
+   <aside></aside>
+</div>
+      <!-- !PAGE CONTENT! -->
+      <script src="/javascripts/iscroll.js"></script>
+      <script src="/javascripts/drawer.js"></script>
+      <script src="/javascripts/popup.js"></script>
+      <script src="/javascripts/breadcrumbs.js"></script>
+      <script src="/javascripts/backtotop.js"></script>
+      <script src="/javascripts/zoom-vanilla.js"></script>
+      <script src="/javascripts/toggle.js"></script>
+      <script>
+         $(document).ready(function() {
+         $('.drawer').drawer();
+         });
+      </script>
+      <script>
+         $(function() {
+          /**
+          * Smooth scrolling to page anchor on click
+          **/
+          $("a[href*='#']:not([href='#'])").click(function() {
+              if (
+                  location.hostname == this.hostname
+                  && this.pathname.replace(/^\//,"") == location.pathname.replace(/^\//,"")
+              ) {
+                  var anchor = $(this.hash);
+                  anchor = anchor.length ? anchor : $("[name=" + this.hash.slice(1) +"]");
+                  if ( anchor.length ) {
+                      $("html, body").animate( { scrollTop: anchor.offset().top }, 500);
+                  }
+                  }
+              });
+           });
+      </script>
+	  <!--<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>-->
+	  <!--<script src="/javascripts/docsearch.js"></script>-->
+	  <!--<script>docsearch({container: '#docsearch',appId: 'JCIFZS1SXO',apiKey:'d7102eaca1a7f74822fa7677a517411d',indexName:'ekylibre'});</script>-->
+	  <script>
+  	  $(window).load(function() {
+	  $('#loading').hide();
+	  $('html').css({'overflow-y': 'visible'});
+	  });
+	  </script>
+   </body>
+   <script>
+      $(function() {
+      $(".content").click(function() {
+        return false;
+      });
+      });
+   </script>
+   <script language="JavaScript">
+      function ChangeUrl(formulaire)
+      {
+      if (formulaire.ListeUrl.selectedIndex != 0)
+        {
+        var url ;
+        url = formulaire.ListeUrl.options[formulaire.ListeUrl.selectedIndex].value;
+        window.open(url,'_self');
+        $('#fade, .popup_block').fadeOut();
+      $('#fade, a.close').remove();
+      $(formulaire.ListeUrl).val("");
+      $('html').css({'overflow-y': 'visible'});
+      }
+      }
+   </script>
+</html>

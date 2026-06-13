@@ -1,0 +1,2275 @@
+<!doctype html>
+<html lang="fr">
+   <head>
+      <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+      <meta name="format-detection" content="telephone=no">
+      <meta property="og:url" content="https://doc.ekylibre.com/" />
+      <meta property="og:title" content="Guide de prise en main Ekylibre" />
+      <meta property="og:description" content="Ce guide a pour but d'aider l'utilisateur à configurer correctement les applications développées par Ekylibre pour gérer son exploitation agricole ou viticole. Il rassemble les informations et les procédures essentielles à connaître pour maîtriser les fonctionnalités disponibles dans les différents modules de la solution." />
+      <meta property="og:image" content="https://doc.ekylibre.com/fr/images/commun/ekylibre.png" />
+      <title>Ekylibre : guide de prise en main</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="preload" href="../images/commun/brand.svg" as="image" type="image/svg+xml"/>
+      <link rel="shortcut icon" href="../images/commun/favicon.ico" />
+      <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400i,700,700i&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="/stylesheets/w3school.css" />
+      <link rel="stylesheet" href="/stylesheets/quickstart.css" />
+      <link rel="stylesheet" href="/stylesheets/ekylibre.css" />
+      <link rel="stylesheet" href="/stylesheets/drawer.css" />
+      <link rel="stylesheet" href="/stylesheets/jquery.qtip.css" />
+      <link rel="stylesheet" href="/stylesheets/chronoline.css" />
+      <link rel="stylesheet" href="/stylesheets/fontawesome.css" />
+	  <!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3" />-->
+	  <link rel="stylesheet" href="/stylesheets/docsearch.css" />
+      <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', 'UA-58304754-1', 'auto');ga('send', 'pageview');</script>
+      <!-- Start of ekylibrehelp Zendesk Widget script -->
+      <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=8e03812d-d038-4a8c-8412-d85571f9fdbe"> </script>
+      <!-- End of ekylibrehelp Zendesk Widget script -->
+      <script src="/javascripts/jquery.js"></script>
+      <script src="/javascripts/jquery.qtip.js"></script>
+      <script src="/javascripts/chronoline.js"></script>
+      <script src="/javascripts/raphael-min.js"></script>
+	  <script src="/javascripts/justgage.js"></script>
+      <style>
+         .nav-lang-switcher { display: inline-block; margin-right: 1rem; font-weight: 700; letter-spacing: 0.05em; }
+         .nav-lang-switcher a, .nav-lang-switcher span { color: inherit; padding: 0 4px; text-decoration: none; }
+         .nav-lang-switcher a { opacity: 0.6; }
+         .nav-lang-switcher a:hover, .nav-lang-switcher a:focus { opacity: 1; text-decoration: underline; }
+         .nav-lang-switcher span[aria-current] { opacity: 1; }
+         .nav-lang-switcher .lang-sep { opacity: 0.4; }
+      </style>
+   </head>
+   <body class="drawer drawer--top">
+      <a href="javascript:void(0);" id="scroll" title="Scroll to Top" style="display: none;">Top<span></span></a>
+      <div class="conteneur">
+         <div class="ekylibre affichage-print"><img src="../images/commun/brand.svg" alt="Ekylibre" class="logo-entete"></div>
+         <header role="banner">
+            <button type="button" class="drawer-toggle drawer-hamburger">
+            <span class="sr-only">Menu</span>
+            <span class="drawer-hamburger-icon"></span>
+            </button>
+            <div id="shadow"></div>
+            <nav class="drawer-nav" role="navigation">
+               <ul class="drawer-menu columns">
+                  <li><a class="drawer-menu-item" href="../chapitre1"><span data-descr="[Prérequis - Tâches visées - Abonnement - Démarrage]">Introduction</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i></a></li>
+                  <li><a class="drawer-menu-item" href="../chapitre2"><span data-descr="[Récupération et import de la déclaration TelePAC - Utilisation du RPG]">Parcellaire</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i><br></a></li>
+                  <li><a class="drawer-menu-item" href="../chapitre3"><span data-descr="[Activités - Zones de stockage - Équipements - Accès initial]">Exploitation</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i></a></li>
+                  <li><a class="drawer-menu-item" href="../chapitre4"><span data-descr="[Espace de travail - Personnalisation - Utilisateurs et droits - Duke]">Interface et accès</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i></a></li>
+                  <li><a class="drawer-menu-item" href="../chapitre5"><span data-descr="[Journaux - Exercices - Synthèses - Immobilisations - TVA - Trésorerie]">Comptabilité</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i></a></li>
+                  <li><a class="drawer-menu-item" href="../chapitre6"><span data-descr="[Commandes - Réceptions - Facturation - Décaissements]">Achats</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i></a></li>
+                  <li><a class="drawer-menu-item" href="../chapitre7"><span data-descr="[Devis - Expéditions - Livraisons - Encaissements - Remises en banque]">Ventes</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i></a></li>
+                  <li><a class="drawer-menu-item" href="../chapitre8"><span data-descr="[Articles - Inventaires - Équipements - Contacts - Équipiers - Salaires]">Stocks, tiers et RH</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i></a></li>
+                  <li><a class="drawer-menu-item" href="../chapitre9"><span data-descr="[Activités - Assolement - Interventions - Calcul IFT - Planification - Traçabilité]">Production</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i></a></li>
+                  <li><a class="drawer-menu-item" href="../chapitre10"><span data-descr="[Imports de données - Documents - Extractions - Connexions partenaires]">Outils</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i></a></li>
+				  <li><a class="drawer-menu-item" href="../performance"><span data-descr="[Budgets - Coûts - Marges - Seuils de commercialisation - Itinéraires culturaux]">Performance</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i></a></li>
+				  <li><a class="drawer-menu-item" href="../ekyviti"><span data-descr="[Import CVI - Conversion parcellaire - Vendange - Connexion Baqio]">Ekyviti</span>&nbsp;<i class="far fa-angle-right angle" aria-hidden="true"></i></a></li>
+               </ul>
+            </nav>
+         </header>
+         <div class="main-menu drawer-toggle">
+            <p>Menu principal</p>
+         </div>
+         <div class="affichage-large">
+            <div class="top-background w3-top">
+               <div class="divTableCellMenu w3-right w3-text-white" style="width:364px">
+                  <span class="nav-lang-switcher" role="navigation" aria-label="Langue">
+                     <a href="/" hreflang="en" lang="en">EN</a><span class="lang-sep" aria-hidden="true">|</span><span aria-current="page" lang="fr">FR</span>
+                  </span>
+                  <a href="/">Accueil</a>
+               </div>
+            </div>
+         </div>
+         <div class="affichage-mobile">
+            <div class="top-background w3-top">
+               <div class="divTableCellMenu w3-right w3-text-white" style="width:240px">
+                  <span class="nav-lang-switcher" role="navigation" aria-label="Langue">
+                     <a href="/" hreflang="en" lang="en">EN</a><span class="lang-sep" aria-hidden="true">|</span><span aria-current="page" lang="fr">FR</span>
+                  </span>
+                  <a href="/">Accueil</a>
+               </div>
+            </div>
+         </div>
+         <div class="affichage-print">
+            <div class="top-background w3-top">
+               <div class="w3-right w3-text-white" style="width:250px">GUIDE DE PRISE EN MAIN</div>
+            </div>
+         </div>
+      </div>
+      <!-- !PAGE CONTENT! -->
+	  <div id="loading">
+		<p><i class="fa-duotone fa-spinner-third fa-spin" style="font-size: 100px; top: 156px; color: #fff; z-index: 1000;"></i></p>
+	  </div>
+      <div class="tooltip">
+         <a style="display:block" href="../pdf/Ekylibre-Guide.pdf" target="_blank">
+            <div class="btn_pdf"><span class="tooltiptext2 tooltip-top">Guide format PDF</span></div>
+         </a>
+      </div>
+	  <!--
+      <div class="tooltip">
+         <a style="display:block" href="../notes-version" target="_self">
+            <div class="btn_notes-version"><span class="tooltiptext2 tooltip-top">Notes de version</span></div>
+         </a>
+      </div>
+	  -->
+      <div class="w3-content page-content scroll-spy-heading-breadcrumbs">
+   <article class="post DocSearch-content">
+      <div id="navigation">
+         <div class="divTable">
+            <div class="divTableBody">
+               <div class="divTableRow">
+                  <div class="divTableCellNavi1"><img src="../images/commun/angle-left.svg" alt="Précédent" height="13" class="align-navi icone-marge-droite"><a href="../chapitre10" title="Outils" target="_self">Outils</a></div>
+                  <div class="divTableCellNavi2">Guide de prise en main • Performance</div>
+                  <div class="divTableCellNavi3"><a href="../ekyviti" title="Parcellaire" target="_self">Ekyviti</a><img src="../images/commun/angle-right.svg" alt="Suivant" height="13" class="align-navi icone-marge-gauche"></div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="image-large">
+         <img class="chapitre" src="../images/performance/performance.png" alt="Introduction"/>
+      </div>
+      <div class="image-carre">
+         <img class="chapitre" src="../images/performance/performance-carre.png" alt="Introduction"/>
+      </div>
+	  <div id="docsearch" class="title-chapter pdf"></div>
+      <h1 align="center" class="majuscule aerateur">11 - Performance</h1>
+      <div class="sommaire">
+         <div class="gris">
+            <div class="contenu">
+               <ul id="toggle">
+                  <li>
+                     <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-all">1</div>
+                           Introduction
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: none;">
+                        <div class="bloc">
+                           <li><a href="#prerequis" target="_self">Prérequis pour utiliser l'application</a></li>
+                           <li><a href="#parcours" target="_self">Parcours de configuration</a></li>
+                           <li><a href="#quefaire" target="_self">Que faire avec <strong>Eky</strong>agri et <strong>Eky</strong>viti&nbsp;?</a></li>
+                           <li><a href="#preparation" target="_self">Préparation des données</a></li>
+                           <li><a href="#inscription" target="_self">Sélection et souscription à une offre</a></li>
+                           <li><a href="#demarrage" target="_self">Arrivée dans l'assistant de démarrage</a></li>
+                           <li><a href="#declaration" target="_self">Déclaration de l'exploitation</a></li>
+                        </div>
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-all">2</div>
+                           Parcellaire
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: none;">
+                        <div class="bloc">
+                           <li><a href="../chapitre2#gestion" target="_self">Gestion des cultures</a></li>
+                           <li><a href="../chapitre2#zones" target="_self">Création des zones cultivables</a></li>
+                           <li><a href="../chapitre2#declaration" target="_self">Récupération et utilisation des données TelePAC</a></li>
+						   <li><a href="../chapitre2#rpg" target="_self">Utilisation du registre parcellaire graphique</a></li>
+						   <li><a href="../chapitre2#no-pac" target="_self">Création des zones cultivables non déclarées à la PAC</a></li>
+                        </div>
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-all">3</div>
+                           Exploitation
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: none;">
+                        <div class="bloc">
+                           <li><a href="../chapitre3#activites" target="_self">Activités de l'exploitation</a></li>
+                           <li><a href="../chapitre3#zones" target="_self">Création des zones cultivables &#40;sans TelePAC&#41;</a></li>
+                           <li><a href="../chapitre3#batiments" target="_self">Création des bâtiments et des zones de stockage</a></li>
+                           <li><a href="../chapitre3#decoupage" target="_self">Découpage des bâtiments et des zones de stockage</a></li>
+                           <li><a href="../chapitre3#equipements" target="_self">Création des équipements</a></li>
+                           <li><a href="../chapitre3#validation" target="_self">Confirmation de la configuration de démarrage</a></li>
+						   <li><a href="../chapitre3#password" target="_self">Création du mot de passe initial</a></li>
+                        </div>
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-all">4</div>
+                           Interface et accès
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: none;">
+                        <div class="bloc">
+                           <li><a href="../chapitre4#espace" target="_self">Présentation de l'espace de travail</a></li>
+                           <li><a href="../chapitre4#modules" target="_self">Navigation et accès aux différents modules</a></li>
+						   <li><a href="../chapitre4#compte" target="_self">Gestion du compte administrateur</a></li>
+                           <li><a href="../chapitre4#perso" target="_self">Personnalisation des tableaux de bord</a></li>
+						   <li><a href="../chapitre4#etiquettes" target="_self">Paramétrage des étiquettes</a></li>
+                           <li><a href="../chapitre4#champs" target="_self">Création de champs personnalisés</a></li>
+						   <li><a href="../chapitre4#formats" target="_self">Formats de nommage</a></li>
+						   <li><a href="../chapitre4#sequences" target="_self">Configuration des séquences</a></li>
+						   <li><a href="../chapitre4#acces" target="_self">Accès et rôles d'utilisateur</a></li>
+						   <li><a href="../chapitre4#duke" target="_self">Duke, l'assistant vocal intelligent</a></li>
+                        </div>
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-gestion">5</div>
+                           Comptabilité
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: none;">
+                        <div class="bloc">
+                           <li><a href="../chapitre5#introduction" target="_self">Introduction</a></li>
+                           <li><a href="../chapitre5#societe" target="_self">Paramétrage</a></li>
+                           <li><a href="../chapitre5#journaux" target="_self">Journaux</a></li>
+                           <li><a href="../chapitre5#exercice" target="_self">Exercices comptables</a></li>
+                           <li><a href="../chapitre5#plan" target="_self">Plan de comptes</a></li>
+                           <li><a href="../chapitre5#tva" target="_self">Taux et déclaration de TVA</a></li>
+                           <li><a href="../chapitre5#tresorerie" target="_self">Trésorerie</a></li>
+                           <li><a href="../chapitre5#immobilisations" target="_self">Immobilisations</a></li>
+                           <li><a href="../chapitre5#echanges" target="_self">Échanges comptables</a></li>
+                           <li><a href="../chapitre5#balance" target="_self">Balance</a></li>
+						   <li><a href="../chapitre5#ecritures" target="_self">Écritures</a></li>
+                           <li><a href="../chapitre5#grand-livre" target="_self">Grand-livre</a></li>
+                        </div>
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-gestion">6</div>
+                           Achats
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: none;">
+                        <div class="bloc">
+                           <li><a href="../chapitre6#societe" target="_self">Paramétrage</a></li>
+                           <li><a href="../chapitre6#types" target="_self">Types d'achat</a></li>
+                           <li><a href="../chapitre6#achats" target="_self">Enregistrement des commandes</a></li>
+                           <li><a href="../chapitre6#reception" target="_self">Réception des commandes</a></li>
+                           <li><a href="../chapitre6#facturation" target="_self">Facturation des achats</a></li>
+                           <li><a href="../chapitre6#decaissements" target="_self">Décaissements et lots de décaissements</a></li>
+						   <li><a href="../chapitre6#justif-achats" target="_self">Justificatifs d'achats</a></li>
+                           <li><a href="../chapitre6#stockage" target="_self">Zones de stockage</a></li>
+                        </div>
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-gestion">7</div>
+                           Ventes
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: none;">
+                        <div class="bloc">
+                           <li><a href="../chapitre7#societe" target="_self">Paramétrage</a></li>
+                           <li><a href="../chapitre7#types" target="_self">Types de vente</a></li>
+                           <li><a href="../chapitre7#ventes" target="_self">Enregistrer une vente</a></li>
+                           <li><a href="../chapitre7#factures" target="_self">Facturer une vente</a></li>
+                           <li><a href="../chapitre7#expeditions" target="_self">Expédier une vente</a></li>
+                           <li><a href="../chapitre7#avoirs" target="_self">Réaliser un avoir</a></li>
+                           <li><a href="../chapitre7#livraisons" target="_self">Enregistrer une livraison</a></li>
+                           <li><a href="../chapitre7#encaissements" target="_self">Enregistrer un encaissement</a></li>
+                           <li><a href="../chapitre7#remises" target="_self">Remises en banque</a></li>
+                        </div>
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-all">8</div>
+                           Stocks, tiers et RH
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: none;">
+                        <div class="bloc">
+                           <li><a href="../chapitre8#categories" target="_self">Catégories, profils et articles</a></li>
+						   <li><a href="../chapitre8#conditionnement" target="_self">Unités et conditionnements</a></li>
+                           <li><a href="../chapitre8#stocks" target="_self">Gestion des stocks et création de matières</a></li>
+                           <li><a href="../chapitre8#expeditions" target="_self">Expéditions, livraisons et facturation</a></li>
+                           <li><a href="../chapitre8#inventaires" target="_self">Inventaire des stocks</a></li>
+                           <li><a href="../chapitre8#equipements" target="_self">Gestion des équipements</a></li>
+                           <li><a href="../chapitre8#tiers" target="_self">Gestion des tiers et des équipiers</a></li>
+						   <li><a href="../chapitre8#salaires" target="_self">Gestion des salaires et des contrats de travail</a></li>
+                        </div>
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-all">9</div>
+                           Production
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: none;">
+                        <div class="bloc">
+                           <li><a href="../chapitre9#activites" target="_self">Activités agricoles</a></li>
+                           <li><a href="../chapitre9#productions" target="_self">Création des productions dans une campagne</a></li>
+                           <li><a href="../chapitre9#interventions" target="_self">Enregistrement d'interventions</a></li>
+                           <li><a href="../chapitre9#planification" target="_self">Planification d'interventions</a></li>
+						   <li><a href="../chapitre9#zero" target="_self">Utilisation de l'application mobile</a></li>
+                           <li><a href="../chapitre9#cahier" target="_self">Impression des documents réglementaires</a></li>
+						   <li><a href="../chapitre9#suivi" target="_self">Indicateurs et suivi des activités</a></li>
+						   <li><a href="../chapitre9#couts-prod" target="_self">Coûts de production détaillés</a></li>
+                        </div>
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-all">10</div>
+                           Outils
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: none;">
+                        <div class="bloc marge-basse">
+                           <li><a href="../chapitre10#fichiers" target="_self">Importation de fichiers CSV</a></li>
+                           <li><a href="../chapitre10#imports" target="_self">Import de données dans <strong>Eky</strong>agri | <strong>Eky</strong>viti</a></li>
+                           <li><a href="../chapitre10#extractions" target="_self">Extraction de données au format CSV</a></li>
+						   <li><a href="../chapitre10#ged" target="_self">Gestion des documents archivés</a></li>
+						   <li><a href="../chapitre10#connexions" target="_self">Connexions partenaires</a></li>
+                        </div>
+                     </ul>
+                  </li>
+				  <li>
+				  <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-perf">11</div>
+                           Performance
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-up"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: block;">
+                        <div class="bloc">
+						   <li><a href="#config" target="_self">Instructions de configuration</a></li>
+						   <li><a href="#activites" target="_self">Paramétrage des activités</a></li>
+						   <li><a href="#budgets" target="_self">Budgets prévisionnels</a></li>
+                           <li><a href="#couts-prod" target="_self">Coûts de production</a></li>
+						   <li><a href="#marges" target="_self">Marges</a></li>
+						   <li><a href="#seuils" target="_self">Seuils de commercialisation</a></li>
+						   <li><a href="#modeles" target="_self">Modèles d'interventions</a></li>
+						   <li><a href="#itineraires" target="_self">Itinéraires culturaux</a></li>
+                           <li><a href="#plan-charges" target="_self">Plan de charges</a></li>
+                           <li><a href="#scenarios" target="_self">Élaboration de scénarios</a></li>
+                        </div>
+                     </ul>
+                  </li>
+                  <li>
+                     <div class="clear"></div>
+                     <div>
+                        <h5>
+                           <div class="rond-viti">12</div>
+                           Ekyviti
+                        </h5>
+                        <span class="the-btn"><i class="fa-solid fa-angle-down"></i></span>
+                        <div class="clear"></div>
+                     </div>
+                     <ul style="display: none;">
+                        <div class="bloc">
+                           <li><a href="../ekyviti#cvi" target="_self">Préparation et import des données cadastrales du CVI</a></li>
+                           <li><a href="../ekyviti#conversion" target="_self">Conversion du parcellaire cadastral</a></li>
+                           <li><a href="../ekyviti#zones" target="_self">Paramétrage et modification des zones cultivables</a></li>
+                           <li><a href="../ekyviti#parcelles" target="_self">Préparation et conversion du parcellaire cultural</a></li>
+						   <li><a href="../ekyviti#no-cvi" target="_self">Création des cultures sans CVI</a></li>
+                           <li><a href="../ekyviti#indicateurs" target="_self">Consultation et actualisation des indicateurs</a></li>
+						   <li><a href="../ekyviti#vendange" target="_self">Réception de vendange avec Duke</a></li>
+						   <li><a href="../ekyviti#baqio" target="_self">Connexion partenaire avec la solution Baqio</a></li>
+                        </div>
+                     </ul>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+      <h2 class="texte aerateur">Glossaire du chapitre</h2>
+      <div class="divTableGlossaire marge">
+         <div class="divTableBody">
+			<div class="divTableRow">
+               <div class="divTableCellGlossaire1" style="width: auto">
+                  Coûts de production
+               </div>
+               <div class="divTableCellGlossaire2" style="width: 100%">ensemble des charges directes opérationnelles et des charges indirectes ventilées selon les activités de l'exploitation</div>
+            </div>
+			<div class="divTableRow">
+               <div class="divTableCellGlossaire1">
+                  Fenêtre modale
+               </div>
+               <div class="divTableCellGlossaire2" style="width: 100%">
+                  fenêtre qui prend le contrôle total du clavier et de l'écran. Elle est en général associée à une question ou à une sélection à laquelle il est impératif que l'utilisateur réponde avant de poursuivre, ou de modifier quoi que ce soit
+               </div>
+            </div>
+            <div class="divTableRow">
+               <div class="divTableCellGlossaire1" style="width: auto">
+                  Itinéraire cultural
+               </div>
+               <div class="divTableCellGlossaire2" style="width: 100%">enchaînement logique et ordonné d'interventions techniques permettant de tirer le maximum des potentialités du milieu vis-à-vis d'une production donnée</div>
+            </div>
+			<div class="divTableRow">
+               <div class="divTableCellGlossaire1">
+                  Marge brute
+               </div>
+               <div class="divTableCellGlossaire2">
+                  elle est calculée pour chaque activité selon les fluctuations de rendement et de prix de vente auxquelles sont soustraites les charges proportionnelles directes et les charges fixes directes
+               </div>
+            </div>
+			<div class="divTableRow">
+               <div class="divTableCellGlossaire1">
+                  MATIF
+               </div>
+               <div class="divTableCellGlossaire2">
+                  marché financier &#40;marché à terme international de France&#41; destiné à garantir aux investisseurs la fluctuation des cours sur certains produits, ainsi que la variation des taux d'intérêt et du prix des matières premières
+               </div>
+            </div>
+            <div class="divTableRow">
+               <div class="divTableCellGlossaire1">
+                  Seuil de commercialisation
+               </div>
+               <div class="divTableCellGlossaire2">
+                  il s'agit du prix de vente en-dessous duquel l'exploitant ne peut pas atteindre ses objectifs en terme de rémunération et de réserves de trésorerie à constituer
+               </div>
+            </div>
+         </div>
+      </div>
+	  <div class="saut-page"></div>
+	  <!--<p class="texte aerateur" align="center"><img src="../images/performance/construction.png" width="100" alt="Construction"/></p>-->
+	  <div class="warn-fond aerateur-haut aerateur-bas">
+         <div class="floating-box-warn">
+            <img src="../images/performance/logo-fcgaa.svg" width="92" alt="FCGAA"/>
+         </div>
+         <div class="info-txt">
+            <span class="titre-advice">Chapitre en construction<br /></span>
+            <p class="texte-advice">Ce chapitre de la documentation est en cours de rédaction et s'adresse plus particulièrement aux abonné&#40;e&#41;s <strong>Eky</strong>agri | <strong>Eky</strong>viti Performance, deux offres proposées en partenariat avec la <a href="https://www.fcgaa.fr/" title="FCGAA" target="_blank">FCGAA</a>. Il sera progressivement enrichi avec les développements en cours et la mise à disposition de nouvelles fonctionnalités.</p>
+         </div>
+      </div>
+	  <h6>Guide de prise en main • Performance • Instructions de configuration</h6>
+      <a class="slice-process" id="config"></a>
+	  <h2 class="texte aerateur">a - Instructions de configuration</h2>
+	  <p class="texte">Dans l'objectif de réaliser avec justesse le paramétrage initial des fonctionnalités proposées dans les offres <strong>Eky</strong>agri et <strong>Eky</strong>viti Performance, il convient de respecter  l'ordre des procédures abordées dans ce chapitre&nbsp;:</p>
+	  <p class="texte"><strong>1</strong> - Configurez vos activités administratives, de maintenance, de production &#40;végétales, animales, viticoles - avec un paramétrage approprié des itinéraires culturaux&#41;, de transformation, de prestation de service et de vinification&nbsp;;</p>
+	  <p class="texte"><strong>2</strong> - Pour les productions végétales ou viticoles, procédez à l'assolement des zones cultivables afin de définir correctement la surface totale des parcelles prises en compte par le calcul du budget prévisionnel des activités&nbsp;;</p>
+	  <p class="texte"><strong>3</strong> - Générez et ajustez le budget prévisionnel de chaque activité ouverte durant la campagne en cours, en fonction des dépenses, des recettes et des pratiques culturales propres à votre exploitation ou aux systèmes de production&nbsp;;</p>
+	  <p class="texte"><strong>4</strong> - Visualisez les indicateurs financiers et affectez des écritures comptables aux activités de votre choix. Simulez une estimation dynamique des seuils de commercialisation en fonction de vos charges et des prix du marché.</p>
+	  <div class="affichage-large"></div>
+      <div class="affichage-mobile">
+         <p align="center">
+            <img src="../images/commun/scroll.svg" alt="Scroll" height="40" class="">
+            <br />
+            Glissez pour parcourir le schéma
+         </p>
+      </div>
+      <div class="scroll marge">
+         <div class="tableau">
+            <p align="center" class="aerateur-haut"><img src="../images/performance/schema-performance.png" class="contour-img" alt="Schéma fonctionnement" data-action="zoom" /></p>
+         </div>
+      </div>
+	  <p align="center" class="texte legende">Exemple de gestion des activités et des budgets dans <strong>Eky</strong>agri</p>
+	  <h6>Guide de prise en main • Performance • Paramétrage des activités</h6>
+      <a class="slice-process" id="activites"></a>
+	  <h2 class="texte aerateur">b - Paramétrage des activités</h2>
+	  <h3 align="center" class="texte aerateur procedure">A - Introduction à la notion de centre analytique</h3>
+      <p class="texte">En complément des explications délivrées dans la section <a href="../chapitre9#nelle-activite" target="_self" class="avoid-clicks">&#171;&nbsp;Procédure pour créer de nouvelles activités&nbsp;&#187;</a> du chapitre "Production", les offres <strong>Eky</strong>agri et <strong>Eky</strong>viti Performance disposent d'un algorythme avancé et innovant pour réaliser le calcul, la répartition et l'affectation des recettes et des dépenses aux budgets des différentes activités.</p>
+	  <p class="texte">Dans ces deux offres, on distingue les "Activités de production", également dénommées "Activités principales", des "Activités de structure ou de support", appelées "Activités auxiliaires" dans l'interface de l'application.</p>
+	  <div class="affichage-mobile">
+         <p align="center">
+            <img src="../images/commun/scroll.svg" alt="Scroll" height="40" class="">
+            <br />
+            Glissez pour visualiser l'illustration
+         </p>
+      </div>
+      <div class="scroll marge">
+         <div class="tableau">
+            <p align="center" class="aerateur-haut"><img src="../images/performance/schema-auxiliaires.png" class="contour-img" alt="Schéma activités auxiliaires" data-action="zoom" /></p>
+         </div>
+      </div>
+	  <p align="center" class="texte legende">Logique globale d'affectation des coûts des activités auxiliaires et des charges indirectes</p>
+	  <p class="texte">Les "Activités auxiliaires" doivent être créées et configurées correctement pour répartir les différentes charges fixes de l'exploitation, les frais de maintenance des équipements et les actions commerciales &#40;ventes&#41;.</p>
+	  <p class="texte">Paramétrez les <strong>options analytiques</strong> des <a class="avoid-clicks" href="../chapitre5/#immobilisations" target="_self">immobilisations</a> et des <a class="avoid-clicks" href="../chapitre5/#emprunts" target="_self">emprunts</a> en cours, ainsi que la clé de répartition de chaque <a class="avoid-clicks" href="../chapitre8/#contrats" target="_self">contrat de travail</a> pour la distribution ciblée des salaires aux activités.</p>
+	  <div class="affichage-mobile">
+         <p align="center">
+            <img src="../images/commun/scroll.svg" alt="Scroll" height="40" class="">
+            <br />
+            Glissez pour visualiser l'illustration
+         </p>
+      </div>
+      <div class="scroll marge">
+         <div class="tableau">
+            <p align="center" class="aerateur-haut"><img src="../images/performance/schema-principales.png" class="contour-img" alt="Schéma activités principales" data-action="zoom" /></p>
+         </div>
+      </div>
+	  <p align="center" class="texte legende">Logique globale de calcul du budget prévisionnel et des indicateurs financiers clés</p>
+	  <p class="texte">Le calcul des coûts et des marges est réalisé par la <strong>méthode ABC</strong> &#40;Activity-Based Costing&#41;. Basée sur un objectif analytique des performances, elle permet de piloter les coûts d'une exploitation par activité et de faire une analyse plus fine que le simple calcul des coûts de revient. Dans la pratique, elle passe par un fin découpage du processus de calcul et s'attache à définir du mieux possible la provenance des coûts afin d'évaluer la performance économique réalisée pour chacune des activités. Avec ce procédé, les données obtenues deviennent un véritable instrument d'aide à la prise de décision.</p>
+	  <h6>Guide de prise en main • Performance • Activités auxiliaires</h6>
+      <a class="slice-process" id="auxiliaires"></a>
+	  <h3 align="center" class="texte aerateur procedure">B - Paramétrage des activités auxiliaires</h3>
+	  <p class="texte">Le processus suivant vous guide pour créer une nouvelle activité auxiliaire, complémentaire des activités principales de l'exploitation.</p>
+      <div class="floating-box process">
+         <img src="../images/commun/step1.svg" alt="1" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Accédez aux activités</span>
+		 <p>Cliquez sur le lien "Production" dans le "Menu principal" ou sur le bouton "Production" de la page d'accueil&nbsp;:</p>
+         <p align="center"><img src="../images/performance/production.svg" alt="Production" width="60"></p>
+         <p>Puis, dans la barre latérale du module "Production", cliquez sur "Activités" dans la section "Production" symbolisée par l'icône d'une ferme<img src="../images/performance/farm.svg" alt="Ferme" height="20" class="align-icone icone-marge-gauche">.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/activite-aux1.png" class="contour-img" alt="Liste des activités" data-action="zoom" />
+         </p>
+		 <p>Toutes les activités principales &#40;végétale, viticoles, animales&#41; déjà ouvertes pour une campagne donnée sont listées ici.</p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step2.svg" alt="2" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Créez une nouvelle activité</span>
+		 <p>Cliquez sur le bouton "Ouvrir", puis sélectionnez "Nouvelle activité" dans la liste déroulante.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/activite-aux2.png" class="contour-img" alt="Nouvelle activité" data-action="zoom" />
+         </p>
+      </div>
+	  <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step3.svg" alt="3" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Choisissez une famille d'activité</span>
+		 <p>Sélectionnez l'activité "Adminitratif" dans la liste déroulante "Famille".</p>
+		 <p class="max-img-process">
+            <img src="../images/performance/activite-aux3.png" class="contour-img" alt="Sélection famille d'activité" data-action="zoom" />
+         </p>
+		 <p class="max-img-process">
+            <img src="../images/performance/activite-aux4.png" class="contour-img" alt="Validation de la famille" data-action="zoom" />
+         </p>
+         <p>Cliquez sur <span class="btn-blue">Valider</span> pour valider l'opération.</p>
+      </div>
+	  <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step4.svg" alt="4" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Renseignez la nouvelle activité auxiliaire</span>
+		 <p>Nommez la nouvelle activité, puis définissez le "Type de centre analytique" approprié en vérifiant que le bouton radio<img src="../images/commun/radio.svg" alt="Bouton radio" height="20" class="align-icone icone-marge-gauche icone-marge-droite">est bien activé à gauche du libellé "Auxiliaire".</p>
+		 <p class="max-img-process">
+            <img src="../images/performance/activite-aux5.png" class="contour-img" alt="Sélection famille d'activité" data-action="zoom" />
+         </p>
+      </div>
+	  <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step5.svg" alt="5" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Paramétrez la clé de répartition analytique</span>
+		 <p>Sélectionnez la "Clé de répartition analytique" appropriée en activant le bouton radio<img src="../images/commun/radio.svg" alt="Bouton radio" height="20" class="align-icone icone-marge-gauche icone-marge-droite">à gauche du mode de calcul à appliquer.</p>
+		 <p><strong>3 méthodes de répartition sont à votre disposition.</strong></p>
+		 <p>1 - Calculée au prorata de la <strong>marge brute</strong> générée par chaque activité durant une campagne&nbsp;:</p>
+		 <p class="max-img-process">
+            <img src="../images/performance/activite-aux6.png" class="contour-img" alt="Sélection marge brute" data-action="zoom" />
+         </p>
+		 <p>2 - Calculée selon un <strong>pourcentage</strong> affecté à une ou plusieurs activités de votre choix&nbsp;:</p>
+		 <p class="max-img-process">
+            <img src="../images/performance/activite-aux7.png" class="contour-img" alt="Sélection répartition par pourcentage" data-action="zoom" />
+         </p>
+		 <p>Cliquez sur "<span style="color:#487bd4">Ajouter une répartition</span>" pour sélectionner une activité parmi celles qui sont disponibles et saisissez un pourcentage d'affectation.</p>
+		 <p class="max-img-process">
+            <img src="../images/performance/activite-aux8.png" class="contour-img" alt="Sélection répartition par pourcentage" data-action="zoom" />
+         </p>
+		 <p>Répétez l'opération pour ajouter successivement toutes les activités concernées par le paramétrage de cette distribution. Cliquez sur la croix<img src="../images/commun/times-blue.svg" alt="Suppression" height="20" class="align-icone icone-marge-gauche icone-marge-droite">à droite pour supprimer une activité de la répartition.</p>
+		 <p>Notez que la valeur des pourcentages est automatiquement rectifiée après validation si la somme totale de la répartition n'est pas strictement égale à 100&nbsp;%.</p>
+		 <p class="max-img-process">
+            <img src="../images/performance/activite-aux9.png" class="contour-img" alt="Sélection répartition par pourcentage" data-action="zoom" />
+         </p>
+		 <p>3 - Calculée au prorata des <strong>temps de travail des équipements</strong> utilisés durant une campagne&nbsp;:</p>
+		 <p class="max-img-process">
+            <img src="../images/performance/activite-aux10.png" class="contour-img" alt="Sélection temps de travail" data-action="zoom" />
+         </p>
+         <p>Cliquez sur <span class="btn-blue">Créer</span> pour valider l'opération.</p>
+      </div>
+	  <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step6.svg" alt="6" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Affichez les activités</span>
+		 <p>La nouvelle activité "Exploitation" est désormais disponible et un budget par défaut et personnalisable peut maintenant lui être affecté.</p>
+		 <p class="max-img-process">
+            <img src="../images/performance/activite-aux11.png" class="contour-img" alt="Liste des activités" data-action="zoom" />
+         </p>
+	  </div>
+	  <h6>Guide de prise en main • Performance • Activités principales</h6>
+      <a class="slice-process" id="principales"></a>
+	  <h3 align="center" class="texte aerateur procedure">C - Paramétrage des activités principales</h3>
+	  <p class="texte">En complément des explications délivrées dans la section <a href="../chapitre9#nelle-activite" target="_self" class="avoid-clicks">&#171;&nbsp;Procédure pour créer de nouvelles activités&nbsp;&#187;</a> du chapitre "Production", les offres <strong>Eky</strong>agri et <strong>Eky</strong>viti Performance permettent d'affecter un itinéraire cultural spécifique pour piloter les ressources nécessaires et les interventions successives de chaque activité.</p>
+	  <p class="texte">Le processus suivant vous guide pour compléter le paramétrage initial d'un activité principale.</p>
+	  <div class="floating-box process">
+         <img src="../images/commun/step1.svg" alt="1" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Accédez aux activités</span>
+		 <p>Cliquez sur le lien "Production" dans le "Menu principal" ou sur le bouton "Production" de la page d'accueil&nbsp;:</p>
+         <p align="center"><img src="../images/performance/production.svg" alt="Production" width="60"></p>
+         <p>Puis, dans la barre latérale du module "Production", cliquez sur "Activités" dans la section "Production" symbolisée par l'icône d'une ferme<img src="../images/performance/farm.svg" alt="Ferme" height="20" class="align-icone icone-marge-gauche">.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/activite-princip1.png" class="contour-img" alt="Liste des activités" data-action="zoom" />
+         </p>
+		 <p>Toutes les activités principales &#40;végétale, viticoles, animales&#41; et auxiliaires déjà ouvertes pour une campagne donnée sont listées ici.</p>
+      </div>
+      <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step2.svg" alt="2" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Sélectionnez une activité</span>
+         <p>Cliquez sur la vignette ou sur le nom d'une activité pour afficher la vue détaillée de celle-ci, puis cliquez sur le bouton<img src="../images/commun/modifier2.svg" alt="Modifier" height="25" class="align-btn-gris icone-marge-gauche icone-marge-droite">en haut à gauche de la fenêtre principale.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/activite-princip2.png" class="contour-img" alt="Vue activité" data-action="zoom" />
+         </p>
+      </div>
+      <br />
+	   <div class="floating-box process">
+         <img src="../images/commun/step3.svg" alt="3" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Activez les itinéraires culturaux</span>
+         <p>Dans la section "Itinéraires culturaux", activez l'option "Utiliser les itinéraires techniques" en cochant la case <img src="../images/commun/check-square.svg" alt="Case à cocher" height="18" class="align-icone icone-marge-gauche icone-marge-droite"> à droite de son libellé.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/activite-princip3.png" class="contour-img" alt="Vue activité" data-action="zoom" />
+         </p>
+		 <p>Cliquez sur "Ajouter un itinéraire technique" pour déployer le formulaire affecté au paramétrage de l'itinéraire.</p>
+		 <p class="max-img-process">
+            <img src="../images/performance/activite-princip4.png" class="contour-img" alt="Activation itinéraire cultural" data-action="zoom" />
+         </p>
+		 <p class="max-img-process">
+            <img src="../images/performance/activite-princip5.png" class="contour-img" alt="Activation itinéraire cultural" data-action="zoom" />
+         </p>
+      </div>
+      <br />
+	   <div class="floating-box process">
+         <img src="../images/commun/step4.svg" alt="4" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Paramétrez l'itinéraire cultural</span>
+		 <p>Sélectionnez l'itinéraire technique approprié parmi les propositions filtrées ou disponibles dans la liste déroulante &#40;seuls les itinéraires de référence <a href="#itineraire-ref" class="avoid-clicks">importés</a> dans l'application ou <a href="#config-itineraire" class="avoid-clicks">configurés</a> préalablement sont proposés&#41;. Cochez la case<img src="../images/commun/check-square.svg" alt="Case à cocher" height="18" class="align-icone icone-marge-gauche icone-marge-droite">pour le définir "Par défaut" le cas échéant.</p>
+		 <p class="max-img-process">
+            <img src="../images/performance/activite-princip6.png" class="contour-img" alt="Activation itinéraire cultural" data-action="zoom" />
+         </p>
+		 <p>Nommez l'itinéraire, puis sélectionnez un type de planification &#40;date de semis prévisionnelle/de début de campagne annuelle de production ou de récolte prévisionnelle&#41; et définissez une plage temporelle en jours par rapport à la date estimative de l'intervention.</p>
+		 <p class="max-img-process">
+            <img src="../images/performance/activite-princip7.png" class="contour-img" alt="Activation itinéraire cultural" data-action="zoom" />
+         </p>
+		 <p>Notez que pour une activité pérenne &#40;vigne, etc.&#41;, la date de début de campagne annuelle de production est automatiquement préremplie dans le champ correspondant, avec la possibilité de la modifier&nbsp;:</p>
+		 <p class="max-img-process">
+            <img src="../images/performance/activite-princip8.png" class="contour-img" alt="Activation itinéraire cultural" data-action="zoom" />
+         </p>
+		 <p>Cliquez sur <span class="btn-blue">Modifier</span> pour valider l'opération.</p>
+      </div>
+      <br />
+	   <div class="floating-box process">
+         <img src="../images/commun/step5.svg" alt="5" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Affichez l'activité modifiée</span>
+         <p>Dans la vue détaillée de l'activité principale, la case cochée<img src="../images/commun/check-square-o.svg" alt="Case cochée" height="18" class="align-icone icone-marge-gauche icone-marge-droite">à droite du libellé "Utiliser les itinéraires techniques" confirme que la modification a bien été effectuée.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/activite-princip9.png" class="contour-img" alt="Activité modifiée" data-action="zoom" />
+         </p>
+      </div>
+      <h6>Guide de prise en main • Performance • Budgets prévisionnels</h6>
+      <a class="slice-process" id="budgets"></a>
+	  <h2 class="texte aerateur">c - Budgets prévisionnels</h2>
+	  <h6>Guide de prise en main • Performance • Budget des activités auxilliaires</h6>
+	  <h3 align="center" class="texte aerateur procedure">A - Budget des activités auxilliaires</h3>
+	  <p class="texte titre-advice">Types de charges et produits indirects</p>
+	  <p class="texte">Les différents types de charges et de produits indirects supportés ou générés par les activités auxiliaires sont classés en 3 catégories&nbsp;:</p>
+	  <div class="divTableListe marge">
+         <div class="divTableBody">
+            <div class="divTableRow">
+               <div class="divTableCellPlan" style="width: 10px">
+                  <img src="../images/commun/circle-red.svg" alt="Puce" height="15">
+               </div>
+               <div class="divTableCellPlan txt-red" style="width: auto">
+                  <strong>Charges indirectes fixes</strong>&nbsp;: abonnement internet, de téléphone, frais bancaires, etc.
+               </div>
+            </div>
+            <div class="divTableRow">
+               <div class="divTableCellPlan">
+                  <img src="../images/commun/circle-red.svg" alt="Puce" height="15">
+               </div>
+               <div class="divTableCellPlan txt-red">
+                  <strong>Charges indirectes proportionnelles</strong>&nbsp;: assurance des bâtiments par m<sup>2</sup>, etc.
+               </div>
+            </div>
+			<div class="divTableRow">
+               <div class="divTableCellPlan">
+               </div>
+               <div class="divTableCellPlan">
+                  &nbsp;
+               </div>
+            </div>
+            <div class="divTableRow">
+               <div class="divTableCellPlan">
+                  <img src="../images/commun/circle-green.svg" alt="Puce" height="15">
+               </div>
+               <div class="divTableCellPlan txt-green">
+                  <strong>Produits indirects fixes</strong>&nbsp;: subventions/aides forfaitaires à l'exploitation
+               </div>
+            </div>
+         </div>
+      </div>
+	  <p class="texte">Auxquels s'ajoutent certains éléments enregistrés en comptabilité et dans la gestion des ressources humaines&nbsp;:</p>
+	  <div class="divTableListe marge">
+         <div class="divTableBody">
+            <div class="divTableRow">
+               <div class="divTableCellPlan">
+                  <img src="../images/commun/circle.svg" alt="Puce" height="15">
+               </div>
+               <div class="divTableCellPlan">
+                  <strong>Emprunts</strong>&nbsp;: charges indirectes &#40;échéances, intérêts d'emprunts, ADI&#41;
+               </div>
+            </div>
+			<div class="divTableRow">
+               <div class="divTableCellPlan">
+                  <img src="../images/commun/circle.svg" alt="Puce" height="15">
+               </div>
+               <div class="divTableCellPlan">
+                  <strong>Immobilisations</strong>&nbsp;: charges indirectes &#40;amortissements des bâtiments, des équipements agricoles, etc.&#41;
+               </div>
+            </div>
+			<div class="divTableRow">
+               <div class="divTableCellPlan">
+                  <img src="../images/commun/circle.svg" alt="Puce" height="15">
+               </div>
+               <div class="divTableCellPlan">
+                  <strong>RH/Contrats de travail</strong>&nbsp;: charges indirectes &#40;paiement des salaires et des primes&#41;
+               </div>
+            </div>
+         </div>
+      </div>
+	  <h6>Guide de prise en main • Performance • Budget des activités principales</h6>
+	  <h3 align="center" class="texte aerateur procedure">B - Budget des activités principales</h3>
+	  <p class="texte titre-advice">Types de charges et produits directs</p>
+	  <p class="texte">Les différents types de charges et de produits directs supportés ou générés par les activités principales sont classés en 6 catégories&nbsp;:</p>
+	  <div class="divTableListe marge">
+         <div class="divTableBody">
+            <div class="divTableRow">
+               <div class="divTableCellPlan" style="width: 10px">
+                  <img src="../images/commun/circle-red.svg" alt="Puce" height="15">
+               </div>
+               <div class="divTableCellPlan txt-red" style="width: auto">
+                  <strong>Charges directes fixes</strong>&nbsp;: conseil technique, frais de déplacement liés à la commercialisation &#40;salons, foires&#41;, etc.
+               </div>
+            </div>
+            <div class="divTableRow">
+               <div class="divTableCellPlan">
+                  <img src="../images/commun/circle-red.svg" alt="Puce" height="15">
+               </div>
+               <div class="divTableCellPlan txt-red">
+                  <strong>Charges directes proportionnelles statiques non corrélées au rendement</strong>&nbsp;: fermage
+               </div>
+            </div>
+            <div class="divTableRow">
+               <div class="divTableCellPlan">
+                  <img src="../images/commun/circle-red.svg" alt="Puce" height="15">
+               </div>
+               <div class="divTableCellPlan txt-red">
+                  <strong>Charges directes proportionnelles dynamiques corrélées au rendement*</strong>&nbsp;: engrais, plants, semences, produits phytosanitaires, etc.
+               </div>
+            </div>
+			<div class="divTableRow">
+               <div class="divTableCellPlan">
+               </div>
+               <div class="divTableCellPlan">
+                  &nbsp;
+               </div>
+            </div>
+			<div class="divTableRow">
+               <div class="divTableCellPlan">
+                  <img src="../images/commun/circle-green.svg" alt="Puce" height="15">
+               </div>
+               <div class="divTableCellPlan txt-green">
+                  <strong>Produits directs fixes</strong>&nbsp;: subventions/aides forfaitaires à l'exploitation
+               </div>
+            </div>
+			<div class="divTableRow">
+               <div class="divTableCellPlan">
+                  <img src="../images/commun/circle-green.svg" alt="Puce" height="15">
+               </div>
+               <div class="divTableCellPlan txt-green">
+                  <strong>Produits directs proportionnels statiques</strong>&nbsp;: subventions/aides par hectare
+               </div>
+            </div>
+			<div class="divTableRow">
+               <div class="divTableCellPlan">
+                  <img src="../images/commun/circle-green.svg" alt="Puce" height="15">
+               </div>
+               <div class="divTableCellPlan txt-green">
+                  <strong>Produits directs proportionnels dynamiques*</strong>&nbsp;: tonnes de blé après récolte, bottes de foin, volumes de lait, etc.
+               </div>
+            </div>
+         </div>
+      </div>
+	  <p class="texte"><em>* Les charges et produits directs proportionnels dynamiques sont prédéfinis dans un itinéraire cultural personnalisable.</em></p>
+	  <h6>Guide de prise en main • Performance • Définir les budgets prévisionnels</h6>
+	  <h3 align="center" class="texte aerateur procedure">C - Définir les budgets prévisionnels</h3>
+	  <p class="texte">Différentes méthodes permettent d'affecter un budget prévisionnel à chacune des activités ouvertes durant une campagne.</p>
+	  <p class="texte titre-advice aerateur-haut">Paramétrage global de toutes les activités</p>
+	  <p class="texte">Le processus suivant vous guide pour générer automatiquement les budgets prévisionnels de l'ensemble des activités.</p>
+	  <div class="floating-box process">
+         <img src="../images/commun/step1.svg" alt="1" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Accédez aux activités</span>
+		 <p>Cliquez sur le lien "Production" dans le "Menu principal" ou sur le bouton "Production" de la page d'accueil&nbsp;:</p>
+         <p align="center"><img src="../images/performance/production.svg" alt="Production" width="60"></p>
+         <p>Puis, dans la barre latérale du module "Production", cliquez sur "Activités" dans la section "Production" symbolisée par l'icône d'une ferme<img src="../images/performance/farm.svg" alt="Ferme" height="20" class="align-icone icone-marge-gauche">.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/budget-gen1.png" class="contour-img" alt="Liste des activités" data-action="zoom" />
+         </p>
+		 <p>Toutes les activités principales &#40;végétale, viticoles, animales&#41; et auxiliaires déjà ouvertes pour une campagne donnée sont listées ici.</p>
+      </div>
+      <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step2.svg" alt="2" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Budgéter toutes les activités</span>
+         <p>Cliquez sur le bouton "Planifier et budgéter automatiquement les activités" en haut à droite de la fenêtre principale.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/budget-gen2.png" class="contour-img" alt="Budgéter les activités" data-action="zoom" />
+         </p>
+      </div>
+	  <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step3.svg" alt="3" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Affichez un nouveau budget</span>
+		 <p>Patientez quelques instants. La pastille rouge<img src="../images/commun/marker.svg" alt="Notification" height="20" class="align-icone icone-marge-gauche icone-marge-droite">en haut à droite de la cloche<img src="../images/commun/bell-o-blue.svg" alt="Cloche" height="20" class="align-icone icone-marge-gauche icone-marge-droite">vous indique qu'une opération interne a été effectuée par l'application. Cliquez sur celle-ci pour afficher la notification. En cas d'erreur, vous serez informé&#40;e&#41; de la nature de celle-ci.</p>
+		 <p class="max-img-process">
+            <img src="../images/performance/budget-gen3.png" class="contour-img" alt="Notification" data-action="zoom" />
+         </p>
+         <p>Cliquez sur la vignette ou sur le nom d'une activité de votre choix pour afficher la vue détaillée de celle-ci et découvrir son budget prévisionnel.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/budget-gen4.png" class="contour-img" alt="Vue activité" data-action="zoom" />
+         </p>
+		 <p>Notez que les montants TTC affichés ne diffèrent des montants HT que si une taxe a été sélectionnée dans le tableau du budget ou si une <a class="avoid-clicks" href="../chapitre6#tva-categorie" target="_self">taxe d'achat</a> ou de <a class="avoid-clicks" href="../chapitre7#tva-categorie" target="_self">vente</a> a été affectée à une catégorie comptable.</p>
+      </div>
+      <p class="texte titre-advice aerateur-haut">Paramétrage d'une activité unique</p>
+	  <p class="texte">Le processus suivant vous guide pour générer le budget prévisionnel d'une seule activité.</p>
+	  <div class="floating-box process">
+         <img src="../images/commun/step1.svg" alt="1" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Accédez aux activités</span>
+		 <p>Cliquez sur le lien "Production" dans le "Menu principal" ou sur le bouton "Production" de la page d'accueil&nbsp;:</p>
+         <p align="center"><img src="../images/performance/production.svg" alt="Production" width="60"></p>
+         <p>Puis, dans la barre latérale du module "Production", cliquez sur "Activités" dans la section "Production" symbolisée par l'icône d'une ferme<img src="../images/performance/farm.svg" alt="Ferme" height="20" class="align-icone icone-marge-gauche">.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/budget-ind1.png" class="contour-img" alt="Liste des activités" data-action="zoom" />
+         </p>
+		 <p>Toutes les activités principales &#40;végétale, viticoles, animales&#41; et auxiliaires déjà ouvertes pour une campagne donnée sont listées ici.</p>
+      </div>
+      <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step2.svg" alt="2" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Sélectionnez une activité</span>
+         <p>Cliquez sur la vignette ou sur le nom d'une activité pour afficher la vue détaillée de celle-ci.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/budget-ind2.png" class="contour-img" alt="Vue activité" data-action="zoom" />
+         </p>
+		 <p>Notez que, dans la section "Budget", vous disposez d'un accès direct vers la partie de la documentation consacrée aux explications de la fonctionnalité en cliquant sur la bouée de sauvetage<img src="../images/performance/life-ring.svg" alt="Bouée de sauvetage" height="20" class="align-icone icone-marge-gauche">.</p>
+      </div>
+      <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step3.svg" alt="3" width="52" />
+      </div>
+	  <div class="process-txt">
+         <span class="titre-advice">Générer le budget prévisionnel</span>
+         <p>En fonction de l'historique des budgets consigné dans votre ferme ou votre domaine, différents boutons sont activés et/ou mis à votre disposition dans la section "Budget" de l'activité sélectionnée.</p>
+		 <p align="center">COMMANDES INITIALES</p>
+		 <p>Cliquez sur le bouton <strong>"Générer un budget de référence"</strong> pour affecter un budget pré-paramétré. Cette option a la même fonction que celle du bouton "Planifier et budgéter automatiquement les activités", mais ne s'applique qu'à l'activité choisie.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/budget-ind3.png" class="contour-img" alt="Créer le budget" data-action="zoom" />
+         </p>
+		 <p>Dès que vous avez lancé l'opération, un <em>"spinner"</em> <i class="fa-duotone fa-spinner-third"></i> &#40;animation de chargement&#41; est affiché dans le bouton qui devient inactif durant toute la durée de la tâche. Patientez quelques instants car le processus peut prendre plus ou moins de temps en fonction du nombre d'éléments à prendre en compte.</p>
+		 <p class="max-img-process">
+            <img src="../images/performance/budget-ind4.png" class="contour-img" alt="Opération en cours" data-action="zoom" />
+         </p>
+		 <p>Une fois que le <em>"spinner"</em> disparaît, la pastille rouge<img src="../images/commun/marker.svg" alt="Notification" height="20" class="align-icone icone-marge-gauche icone-marge-droite">en haut à droite de la cloche<img src="../images/commun/bell-o-blue.svg" alt="Cloche" height="20" class="align-icone icone-marge-gauche icone-marge-droite">vous indique que l'opération a été achevée par l'application. Cliquez sur celle-ci pour afficher la notification. En cas d'erreur, vous serez informé&#40;e&#41; de la nature de celle-ci.</p>
+		 <p class="max-img-process">
+            <img src="../images/performance/budget-ind5.png" class="contour-img" alt="Notification" data-action="zoom" />
+         </p>
+		 <p>Cliquez sur le bouton <strong>"Créer un nouveau budget"</strong> pour générer un budget vierge de toutes données. À charge pour vous de renseigner les différents postes de dépenses et de recettes afférentes à l'activité.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/budget-ind6.png" class="contour-img" alt="Créer le budget" data-action="zoom" />
+         </p>
+		 <p align="center">COMMANDES COMPLÉMENTAIRES</p>
+		 <p>Cliquez sur le bouton <strong>"Copier à partir du budget précédent"</strong> pour créer un budget à partir des données issues de la campagne précédente &#40;seulement si elles sont disponibles&#41;.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/budget-ind7.png" class="contour-img" alt="Créer le budget" data-action="zoom" />
+         </p>
+		 <p>Cliquez sur le bouton <strong>"Copier depuis une autre activité"</strong> et sélectionnez une activité déjà ouverte pour dupliquer et affecter les données de son budget &#40;seulement si elles sont disponibles&#41;.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/budget-ind8.png" class="contour-img" alt="Créer le budget" data-action="zoom" />
+         </p>
+      </div>
+      <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step4.svg" alt="4" width="52" />
+      </div>
+	  <div class="process-txt">
+         <span class="titre-advice">En option&nbsp;: réinitialisez le budget prévisionnel</span>
+         <p>Une fois le budget prévisionnel créé ou modifié, il est toujours possible de revenir aux paramètres par défaut définis pour l'activité sélectionnée, en cliquant sur le bouton <strong>"Réinitialiser avec un budget de référence"</strong>.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/budget-ind9.png" class="contour-img" alt="Réinitialiser le budget" data-action="zoom" />
+         </p>
+		 <p>Notez que les montants TTC affichés ne diffèrent des montants HT que si une taxe a été sélectionnée dans le tableau du budget ou si une <a class="avoid-clicks" href="../chapitre6#tva-categorie" target="_self">taxe d'achat</a> ou de <a class="avoid-clicks" href="../chapitre7#tva-categorie" target="_self">vente</a> a été affectée à une catégorie comptable.</p>
+		 <p>Dès que vous avez lancé l'opération, un <em>"spinner"</em> <i class="fa-duotone fa-spinner-third"></i> &#40;animation de chargement&#41; est affiché dans le bouton qui devient inactif durant toute la durée de la tâche. Patientez quelques instants car le processus peut prendre plus ou moins de temps en fonction du nombre d'éléments à prendre en compte.</p>
+		 <p class="max-img-process">
+            <img src="../images/performance/budget-ind10.png" class="contour-img" alt="Opération en cours" data-action="zoom" />
+         </p>
+		  <p>Une fois que le <em>"spinner"</em> disparaît, la pastille rouge<img src="../images/commun/marker.svg" alt="Notification" height="20" class="align-icone icone-marge-gauche icone-marge-droite">en haut à droite de la cloche<img src="../images/commun/bell-o-blue.svg" alt="Cloche" height="20" class="align-icone icone-marge-gauche icone-marge-droite">vous indique que l'opération a été achevée par l'application. Cliquez sur celle-ci pour afficher la notification. En cas d'erreur, vous serez informé&#40;e&#41; de la nature de celle-ci.</p>
+	  </div>
+	  <h3 align="center" class="texte aerateur procedure">D - Modifier le budget prévisionnel d'une activité auxiliaire</h3>
+	  <h6>Guide de prise en main • Performance • Modifier un budget prévisionnel</h6>
+	  <p class="texte">Le processus suivant vous guide pour afficher et modifier le budget prévisionnel d'une activité auxiliaire.</p>
+	  <div class="floating-box process">
+         <img src="../images/commun/step1.svg" alt="1" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Accédez aux activités</span>
+		 <p>Cliquez sur le lien "Production" dans le "Menu principal" ou sur le bouton "Production" de la page d'accueil&nbsp;:</p>
+         <p align="center"><img src="../images/performance/production.svg" alt="Production" width="60"></p>
+         <p>Puis, dans la barre latérale du module "Production", cliquez sur "Activités" dans la section "Production" symbolisée par l'icône d'une ferme<img src="../images/performance/farm.svg" alt="Ferme" height="20" class="align-icone icone-marge-gauche">.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/budget-aux1.png" class="contour-img" alt="Liste des activités" data-action="zoom" />
+         </p>
+		 <p>Toutes les activités principales &#40;végétale, viticoles, animales&#41; et auxiliaires déjà ouvertes pour une campagne donnée sont listées ici.</p>
+      </div>
+      <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step2.svg" alt="2" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Sélectionnez une activité</span>
+         <p>Cliquez sur la vignette ou sur le nom d'une activité pour afficher la vue détaillée de celle-ci, puis cliquez sur le bouton "Modifier le budget".</p>
+         <p class="max-img-process">
+            <img src="../images/performance/budget-aux2.png" class="contour-img" alt="Vue activité" data-action="zoom" />
+         </p>
+      </div>
+	  <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step3.svg" alt="3" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Visualisez les éléments du budget</span>
+         <p>Pour chaque article &#40;dépense ou recette&#41;, une quantité est définie dans son unité de référence, avec la sélection d'une méthode de calcul, un prix unitaire HT et un montant total HT.</p>
+		 <p>La date de la première utilisation est également renseignée ainsi que la fréquence de la dépense ou de la recette pour automatiser le calcul automatique des opérations récurrentes.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/budget-aux3.png" class="contour-img" alt="Liste des articles" data-action="zoom" />
+         </p>
+		 <p>Sélectionnez, le cas échéant, un taux de TVA pour calculer avec davantage de précision les besoins de trésorerie. Si une <a class="avoid-clicks" href="../chapitre6#tva-categorie" target="_self">taxe d'achat</a> ou une <a class="avoid-clicks" href="../chapitre7#tva-categorie" target="_self">taxe de vente</a> a été ajoutée à la catégorie comptable d'un article, elle est automatiquement affectée à la dépense ou à la recette de l'élément concerné.</p>
+		 <p class="max-img-process">
+            <img src="../images/performance/budget-aux4.png" class="contour-img" alt="Affectation TVA" data-action="zoom" />
+         </p>
+      </div>
+	  <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step4.svg" alt="4" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Modifiez ou ajoutez un élément au budget</span>
+         <p>Dans le champ du prix HT d'un article, comme par exemple une dépense, saisissez le nouveau montant pour remplacer celui prédéfini par défaut ou hérité d'une campagne précédente.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/budget-aux5.png" class="contour-img" alt="Modifier une dépense" data-action="zoom" />
+         </p>
+		 <p class="max-img-process">
+            <img src="../images/performance/budget-aux6.png" class="contour-img" alt="Modifier une dépense" data-action="zoom" />
+         </p>
+		 <p>Répétez l'opération pour ajuster, à la baisse ou à la hausse, les montants qu'il vous semble nécessaire de corriger.</p>
+		 <p class="aerateur-haut">
+            Cliquez sur <span class="btn-blue">Ajouter une dépense</span> ou <span class="btn-blue">Ajouter une recette</span> pour compléter les éléments du budget.
+         </p>
+		 <p class="max-img-process">
+            <img src="../images/performance/budget-aux7.png" class="contour-img" alt="Sélection affectation" data-action="zoom" />
+         </p>
+		 <p>Pour chaque nouvel élément ajouté, sélectionnez une <strong>quantité</strong> et l'<strong>unité</strong> applicable pour la campagne choisie.</p>
+		 <p>Renseignez ensuite la <strong>date de première utilisation</strong> ainsi que la <strong>fréquence</strong> afin de calculer et prévoir les besoins de trésorerie de l'exploitation.</p>
+		 <p class="max-img-process">
+            <img src="../images/performance/budget-aux8.png" class="contour-img" alt="Modifier une dépense" data-action="zoom" />
+         </p>
+		 <p class="aerateur-haut">Notez que, contrairement à certaines charges ou produits affectés aux activités principales, le profil des articles est généralement défini sur "Statique" car ils ne sont pas associés à un rendement.</p>
+		 <p>
+            Cliquez sur <span class="btn-blue">Modifier</span> pour valider l'opération.
+         </p>
+      </div>
+	  <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step5.svg" alt="5" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Affichez le nouveau budget</span>
+         <p>Le budget prévisionnel est mis à jour et son montant est automatiquement répercuté sur les différentes activités principales en fonction de la clé de répartition analytique choisie.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/budget-aux9.png" class="contour-img" alt="Modifier une dépense" data-action="zoom" />
+         </p>
+		 <p>Notez que les montants TTC affichés ne diffèrent des montants HT que si une taxe a été sélectionnée dans le tableau du budget ou si une <a class="avoid-clicks" href="../chapitre6#tva-categorie" target="_self">taxe d'achat</a> ou de <a class="avoid-clicks" href="../chapitre7#tva-categorie" target="_self">vente</a> a été affectée à une catégorie comptable.</p>
+      </div>
+	  <h6>Guide de prise en main • Performance • Modifier un budget prévisionnel</h6>
+	  <a class="slice-process" id="modif-budget"></a>
+	  <h3 align="center" class="texte aerateur procedure">E - Modifier le budget prévisionnel d'une activité principale</h3>
+	  <p class="texte">Le processus suivant vous guide pour afficher et modifier le budget prévisionnel d'une activité principale.</p>
+	  <div class="floating-box process">
+         <img src="../images/commun/step1.svg" alt="1" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Accédez aux activités</span>
+		 <p>Cliquez sur le lien "Production" dans le "Menu principal" ou sur le bouton "Production" de la page d'accueil&nbsp;:</p>
+         <p align="center"><img src="../images/performance/production.svg" alt="Production" width="60"></p>
+         <p>Puis, dans la barre latérale du module "Production", cliquez sur "Activités" dans la section "Production" symbolisée par l'icône d'une ferme<img src="../images/performance/farm.svg" alt="Ferme" height="20" class="align-icone icone-marge-gauche">.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/budget-princip1.png" class="contour-img" alt="Liste des activités" data-action="zoom" />
+         </p>
+		 <p>Toutes les activités principales &#40;végétale, viticoles, animales&#41; et auxiliaires déjà ouvertes pour une campagne donnée sont listées ici.</p>
+      </div>
+      <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step2.svg" alt="2" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Sélectionnez une activité</span>
+         <p>Cliquez sur la vignette ou sur le nom d'une activité pour afficher la vue détaillée de celle-ci, puis cliquez sur le bouton "Modifier le budget".</p>
+         <p class="max-img-process">
+            <img src="../images/performance/budget-princip2.png" class="contour-img" alt="Vue activité" data-action="zoom" />
+         </p>
+		 <p>Notez que les montants affichés initialement sont calculés sur la base des informations &#40;interventions, charges, rendement moyen&#41; définies dans l'itinéraire cultural choisi pour cette activité et doivent être actualisés en fonction de la surface assolée.</p>
+      </div>
+	  <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step3.svg" alt="3" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Visualisez les éléments du budget</span>
+         <p>Pour chaque article &#40;dépense ou recette&#41;, une quantité est définie dans son unité de référence, avec la sélection d'une méthode de calcul, un prix unitaire HT et un montant total HT.</p>
+		 <p>La date de la première utilisation est également renseignée ainsi que la fréquence de la dépense ou de la recette.</p>
+		 <p><strong>Dépenses</strong></p>
+         <p class="max-img-process">
+            <img src="../images/performance/budget-princip3.png" class="contour-img" alt="Liste des dépenses" data-action="zoom" />
+         </p>
+		 <p>Sélectionnez, le cas échéant, un taux de TVA pour calculer avec davantage de précision les besoins de trésorerie. Si une <a class="avoid-clicks" href="../chapitre6#tva-categorie" target="_self">taxe d'achat</a> ou une <a class="avoid-clicks" href="../chapitre7#tva-categorie" target="_self">taxe de vente</a> a été ajoutée à la catégorie comptable d'un article, elle est automatiquement affectée à la dépense ou à la recette de l'élément concerné.</p>
+		 <p class="max-img-process">
+            <img src="../images/performance/budget-princip4.png" class="contour-img" alt="Affectation TVA" data-action="zoom" />
+         </p>
+		 <p><strong>Recettes</strong></p>
+		 <p class="max-img-process">
+            <img src="../images/performance/budget-princip5.png" class="contour-img" alt="Liste des recettes" data-action="zoom" />
+         </p>
+		 <p>Lorsque plusieurs matières sont récoltées, comme par exemple du grain et de la paille pour la moisson de certaines céréales, cochez la case<img src="../images/commun/check-square.svg" alt="Case à cocher" height="18" class="align-icone icone-marge-gauche icone-marge-droite">à droite du "Produit principal" que vous souhaitez prioriser.</p>
+		 <p><strong>Notez que la sélection d'un "Produit principal" dans les recettes est <span class="txt-red">obligatoire</span> pour réaliser le calcul des coûts de production, des marges et du seuil de commercialisation de l'activité.</strong></p>
+		 <p class="aerateur-haut">Si le produit de la récolte est <strong>destiné à être utilisé par une autre activité de l'exploitation</strong>, cochez la case<img src="../images/commun/check-square.svg" alt="Case à cocher" height="18" class="align-icone icone-marge-gauche icone-marge-droite">à droite du libellé "Utiliser le prix de cession", puis sélectionnez une autre activité dans la liste déroulante "Cession d'activité vers un budget cible"&nbsp;:</p>
+		 <p class="max-img-process">
+            <img src="../images/performance/budget-princip6.png" class="contour-img" alt="Cession d'activité" data-action="zoom" />
+         </p>
+		 <p>La recette de l'activité est alors automatique reportée dans la liste des dépenses du budget de l'activité ciblée.</p>
+		 <p class="max-img-process">
+            <img src="../images/performance/budget-princip7.png" class="contour-img" alt="Cession d'activité" data-action="zoom" />
+         </p>
+		 <p>Il est également possible d'enchaîner successivement plusieurs cessions entre des activités ouvertes comme par exemple <strong>"Luzerne" &#62; "Vache laitière" &#62; "Production fromage"</strong> &#40;activité de transformation&#41;&nbsp;:</p>
+         <p align="center"><img src="../images/performance/schema-cession.png" class="contour-img" alt="Schéma cession" data-action="zoom" /></p>
+      </div>
+	  <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step4.svg" alt="4" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Modifiez ou ajoutez un élément au budget</span>
+         <p>Dans le champ du prix HT d'un article, comme par exemple une dépense, saisissez le nouveau montant pour remplacer celui prédéfini par défaut ou hérité d'une campagne précédente.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/budget-princip8.png" class="contour-img" alt="Modifier une dépense" data-action="zoom" />
+         </p>
+		 <p class="max-img-process">
+            <img src="../images/performance/budget-princip9.png" class="contour-img" alt="Modifier une dépense" data-action="zoom" />
+         </p>
+		 <p>Répétez l'opération pour ajuster, à la baisse ou à la hausse, les montants qu'il vous semble nécessaire de corriger.</p>
+		 <p class="aerateur-haut">
+            Cliquez sur <span class="btn-blue">Ajouter une dépense</span> ou <span class="btn-blue">Ajouter une recette</span> pour compléter les éléments du budget.
+         </p>
+		 <p>Pour chaque nouvel élément ajouté, sélectionnez une <strong>quantité</strong>, une <strong>unité</strong> et une <strong>méthode de calcul</strong> à appliquer&nbsp;:</p>
+		 <div class="divTableListe">
+         <div class="divTableBody">
+            <div class="divTableRow">
+               <div class="divTableCellPlan" style="width: 10px">
+                  <img src="../images/commun/circle.svg" alt="Puce" height="15">
+               </div>
+               <div class="divTableCellPlan" style="width: auto">
+                  Par unité d'œuvre &#40;par hectare ou par tête de bétail&#41;&nbsp;;
+               </div>
+            </div>
+            <div class="divTableRow">
+               <div class="divTableCellPlan">
+                  <img src="../images/commun/circle.svg" alt="Puce" height="15">
+               </div>
+               <div class="divTableCellPlan">
+                  Par production&nbsp;;
+               </div>
+            </div>
+            <div class="divTableRow">
+               <div class="divTableCellPlan">
+                  <img src="../images/commun/circle.svg" alt="Puce" height="15">
+               </div>
+               <div class="divTableCellPlan">
+                  Par campagne.
+               </div>
+            </div>
+         </div>
+         </div>
+		 <p class="max-img-process">
+            <img src="../images/performance/budget-princip10.png" class="contour-img" alt="Sélection affectation" data-action="zoom" />
+         </p>
+		 <p>Renseignez ensuite la <strong>date de première utilisation</strong> ainsi que la <strong>fréquence</strong> afin de calculer et prévoir les besoins de trésorerie de l'exploitation.</p>
+		 <p class="aerateur-haut">Notez que le profil des articles est défini sur "Statique" lorsqu'ils ne sont pas associés à un rendement. Ils sont considérés comme "Dynamique" dans le cas contraire, comme expliqué en introduction de la section <a href="#budgets" class="avoid-clicks">&#171;&nbsp;Budgets prévisionnels&nbsp;&#187;</a> de ce chapitre.</p>
+		 <p>
+            Cliquez sur <span class="btn-blue">Modifier</span> pour valider l'opération.
+         </p>
+      </div>
+	  <h6>Guide de prise en main • Performance • Imprimer les budgets prévisionnels</h6>
+      <a class="slice-process" id="print-budget"></a>
+      <h3 align="center" class="texte aerateur procedure">f – Imprimer le budget prévisionnel de toutes les activités</h3>
+      <p class="texte">Le processus suivant vous guide pour imprimer le budget prévisionnel de l'ensemble des activités ouvertes durant une campagne.</p>
+      <div class="floating-box process">
+         <img src="../images/commun/step1.svg" alt="1" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Accédez aux activités</span>
+         <p>
+            Cliquez sur le lien "Production" dans le "Menu principal" ou sur le bouton "Production" de la page d'accueil&nbsp;:
+         </p>
+         <p align="center"><img src="../images/performance/production.svg" alt="Production" width="60"></p>
+         <p>Dans la barre latérale du module "Production", cliquez sur "Activités" dans la section "Production" symbolisée par l'icône d'une ferme<img src="../images/performance/farm.svg" alt="Ferme" height="20" class="align-icone icone-marge-gauche icone-marge-droite">pour afficher la liste des activités.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/budget-print1.png" class="contour-img" alt="Liste des activités" data-action="zoom" />
+         </p>
+		 <p>Toutes les activités principales &#40;végétale, viticoles, animales&#41; et auxiliaires déjà ouvertes pour une campagne donnée sont listées ici.</p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step2.svg" alt="2" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Sélectionnez une campagne</span>
+         <p>Sélectionnez la campagne avec les flèches<img src="../images/chapitre9/fleche-g.svg" alt="Flèche" class="btn-gris icone-marge-gauche icone-marge-droite">et<img src="../images/chapitre9/fleche-d.svg" alt="Flèche" class="btn-gris icone-marge-gauche icone-marge-droite"> en haut à droite de la fenêtre principale. La période couverte par la création du nouveau document est basée sur ce choix.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/budget-print2.png" class="contour-img" alt="Sélection campagne" data-action="zoom" />
+         </p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step3.svg" alt="3" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Imprimez le budget prévisionnel</span>
+		 <p>Cliquez sur le bouton <img src="../images/chapitre9/documents.svg" alt="Documents" class="btn-gris icone-marge-gauche icone-marge-droite"> et sélectionnez, dans la liste déroulante, "Budget prévisionnel" pour obtenir le document.</p>
+		 <p class="max-img-process">
+            <img src="../images/performance/budget-print3.png" class="contour-img" alt="Sélection document" data-action="zoom" />
+         </p>
+         <p>Patientez quelques instants car la fabrication du PDF peut prendre plus ou moins de temps en fonction du nombre d'activités et d'éléments de chaque budget à traiter.</p>
+         <p>La pastille rouge<img src="../images/commun/marker.svg" alt="Notification" height="20" class="align-icone icone-marge-gauche icone-marge-droite">en haut à droite de la cloche<img src="../images/commun/bell-o-blue.svg" alt="Cloche" height="20" class="align-icone icone-marge-gauche icone-marge-droite">vous indique qu'une opération interne a été effectuée par l'application. Cliquez sur celle-ci pour afficher la notification, puis cliquez sur le lien "Votre fichier a été généré avec succès" pour afficher la vignette du nouveau PDF dans "Mes documents".</p>
+         <p class="max-img-process">
+            <img src="../images/performance/budget-print4.png" class="contour-img" alt="Affichage notification" data-action="zoom" />
+         </p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step4.svg" alt="4" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Affichez le document PDF</span>
+         <p>Cliquez sur la vignette pour afficher le document au format PDF dans votre navigateur. Enregistrez et/ou imprimez le document obtenu.</p>
+		 <p class="max-img-process">
+            <img src="../images/performance/budget-print5.png" class="contour-img" alt="Vignette du PDF" data-action="zoom" />
+         </p>
+         <p class="max-img-process">
+            <img src="../images/performance/budget-print6.png" class="contour-img" alt="Affichage du PDF" data-action="zoom" />
+         </p>
+         <p>Notez que ce document reste accessible à tout moment via le lien <a class="avoid-clicks" href="../chapitre10#ged" target="_self">"Mes documents"</a> dans la section "Archives"<img src="../images/commun/archive.svg" alt="Archives" height="20" class="align-icone icone-marge-gauche icone-marge-droite">du module "Outils", tant qu'il n'a pas été supprimé.</p>
+      </div>
+      <h3 align="center" class="texte aerateur procedure">g – Imprimer le budget prévisionnel d'une activité unique</h3>
+      <p class="texte">Le processus suivant vous guide pour imprimer le budget prévisionnel d'une seule activité parmi celles ouvertes durant une campagne donnée.</p>
+      <div class="floating-box process">
+         <img src="../images/commun/step1.svg" alt="1" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Accédez aux activités</span>
+         <p>
+            Cliquez sur le lien "Production" dans le "Menu principal" ou sur le bouton "Production" de la page d'accueil&nbsp;:
+         </p>
+         <p align="center"><img src="../images/chapitre9/production.svg" alt="Production" width="60"></p>
+         <p>Dans la barre latérale du module "Production", cliquez sur "Activités" dans la section "Production" symbolisée par l'icône d'une ferme<img src="../images/chapitre9/farm.svg" alt="Ferme" height="20" class="align-icone icone-marge-gauche icone-marge-droite">pour afficher la liste des activités.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/budget-solo1.png" class="contour-img" alt="Liste des activités" data-action="zoom" />
+         </p>
+		 <p>Toutes les activités principales &#40;végétale, viticoles, animales&#41; et auxiliaires déjà ouvertes pour une campagne donnée sont listées ici.</p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step2.svg" alt="2" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Sélectionnez une campagne</span>
+         <p>Sélectionnez la campagne avec les flèches<img src="../images/chapitre9/fleche-g.svg" alt="Flèche" class="btn-gris icone-marge-gauche icone-marge-droite">et<img src="../images/chapitre9/fleche-d.svg" alt="Flèche" class="btn-gris icone-marge-gauche icone-marge-droite"> en haut à droite de la fenêtre principale. La période couverte par la création du nouveau document est basée sur ce choix.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/budget-solo2.png" class="contour-img" alt="Sélection campagne" data-action="zoom" />
+         </p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step3.svg" alt="3" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Choisissez une activité</span>
+         <p>Cliquez sur le visuel ou sur le nom d'une activité, puis cliquez sur le bouton <img src="../images/chapitre9/documents.svg" alt="Documents" class="btn-gris icone-marge-gauche icone-marge-droite"> et sélectionnez, dans la liste déroulante, "Budget prévisonnel" pour obtenir le document.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/budget-solo3.png" class="contour-img" alt="Sélection activité" data-action="zoom" />
+         </p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step4.svg" alt="4" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Imprimez le budget prévisionnel</span>
+         <p>Patientez quelques instants car la fabrication du PDF peut prendre plus ou moins de temps en fonction du nombre d'éléments du budget à traiter.</p>
+         <p>La pastille rouge<img src="../images/commun/marker.svg" alt="Notification" height="20" class="align-icone icone-marge-gauche icone-marge-droite">en haut à droite de la cloche<img src="../images/commun/bell-o-blue.svg" alt="Cloche" height="20" class="align-icone icone-marge-gauche icone-marge-droite">vous indique qu'une opération interne a été effectuée par l'application. Cliquez sur celle-ci pour afficher la notification, puis cliquez sur le lien "Votre fichier a été généré avec succès" pour afficher la vignette du nouveau PDF dans "Mes documents".</p>
+         <p class="max-img-process">
+            <img src="../images/performance/budget-solo4.png" class="contour-img" alt="Affichage notification" data-action="zoom" />
+         </p>
+      </div>
+      <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step5.svg" alt="5" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Affichez le document PDF</span>
+         <p>Cliquez sur la vignette pour afficher le document au format PDF dans votre navigateur. Enregistrez et/ou imprimez le document obtenu.</p>
+		 <p class="max-img-process">
+            <img src="../images/performance/budget-solo5.png" class="contour-img" alt="Vignette du PDF" data-action="zoom" />
+         </p>
+         <p class="max-img-process">
+            <img src="../images/performance/budget-solo6.png" class="contour-img" alt="Affichage du PDF" data-action="zoom" />
+         </p>
+         <p>Notez que ce document reste accessible à tout moment via le lien <a class="avoid-clicks" href="../chapitre10#ged" target="_self">"Mes documents"</a> dans la section "Archives"<img src="../images/commun/archive.svg" alt="Archives" height="20" class="align-icone icone-marge-gauche icone-marge-droite">du module "Outils", tant qu'il n'a pas été supprimé.</p>
+      </div>
+	  <h6>Guide de prise en main • Performance • Coûts de production</h6>
+	  <a class="slice-process" id="couts-prod"></a>
+	  <h2 class="texte aerateur">d - Coûts de production</h2>
+	  <p class="texte">Les coûts de production sont calculés dynamiquement pour chaque production, en fonction du rendement visé, des charges directes &#40;engrais, semences, produits phytosanitaires…&#41; et indirectes &#40;assurance, électricité, etc.&#41; prédéfinis dans un itinéraire technique et ventilées sur les activités via une clé de répartition.</p>
+	  <p class="texte">Le processus suivant vous guide pour afficher les coûts de production et affecter une écriture comptable à une activité ouverte durant une campagne.</p>
+	  <div class="floating-box process">
+         <img src="../images/commun/step1.svg" alt="1" width="52" />
+      </div>
+	  <div class="process-txt">
+         <span class="titre-advice">Accédez aux coûts de production</span>
+		 <p>Cliquez sur le lien "Économique" dans le "Menu principal" ou sur le bouton "Économique" de la page d'accueil&nbsp;:</p>
+         <p align="center"><img src="../images/performance/economique.svg" alt="Économique" width="60"></p>
+         <p>Puis, dans la barre latérale du module "Économique", cliquez sur "Coûts de production" dans la section "Coûts" symbolisée par l'icône d'une loupe<img src="../images/performance/glass-dollar.svg" alt="Loupe" height="20" class="align-icone icone-marge-gauche icone-marge-droite">pour afficher la liste des activités.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/couts-prod1.png" class="contour-img" alt="Coûts de production" data-action="zoom" />
+         </p>
+		 <p>Tous les coûts de production des activités principales &#40;végétale, viticoles, animales&#41; déjà calculés sont listés ici.</p>
+      </div>
+      <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step2.svg" alt="2" width="52" />
+      </div>
+	  <div class="process-txt">
+         <span class="titre-advice">En option &nbsp;: modifiez le budget</span>
+         <p>Cliquez sur le bouton "Modifier le budget" affiché sous le libellé de chaque activité.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/couts-prod2.png" class="contour-img" alt="Coûts de production" data-action="zoom" />
+         </p>
+		 <p>Vous êtes automatiquement redirigé&#40;e&#41; vers la page de modification du budget prévisionnel de l'activité. Le cas échéant, corrigez-le comme expliqué dans la section <a href="#modif-budget" class="avoid-clicks">&#171;&nbsp;Budgets prévisionnels&nbsp;&#187;</a> de ce chapitre.</p>
+		 <p class="max-img-process">
+            <img src="../images/performance/couts-prod3.png" class="contour-img" alt="Modification du budget" data-action="zoom" />
+         </p>
+      </div>
+	  <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step3.svg" alt="3" width="52" />
+      </div>
+	  <div class="process-txt">
+         <span class="titre-advice">Accédez aux écritures comptables</span>
+         <p>Cliquez sur le lien "Comptabilité" dans le "Menu principal" ou sur le bouton "Comptabilité" de la page d'accueil&nbsp;:</p>
+         <p align="center"><img src="../images/performance/comptabilite.svg" alt="Comptabilité" width="60"></p>
+         <p>Dans la barre latérale du module, cliquez sur "Écritures" dans la section "Synthèses" symbolisée par l'icône d'un tableau<img src="../images/performance/table.svg" alt="Tableau" height="20" class="align-icone icone-marge-gauche">.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/couts-prod4.png" class="contour-img" alt="Liste des écritures" data-action="zoom" />
+         </p>
+         <p>Toutes les écritures comptables sont listées ici. Déployez, le cas échéant, l'en-tête de recherche pour filtrer les écritures.</p>
+      </div>
+      <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step4.svg" alt="4" width="52" />
+      </div>
+	  <div class="process-txt">
+         <span class="titre-advice">Sélectionnez et affectez une écriture</span>
+         <p>Sélectionnez une écriture parmi celles qui sont listées en cochant la case<img src="../images/commun/check-square.svg" alt="Case à cocher" height="18" class="align-icone icone-marge-gauche icone-marge-droite">devant l'élément de votre choix &#40;la sélection de plusieurs écritures est également autorisée&#41;.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/couts-prod5.png" class="contour-img" alt="Sélection écriture" data-action="zoom" />
+         </p>
+         <p>Choisissez ensuite une activité dans la liste déroulante située sous le bouton<img src="../images/commun/imprimer.svg" alt="Imprimer" class="btn-gris icone-marge-gauche">&nbsp;.</p>
+		 <p class="max-img-process">
+            <img src="../images/performance/couts-prod6.png" class="contour-img" alt="Sélection activité" data-action="zoom" />
+         </p>
+		 <p>Cliquez enfin sur le bouton devenu actif <span class="btn-blue">Affecter cet élément analytique à la sélection</span>.</p>
+		 <p>Un message de confirmation pour informe de la bonne exécution de l'opération.</p>
+		 <p class="max-img-process">
+            <img src="../images/performance/couts-prod7.png" class="contour-img" alt="Confirmation affectation" data-action="zoom" />
+         </p>
+      </div>
+      <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step5.svg" alt="5" width="52" />
+      </div>
+	  <div class="process-txt">
+         <span class="titre-advice">Visualisez les coûts de production</span>
+         <p>Retournez dans la section "Coûts de production" du module "Économique". La partie récapitulative du tableau, réservée aux coûts réalisés, est automatiquement mise à jour.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/couts-prod8.png" class="contour-img" alt="Coûts de production" data-action="zoom" />
+         </p>
+      </div>
+	  <h6>Guide de prise en main • Performance • Marges</h6>
+	  <a class="slice-process" id="marges"></a>
+	  <h2 class="texte aerateur">e - Marges</h2>
+	  <p class="texte">Les marges sont calculées dynamiquement pour chaque production, en fonction du rendement visé, des charges directes &#40;engrais, semences, produits phytosanitaires…&#41; et indirectes &#40;assurance, électricité, etc.&#41; prédéfinis dans un itinéraire technique et ventilées sur les activités via une clé de répartition.</p>
+	  <p class="texte">Le processus suivant vous guide pour afficher l'évolution des marges d'une activité en fonction de l'affectation des écritures comptables.</p>
+	  <div class="floating-box process">
+         <img src="../images/commun/step1.svg" alt="1" width="52" />
+      </div>
+	  <div class="process-txt">
+         <span class="titre-advice">Accédez aux calculs des marges</span>
+		 <p>Cliquez sur le lien "Économique" dans le "Menu principal" ou sur le bouton "Économique" de la page d'accueil&nbsp;:</p>
+         <p align="center"><img src="../images/performance/economique.svg" alt="Économique" width="60"></p>
+         <p>Puis, dans la barre latérale du module "Économique", cliquez sur "Marges" dans la section "Marges" symbolisée par l'icône d'une main<img src="../images/performance/hand-dollar.svg" alt="Main" height="20" class="align-icone icone-marge-gauche icone-marge-droite">pour afficher la liste des activités.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/marges1.png" class="contour-img" alt="Marges" data-action="zoom" />
+         </p>
+		 <p>Toutes les marges des activités principales &#40;végétale, viticoles, animales&#41; déjà calculées sont listées ici.</p>
+      </div>
+	  <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step2.svg" alt="2" width="52" />
+      </div>
+	  <div class="process-txt">
+         <span class="titre-advice">En option &nbsp;: modifiez le budget</span>
+         <p>Cliquez sur le bouton "Modifier le budget" affiché sous le libellé de chaque activité.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/marges2.png" class="contour-img" alt="Marges" data-action="zoom" />
+         </p>
+		 <p>Vous êtes automatiquement redirigé&#40;e&#41; vers la page de modification du budget prévisionnel de l'activité. Le cas échéant, corrigez-le comme expliqué dans la section <a href="#modif-budget" class="avoid-clicks">&#171;&nbsp;Budgets prévisionnels&nbsp;&#187;</a> de ce chapitre.</p>
+		 <p class="aerateur-haut">Cliquez sur le bouton<img class="btn-gris icone-marge-gauche icone-marge-droite" src="../images/commun/exporter.svg" alt="Exporter">pour obtenir le détail des marges dans une feuille de calcul au format XLS &#40;Microsoft Excel&#41;.</p>
+		 <p class="max-img-process">
+            <img src="../images/performance/marges3.png" class="contour-img" alt="Impression marges" data-action="zoom" />
+         </p>
+      </div>
+	  <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step3.svg" alt="3" width="52" />
+      </div>
+	  <div class="process-txt">
+         <span class="titre-advice">Visualisez l'évolution des marges</span>
+         <p>Dès qu'une écriture comptable est affectée à une activité comme expliqué dans la section <a href="#couts-prod" class="avoid-clicks">&#171;&nbsp;Coûts de production&nbsp;&#187;</a>, la partie récapitulative du tableau réservée aux marges réalisées est automatiquement mise à jour.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/marges4.png" class="contour-img" alt="Marges" data-action="zoom" />
+         </p>
+		 <p>Notez qu'en fonction des valeurs à afficher, l'application choisit automatiquement l'unité &#40;quintal ou tonne&#41; la plus adaptée pour remplir le tableau d'une activité végétale.</p>
+		 <p class="max-img-process">
+            <img src="../images/performance/marges5.png" class="contour-img" alt="Marges" data-action="zoom" />
+         </p>
+      </div>
+	  <h6>Guide de prise en main • Performance • Seuils de commercialisation</h6>
+	  <a class="slice-process" id="seuils"></a>
+	  <h2 class="texte aerateur">f - Seuils de commercialisation</h2>
+	  <p class="texte">Les seuils de commercialisation sont calculés dynamiquement pour chaque production, en fonction du rendement visé, des charges directes &#40;engrais, semences, produits phytosanitaires…&#41; et indirectes &#40;assurance, électricité, etc.&#41; prédéfinis dans un itinéraire technique et ventilées sur les activités via une clé de répartition. Pour chaque activité, ils permettent d'obtenir un prix d'équilibre, c'est à dire un prix de vente en-dessous duquel l'exploitant ne peut pas atteindre ses objectifs en terme de rémunération et de réserves de trésorerie à constituer.</p>
+	  <p class="texte">Le processus suivant vous guide pour afficher et simuler le prix d'équilibre d'une activité.</p>
+	  <div class="floating-box process">
+         <img src="../images/commun/step1.svg" alt="1" width="52" />
+      </div>
+	  <div class="process-txt">
+         <span class="titre-advice">Accédez aux seuils de commercialisation</span>
+		 <p>Cliquez sur le lien "Économique" dans le "Menu principal" ou sur le bouton "Économique" de la page d'accueil&nbsp;:</p>
+         <p align="center"><img src="../images/performance/economique.svg" alt="Économique" width="60"></p>
+         <p>Puis, dans la barre latérale du module "Économique", cliquez sur "Seuils de commercialisation" dans la section "Seuils de commercialisation" symbolisée par l'icône d'une balance<img src="../images/performance/scale-balanced.svg" alt="Balance" height="20" class="align-icone icone-marge-gauche icone-marge-droite">pour afficher la liste des activités.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/seuils1.png" class="contour-img" alt="Seuils de commercialisation" data-action="zoom" />
+         </p>
+		 <p>Tous les seuils de commercialisation des activités principales &#40;végétale, viticoles, animales&#41; déjà calculés sont listés ici.</p>
+      </div>
+      <br />
+	   <div class="floating-box process">
+         <img src="../images/commun/step2.svg" alt="2" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Modifiez les salaires et les provisions</span>
+         <p>À l'aide des curseurs de défilement situés en haut de la fenêtre principale, modifiez les rémunérations, les charges fixes et les provisions/réserves annuelles de l'exploitation. Le prix d'équilibre et le graphe sont dynamiquement mis à jour, permettant de comparer le cours <span class="tooltip">MATIF<span class="tooltiptext tooltip-top">Voir glossaire</span></span> du produit principal avec le seuil de commercialisation.</p>
+		 <p>Notez que ces 4 curseurs ne sont affichés que si et seulement si l'<strong>activité auxiliaire "Exploitation" est ouverte</strong> pour la campagne en cours car c'est elle qui défini le budget des charges fixes annuelles.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/seuils2.png" class="contour-img" alt="Modification des charges" data-action="zoom" />
+         </p>
+      </div>
+	  <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step3.svg" alt="3" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">Modifiez le rendement d'une activité</span>
+         <p>À l'aide du curseur de défilement situé sous le tableau récapitulatif du budget de l'activité, modifiez son rendement. Le prix d'équilibre et le graphe sont dynamiquement mis à jour, permettant de comparer le cours <span class="tooltip">MATIF<span class="tooltiptext tooltip-top">Voir glossaire</span></span> du produit principal avec le seuil de commercialisation.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/seuils3.png" class="contour-img" alt="Modification du rendement" data-action="zoom" />
+         </p>
+		 <p>Dès que le prix du marché est supérieur au seuil de commercialisation, il est possible de réaliser la vente des produits récoltés en sécurisant la situation économique de l'activité.</p>
+      </div>
+	  <h6>Guide de prise en main • Performance • Modèles d'interventions</h6>
+	  <a class="slice-process" id="modeles"></a>
+	  <h2 class="texte aerateur">g - Modèles d'interventions</h2>
+	  <p class ="texte">Un itinéraire cultural est composé, dans les offres <strong>Eky</strong>agri| <strong>Eky</strong>viti, d'une succession d'interventions planifiées pour chaque stade de développement du cycle annuel d'une plante. Cette période comprend non seulement le cycle cultural mais également le travail du sol, comme par exemple les étapes labour-semis-récolte-déchaumage pour les cultures annuelles. L'itinéraire est également caractérisé par le système de production adopté comme par exemple celui mis en œuvre en agriculture conventionnelle ou biologique.</p>
+	  <p class="texte">Un itinéraire cultural est donc constitué d'une suite de modèles d'interventions ordonnancés selon vos pratiques, la situation géographique de vos parcelles et suivant une chronologie que vous êtres libre de paramétrer.</p>
+	  <p class="texte">Le processus suivant vous guide pour créer un nouveau modèle d'intervention.</p>
+	  <div class="floating-box process">
+         <img src="../images/commun/step1.svg" alt="1" width="52" />
+      </div>
+	  <div class="process-txt">
+         <span class="titre-advice">Accédez aux modèles d'interventions</span>
+		 <p>Cliquez sur le lien "Planification" dans le "Menu principal" ou sur le bouton "Planification" de la page d'accueil&nbsp;:</p>
+         <p align="center"><img src="../images/performance/planification.svg" alt="Planification" width="60"></p>
+         <p>Puis, dans la barre latérale du module "Planification", cliquez sur "Modèles d'interventions" dans la section "Paramètres" symbolisée par l'icône d'un engrenage<img src="../images/performance/cog.svg" alt="Engrenage" height="20" class="align-icone icone-marge-gauche">.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/modeles-inter1.png" class="contour-img" alt="Liste des modèles" data-action="zoom" />
+         </p>
+		 <p>Tous les modèles d'interventions paramétrés automatiquement ou créés par l'utilisateur sont listés ici.</p>
+		 <p>Notez qu'il s'agit ici de modèles d'interventions affectés à un itinéraire cultural prédéfini et sélectionné pour une activité ouverte, et dont le budget prévisionnel a déjà été calculé pour une campagne donnée.</p>
+      </div>
+      <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step2.svg" alt="2" width="52" />
+      </div>
+	  <div class="process-txt">
+         <span class="titre-advice">Créez un modèle d'intervention</span>
+		 <p>Cliquez sur le bouton "Ajouter un modèle d'intervention" en haut à gauche de la fenêtre principale.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/modeles-inter2.png" class="contour-img" alt="Création modèle" data-action="zoom" />
+         </p>
+      </div>
+      <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step3.svg" alt="3" width="52" />
+      </div>
+	  <div class="process-txt">
+         <span class="titre-advice">Sélectionnez un type d'intervention</span>
+		 <p>Créez un nouveau modèle d'intervention en cliquant sur le bouton de votre choix ou en le sélectionnant dans une des listes déroulantes.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/modeles-inter3.png" class="contour-img" alt="Sélection modèle d'intervention" data-action="zoom" />
+         </p>
+      </div>
+      <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step4.svg" alt="4" width="52" />
+      </div>
+	  <div class="process-txt">
+         <span class="titre-advice">Configurez le modèle d'intervention</span>
+		 <p>Remplissez tous les champs obligatoires signalés par une astérisque de couleur rouge avec les bonnes informations requises pour le paramétrer correctement.</p>
+		 <p>Sélectionnez une activité ciblée ou non, et renseignez, en option, un temps de préraration.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/modeles-inter4.png" class="contour-img" alt="Configuration modèle d'intervention" data-action="zoom" />
+         </p>
+		 <p>Définissez enfin les "Paramètres du produit" &#40;semences, fertilisants, produits phytosanitaires, produits de récolte, opérateurs/conducteurs et équipements&#41; en fonction du modèle d'intervention.</p>
+		 <p class="max-img-process">
+            <img src="../images/performance/modeles-inter5.png" class="contour-img" alt="Paramètres du produit" data-action="zoom" />
+         </p>
+		 <p>Cliquez sur <span class="btn-blue">Créer</span> pour valider l'opération.</p>
+		 <p class="aerateur-haut">Le <strong>coût estimatif</strong> de l'intervention est alors calculé à partir des prix enregistrés dans les <strong>catalogues de prix</strong> "Coûts d'usage" et "Prix d'achat". Tous ces montants peuvent être définis avant la configuration du modèle d'intervention, ou renseignés après, depuis la vue détaillée de celui-ci&nbsp;:</p>
+		 <p class="max-img-process">
+            <img src="../images/performance/modeles-inter6.png" class="contour-img" alt="Détail modèle d'intervention" data-action="zoom" />
+         </p>
+      </div>
+      <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step5.svg" alt="5" width="52" />
+      </div>
+	  <div class="process-txt">
+         <span class="titre-advice">En option&nbsp;: dupliquez un modèle d'intervention</span>
+		 <p>Il est possible, depuis la vue "Liste", de copier un ou plusieurs modèles d'interventions. Cochez la case<img src="../images/commun/check-square.svg" alt="Case à cocher" height="18" class="align-icone icone-marge-gauche icone-marge-droite">à gauche de leur nom, puis cliquez sur le bouton<img class="btn-gris icone-marge-gauche icone-marge-droite" src="../images/commun/dupliquer.svg" alt="Dupliquer">devenu actif après sélection.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/modeles-inter7.png" class="contour-img" alt="Duplication modèle d'intervention" data-action="zoom" />
+         </p>
+		 <p>Dupliquez les modèles d'interventions choisis en ciblant la campagne suivante dans la liste déroulante.</p>
+		 <p class="max-img-process">
+            <img src="../images/performance/modeles-inter8.png" class="contour-img" alt="Validation duplication" data-action="zoom" />
+         </p>
+		 <p>Cliquez sur <span class="btn-blue">Valider</span> dans la <span class="tooltip">fenêtre modale<span class="tooltiptext tooltip-top">Voir glossaire</span></span> pour confirmer l'opération.</p>
+		 <p class="aerateur-haut">Répétez cette procédure initiale pour générer les différents modèles d'interventions personnalisables et nécessaires à la configuration des nouveaux itinéraires culturaux.</p>
+      </div>
+	  <h6>Guide de prise en main • Performance • Itinéraires culturaux</h6>
+	  <a class="slice-process" id="itineraires"></a>
+	  <h2 class="texte aerateur">h - Itinéraires culturaux</h2>
+	  <a class="slice-process" id="itineraire-ref"></a>
+	  <h6>Guide de prise en main • Performance • Import d'un itinéraire cultural</h6>
+	  <h3 align="center" class="texte aerateur procedure">A - Import d'un itinéraire cultural de référence</h3>
+	  <p class="texte">Le processus suivant vous guide pour importer un itinéraire cultural de référence parmi ceux qui sont prédéfinis dans l'application.</p>
+	  <div class="floating-box process">
+         <img src="../images/commun/step1.svg" alt="1" width="52" />
+      </div>
+	   <div class="process-txt">
+         <span class="titre-advice">Accédez aux itinéraires culturaux</span>
+		 <p>Cliquez sur le lien "Planification" dans le "Menu principal" ou sur le bouton "Planification" de la page d'accueil&nbsp;:</p>
+         <p align="center"><img src="../images/performance/planification.svg" alt="Planification" width="60"></p>
+         <p>Puis, dans la barre latérale du module "Planification", cliquez sur "Itinéraires culturaux" dans la section "Paramètres" symbolisée par l'icône d'un engrenage<img src="../images/performance/cog.svg" alt="Engrenage" height="20" class="align-icone icone-marge-gauche">.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/itineraire-ref1.png" class="contour-img" alt="Liste des itinéraires" data-action="zoom" />
+         </p>
+		 <p>Tous les itinéraires culturaux déjà importés ou configurés par l'utilisateur sont listés ici. La mention "Paramétrage automatique" dans la colonne "Description" fait référence à un itinéraire fourni par défaut dans l'application.</p>
+      </div>
+      <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step2.svg" alt="2" width="52" />
+      </div>
+	  <div class="process-txt">
+         <span class="titre-advice">Importez un itinéraire cultural</span>
+		 <p>Cliquez sur le bouton "+&nbsp;Importer un itinéraire cultural de référence" situé en haut de la fenêtre principale.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/itineraire-ref2.png" class="contour-img" alt="Import itinéraire" data-action="zoom" />
+         </p>
+      </div>
+      <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step3.svg" alt="3" width="52" />
+      </div>
+	  <div class="process-txt">
+         <span class="titre-advice">Sélectionnez l'itinéraire cultural</span>
+		 <p>Dans la liste déroulante, choisissez un itinéraire cultural parmi les propositions affichées.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/itineraire-ref3.png" class="contour-img" alt="Import itinéraire" data-action="zoom" />
+         </p>
+		 <p class="max-img-process">
+            <img src="../images/performance/itineraire-ref4.png" class="contour-img" alt="Import itinéraire" data-action="zoom" />
+         </p>
+		 <p>Cliquez sur <span class="btn-blue">Importer</span> pour valider l'opération.</p>
+      </div>
+	  <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step4.svg" alt="4" width="52" />
+      </div>
+	  <div class="process-txt">
+         <span class="titre-advice">Modifiez l'itinéraire cultural</span>
+		 <p>Renommez l'itinéraire pour l'identifier facilement et, en fonction de vos pratiques culturales et de vos équipements, adaptez celui-ci en fonction de vos modèles d'interventions personnalisés &#40;explications délivrées dans la procédure <a href="#config-itineraire" class="avoid-clicks">&#171;&nbsp;Création d'un itinéraire cultural&nbsp;&#187;</a>&#41;.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/itineraire-ref5.png" class="contour-img" alt="Modification itinéraire" data-action="zoom" />
+         </p>
+		 <p class="max-img-process">
+            <img src="../images/performance/itineraire-ref6.png" class="contour-img" alt="Modification itinéraire" data-action="zoom" />
+         </p>
+		 <p>Cliquez sur <span class="btn-blue">Envoyer</span> pour valider l'opération.</p>
+      </div>
+	  <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step5.svg" alt="5" width="52" />
+      </div>
+	  <div class="process-txt">
+         <span class="titre-advice">Affichez les itinéraires culturaux</span>
+		 <p>La liste des itinéraires disponibles est automatiquement actualisée en incluant le nouvel import.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/itineraire-ref7.png" class="contour-img" alt="Liste des itinéraires" data-action="zoom" />
+         </p>
+      </div>
+	  <a class="slice-process" id="config-itineraire"></a>
+	  <h6>Guide de prise en main • Performance • Création d'un itinéraire cultural</h6>
+	  <h3 align="center" class="texte aerateur procedure">B - Création d'un itinéraire cultural</h3>
+	  <p class="texte">Le processus suivant vous guide pour créer un nouvel itinéraire cultural à partir de modèles d'interventions.</p>
+	  <div class="floating-box process">
+         <img src="../images/commun/step1.svg" alt="1" width="52" />
+      </div>
+	  <div class="process-txt">
+         <span class="titre-advice">Prérequis&nbsp;: modèles d'interventions</span>
+		 <p>Assurez-vous que tous les différents modèles d'interventions ont été préalablement et correctement configurés comme expliqué dans la section <a href="#modeles" class="avoid-clicks">&#171;&nbsp;Modèles d'interventions&nbsp;&#187;</a> de ce chapitre.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/itineraire1.png" class="contour-img" alt="Liste des modèles" data-action="zoom" />
+         </p>
+      </div>
+      <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step2.svg" alt="2" width="52" />
+      </div>
+	  <div class="process-txt">
+         <span class="titre-advice">Accédez aux itinéraires culturaux</span>
+		 <p>Cliquez sur le lien "Planification" dans le "Menu principal" ou sur le bouton "Planification" de la page d'accueil&nbsp;:</p>
+         <p align="center"><img src="../images/performance/planification.svg" alt="Planification" width="60"></p>
+         <p>Puis, dans la barre latérale du module "Planification", cliquez sur "Itinéraires culturaux" dans la section "Paramètres" symbolisée par l'icône d'un engrenage<img src="../images/performance/cog.svg" alt="Engrenage" height="20" class="align-icone icone-marge-gauche">.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/itineraire2.png" class="contour-img" alt="Liste des itinéraires" data-action="zoom" />
+         </p>
+		 <p>Tous les itinéraires culturaux déjà importés ou configurés par l'utilisateur sont listés ici. La mention "Paramétrage automatique" dans la colonne "Description" fait référence à un itinéraire fourni par défaut dans l'application.</p>
+      </div>
+      <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step3.svg" alt="3" width="52" />
+      </div>
+	  <div class="process-txt">
+         <span class="titre-advice">Créez un itinéraire cultural</span>
+		 <p>Cliquez sur le bouton "+&nbsp;Enregistrer un itinéraire cultural" en haut à gauche de la fenêtre principale.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/itineraire3.png" class="contour-img" alt="Création itinéraire" data-action="zoom" />
+         </p>
+		 <p>Notez que vous pouvez également démarrer avec un itinéraire prédéfini en cliquant sur le bouton "+&nbsp;Importer un itinéraire cultural de référence" et le dupliquer. Une fois importé et en fonction de vos besoins, il est alors possible de le modifier pour l'adapter à vos pratiques culturales et à vos équipements, tant que le budget de l'activité qui l'utilise n'a pas encore été généré.</p>
+      </div>
+      <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step4.svg" alt="4" width="52" />
+      </div>
+	  <div class="process-txt">
+         <span class="titre-advice">Configurez le nouvel itinéraire cultural</span>
+		 <p>Sélectionnez une campagne, nommez l'itinéraire et choisissez une activité dans la liste déroulante.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/itineraire4.png" class="contour-img" alt="Configuration itinéraire" data-action="zoom" />
+         </p>
+      </div>
+      <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step5.svg" alt="5" width="52" />
+      </div>
+	  <div class="process-txt">
+         <span class="titre-advice">Paramétrez la liste des interventions</span>
+		 <p>Sélectionnez une première intervention dans la liste déroulante des modèles d'interventions.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/itineraire5.png" class="contour-img" alt="Sélection modèle d'intervention" data-action="zoom" />
+         </p>
+		 <p class="max-img-process">
+            <img src="../images/performance/itineraire6.png" class="contour-img" alt="Sélection modèle d'intervention" data-action="zoom" />
+         </p>
+      </div>
+      <br />
+	   <div class="floating-box process">
+         <img src="../images/commun/step6.svg" alt="6" width="52" />
+      </div>
+	  <div class="process-txt">
+         <span class="titre-advice">Complétez la liste des interventions</span>
+		  <p>Cliquez sur "<span style="color:#487bd4">Ajouter</span>" et sélectionnez une deuxième intervention dans la liste déroulante des modèles d'interventions.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/itineraire7.png" class="contour-img" alt="Sélection modèle d'intervention" data-action="zoom" />
+         </p>
+		 <p>Renseignez le délai &#40;un intervalle en jours&#41; prévu avec le modèle d'intervention précédent.</p>
+		 <p class="max-img-process">
+            <img src="../images/performance/itineraire8.png" class="contour-img" alt="Sélection modèle d'intervention" data-action="zoom" />
+         </p>
+		 <p>Répétez successivement cette opération pour tous les modèles d'interventions que vous souhaitez ajouter à l'itinéraire cultural.</p>
+		 <p class="max-img-process">
+            <img src="../images/performance/itineraire9.png" class="contour-img" alt="Sélection modèle d'intervention" data-action="zoom" />
+         </p>
+		 <p>Cliquez sur l'icône<img src="../images/commun/repeat.svg" alt="Répétition" height="20" class="align-icone icone-marge-gauche icone-marge-droite">à droite du nom d'une intervention pour paramétrer une ou plusieurs répétitions avec un intervalle défini en jours. Cliquez sur la croix<img src="../images/commun/delete.svg" alt="Suppression" height="20" class="align-icone icone-marge-gauche icone-marge-droite">pour supprimer une intervention de la liste.</p>
+		 <p class="max-img-process">
+            <img src="../images/performance/itineraire10.png" class="contour-img" alt="Répétition intervention" data-action="zoom" />
+         </p>
+		 <p>Cliquez sur <span class="btn-blue">Valider</span> dans la <span class="tooltip">fenêtre modale<span class="tooltiptext tooltip-top">Voir glossaire</span></span> pour confirmer la répétition.</p>
+		 <p class="aerateur-haut"><strong>Interventions de récolte</strong></p>
+		 <p>Cliquez sur l'icône symbolisant un "Crayon"<img src="../images/commun/crayon.svg" alt="Crayon" height="20" class="align-icone icone-marge-gauche icone-marge-droite">pour répartir une intervention de récolte sur plusieurs jours. Cochez la case<img src="../images/commun/check-square.svg" alt="Case à cocher" height="20" class="align-icone icone-marge-gauche icone-marge-droite">pour annuler une répartition erronée mais déjà affectée à une activité.</p>
+		 <p class="max-img-process">
+            <img src="../images/performance/itineraire11.png" class="contour-img" alt="Répartition récolte" data-action="zoom" />
+         </p>
+		 <p>Cliquez sur <span class="btn-blue">Valider</span> dans la <span class="tooltip">fenêtre modale<span class="tooltiptext tooltip-top">Voir glossaire</span></span> pour confirmer la modification.</p>
+		 <p class="max-img-process aerateur-haut">
+            <img src="../images/performance/itineraire12.png" class="contour-img" alt="Sélection modèle d'intervention" data-action="zoom" />
+         </p>
+		 <p>Notez que les délais indiqués en jours par rapport au semis &#40;ou une autre intervention d'implantation de culture&#41; sont automatiquement calculés après l'enregistrement de l'itinéraire.</p>
+		 <p>Cliquez sur <span class="btn-blue">Envoyer</span> pour valider l'opération et affecter l'itinéraire cultural à l'activité ciblée.</p>
+		 <p class="aerateur-haut">La liste des interventions ne peut plus être modifiée lorsque l'itinéraire cultural a déjà été utilisé sur une ou plusieurs productions.</p>
+      </div>
+	  <br />
+      <div class="floating-box process">
+         <img src="../images/commun/step7.svg" alt="7" width="52" />
+      </div>
+      <div class="process-txt">
+         <span class="titre-advice">En option : générez la fiche des itinéraires techniques</span>
+		 <p>Ce document consigne, dans l'ordre chronologique, l'ensemble des modèles d'interventions composant un itinéraire technique. Il récapitule les temps/ha, les rendements, les besoins en équipements, en main d'œuvre, en intrants et renseigne sur les coûts estimatifs de la planification pour une campagne donnée.</p>
+		 <p>Cliquez sur le bouton <img src="../images/chapitre9/documents.svg" alt="Documents" class="btn-gris icone-marge-gauche icone-marge-droite"> dans la liste des itinéraires culturaux ou dans la vue détaillée de l'un d'entre eux, puis sélectionnez "Fiche itinéraires techniques" pour obtenir le document.</p>
+		 <p class="max-img-process">
+            <img src="../images/performance/itineraire13.png" class="contour-img" alt="Sélection document" data-action="zoom" />
+         </p>
+         <p>Patientez quelques instants car la fabrication de la nouvelle fiche peut prendre plus ou moins de temps en fonction du nombre d'activités et/ou de modèles d'interventions à traiter.</p>
+         <p>La pastille rouge<img src="../images/commun/marker.svg" alt="Notification" height="20" class="align-icone icone-marge-gauche icone-marge-droite">en haut à droite de la cloche<img src="../images/commun/bell-o-blue.svg" alt="Cloche" height="20" class="align-icone icone-marge-gauche icone-marge-droite">vous indique qu'une opération interne a été effectuée par l'application. Cliquez sur celle-ci pour afficher la notification, puis cliquez sur le lien "Votre fichier a été généré avec succès" pour afficher la vignette de la fiche dans "Mes documents".</p>
+         <p class="max-img-process">
+            <img src="../images/performance/itineraire14.png" class="contour-img" alt="Affichage notification" data-action="zoom" />
+         </p>
+         <p>Cliquez sur la vignette pour afficher le document au format PDF dans votre navigateur. Enregistrez et/ou imprimez le document obtenu.</p>
+		 <p class="max-img-process">
+            <img src="../images/performance/itineraire15.png" class="contour-img" alt="Vignette de la fiche" data-action="zoom" />
+         </p>
+         <p>Notez que ce document reste accessible à tout moment via le lien <a class="avoid-clicks" href="../chapitre10#ged" target="_self">"Mes documents"</a> dans la section "Archives"<img src="../images/commun/archive.svg" alt="Archives" height="20" class="align-icone icone-marge-gauche icone-marge-droite">du module "Outils", tant qu'il n'a pas été supprimé.</p>
+         <p>Si un seul itinéraire technique est choisi au moment de l'impression, la fiche mentionne uniquement le nom de l'activité et la campagne concernée, comme par exemple "Blé tendre d'hiver biologique 2022".</p>
+      </div>
+	   <a class="slice-process" id="duplic-itineraire"></a>
+	  <h6>Guide de prise en main • Performance • Duplication d'un itinéraire cultural</h6>
+	  <h3 align="center" class="texte aerateur procedure">C - Duplication d'un itinéraire cultural</h3>
+	  <p class="texte">Le processus suivant vous guide pour dupliquer un itinéraire cultural et vous permettre de le modifier tout en conservant une copie de l'élément initial.</p>
+	  <div class="floating-box process">
+         <img src="../images/commun/step1.svg" alt="1" width="52" />
+      </div>
+	   <div class="process-txt">
+         <span class="titre-advice">Accédez aux itinéraires culturaux</span>
+		 <p>Cliquez sur le lien "Planification" dans le "Menu principal" ou sur le bouton "Planification" de la page d'accueil&nbsp;:</p>
+         <p align="center"><img src="../images/performance/planification.svg" alt="Planification" width="60"></p>
+         <p>Puis, dans la barre latérale du module "Planification", cliquez sur "Itinéraires culturaux" dans la section "Paramètres" symbolisée par l'icône d'un engrenage<img src="../images/performance/cog.svg" alt="Engrenage" height="20" class="align-icone icone-marge-gauche">.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/duplic-itineraire1.png" class="contour-img" alt="Liste des itinéraires" data-action="zoom" />
+         </p>
+		 <p>Tous les itinéraires culturaux déjà importés ou configurés par l'utilisateur sont listés ici. La mention "Paramétrage automatique" dans la colonne "Description" fait référence à un itinéraire fourni par défaut dans l'application.</p>
+      </div>
+      <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step2.svg" alt="2" width="52" />
+      </div>
+	   <div class="process-txt">
+         <span class="titre-advice">Affichez la fiche de l'itinéraire</span>
+		 <p>Cliquez sur le nom de l'itinéraire pour afficher sa fiche détaillée.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/duplic-itineraire2.png" class="contour-img" alt="Fiche itinéraire cultural" data-action="zoom" />
+         </p>
+      </div>
+	  <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step3.svg" alt="3" width="52" />
+      </div>
+	   <div class="process-txt">
+         <span class="titre-advice">Dupliquez l'itinéraire cultural</span>
+		 <p>Cliquez sur le bouton<img class="btn-gris icone-marge-gauche icone-marge-droite" src="../images/commun/dupliquer.svg" alt="Dupliquer">en haut de la fenêtre principale.</p>
+		 <p><strong>Attention, ce bouton n'est disponible dans l'interface que si l'itinéraire sélectionné n'a encore jamais été dupliqué au moins une fois.</strong></p>
+		 <p>En pratique, pour obtenir 2 copies d'un même itinéraire, il est nécessaire de dupliquer l'itinéraire initial une fois, et de dupliquer à son tour le nouvel itinéraire obtenu.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/duplic-itineraire3.png" class="contour-img" alt="Duplication itinéraire cultural" data-action="zoom" />
+         </p>
+      </div>
+      <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step4.svg" alt="4" width="52" />
+      </div>
+	   <div class="process-txt">
+         <span class="titre-advice">Paramétrez la duplication</span>
+		 <p>Sélectionnez la campagne à cibler dans la liste déroulante.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/duplic-itineraire4.png" class="contour-img" alt="Sélection campagne" data-action="zoom" />
+         </p>
+		 <p>Cliquez sur <span class="btn-blue">Valider</span> pour valider l'opération.</p>
+		 <p>Sélectionnez les modèles d'interventions à prendre en compte dans la copie de l'itinéraire cultural en activant ou non les cases à cocher situées devant chaque libellé<img src="../images/commun/check-square.svg" alt="Case à cocher" height="18" class="align-icone icone-marge-gauche icone-marge-droite">dans la liste.</p>
+		 <p class="max-img-process">
+            <img src="../images/performance/duplic-itineraire5.png" class="contour-img" alt="Sélection modèles d'interventions" data-action="zoom" />
+         </p>
+		 <p>Cliquez sur <span class="btn-blue">Valider</span> pour valider l'opération.</p>
+      </div>
+      <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step5.svg" alt="5" width="52" />
+      </div>
+	   <div class="process-txt">
+         <span class="titre-advice">Modifiez l'itinéraire cultural</span>
+		 <p>Renommez l'itinéraire pour l'identifier facilement et, en fonction de vos pratiques culturales et de vos équipements, adaptez celui-ci en fonction de vos modèles d'interventions personnalisés &#40;explications délivrées dans la procédure <a href="#config-itineraire" class="avoid-clicks">&#171;&nbsp;Création d'un itinéraire cultural&nbsp;&#187;</a>&#41;.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/duplic-itineraire6.png" class="contour-img" alt="Modification itinéraire" data-action="zoom" />
+         </p>
+		 <p class="max-img-process">
+            <img src="../images/performance/duplic-itineraire7.png" class="contour-img" alt="Modification itinéraire" data-action="zoom" />
+         </p>
+		 <p>Cliquez sur <span class="btn-blue">Envoyer</span> pour valider l'opération.</p>
+      </div>
+	  <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step6.svg" alt="6" width="52" />
+      </div>
+	  <div class="process-txt">
+         <span class="titre-advice">Affichez les itinéraires culturaux</span>
+		 <p>La liste des itinéraires disponibles est automatiquement actualisée en incluant l'itinéraire dupliqué.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/duplic-itineraire8.png" class="contour-img" alt="Liste des itinéraires" data-action="zoom" />
+         </p>
+      </div>
+	  <h6>Guide de prise en main • Performance • Plan de charges</h6>
+	  <a class="slice-process" id="plan-charges"></a>
+	  <h2 class="texte aerateur">i - Plan de charges</h2>
+	  <p class="texte">Le plan de charges permet de prévoir et de visualiser, pour une année civile complète, les besoins en équipements, en main d'œuvre et en intrants. Il se référe à un ou plusieurs itinéraires culturaux, à l'assolement des parcelles, à la date de semis prévisionnelle ou de début de campagne annuelle de production et au calcul du budget prévisionnel de chaque activité.</p>
+	  <div class="saut-page"></div>
+	  <div class="warn-fond perf-orange aerateur-haut aerateur-bas">
+         <div class="floating-box-warn">
+            <img src="../images/commun/attention.svg" width="100" alt="Attention"/>
+         </div>
+         <div class="info-txt">
+            <span class="titre-advice">Prérequis et ordre des tâches<br /></span>
+            <p class="texte-advice">
+               L'utilisation de la fonctionnalité nécessite de respecter le paramétrage initial suivant&nbsp;:
+            </p>
+			<div class="divTableListe">
+         		<div class="divTableBody">
+					<div class="divTableRow">
+               			<div class="divTableCellPlan" style="width: 15px">1.</div>
+               			<div class="divTableCellPlan" style="width: auto">sélectionnez l'itinéraire cultural approprié pour chaque activité végétale ou viticole&nbsp;;</div>
+            		</div>
+					<div class="divTableRow">
+               			<div class="divTableCellPlan" style="width: 15px">2.</div>
+               			<div class="divTableCellPlan" style="width: auto">validez les dates de semis prévisionnelles ou de début de campagne de production&nbsp;;</div>
+            		</div>
+					<div class="divTableRow">
+               			<div class="divTableCellPlan" style="width: 15px">3.</div>
+               			<div class="divTableCellPlan" style="width: auto">réalisez l'assolement complet des parcelles de votre choix avec les activités ouvertes&nbsp;;</div>
+            		</div>
+					<div class="divTableRow">
+               			<div class="divTableCellPlan" style="width: 15px">4.</div>
+               			<div class="divTableCellPlan" style="width: auto">générez ou définissez un budget prévisionnel de référence pour chaque activité.</div>
+            		</div>
+         		</div>
+      	 	</div>
+         </div>
+      </div>
+	  <p class="texte">Le processus suivant vous guide pour afficher et connaître le plan de charges annuel, hebdomadaire et journalier pour l'ensemble ou pour une seule des activités ouvertes durant une campagne.</p>
+	  <div class="floating-box process">
+         <img src="../images/commun/step1.svg" alt="1" width="52" />
+      </div>
+	  <div class="process-txt">
+         <span class="titre-advice">Accédez au plan de charges</span>
+		 <p>Cliquez sur le lien "Planification" dans le "Menu principal" ou sur le bouton "Planification" de la page d'accueil&nbsp;:</p>
+         <p align="center"><img src="../images/performance/planification.svg" alt="Planification" width="60"></p>
+         <p>Puis, dans la barre latérale du module "Planification", cliquez sur "Plan de charges" dans la section "Prévision" symbolisée par l'icône d'un histogramme<img src="../images/performance/bar-chart.svg" alt="Histogramme" height="20" class="align-icone icone-marge-gauche">.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/plan-charges1.png" class="contour-img" alt="Plan de charges" data-action="zoom" />
+         </p>
+		 <p>Un graphe à barres verticales affiche automatiquement les quantités d'heures des équipements et de main d'œuvre nécessaires pour réaliser les interventions définies dans les itinéraires culturaux.</p>
+		 <p>Utilisez le "<em>slider</em>" &#40;curseur de défilement&#41; pour vous déplacer dans la frise chronologique et visualiser la succession des interventions ordonnancées pour chaque semaine de l'année civile&nbsp;:</p>
+         <p class="max-img-process">
+            <img src="../images/performance/plan-charges2.png" class="contour-img" alt="Plan de charges" data-action="zoom" />
+         </p>
+      </div>
+      <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step2.svg" alt="2" width="52" />
+      </div>
+	  <div class="process-txt">
+         <span class="titre-advice">Sélectionnez une activité</span>
+         <p>En fonction de vos préférences, choisissez ou non une activité dans la liste déroulante "Activités" située en haut à droite de la fenêtre principale, pour filtrer les besoins propres à cette activité.</p>
+		 <p>Notez que seules les activités correctement configurées avec tous les paramètres requis sont affichées.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/plan-charges3.png" class="contour-img" alt="Plan de charges" data-action="zoom" />
+         </p>
+		 <p>En fonction de votre position dans la frise chronologique, l'échelle des heures en abscisse à gauche du graphe peut être masquée et devient de nouveau visible dès l'affichage des charges hebdomadaires ou journalières.</p>
+      </div>
+      <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step3.svg" alt="3" width="52" />
+      </div>
+	  <div class="process-txt">
+         <span class="titre-advice">Affichez le plan de charges de l'activité</span>
+         <p>Le graphe est automatiquement actualisé pour l'activité sélectionnée avec les quantités d'heures des équipements et de main d'œuvre requises pour réaliser chaque intervention planifée dans l'itinéraire cultural.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/plan-charges4.png" class="contour-img" alt="Plan de charges" data-action="zoom" />
+         </p>
+		 <p>Les heures comptabilisées pour toutes les autres activités sont alors soustraites des chiffres calculés et affichés initialement dans les barres à l'étape précédente.</p>
+      </div>
+	  <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step4.svg" alt="4" width="52" />
+      </div>
+	  <div class="process-txt">
+         <span class="titre-advice">Visualisez les charges hebdomadaires</span>
+         <p>Cliquez sur une barre du graphe de votre choix afin de recadrer la frise chronologique et zoomer sur le détail des charges hebdomadaires prévisionnelles de la semaine ciblée.</p>
+		 <p><strong>Attention&nbsp;:</strong> sans la sélection préalable d'une activité, le graphe cumule toutes les ressources nécessaires à la réalisation des différentes interventions planifiées sur la période, et pour l'ensemble des activités.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/plan-charges5.png" class="contour-img" alt="Charges hebdomadaires" data-action="zoom" />
+         </p>
+		 <p>Notez que les quantités disponibles pour la période sont exprimées en nombre d'équipements en stock et de travailleurs à votre disposition pour réaliser les différents travaux sur l'exploitation.</p>
+		 <p class="max-img-process">
+            <img src="../images/performance/plan-charges6.png" class="contour-img" alt="Charges hebdomadaires" data-action="zoom" />
+         </p>
+		 <p>Cliquez sur l'icône<img src="../images/performance/publish.svg" alt="Charges annuelles" height="20" class="align-icone icone-marge-gauche icone-marge-droite">en haut à droite de la fenêtre principale pour revenir à la vue du plan de charges annuel.</p>
+      </div>
+	  <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step5.svg" alt="5" width="52" />
+      </div>
+	  <div class="process-txt">
+         <span class="titre-advice">Visualisez les charges journalières</span>
+         <p>Cliquez à nouveau sur une barre du graphe de votre choix pour cibler et afficher le détail des charges journalières prévisionnelles.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/plan-charges7.png" class="contour-img" alt="Charges journalières" data-action="zoom" />
+         </p>
+		 <p>Notez que les quantités disponibles à une date donnée sont exprimées en nombre d'équipements en stock et de travailleurs à votre disposition pour réaliser une ou plusieurs interventions.</p>
+		 <p class="max-img-process">
+            <img src="../images/performance/plan-charges8.png" class="contour-img" alt="Charges journalières" data-action="zoom" />
+         </p>
+		 <p>Cliquez sur l'icône<img src="../images/performance/publish.svg" alt="Charges annuelles" height="20" class="align-icone icone-marge-gauche icone-marge-droite">en haut à droite de la fenêtre principale pour revenir à la vue du plan de charges annuel.</p>
+      </div>
+	  <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step6.svg" alt="6" width="52" />
+      </div>
+	  <div class="process-txt">
+         <span class="titre-advice">Charges des interventions avec intrants</span>
+         <p>Pour les interventions avec intrants &#40;semences, fertilisants, produits phytosanitaires, etc.&#41;, les quantités affichées et disponibles en stock sont exprimées dans l'unité de référence&nbsp;: litre, kilogramme, tonne, etc.</p>
+		 <p>Exemple de charge journalière en intrants prévue dans une intervention de pulvérisation&nbsp;:</p>
+         <p class="max-img-process">
+            <img src="../images/performance/plan-charges9.png" class="contour-img" alt="Charges intrants" data-action="zoom" />
+         </p>
+		 <p>Exemple de charges hebdomadaires en intrants prévues dans deux interventions de semis&nbsp;:</p>
+		 <p class="max-img-process">
+            <img src="../images/performance/plan-charges10.png" class="contour-img" alt="Charges intrants" data-action="zoom" />
+         </p>
+      </div>
+	  <h6>Guide de prise en main • Performance • Élaboration de scénarios</h6>
+	  <a class="slice-process" id="scenarios"></a>
+	  <h2 class="texte aerateur">j - Élaboration de scénarios</h2>
+	  <p class="texte">Les scénarios permettent de simuler un ou plusieurs plans d'assolement afin d'envisager la répartition des besoins en équipements, en main d'œuvre et en intrants durant une année civile. Ils se réfèrent à une sélection d'activités, aux itinéraires culturaux, à des projections des surfaces de travail et des dates prévisionnelles de semis/plantation. Toutes ces informations permettent de calculer différents <a href="#plan-charges" class="avoid-clicks">plans de charges</a> hypothétiques, en évitant de réaliser l'assolement définitif des parcelles pour les productions végétales ou viticoles.</p>
+	  <p class="texte">Le processus suivant vous guide pour construire un scénario afin de connaître le plan de charges annuel, hebdomadaire et journalier pour l'ensemble ou pour une seule des activités ouvertes durant une campagne.</p>
+	  <div class="floating-box process">
+         <img src="../images/commun/step1.svg" alt="1" width="52" />
+      </div>
+	  <div class="process-txt">
+         <span class="titre-advice">Accédez aux scénarios d'assolement</span>
+		 <p>Cliquez sur le lien "Planification" dans le "Menu principal" ou sur le bouton "Planification" de la page d'accueil&nbsp;:</p>
+         <p align="center"><img src="../images/performance/planification.svg" alt="Planification" width="60"></p>
+         <p>Puis, dans la barre latérale du module "Planification", cliquez sur "Scénarios" dans la section "Prévision" symbolisée par l'icône d'un histogramme<img src="../images/performance/bar-chart.svg" alt="Histogramme" height="20" class="align-icone icone-marge-gauche">.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/scenarios1.png" class="contour-img" alt="Scénarios" data-action="zoom" />
+         </p>
+		 <p>Tous les scénarios prédéfinis automatiquement ou configurés par l'utilisateur sont listés ici.</p>
+		 <p>Cliquez sur le bouton "+ Enregistrer un nouveau scénario" en haut à gauche de la fenêtre principale.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/scenarios2.png" class="contour-img" alt="Nouveau scénario" data-action="zoom" />
+         </p>
+      </div>
+      <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step2.svg" alt="2" width="52" />
+      </div>
+	  <div class="process-txt">
+         <span class="titre-advice">Paramétrez le nouveau scénario</span>
+         <p>Sélectionnez la campagne de production et nommez le nouveau scénario pour le définir correctement. Lors de son enregistrement, le nom du scénario sera automatiquement complété d'un suffixe précisant la campagne choisie comme par exemple "Production végétale - Campagne 2023" si vous avez saisi "Production végétale" comme nom de scénario.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/scenarios3.png" class="contour-img" alt="Nouveau scénario" data-action="zoom" />
+         </p>
+		 <p>Notez que dès qu'une première activité est ajoutée à l'étape suivante pour simuler l'assolement, ou après l'enregistrement du nouveau scénario, il n'est plus possible de modifier la campagne choisie ici.</p>
+      </div>
+      <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step3.svg" alt="3" width="52" />
+      </div>
+	  <div class="process-txt">
+         <span class="titre-advice">Choisissez une première activité</span>
+         <p>Cliquez sur <span style="color:#487bd4">"Ajouter une activité"</span>, puis sélectionnez une première activité dans la liste déroulante.</p>
+		 <p>Seules les activités correctement configurées avec un itinéraire cultural sont proposées dans cette liste.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/scenarios4.png" class="contour-img" alt="Nouveau scénario" data-action="zoom" />
+         </p>
+      </div>
+      <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step4.svg" alt="4" width="52" />
+      </div>
+	  <div class="process-txt">
+         <span class="titre-advice">Définissez l'assolement de l'activité</span>
+		 <p>Cliquez sur <span style="color:#487bd4">"Ajouter une parcelle"</span> pour démarrer la configuration du plan d'assolement avec l'activité choisie.</p>
+		 <p>Sélectionnez l'itinéraire technique associé à l'activité dans les propositions filtrées, renseignez la date prévisionnelle de semis/plantation et la surface en hectare&#40;s&#41;.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/scenarios5.png" class="contour-img" alt="Nouveau scénario" data-action="zoom" />
+         </p>
+      </div>
+      <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step5.svg" alt="5" width="52" />
+      </div>
+	  <div class="process-txt">
+         <span class="titre-advice">Complétez l'assolement de l'activité</span>
+         <p>Cliquez sur <span style="color:#487bd4">"Ajouter une parcelle"</span> pour ajouter une parcelle à l'assolement de l'activité sélectionnée.</p>
+		 <p>Renseignez, le cas échéant, une date prévisionnelle de semis/plantation différente de la première pour étaler la durée des travaux et disposer des ressources "Équipements" et "Main d'œuvre" à des périodes distinctes.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/scenarios6.png" class="contour-img" alt="Nouveau scénario" data-action="zoom" />
+         </p>
+      </div>
+      <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step6.svg" alt="6" width="52" />
+      </div>
+	  <div class="process-txt">
+         <span class="titre-advice">Ajoutez une deuxième activité</span>
+         <p>Cliquez sur <span style="color:#487bd4">"Ajouter une activité"</span> pour compléter le plan d'assolement avec une autre activité.</p>
+		 <p>Sélectionnez l'itinéraire technique associé à l'activité dans les propositions filtrées, renseignez la date prévisionnelle de semis/plantation et la surface en hectare&#40;s&#41;.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/scenarios7.png" class="contour-img" alt="Nouveau scénario" data-action="zoom" />
+         </p>
+		 <p>Ajoutez successivement autant d'activités que nécessaire en fonction de vos préférences de simulation.</p>
+		 <p>Cliquez sur <span class="btn-blue">Créer</span> pour valider l'opération.</p>
+      </div>
+      <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step7.svg" alt="7" width="52" />
+      </div>
+	  <div class="process-txt">
+         <span class="titre-advice">Visualisez les éléments du scénario</span>
+		 <p>Une fois créé, l'application affiche automatiquement la vue détaillée du scénario avec la liste complète des parcelles assolées pour chaque activité.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/scenarios8.png" class="contour-img" alt="Nouveau scénario" data-action="zoom" />
+         </p>
+		 <p>Configurez autant de scénarios que nécessaire pour simuler et comparer différents assolements avec un calcul estimatif des charges et des marges prévisionnelles.</p>
+      </div>
+      <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step8.svg" alt="8" width="52" />
+      </div>
+	  <div class="process-txt">
+         <span class="titre-advice">Affichez le plan de charges du scénario</span>
+		 <p>Cliquez sur le bouton<img src="../images/commun/visualiser.svg" alt="Visualiser" class="btn-gris icone-marge-gauche icone-marge-droite">en haut à gauche de la fenêtre principale pour afficher le graphe du plan de charges annuel.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/scenarios9.png" class="contour-img" alt="Affichage plan de charges" data-action="zoom" />
+         </p>
+		 <p class="max-img-process">
+            <img src="../images/performance/scenarios10.png" class="contour-img" alt="Plan de charges" data-action="zoom" />
+         </p>
+		 <p>Comme expliqué dans la section <a href="#plan-charges" class="avoid-clicks">&#171;&nbsp;plan de charges&nbsp;&#187;</a> de ce chapitre, Utilisez le "<em>slider</em>" &#40;curseur de défilement&#41; pour vous déplacer dans la frise chronologique et visualiser la succession des interventions ordonnancées pour chaque semaine de l'année civile.</p>
+		 <p>En fonction de vos préférences, choisissez ou non une activité dans la liste déroulante "Activités" située en haut à droite de la fenêtre principale, pour filtrer les besoins propres à cette activité.</p>
+		 <p class="max-img-process">
+            <img src="../images/performance/scenarios11.png" class="contour-img" alt="Plan de charges" data-action="zoom" />
+         </p>
+		 <p>Cliquez sur une barre du graphe de votre choix afin de zoomer sur le détail des charges hebdomadaires prévisionnelles de la semaine ciblée. Cliquez ensuite à nouveau sur une barre du graphe pour cibler et afficher le détail des charges journalières prévisionnelles.</p>
+		 <p>Cliquez sur <span class="btn-blue">Revenir au scénario</span> pour retourner à la vue initiale du scénario.</p>
+      </div>
+      <br />
+	  <div class="floating-box process">
+         <img src="../images/commun/step9.svg" alt="9" width="52" />
+      </div>
+	  <div class="process-txt">
+         <span class="titre-advice">Exportez le plan de charges du scénario</span>
+		 <p>Cliquez sur le bouton<img src="../images/commun/exporter-caret.svg" alt="Exporter" class="btn-gris icone-marge-gauche icone-marge-droite">et sélectionnez le format de fichier &#40;ODF, CSV ou CSV Excel&#41; dans la liste déroulante pour obtenir le nouveau document dans le format de votre choix.</p>
+         <p class="max-img-process">
+            <img src="../images/performance/scenarios12.png" class="contour-img" alt="Export plan de charges" data-action="zoom" />
+         </p>
+		 <p>Patientez quelques instants car la fabrication du fichier peut prendre plus ou moins de temps selon le nombre d'activités et de modèles d'interventions définis dans chaque itinéraire cultural.</p>
+         <p>La pastille rouge<img src="../images/commun/marker.svg" alt="Notification" height="20" class="align-icone icone-marge-gauche icone-marge-droite">en haut à droite de la cloche<img src="../images/commun/bell-o-blue.svg" alt="Cloche" height="20" class="align-icone icone-marge-gauche icone-marge-droite">vous indique qu'une opération interne a été effectuée par l'application. Cliquez sur celle-ci pour afficher la notification, puis cliquez sur le lien "Votre fichier a été généré avec succès" pour afficher la vignette du plan de charges dans "Mes documents".</p>
+		 <p class="max-img-process">
+            <img src="../images/performance/scenarios13.png" class="contour-img" alt="Export plan de charges" data-action="zoom" />
+         </p>
+		 <p class="max-img-process">
+            <img src="../images/performance/scenarios14.png" class="contour-img" alt="Plan de charges ODF" data-action="zoom" />
+         </p>
+		 <p>Notez que ce document reste accessible à tout moment via le lien <a class="avoid-clicks" href="../chapitre10#ged" target="_self">"Mes documents"</a> dans la section "Archives"<img src="../images/commun/archive.svg" alt="Archives" height="20" class="align-icone icone-marge-gauche icone-marge-droite">du module "Outils", tant qu'il n'a pas été supprimé.</p>
+      </div>
+      <div class="pdf">
+         <p align="right" class="texte aerateur-top aerateur-bas">Passez au <a class="avoid-clicks" href="../ekyviti">chapitre suivant</a> de ce guide.</p>
+      </div>
+      <div class="navishort aerateur-haut">
+         <div class="divTable">
+            <div class="divTableBody">
+               <div class="divTableRow">
+                  <div class="divTableCellCenter" style="width: auto">
+                     &nbsp;
+                  </div>
+                  <div class="divTableCellRight" style="width: 150px">
+                     <span><a href="../chapitre10" target="_self">OUTILS</a></span>
+                  </div>
+                  <div class="divTableCellCenter" style="width: 40px">
+                     <a href="../chapitre10" target="_self"><img src="../images/commun/arrow-left.svg" width="40" alt="Outils"></a>
+                  </div>
+                  <div class="divTableCellCenter" style="width: 40px">
+                     <a href="../ekyviti" target="_self"><img src="../images/commun/arrow-right.svg" width="40" alt="Ekyviti"></a>
+                  </div>
+                  <div class="divTableCellLeft" style="width: 150px">
+                     <span><a href="../ekyviti" target="_self">EKYVITI</a></span>
+                  </div>
+                  <div class="divTableCellCenter" style="width: auto">
+                     &nbsp;
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="footer"><img src="../images/commun/frise.png" alt="Frise" /></div>
+	  <div class="navigation">
+         <div id="breadcrumb">
+            <ul class="breadcrumb">
+               <li>
+                  <a href="../ekyviti">
+                  <i class="fa-solid fa-lg fa-grapes"></i>
+                  <span class="text">&nbsp;Ekyviti</span>
+                  </a>
+               </li>
+			   <li>
+                  <a href="../performance">
+                  <i class="top-marker"></i><i class="fa-solid fa-lg fa-chart-line-up"></i>
+                  <span class="text">&nbsp;Performance</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="../chapitre10">
+                  <i class="fa-solid fa-lg fa-wand-magic-sparkles"></i>
+                  <span class="text">&nbsp;Outils</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="../chapitre9">
+                  <i class="fa-solid fa-lg fa-farm"></i>
+                  <span class="text">&nbsp;Production</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="../chapitre8">
+                  <i class="fa-solid fa-lg fa-warehouse-full"></i>
+                  <span class="text">&nbsp;Stocks, tiers et RH</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="../chapitre7">
+                  <i class="fa-solid fa-lg fa-chart-column"></i>
+                  <span class="text">&nbsp;Ventes</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="../chapitre6">
+                  <i class="fa-solid fa-lg fa-cart-shopping"></i>
+                  <span class="text">&nbsp;Achats</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="../chapitre5">
+                  <i class="fa-solid fa-lg fa-calculator"></i>
+                  <span class="text">&nbsp;Comptabilité</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="../chapitre4">
+                  <i class="fa-solid fa-lg fa-desktop"></i>
+                  <span class="text">&nbsp;Interface et accès</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="../chapitre3">
+                  <i class="fa-solid fa-lg fa-tractor"></i>
+                  <span class="text">&nbsp;Exploitation</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="../chapitre2">
+                  <i class="fas fa-lg fa-wheat"></i>
+                  <span class="text">&nbsp;Parcellaire</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="../chapitre1">
+                  <i class="fa-solid fa-lg fa-flag-checkered"></i>
+                  <span class="text">&nbsp;Introduction</span>
+                  </a>
+               </li>
+               <li>
+                  <a href="../demarrage">
+                  <i class="fa-solid fa-lg fa-house"></i>
+                  </a>
+               </li>
+            </ul>
+         </div>
+         <div id="arrow"><i class="fa-solid fa-lg fa-caret-left"></i></div>
+      </div>
+   </article>
+   <aside></aside>
+</div>
+      <!-- !PAGE CONTENT! -->
+      <script src="/javascripts/iscroll.js"></script>
+      <script src="/javascripts/drawer.js"></script>
+      <script src="/javascripts/popup.js"></script>
+      <script src="/javascripts/breadcrumbs.js"></script>
+      <script src="/javascripts/backtotop.js"></script>
+      <script src="/javascripts/zoom-vanilla.js"></script>
+      <script src="/javascripts/toggle.js"></script>
+      <script>
+         $(document).ready(function() {
+         $('.drawer').drawer();
+         });
+      </script>
+      <script>
+         $(function() {
+          /**
+          * Smooth scrolling to page anchor on click
+          **/
+          $("a[href*='#']:not([href='#'])").click(function() {
+              if (
+                  location.hostname == this.hostname
+                  && this.pathname.replace(/^\//,"") == location.pathname.replace(/^\//,"")
+              ) {
+                  var anchor = $(this.hash);
+                  anchor = anchor.length ? anchor : $("[name=" + this.hash.slice(1) +"]");
+                  if ( anchor.length ) {
+                      $("html, body").animate( { scrollTop: anchor.offset().top }, 500);
+                  }
+                  }
+              });
+           });
+      </script>
+	  <!--<script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3"></script>-->
+	  <!--<script src="/javascripts/docsearch.js"></script>-->
+	  <!--<script>docsearch({container: '#docsearch',appId: 'JCIFZS1SXO',apiKey:'d7102eaca1a7f74822fa7677a517411d',indexName:'ekylibre'});</script>-->
+	  <script>
+  	  $(window).load(function() {
+	  $('#loading').hide();
+	  $('html').css({'overflow-y': 'visible'});
+	  });
+	  </script>
+   </body>
+   <script>
+      $(function() {
+      $(".content").click(function() {
+        return false;
+      });
+      });
+   </script>
+   <script language="JavaScript">
+      function ChangeUrl(formulaire)
+      {
+      if (formulaire.ListeUrl.selectedIndex != 0)
+        {
+        var url ;
+        url = formulaire.ListeUrl.options[formulaire.ListeUrl.selectedIndex].value;
+        window.open(url,'_self');
+        $('#fade, .popup_block').fadeOut();
+      $('#fade, a.close').remove();
+      $(formulaire.ListeUrl).val("");
+      $('html').css({'overflow-y': 'visible'});
+      }
+      }
+   </script>
+</html>
