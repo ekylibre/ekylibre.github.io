@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page introuvable — Ekylibre</title>
+  <script>
+    (function () {
+      var path = window.location.pathname;
+      if (path.indexOf('/doc/') === 0) {
+        var target = path.replace(/^\/doc\//, '/') + window.location.search + window.location.hash;
+        window.location.replace(target);
+      }
+    })();
+  </script>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 640px; margin: 80px auto; padding: 0 20px; color: #333; line-height: 1.55; }
+    h1 { color: #c0392b; margin-bottom: 0.5em; }
+    code { background: #f4f4f4; padding: 2px 6px; border-radius: 3px; font-size: 0.95em; }
+    a { color: #2980b9; }
+  </style>
+</head>
+<body>
+  <h1>Page introuvable (404)</h1>
+  <p>La documentation a été déplacée de <code>ekylibre.github.io/doc/</code> vers <code>ekylibre.org/</code>.</p>
+  <p>Si vous êtes arrivé ici depuis un ancien lien contenant <code>/doc/</code> dans l'URL, vous devriez être redirigé automatiquement vers la bonne page.</p>
+  <p><a href="/">Retour à l'accueil de la documentation</a></p>
+</body>
+</html>
