@@ -40,6 +40,10 @@ compile '/faq.*' do
   layout '/start.*'
 end
 
+compile '/legal/**/*.{html,md}' do
+  layout '/start.*'
+end
+
 compile '/api.*' do
 end
 

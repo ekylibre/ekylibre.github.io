@@ -1,0 +1,255 @@
+---
+title: Politique de confidentialité — Ekylibre Mobile
+---
+<div class="container" style="max-width: 860px; padding-top: 30px; padding-bottom: 60px;">
+  <h1>Politique de confidentialité — Ekylibre Mobile</h1>
+  <p class="text-muted"><em>Dernière mise à jour : 18 juin 2026 — Version 1.0</em></p>
+
+  <p>
+    La présente politique de confidentialité décrit la manière dont l'application mobile
+    <strong>Ekylibre Mobile</strong> (ci-après « l'Application »), éditée par <strong>Ekylibre SAS</strong>,
+    collecte, utilise, conserve et protège les données personnelles de ses utilisateurs.
+  </p>
+  <p>
+    Elle s'applique aux versions iOS (bundle <code>com.ekylibre.zeromobile</code>) et Android
+    (package <code>com.ekylibre.zeromobile</code>) distribuées via l'App Store d'Apple et le
+    Google Play Store.
+  </p>
+
+  <h2>1. Responsable de traitement</h2>
+  <p>
+    <strong>Ekylibre SAS</strong><br>
+    8 rue du bouil bleu — 17250 Saint-POrchaire, France<br>
+    Courriel pour les questions liées à la vie privée :
+    <a href="mailto:ekylibre@ekylibre.org">ekylibre@ekylibre.org</a><br>
+    Site web : <a href="https://ekylibre.org">ekylibre.org</a>
+  </p>
+
+  <h2>2. Vue d'ensemble</h2>
+  <p>
+    Ekylibre Mobile est une application de gestion agricole permettant à un exploitant
+    de saisir hors ligne ses interventions (notamment la pulvérisation) et de les
+    synchroniser avec son instance Ekylibre. L'Application est conçue selon le principe
+    de <strong>minimisation des données</strong> : elle ne collecte que les informations
+    strictement nécessaires à son fonctionnement.
+  </p>
+  <p>
+    En particulier, l'Application <strong>ne collecte pas</strong> :
+  </p>
+  <ul>
+    <li>de données de géolocalisation (aucune permission de localisation n'est demandée) ;</li>
+    <li>de photos, vidéos, contacts, calendrier ou microphone ;</li>
+    <li>d'identifiant publicitaire (IDFA, AAID) ni de données à des fins de publicité ciblée ;</li>
+    <li>de données de suivi inter-applications (« cross-app tracking ») ;</li>
+    <li>de cookies ou de traceurs tiers à des fins de marketing.</li>
+  </ul>
+
+  <h2>3. Données collectées et finalités</h2>
+
+  <h3>3.1 Identifiants de connexion à votre instance Ekylibre</h3>
+  <p>
+    Pour vous authentifier auprès de votre serveur Ekylibre, l'Application stocke :
+  </p>
+  <ul>
+    <li>l'URL de votre instance Ekylibre ;</li>
+    <li>votre adresse de courriel ;</li>
+    <li>votre mot de passe.</li>
+  </ul>
+  <p>
+    Ces identifiants sont conservés <strong>uniquement sur votre appareil</strong>, dans
+    le coffre-fort sécurisé du système d'exploitation (<em>Keychain</em> sur iOS,
+    <em>Keystore</em> sur Android), via la bibliothèque <code>expo-secure-store</code>.
+    Ils ne sont transmis qu'à votre serveur Ekylibre lors de l'authentification et ne
+    quittent jamais l'application à destination d'un tiers.
+  </p>
+  <p>
+    <strong>Base légale</strong> : exécution du contrat de service (art. 6.1.b RGPD).
+  </p>
+
+  <h3>3.2 Données agricoles synchronisées</h3>
+  <p>
+    Lorsque vous utilisez l'Application, des données métier sont téléchargées depuis
+    votre instance Ekylibre puis stockées localement pour permettre un fonctionnement
+    hors ligne :
+  </p>
+  <ul>
+    <li>catalogue de produits, intrants, équipements et opérateurs ;</li>
+    <li>parcelles et cultures, y compris leur géométrie (forme cartographique) ;</li>
+    <li>interventions agricoles que vous avez créées (date, cibles, intrants, dose, etc.).</li>
+  </ul>
+  <p>
+    Ces données restent la propriété de l'exploitation. Elles sont stockées dans une
+    base de données locale sur l'appareil (WatermelonDB / SQLite) et transmises
+    exclusivement vers et depuis votre propre instance Ekylibre. <strong>Ekylibre SAS
+    n'a pas accès à ces données</strong> par le biais de l'Application.
+  </p>
+  <p>
+    <strong>Base légale</strong> : exécution du contrat de service.
+  </p>
+
+  <h3>3.3 Rapports de plantage et télémétrie technique</h3>
+  <p>
+    Pour identifier et corriger les anomalies, l'Application transmet de manière
+    automatique des rapports techniques au service <strong>Sentry</strong> (voir §5).
+    Ces rapports contiennent :
+  </p>
+  <ul>
+    <li>la trace technique d'erreur (« stack trace ») ;</li>
+    <li>la version de l'Application et du système d'exploitation ;</li>
+    <li>le type d'appareil ;</li>
+    <li>la durée et le résultat agrégé des cycles de synchronisation (nombre d'éléments
+      synchronisés, nombre d'erreurs).</li>
+  </ul>
+  <p>
+    L'Application <strong>anonymise activement ces rapports</strong> : avant tout envoi,
+    elle supprime l'adresse de courriel de l'utilisateur, et n'inclut jamais l'URL de
+    l'instance Ekylibre, les noms de parcelles, les identifiants métier ni le contenu
+    des interventions.
+  </p>
+  <p>
+    <strong>Base légale</strong> : intérêt légitime à assurer la sécurité et la
+    fiabilité du service (art. 6.1.f RGPD).
+  </p>
+
+  <h3>3.4 Mises à jour à distance</h3>
+  <p>
+    L'Application utilise le service <strong>Expo Updates</strong> pour distribuer
+    rapidement les correctifs entre deux mises à jour de l'App Store / Play Store.
+    Ce service reçoit un identifiant technique d'installation et la version courante
+    de l'Application afin de servir la mise à jour appropriée.
+  </p>
+
+  <h2>4. Permissions demandées</h2>
+  <p>L'Application demande les permissions suivantes :</p>
+  <ul>
+    <li><strong>Android — <code>INTERNET</code> et <code>ACCESS_NETWORK_STATE</code></strong> :
+      nécessaires pour communiquer avec votre instance Ekylibre et détecter l'état de
+      la connexion réseau (sync hors ligne / en ligne).</li>
+    <li><strong>iOS</strong> : aucune permission sensible n'est requise.</li>
+  </ul>
+  <p>
+    Aucune permission d'accès à la localisation, à la caméra, au microphone, aux contacts,
+    aux photos ou au calendrier n'est demandée.
+  </p>
+
+  <h2>5. Destinataires et sous-traitants</h2>
+  <p>
+    Les seules entités auxquelles des données sont transmises sont :
+  </p>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Sous-traitant</th>
+        <th>Finalité</th>
+        <th>Données concernées</th>
+        <th>Localisation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Votre instance Ekylibre</strong></td>
+        <td>Authentification, synchronisation des données agricoles</td>
+        <td>Identifiants de connexion, données métier</td>
+        <td>Choisie par l'utilisateur</td>
+      </tr>
+      <tr>
+        <td>Functional Software, Inc. (<strong>Sentry</strong>)</td>
+        <td>Détection et diagnostic des erreurs techniques</td>
+        <td>Rapports de plantage anonymisés (cf. §3.3)</td>
+        <td>États-Unis (clauses contractuelles types)</td>
+      </tr>
+      <tr>
+        <td>650 Industries, Inc. (<strong>Expo</strong>)</td>
+        <td>Distribution des mises à jour à distance (OTA)</td>
+        <td>Identifiant d'installation, version de l'App</td>
+        <td>États-Unis (clauses contractuelles types)</td>
+      </tr>
+      <tr>
+        <td>Apple Inc. / Google LLC</td>
+        <td>Distribution de l'Application via les stores</td>
+        <td>Données collectées par les stores eux-mêmes (cf. leurs politiques)</td>
+        <td>États-Unis / international</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>
+    Ekylibre SAS ne vend, ne loue, ni ne partage les données à des fins commerciales
+    avec des tiers.
+  </p>
+
+  <h2>6. Stockage et durée de conservation</h2>
+  <ul>
+    <li><strong>Sur l'appareil</strong> : les identifiants chiffrés et la base locale
+      sont conservés tant que l'Application est installée. Ils sont effacés lorsque
+      vous vous déconnectez (« Logout ») ou désinstallez l'Application.</li>
+    <li><strong>Sur votre instance Ekylibre</strong> : la durée est définie par la
+      politique de confidentialité de votre instance (que vous administrez ou qui est
+      administrée pour votre compte).</li>
+    <li><strong>Chez Sentry</strong> : les rapports d'erreur sont conservés 90 jours
+      par défaut.</li>
+  </ul>
+
+  <h2>7. Sécurité</h2>
+  <p>
+    Les mesures suivantes sont mises en œuvre :
+  </p>
+  <ul>
+    <li>chiffrement des identifiants au repos via Keychain (iOS) / Keystore (Android) ;</li>
+    <li>communication exclusive en HTTPS (TLS) avec votre instance Ekylibre et les
+      services tiers ;</li>
+    <li>idempotence des opérations de synchronisation (UUID client) pour éviter les
+      duplications en cas de perte réseau ;</li>
+    <li>code source de l'Application <a href="https://github.com/ekylibre/zero-mobile">disponible
+      en open source</a>, permettant un audit indépendant.</li>
+  </ul>
+
+  <h2>8. Vos droits</h2>
+  <p>
+    Conformément au Règlement (UE) 2016/679 (RGPD) et à la loi Informatique et Libertés,
+    vous disposez des droits suivants sur vos données personnelles :
+  </p>
+  <ul>
+    <li>droit d'<strong>accès</strong> à vos données ;</li>
+    <li>droit de <strong>rectification</strong> des données inexactes ;</li>
+    <li>droit à l'<strong>effacement</strong> (« droit à l'oubli ») ;</li>
+    <li>droit à la <strong>limitation</strong> du traitement ;</li>
+    <li>droit à la <strong>portabilité</strong> ;</li>
+    <li>droit d'<strong>opposition</strong> au traitement fondé sur l'intérêt légitime ;</li>
+    <li>droit d'introduire une <strong>réclamation</strong> auprès de la CNIL
+      (<a href="https://www.cnil.fr">www.cnil.fr</a>).</li>
+  </ul>
+  <p>
+    Pour exercer ces droits, contactez-nous à
+    <a href="mailto:ekylibre@ekylibre.org">ekylibre@ekylibre.org</a>. Pour les données
+    hébergées sur votre instance Ekylibre, l'exercice de ces droits relève également de
+    l'administrateur de cette instance.
+  </p>
+
+  <h2>9. Mineurs</h2>
+  <p>
+    L'Application s'adresse à un public professionnel et n'est pas destinée aux
+    personnes de moins de 16 ans. Aucune donnée n'est sciemment collectée auprès de
+    mineurs.
+  </p>
+
+  <h2>10. Modifications</h2>
+  <p>
+    La présente politique peut être mise à jour pour refléter les évolutions de
+    l'Application ou du cadre réglementaire. La version en vigueur est toujours
+    accessible à l'adresse
+    <a href="https://ekylibre.org/legal/ekylibre-mobile-privacy">https://ekylibre.org/legal/ekylibre-mobile-privacy</a>.
+    En cas de modification substantielle, les utilisateurs seront informés via
+    l'Application ou par courriel.
+  </p>
+
+  <h2>11. Contact</h2>
+  <p>
+    Pour toute question relative à la présente politique ou au traitement de vos
+    données personnelles :
+  </p>
+  <p>
+    <strong>Ekylibre SAS</strong><br>
+    Courriel : <a href="mailto:ekylibre@ekylibre.org">ekylibre@ekylibre.org</a><br>
+    Web : <a href="https://ekylibre.org">ekylibre.org</a>
+  </p>
+</div>
