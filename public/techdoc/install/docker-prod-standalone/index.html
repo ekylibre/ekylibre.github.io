@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="An open-source monitoring system with a dimensional data model, flexible query language, efficient time series database and modern alerting approach.">
+    <meta name="keywords" content="prometheus, monitoring, monitoring system, time series, time series database, alerting, metrics, telemetry">
+    <meta name="author" content="Prometheus">
+    <meta name="twitter:card" content="summary">
+    <meta property="og:description" content="An open-source monitoring system with a dimensional data model, flexible query language, efficient time series database and modern alerting approach.">
+    <meta property="og:image" content="https://prometheus.io/assets/favicons/android-chrome-192x192.png">
+
+    <link rel="alternate" type="application/atom+xml" title="Prometheus Blog » Feed" href="/blog/feed.xml">
+
+    <link rel="shortcut icon" href="/assets/favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/assets/favicons/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/assets/favicons/android-chrome-manifest.json">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    
+    <meta property="og:title" content="Docker production (standalone) | Prometheus">
+    <title>Docker production (standalone) | Prometheus</title>
+    
+
+    <!-- Bootstrap core CSS -->
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="/stylesheets/docs.css" rel="stylesheet">
+    <link href="/stylesheets/routing-tree-editor.css" rel="stylesheet">
+    <link href="/stylesheets/techdoc.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/stylesheets/fontawesome.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,300italic,400' rel='stylesheet' type='text/css'>
+    <style>
+      .nav-lang-switcher { padding: 15px; line-height: 20px; font-weight: 700; letter-spacing: 0.05em; }
+      .nav-lang-switcher a, .nav-lang-switcher span { color: inherit; padding: 0 4px; text-decoration: none; }
+      .nav-lang-switcher a { opacity: 0.55; }
+      .nav-lang-switcher a:hover, .nav-lang-switcher a:focus { opacity: 1; text-decoration: underline; }
+      .nav-lang-switcher span[aria-current] { opacity: 1; }
+      .nav-lang-switcher .lang-sep { opacity: 0.35; }
+    </style>
+  </head>
+
+  <body>
+
+  <div class="">
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="nav navbar-nav navbar-right main-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/fr/user-doc/demarrage">User Doc FR</a></li>
+            <li><a href="/techdoc/">Tech Doc</a></li>
+            <li><a href="/api">API Doc</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="https://discord.gg/BSpD6hq7qR">Forum</a></li>
+            <li><a href="https://demo.ekylibre-dev.com">Demo</a></li>
+            <li><a href="https://github.com/ekylibre"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://twitter.com/ekylibre"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://discord.gg/BSpD6hq7qR"><i class="fab fa-discord"></i></a></li>
+            <li class="nav-lang-switcher" role="navigation" aria-label="Language">
+              
+                <span aria-current="page" lang="en">EN</span><span class="lang-sep" aria-hidden="true">|</span><a href="/fr/" hreflang="fr" lang="fr">FR</a>
+              
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 side-nav-col">
+      
+        <nav class="techdoc-sidebar" aria-label="Documentation technique"><ul class="nav techdoc-nav"><li><a class="techdoc-root" href="/techdoc/"><i class="fa fa-book" aria-hidden="true"></i> <strong>Accueil</strong></a></li><li class="active has-children"><a href="/techdoc/install/"><i class="fa fa-rocket" aria-hidden="true"></i> Installation</a><ul class="nav"><li><a href="/techdoc/install/prerequisites/"><i class="fa fa-check-square-o" aria-hidden="true"></i> Prérequis</a></li><li><a href="/techdoc/install/docker-dev/"><i class="fa fa-cube" aria-hidden="true"></i> Docker dev</a></li><li><a href="/techdoc/install/native-ubuntu/"><i class="fa fa-ubuntu" aria-hidden="true"></i> Native Ubuntu</a></li><li><a href="/techdoc/install/app-setup/"><i class="fa fa-cogs" aria-hidden="true"></i> Setup application</a></li><li class="active current"><a href="/techdoc/install/docker-prod-standalone/" aria-current="page"><i class="fa fa-server" aria-hidden="true"></i> Docker prod standalone</a></li><li><a href="/techdoc/install/docker-prod-dokploy/"><i class="fa fa-cloud" aria-hidden="true"></i> Docker prod Dokploy</a></li><li><a href="/techdoc/install/troubleshooting/"><i class="fa fa-medkit" aria-hidden="true"></i> Troubleshooting</a></li></ul></li><li><a href="/techdoc/architecture/"><i class="fa fa-sitemap" aria-hidden="true"></i> Architecture</a></li><li><a href="/techdoc/data-model/"><i class="fa fa-database" aria-hidden="true"></i> Data model</a></li><li><a href="/techdoc/contributing/"><i class="fa fa-code-fork" aria-hidden="true"></i> Contribuer</a></li></ul></nav>
+      
+    </div>
+
+    <div class="col-md-9 doc-content">
+      <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<h1 id="installation-docker-production-standalone" class="page-header">Installation Docker — Production standalone<a class="header-anchor" href="#installation-docker-production-standalone" name="installation-docker-production-standalone"></a>
+</h1>
+<div class="toc toc-full"><ul>
+<li><a href="#pr-requis">Prérequis
+</a></li>
+<li><a href="#1-configurer-le-fichier-env">1. Configurer le fichier <code>.env</code>
+</a></li>
+<li><a href="#2-r-cup-rer-les-images">2. Récupérer les images
+</a></li>
+<ul><li><a href="#plugins-embarqu-s">Plugins embarqués
+</a></li></ul>
+<li><a href="#3-premier-d-marrage">3. Premier démarrage
+</a></li>
+<ul><li><a href="#architecture-tls-et-provisioning-des-certs">Architecture TLS et provisioning des certs
+</a></li></ul>
+<li><a href="#4-v-rifier-le-d-ploiement">4. Vérifier le déploiement
+</a></li>
+<li><a href="#5-cr-er-un-premier-tenant">5. Créer un premier tenant
+</a></li>
+<li><a href="#6-services-et-ports">6. Services et ports
+</a></li>
+<li><a href="#7-commandes-op-rationnelles">7. Commandes opérationnelles
+</a></li>
+<li><a href="#8-backups-postgresql">8. Backups PostgreSQL
+</a></li>
+<li><a href="#9-s-curit-op-rationnelle">9. Sécurité opérationnelle
+</a></li>
+<li><a href="#10-activer-duke-assistant-chatbot-optionnel">10. Activer Duke (assistant chatbot) — optionnel
+</a></li>
+<li><a href="#11-erreurs-fr-quentes">11. Erreurs fréquentes
+</a></li>
+<li><a href="#r-f-rence-variables-env">Référence — variables <code>.env</code>
+</a></li>
+<li><a href="#tape-suivante">Étape suivante
+</a></li>
+</ul></div>
+
+<p>Déploiement d'Ekylibre sur un serveur unique avec <strong>HTTPS automatique</strong> via Caddy + Let's Encrypt. Cette variante convient lorsque vous gérez ce serveur <strong>uniquement</strong> pour Ekylibre. Pour héberger plusieurs apps sur le même hôte, voir <a href="/techdoc/install/docker-prod-dokploy/">Docker prod Dokploy</a>.</p>
+
+<h2 id="pr-requis">Prérequis<a class="header-anchor" href="#pr-requis" name="pr-requis"></a>
+</h2>
+
+<p>Avoir validé les <a href="/techdoc/install/prerequisites/">prérequis communs</a> :</p>
+
+<ul>
+<li>Docker Engine ≥ 24, Docker Compose v2</li>
+<li>Serveur Linux (Ubuntu 22.04+ recommandé), 4 vCPU / 8 GB RAM minimum</li>
+<li>Ports <code>80</code> et <code>443</code> ouverts publiquement</li>
+<li>Wildcard DNS (<code>example.com</code> + <code>*.example.com</code>) pointant vers le serveur</li>
+<li>
+<code>sysctl vm.overcommit_memory=1</code> appliqué</li>
+</ul>
+
+<h2 id="1-configurer-le-fichier-env">1. Configurer le fichier <code>.env</code><a class="header-anchor" href="#1-configurer-le-fichier-env" name="1-configurer-le-fichier-env"></a>
+</h2>
+
+<pre><code class="bash">git clone -b 5.0-beta https://github.com/ekylibre/ekylibre.git
+cd ekylibre
+cp docker/prod/.env.dist docker/prod/.env
+</code></pre>
+
+<p>Éditer <code>docker/prod/.env</code> et renseigner <strong>au minimum</strong> :</p>
+
+<table class=" table table-bordered">
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>HOST_DOMAIN_NAME</code></td>
+<td>Nom de domaine (sans protocole ni sous-domaine), ex: <code>ekylibre.example.com</code>
+</td>
+</tr>
+<tr>
+<td><code>LETSENCRYPT_EMAIL</code></td>
+<td>Email pour les notifications Let's Encrypt</td>
+</tr>
+<tr>
+<td><code>SECRET_KEY_BASE</code></td>
+<td>À générer : <code>openssl rand -hex 64</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>ADMIN_USERNAME</code> / <code>ADMIN_PASSWORD</code>
+</td>
+<td>Accès HTTP Basic à <code>/admin</code>
+</td>
+</tr>
+<tr>
+<td><code>DB_PASSWORD</code></td>
+<td>Mot de passe PostgreSQL fort (20+ caractères)</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p><strong>Sécurité :</strong> après édition, <code>chmod 600 docker/prod/.env</code>. Ce fichier contient des secrets et est gitignored.</p>
+</blockquote>
+
+<h2 id="2-r-cup-rer-les-images">2. Récupérer les images<a class="header-anchor" href="#2-r-cup-rer-les-images" name="2-r-cup-rer-les-images"></a>
+</h2>
+
+<p>L'image Ekylibre est publiée sur <strong>GHCR</strong> par le workflow <code>.github/workflows/build-prod-image.yml</code> à chaque push sur <code>main</code> ou <code>5.0-beta</code>. <strong>Aucun build local n'est nécessaire</strong> en production :</p>
+
+<pre><code class="bash">docker compose -f docker/prod/docker-compose.yml pull
+</code></pre>
+
+<p>Images tirées :</p>
+
+<ul>
+<li>
+<code>ghcr.io/ekylibre/ekylibre/app:latest</code> (Rails + Sidekiq, image partagée)</li>
+<li>
+<code>caddy:2-alpine</code> (reverse-proxy)</li>
+<li>
+<code>kartoza/postgis:13</code> (PostgreSQL)</li>
+<li><code>redis:7-alpine</code></li>
+</ul>
+
+<blockquote>
+<p><strong>Pinner une version stable</strong> : éditer <code>EKYLIBRE_IMAGE_TAG</code> dans <code>.env</code> (ex: <code>EKYLIBRE_IMAGE_TAG=v5.0.0</code>).</p>
+</blockquote>
+
+<h3 id="plugins-embarqu-s">Plugins embarqués<a class="header-anchor" href="#plugins-embarqu-s" name="plugins-embarqu-s"></a>
+</h3>
+
+<p>L'image GHCR embarque les plugins publics listés dans <code>docker/prod/Gemfile.prod</code> (banking, qonto, baqio, ednotif, planning, samsys, traccar, weenat, sencrop, hve, idea, hajimari, viti, etc.). Pour ajouter / retirer un plugin, éditer ce fichier et déclencher un nouveau build.</p>
+
+<p><strong>Toujours au HEAD de la branche</strong> : chaque build ré-interroge GitHub et installe le dernier commit de la branche déclarée pour chaque plugin. Voir le détail technique dans <code>docker/prod/README.md</code> § 2.</p>
+
+<p><strong>Plugins privés ou path-local</strong> : builder localement :</p>
+
+<pre><code class="bash">docker build -f docker/prod/Dockerfile -t ghcr.io/ekylibre/ekylibre/app:local .
+EKYLIBRE_IMAGE_TAG=local docker compose -f docker/prod/docker-compose.yml up -d
+</code></pre>
+
+<p>Pour ce cas, adapter <code>docker/prod/Dockerfile</code> (retirer le <code>rm -f Gemfile.local</code>) et fournir votre <code>Gemfile.local</code>.</p>
+
+<h2 id="3-premier-d-marrage">3. Premier démarrage<a class="header-anchor" href="#3-premier-d-marrage" name="3-premier-d-marrage"></a>
+</h2>
+
+<pre><code class="bash">docker compose -f docker/prod/docker-compose.yml up -d
+</code></pre>
+
+<p>Suivre les logs du service <code>app</code> :</p>
+
+<pre><code class="bash">docker compose -f docker/prod/docker-compose.yml logs -f app
+</code></pre>
+
+<p>Au premier démarrage, le container <code>app</code> :</p>
+
+<ol>
+<li>Crée la base (<code>db:create</code>)</li>
+<li>Lance les migrations (<code>db:migrate</code>)</li>
+<li>
+<strong>Charge le lexicon</strong> (<code>lexicon:load</code>) — <strong>5 à 10 minutes</strong>
+</li>
+<li>Démarre Puma sur le port 3000 interne</li>
+</ol>
+
+<p>Attendre le message <code>==START PUMA==</code> avant de tester.</p>
+
+<p>Caddy provisionne les certificats Let's Encrypt <strong>automatiquement</strong> au premier accès HTTPS sur chaque sous-domaine.</p>
+
+<h3 id="architecture-tls-et-provisioning-des-certs">Architecture TLS et provisioning des certs<a class="header-anchor" href="#architecture-tls-et-provisioning-des-certs" name="architecture-tls-et-provisioning-des-certs"></a>
+</h3>
+
+<pre><code>Browser ─HTTPS─► Caddy :443 (cert LE par sous-domaine)
+                  │ termine TLS, provisionne on-demand via ACME
+                  │
+                  ├─► example.com               → app:3000  (landing)
+                  ├─► duke.example.com          → duke-api:8000 (Duke, optionnel)
+                  └─► *.example.com (tenants)   → app:3000
+
+Browser ─HTTP─► Caddy :80 (challenge HTTP-01 + redirect HTTPS)
+</code></pre>
+
+<p>Le <code>Caddyfile</code> utilise <code>on_demand_tls</code> pour ne pas provisionner de cert sur des hostnames bidons :</p>
+
+<pre><code class="caddyfile">on_demand_tls {
+    ask http://app:3000/health
+}
+</code></pre>
+
+<p>À chaque sous-domaine inédit, Caddy interroge <code>/health</code> de Rails avant de demander un cert LE. Cela protège du rate-limit Let's Encrypt (50 certs/semaine/domaine racine).</p>
+
+<h2 id="4-v-rifier-le-d-ploiement">4. Vérifier le déploiement<a class="header-anchor" href="#4-v-rifier-le-d-ploiement" name="4-v-rifier-le-d-ploiement"></a>
+</h2>
+
+<pre><code class="bash"># 1. Healthcheck applicatif
+curl -I https://example.com/health
+# → HTTP/2 200
+
+# 2. Page de connexion
+curl -I https://example.com/
+# → HTTP/2 302 (redirection vers /users/sign_in)
+
+# 3. Cert présenté pour un tenant
+curl -I https://acme.example.com/
+# Premier hit : ~10s (challenge ACME), puis 302 → /sign-in
+
+# 4. Voir les certs déjà obtenus par Caddy
+docker compose -f docker/prod/docker-compose.yml exec caddy \
+  ls /data/caddy/certificates/acme-v02.api.letsencrypt.org-directory/
+</code></pre>
+
+<h2 id="5-cr-er-un-premier-tenant">5. Créer un premier tenant<a class="header-anchor" href="#5-cr-er-un-premier-tenant" name="5-cr-er-un-premier-tenant"></a>
+</h2>
+
+<pre><code class="bash">./docker/prod/scripts/tenant-init.sh acme admin@acme.com 'MotDePasseFort!'
+</code></pre>
+
+<p>Le tenant est accessible sur <code>https://acme.example.com</code> après quelques secondes (provisioning du cert TLS).</p>
+
+<p>Charger des données de démo (optionnel) :</p>
+
+<pre><code class="bash">docker compose -f docker/prod/docker-compose.yml exec -e TENANT=acme app \
+  bundle exec rake first_run FOLDER=demo
+</code></pre>
+
+<h2 id="6-services-et-ports">6. Services et ports<a class="header-anchor" href="#6-services-et-ports" name="6-services-et-ports"></a>
+</h2>
+
+<table class=" table table-bordered">
+<thead>
+<tr>
+<th>Service</th>
+<th>Image</th>
+<th>Rôle</th>
+<th>Port hôte</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>app</code></td>
+<td><code>ghcr.io/ekylibre/ekylibre/app:latest</code></td>
+<td>Serveur Rails (Puma)</td>
+<td>(interne 3000)</td>
+</tr>
+<tr>
+<td><code>sidekiq</code></td>
+<td>(même image)</td>
+<td>Worker de jobs</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>caddy</code></td>
+<td><code>caddy:2-alpine</code></td>
+<td>Reverse-proxy HTTPS</td>
+<td>
+<code>80</code> / <code>443</code>
+</td>
+</tr>
+<tr>
+<td><code>db</code></td>
+<td><code>kartoza/postgis:13</code></td>
+<td>PostgreSQL + PostGIS</td>
+<td><strong>non exposé</strong></td>
+</tr>
+<tr>
+<td><code>redis</code></td>
+<td><code>redis:7-alpine</code></td>
+<td>Cache + Sidekiq</td>
+<td><strong>non exposé</strong></td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p>Vérifier que les ports <code>5432</code>, <code>6379</code>, <code>11434</code> ne sont <strong>pas</strong> exposés sur l'hôte (<code>ss -tln</code>).</p>
+</blockquote>
+
+<h2 id="7-commandes-op-rationnelles">7. Commandes opérationnelles<a class="header-anchor" href="#7-commandes-op-rationnelles" name="7-commandes-op-rationnelles"></a>
+</h2>
+
+<pre><code class="bash"># Arrêter
+docker compose -f docker/prod/docker-compose.yml down
+
+# Logs
+docker compose -f docker/prod/docker-compose.yml logs -f app sidekiq
+
+# Shell + console Rails
+docker compose -f docker/prod/docker-compose.yml exec app bash
+docker compose -f docker/prod/docker-compose.yml exec app bundle exec rails c
+
+# Mise à jour applicative (image latest)
+docker compose -f docker/prod/docker-compose.yml pull
+docker compose -f docker/prod/docker-compose.yml up -d
+</code></pre>
+
+<p>Les migrations sont rejouées automatiquement par <code>startup.sh</code>. Le lexicon n'est rechargé que si <code>.lexicon-version</code> a changé.</p>
+
+<h2 id="8-backups-postgresql">8. Backups PostgreSQL<a class="header-anchor" href="#8-backups-postgresql" name="8-backups-postgresql"></a>
+</h2>
+
+<p>Backup manuel :</p>
+
+<pre><code class="bash">docker compose -f docker/prod/docker-compose.yml exec db \
+  pg_dump -U ekylibre eky_production &gt; backup_$(date +%F).sql
+</code></pre>
+
+<p>Cron quotidien avec rotation 7 jours :</p>
+
+<pre><code class="cron">0 3 * * * cd /path/to/ekylibre &amp;&amp; docker compose -f docker/prod/docker-compose.yml exec -T db pg_dump -U ekylibre eky_production &gt; backups/db_$(date +\%F).sql &amp;&amp; find backups -name 'db_*.sql' -mtime +7 -delete
+</code></pre>
+
+<p>Restauration :</p>
+
+<pre><code class="bash">docker compose -f docker/prod/docker-compose.yml exec -T db \
+  psql -U ekylibre eky_production &lt; backup_2026-06-12.sql
+</code></pre>
+
+<h2 id="9-s-curit-op-rationnelle">9. Sécurité opérationnelle<a class="header-anchor" href="#9-s-curit-op-rationnelle" name="9-s-curit-op-rationnelle"></a>
+</h2>
+
+<ul>
+<li>
+<code>chmod 600 docker/prod/.env</code> après chaque édition</li>
+<li>
+<code>ADMIN_PASSWORD</code> et <code>DB_PASSWORD</code> : 20+ caractères, générés aléatoirement</li>
+<li>Vérifier <code>ss -tln</code> : seuls <code>80</code> et <code>443</code> doivent être ouverts publiquement</li>
+<li>Mises à jour mensuelles minimum (<code>pull</code> + <code>up -d</code>)</li>
+<li>Backup régulier de la DB et des volumes <code>uploads</code>, <code>caddy-data</code> (certificats)</li>
+</ul>
+
+<h2 id="10-activer-duke-assistant-chatbot-optionnel">10. Activer Duke (assistant chatbot) — optionnel<a class="header-anchor" href="#10-activer-duke-assistant-chatbot-optionnel" name="10-activer-duke-assistant-chatbot-optionnel"></a>
+</h2>
+
+<p>Duke est un assistant chatbot agricole packagé en image publique GHCR. Activation en 3 étapes (configuration <code>.env</code> + recreate <code>db</code> + démarrage Duke). Procédure détaillée dans <code>docker/prod/README.md</code> §10.</p>
+
+<pre><code class="bash">./docker/prod/scripts/duke-up.sh
+</code></pre>
+
+<p>Avec LLM local (Ollama) :</p>
+
+<pre><code class="bash">./docker/prod/scripts/duke-up.sh --with-local-llm
+</code></pre>
+
+<blockquote>
+<p>Ollama avec <code>mistral-nemo</code> (12B) est très lent sur CPU. Réservé aux serveurs GPU NVIDIA.</p>
+</blockquote>
+
+<h2 id="11-erreurs-fr-quentes">11. Erreurs fréquentes<a class="header-anchor" href="#11-erreurs-fr-quentes" name="11-erreurs-fr-quentes"></a>
+</h2>
+
+<p>Voir <a href="/techdoc/install/troubleshooting/">Résolution de problèmes</a> — notamment :</p>
+
+<ul>
+<li>Caddy ne provisionne pas de cert (DNS, <code>/health</code> non joignable, rate-limit LE)</li>
+<li><code>SECRET_KEY_BASE is empty</code></li>
+<li>Lexicon non chargé → <code>./docker/prod/scripts/lexicon-reload.sh</code>
+</li>
+<li>App redémarre en boucle → vérifier <code>db pg_isready</code>
+</li>
+</ul>
+
+<h2 id="r-f-rence-variables-env">Référence — variables <code>.env</code><a class="header-anchor" href="#r-f-rence-variables-env" name="r-f-rence-variables-env"></a>
+</h2>
+
+<p>Voir <code>docker/prod/.env.dist</code> pour la liste exhaustive. Variables groupées en sections :</p>
+
+<ul>
+<li>
+<strong>Application</strong> : <code>RAILS_ENV</code>, <code>HOST_DOMAIN_NAME</code>, <code>ADMIN_*</code>, <code>SECRET_KEY_BASE</code>, Puma tuning</li>
+<li>
+<strong>Database</strong> : <code>DB_*</code>
+</li>
+<li>
+<strong>Redis</strong> : <code>REDIS_URL</code>
+</li>
+<li>
+<strong>TLS</strong> : <code>LETSENCRYPT_EMAIL</code>
+</li>
+<li>
+<strong>Object storage</strong> : <code>MINIO_*</code> (optionnel)</li>
+<li>
+<strong>Observability</strong> : <code>ELASTIC_APM_ACTIVE</code> (optionnel)</li>
+<li>
+<strong>Duke</strong> : <code>DUKE_*</code>, <code>EKYLIBRE_DB_DSN</code>, <code>HASH_SECRET</code>, clés LLM, <code>OLLAMA_*</code>
+</li>
+</ul>
+
+<h2 id="tape-suivante">Étape suivante<a class="header-anchor" href="#tape-suivante" name="tape-suivante"></a>
+</h2>
+
+<p>Pour héberger plusieurs apps sur le même serveur, voir <a href="/techdoc/install/docker-prod-dokploy/"><strong>Docker prod Dokploy</strong></a>.</p>
+</body></html>
+
+      <p class="open-source-notice">
+          <i class="fa fa-file"></i> Cette documentation est <a href="https://github.com/ekylibre/doc">open-source</a>. Aidez-nous à l'améliorer en ouvrant une issue ou une pull request.
+      </p>
+    </div>
+
+  </div>
+  <hr>
+  <footer>
+    <p class="pull-left">
+      &copy; Ekylibre Authors 2014-2026 | Documentation Distributed under CC-BY-4.0
+    </p>
+    <p class="pull-left">
+       &copy; 2026 Ekylibre SAS. All rights reserved. Ekylibre SAS has registered trademarks and uses trademarks.
+    </p>
+  </footer>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="/javascripts/jquery.js"</script>
+  <script src="/javascripts/bootstrap.min.js"></script>
+</body>
+</html>

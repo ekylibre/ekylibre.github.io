@@ -45,11 +45,20 @@
     <!-- Custom styles for this template -->
     <link href="/stylesheets/docs.css" rel="stylesheet">
     <link href="/stylesheets/routing-tree-editor.css" rel="stylesheet">
+    <link href="/stylesheets/techdoc.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="/stylesheets/fontawesome.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lato:300,300italic,400' rel='stylesheet' type='text/css'>
+    <style>
+      .nav-lang-switcher { padding: 15px; line-height: 20px; font-weight: 700; letter-spacing: 0.05em; }
+      .nav-lang-switcher a, .nav-lang-switcher span { color: inherit; padding: 0 4px; text-decoration: none; }
+      .nav-lang-switcher a { opacity: 0.55; }
+      .nav-lang-switcher a:hover, .nav-lang-switcher a:focus { opacity: 1; text-decoration: underline; }
+      .nav-lang-switcher span[aria-current] { opacity: 1; }
+      .nav-lang-switcher .lang-sep { opacity: 0.35; }
+    </style>
   </head>
 
   <body>
@@ -67,14 +76,23 @@
         </div>
         <div class="collapse navbar-collapse" id="navbar">
           <ul class="nav navbar-nav navbar-right main-nav">
+            <li><a href="/">Home</a></li>
             <li><a href="/fr/user-doc/demarrage">User Doc FR</a></li>
+            <li><a href="/techdoc/">Tech Doc</a></li>
             <li><a href="/api">API Doc</a></li>
-            <li><a href="/fr/faq">FAQ</a></li>
+            <li><a href="/faq">FAQ</a></li>
             <li><a href="https://discord.gg/BSpD6hq7qR">Forum</a></li>
-            <li><a href="https://demo-innovation.ekylibre.io">Demo</a></li>
+            <li><a href="https://demo.ekylibre-dev.com">Demo</a></li>
             <li><a href="https://github.com/ekylibre"><i class="fab fa-github"></i></a></li>
             <li><a href="https://twitter.com/ekylibre"><i class="fab fa-twitter"></i></a></li>
             <li><a href="https://discord.gg/BSpD6hq7qR"><i class="fab fa-discord"></i></a></li>
+            <li class="nav-lang-switcher" role="navigation" aria-label="Language">
+              <% if @item.identifier.to_s.start_with?('/fr/') %>
+                <a href="/" hreflang="en" lang="en">EN</a><span class="lang-sep" aria-hidden="true">|</span><span aria-current="page" lang="fr">FR</span>
+              <% else %>
+                <span aria-current="page" lang="en">EN</span><span class="lang-sep" aria-hidden="true">|</span><a href="/fr/" hreflang="fr" lang="fr">FR</a>
+              <% end %>
+            </li>
           </ul>
         </div>
       </div>
@@ -84,12 +102,15 @@
 <div class="container">
   <div class="row">
     <div class="col-md-3 side-nav-col">
+      <% if @item.identifier.to_s.start_with?('/techdoc/') %>
+        <%= techdoc_sidebar %>
+      <% end %>
     </div>
 
     <div class="col-md-9 doc-content">
       <%= yield %>
       <p class="open-source-notice">
-          <i class="fa fa-file"></i> This documentation is <a href="https://github.com/prometheus/docs#contributing-changes">open-source</a>. Please help improve it by filing issues or pull requests.
+          <i class="fa fa-file"></i> Cette documentation est <a href="https://github.com/ekylibre/doc">open-source</a>. Aidez-nous à l'améliorer en ouvrant une issue ou une pull request.
       </p>
     </div>
 

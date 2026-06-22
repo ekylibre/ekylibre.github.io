@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="An open-source monitoring system with a dimensional data model, flexible query language, efficient time series database and modern alerting approach.">
+    <meta name="keywords" content="prometheus, monitoring, monitoring system, time series, time series database, alerting, metrics, telemetry">
+    <meta name="author" content="Prometheus">
+    <meta name="twitter:card" content="summary">
+    <meta property="og:description" content="An open-source monitoring system with a dimensional data model, flexible query language, efficient time series database and modern alerting approach.">
+    <meta property="og:image" content="https://prometheus.io/assets/favicons/android-chrome-192x192.png">
+
+    <link rel="alternate" type="application/atom+xml" title="Prometheus Blog » Feed" href="/blog/feed.xml">
+
+    <link rel="shortcut icon" href="/assets/favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/assets/favicons/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/assets/favicons/android-chrome-manifest.json">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    
+    <meta property="og:title" content="Setup de l'application | Prometheus">
+    <title>Setup de l'application | Prometheus</title>
+    
+
+    <!-- Bootstrap core CSS -->
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="/stylesheets/docs.css" rel="stylesheet">
+    <link href="/stylesheets/routing-tree-editor.css" rel="stylesheet">
+    <link href="/stylesheets/techdoc.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/stylesheets/fontawesome.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,300italic,400' rel='stylesheet' type='text/css'>
+    <style>
+      .nav-lang-switcher { padding: 15px; line-height: 20px; font-weight: 700; letter-spacing: 0.05em; }
+      .nav-lang-switcher a, .nav-lang-switcher span { color: inherit; padding: 0 4px; text-decoration: none; }
+      .nav-lang-switcher a { opacity: 0.55; }
+      .nav-lang-switcher a:hover, .nav-lang-switcher a:focus { opacity: 1; text-decoration: underline; }
+      .nav-lang-switcher span[aria-current] { opacity: 1; }
+      .nav-lang-switcher .lang-sep { opacity: 0.35; }
+    </style>
+  </head>
+
+  <body>
+
+  <div class="">
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="nav navbar-nav navbar-right main-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/fr/user-doc/demarrage">User Doc FR</a></li>
+            <li><a href="/techdoc/">Tech Doc</a></li>
+            <li><a href="/api">API Doc</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="https://discord.gg/BSpD6hq7qR">Forum</a></li>
+            <li><a href="https://demo.ekylibre-dev.com">Demo</a></li>
+            <li><a href="https://github.com/ekylibre"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://twitter.com/ekylibre"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://discord.gg/BSpD6hq7qR"><i class="fab fa-discord"></i></a></li>
+            <li class="nav-lang-switcher" role="navigation" aria-label="Language">
+              
+                <span aria-current="page" lang="en">EN</span><span class="lang-sep" aria-hidden="true">|</span><a href="/fr/" hreflang="fr" lang="fr">FR</a>
+              
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 side-nav-col">
+      
+        <nav class="techdoc-sidebar" aria-label="Documentation technique"><ul class="nav techdoc-nav"><li><a class="techdoc-root" href="/techdoc/"><i class="fa fa-book" aria-hidden="true"></i> <strong>Accueil</strong></a></li><li class="active has-children"><a href="/techdoc/install/"><i class="fa fa-rocket" aria-hidden="true"></i> Installation</a><ul class="nav"><li><a href="/techdoc/install/prerequisites/"><i class="fa fa-check-square-o" aria-hidden="true"></i> Prérequis</a></li><li><a href="/techdoc/install/docker-dev/"><i class="fa fa-cube" aria-hidden="true"></i> Docker dev</a></li><li><a href="/techdoc/install/native-ubuntu/"><i class="fa fa-ubuntu" aria-hidden="true"></i> Native Ubuntu</a></li><li class="active current"><a href="/techdoc/install/app-setup/" aria-current="page"><i class="fa fa-cogs" aria-hidden="true"></i> Setup application</a></li><li><a href="/techdoc/install/docker-prod-standalone/"><i class="fa fa-server" aria-hidden="true"></i> Docker prod standalone</a></li><li><a href="/techdoc/install/docker-prod-dokploy/"><i class="fa fa-cloud" aria-hidden="true"></i> Docker prod Dokploy</a></li><li><a href="/techdoc/install/troubleshooting/"><i class="fa fa-medkit" aria-hidden="true"></i> Troubleshooting</a></li></ul></li><li><a href="/techdoc/architecture/"><i class="fa fa-sitemap" aria-hidden="true"></i> Architecture</a></li><li><a href="/techdoc/data-model/"><i class="fa fa-database" aria-hidden="true"></i> Data model</a></li><li><a href="/techdoc/contributing/"><i class="fa fa-code-fork" aria-hidden="true"></i> Contribuer</a></li></ul></nav>
+      
+    </div>
+
+    <div class="col-md-9 doc-content">
+      <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<h1 id="setup-de-lapplication-ekylibre" class="page-header">Setup de l'application Ekylibre<a class="header-anchor" href="#setup-de-lapplication-ekylibre" name="setup-de-lapplication-ekylibre"></a>
+</h1>
+<div class="toc toc-full"><ul>
+<li><a href="#barre-de-progression-interactive">Barre de progression interactive
+</a></li>
+<li><a href="#1-cloner-le-d-p-t-clone">1. Cloner le dépôt {#clone}
+</a></li>
+<li><a href="#2-installer-les-d-pendances-ruby-et-js-bundle">2. Installer les dépendances Ruby et JS {#bundle}
+</a></li>
+<li><a href="#3-copier-et-compl-ter-env-env">3. Copier et compléter <code>.env</code> {#env}
+</a></li>
+<li><a href="#4-cr-er-et-migrer-la-base-de-donn-es-db">4. Créer et migrer la base de données {#db}
+</a></li>
+<li><a href="#5-g-n-rer-une-cl-gpg-locale-gpg">5. Générer une clé GPG locale {#gpg}
+</a></li>
+<li><a href="#6-charger-le-lexicon-lexicon">6. Charger le lexicon {#lexicon}
+</a></li>
+<li><a href="#7-premier-run-donn-es-de-d-mo-ou-tenant-vierge-first-run">7. Premier run (données de démo OU tenant vierge) {#first-run}
+</a></li>
+<ul>
+<li><a href="#option-a-charger-les-donn-es-de-d-monstration">Option A — Charger les données de démonstration
+</a></li>
+<li><a href="#option-b-cr-er-un-tenant-vierge">Option B — Créer un tenant vierge
+</a></li>
+</ul>
+<li><a href="#8-d-marrer-les-serveurs-start">8. Démarrer les serveurs {#start}
+</a></li>
+<ul>
+<li><a href="#terminal-1-serveur-rails-puma">Terminal 1 — Serveur Rails (Puma)
+</a></li>
+<li><a href="#terminal-2-worker-sidekiq-jobs-asynchrones">Terminal 2 — Worker Sidekiq (jobs asynchrones)
+</a></li>
+<li><a href="#terminal-3-compilation-des-assets-optionnel-pour-le-dev-front">Terminal 3 — Compilation des assets (optionnel pour le dev front)
+</a></li>
+<li><a href="#acc-s-lapplication">Accès à l'application
+</a></li>
+</ul>
+<li><a href="#v-rifications-post-installation">Vérifications post-installation
+</a></li>
+<li><a href="#tape-suivante">Étape suivante
+</a></li>
+</ul></div>
+
+<p>Cette page décrit la mise en route de l'application <strong>après</strong> que l'environnement système est prêt (voir <a href="/techdoc/install/native-ubuntu/">Native Ubuntu</a> ou Docker). On y clone le repo, installe les dépendances Ruby/JS, configure <code>.env</code>, initialise la base, charge le lexicon, et démarre les serveurs.</p>
+
+<h2 id="barre-de-progression-interactive">Barre de progression interactive<a class="header-anchor" href="#barre-de-progression-interactive" name="barre-de-progression-interactive"></a>
+</h2>
+
+<div id="install-progress" class="techdoc-pixi-progress" data-pixi-component="install-progress" data-steps="clone,bundle,env,db,gpg,lexicon,first-run,start" aria-hidden="true"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/pixi.js@8/dist/pixi.min.js" defer></script>
+
+<script src="/javascripts/techdoc-install-progress.js" defer></script>
+
+<h2 id="1-cloner-le-d-p-t-clone">1. Cloner le dépôt {#clone}<a class="header-anchor" href="#1-cloner-le-d-p-t-clone" name="1-cloner-le-d-p-t-clone"></a>
+</h2>
+
+<pre><code class="bash">mkdir -p ~/projects &amp;&amp; cd ~/projects
+git clone -b 5.0-beta https://github.com/ekylibre/ekylibre.git
+cd ekylibre
+</code></pre>
+
+<p>Si vous travaillez sur la version GitLab privée :</p>
+
+<pre><code class="bash">git clone -b 5.0-beta git@gitlab.com:ekylibre/eky.git
+</code></pre>
+
+<h2 id="2-installer-les-d-pendances-ruby-et-js-bundle">2. Installer les dépendances Ruby et JS {#bundle}<a class="header-anchor" href="#2-installer-les-d-pendances-ruby-et-js-bundle" name="2-installer-les-d-pendances-ruby-et-js-bundle"></a>
+</h2>
+
+<pre><code class="bash">bundle install
+yarn install
+</code></pre>
+
+<blockquote>
+<p><strong>Important :</strong> plusieurs plugins privés sont déclarés via <code>Gemfile.local</code>. Si vous n'avez pas accès aux dépôts privés (<code>github.com/ekylibre/ekylibre-banking</code> etc.), commentez les lignes correspondantes dans <code>Gemfile.local</code> avant de relancer <code>bundle install</code>.</p>
+
+<p><strong>Astuce :</strong> <code>bundle install</code> échoue parfois sur <code>nokogiri</code> / <code>rgeo</code> avec une vieille version de <code>bundler</code>. Mettre à jour :
+<code>bash
+gem install bundler -v '&gt;= 2.3'
+</code></p>
+</blockquote>
+
+<h2 id="3-copier-et-compl-ter-env-env">3. Copier et compléter <code>.env</code> {#env}<a class="header-anchor" href="#3-copier-et-compl-ter-env-env" name="3-copier-et-compl-ter-env-env"></a>
+</h2>
+
+<pre><code class="bash">cp .env.dist .env
+</code></pre>
+
+<p>Le fichier <code>.env.dist</code> contient des secrets de <strong>développement uniquement</strong> (clés Devise, secret base). Pour le dev local, vous pouvez le laisser tel quel.</p>
+
+<p>Quelques variables clés :</p>
+
+<table class=" table table-bordered">
+<thead>
+<tr>
+<th>Variable</th>
+<th>Valeur dev</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DEVISE_SECRET_KEY</code></td>
+<td>(fournie)</td>
+<td>Authentification utilisateurs</td>
+</tr>
+<tr>
+<td><code>SECRET_KEY_BASE</code></td>
+<td>(fournie)</td>
+<td>Chiffrement des cookies Rails</td>
+</tr>
+<tr>
+<td><code>GPG_EMAIL</code></td>
+<td>Email de votre clé GPG (voir §5)</td>
+<td>Signature des documents</td>
+</tr>
+<tr>
+<td><code>MAILER_SENDER</code></td>
+<td><code>sender-is-not-defined@example.org</code></td>
+<td>Émetteur des emails</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p><strong>En production :</strong> régénérer <strong>tous</strong> les secrets avec <code>openssl rand -hex 64</code>, restreindre <code>chmod 600 .env</code>, et <strong>ne pas</strong> committer.</p>
+
+<p><strong>Crédentials d'API tierces</strong> (Saisigo, Baqio, Qonto…) : demandez-les à un autre développeur Ekylibre. Sans ces clés, certaines intégrations seront désactivées (non bloquant pour le démarrage).</p>
+</blockquote>
+
+<h2 id="4-cr-er-et-migrer-la-base-de-donn-es-db">4. Créer et migrer la base de données {#db}<a class="header-anchor" href="#4-cr-er-et-migrer-la-base-de-donn-es-db" name="4-cr-er-et-migrer-la-base-de-donn-es-db"></a>
+</h2>
+
+<pre><code class="bash">bundle exec rails db:create db:migrate
+</code></pre>
+
+<p>Si vous voyez <code>FATAL: Peer authentication failed</code>, c'est que <code>pg_hba.conf</code> n'a pas été ajusté pour utiliser <code>md5</code> — voir §3.c de <a href="/techdoc/install/native-ubuntu/#postgres">Native Ubuntu</a>.</p>
+
+<h2 id="5-g-n-rer-une-cl-gpg-locale-gpg">5. Générer une clé GPG locale {#gpg}<a class="header-anchor" href="#5-g-n-rer-une-cl-gpg-locale-gpg" name="5-g-n-rer-une-cl-gpg-locale-gpg"></a>
+</h2>
+
+<p>Ekylibre signe certains documents (clôtures d'exercice, archives) avec GPG.</p>
+
+<pre><code class="bash">gpg --gen-key
+</code></pre>
+
+<p>Suivre les instructions interactives (nom, email, mot de passe). Puis renseigner l'email dans <code>.env</code> :</p>
+
+<pre><code class="bash">echo "GPG_EMAIL=votre-email@example.org" &gt;&gt; .env
+</code></pre>
+
+<blockquote>
+<p><strong>Sauter cette étape :</strong> uniquement si vous n'utiliserez pas les fonctionnalités de signature (acceptable en dev exploratoire).</p>
+</blockquote>
+
+<h2 id="6-charger-le-lexicon-lexicon">6. Charger le lexicon {#lexicon}<a class="header-anchor" href="#6-charger-le-lexicon-lexicon" name="6-charger-le-lexicon-lexicon"></a>
+</h2>
+
+<p>Le <strong>lexicon</strong> est la base nomenclaturale d'Ekylibre (variétés végétales, équipements, intrants…) — plus de 20 millions d'items.</p>
+
+<pre><code class="bash">bin/rake lexicon:load
+</code></pre>
+
+<blockquote>
+<p><strong>Cette étape prend 5 à 10 minutes.</strong> Le rake task télécharge des archives depuis un MinIO/S3 si les variables <code>MINIO_HOST/ACCESS_KEY/SECRET_KEY</code> sont renseignées dans <code>.env</code>, ou utilise le snapshot embarqué sinon.</p>
+</blockquote>
+
+<h2 id="7-premier-run-donn-es-de-d-mo-ou-tenant-vierge-first-run">7. Premier run (données de démo OU tenant vierge) {#first-run}<a class="header-anchor" href="#7-premier-run-donn-es-de-d-mo-ou-tenant-vierge-first-run" name="7-premier-run-donn-es-de-d-mo-ou-tenant-vierge-first-run"></a>
+</h2>
+
+<h3 id="option-a-charger-les-donn-es-de-d-monstration">Option A — Charger les données de démonstration<a class="header-anchor" href="#option-a-charger-les-donn-es-de-d-monstration" name="option-a-charger-les-donn-es-de-d-monstration"></a>
+</h3>
+
+<pre><code class="bash">mkdir -p db/first_runs
+git clone https://github.com/ekylibre/first_run-demo.git db/first_runs/demo
+bin/rake first_run
+</code></pre>
+
+<p>Ajouter une entrée dans <code>/etc/hosts</code> pour résoudre le tenant <code>demo</code> :</p>
+
+<pre><code class="bash">echo '127.0.0.1 demo.ekylibre.lan' | sudo tee -a /etc/hosts
+</code></pre>
+
+<h3 id="option-b-cr-er-un-tenant-vierge">Option B — Créer un tenant vierge<a class="header-anchor" href="#option-b-cr-er-un-tenant-vierge" name="option-b-cr-er-un-tenant-vierge"></a>
+</h3>
+
+<pre><code class="bash">bin/rake tenant:init TENANT=my-farm
+echo '127.0.0.1 my-farm.ekylibre.lan' | sudo tee -a /etc/hosts
+</code></pre>
+
+<h2 id="8-d-marrer-les-serveurs-start">8. Démarrer les serveurs {#start}<a class="header-anchor" href="#8-d-marrer-les-serveurs-start" name="8-d-marrer-les-serveurs-start"></a>
+</h2>
+
+<p>Ekylibre nécessite <strong>trois processus</strong> en parallèle (en dev sans Docker, ouvrir trois terminaux ou utiliser <code>tmux</code> / <code>foreman</code>).</p>
+
+<h3 id="terminal-1-serveur-rails-puma">Terminal 1 — Serveur Rails (Puma)<a class="header-anchor" href="#terminal-1-serveur-rails-puma" name="terminal-1-serveur-rails-puma"></a>
+</h3>
+
+<pre><code class="bash">bundle exec rails s
+</code></pre>
+
+<h3 id="terminal-2-worker-sidekiq-jobs-asynchrones">Terminal 2 — Worker Sidekiq (jobs asynchrones)<a class="header-anchor" href="#terminal-2-worker-sidekiq-jobs-asynchrones" name="terminal-2-worker-sidekiq-jobs-asynchrones"></a>
+</h3>
+
+<pre><code class="bash">bundle exec sidekiq
+</code></pre>
+
+<h3 id="terminal-3-compilation-des-assets-optionnel-pour-le-dev-front">Terminal 3 — Compilation des assets (optionnel pour le dev front)<a class="header-anchor" href="#terminal-3-compilation-des-assets-optionnel-pour-le-dev-front" name="terminal-3-compilation-des-assets-optionnel-pour-le-dev-front"></a>
+</h3>
+
+<pre><code class="bash">bin/webpack-dev-server
+</code></pre>
+
+<blockquote>
+<p>Sans <code>webpack-dev-server</code>, Rails compile les assets à la volée à la première requête — plus lent mais suffisant pour exploration.</p>
+</blockquote>
+
+<h3 id="acc-s-lapplication">Accès à l'application<a class="header-anchor" href="#acc-s-lapplication" name="acc-s-lapplication"></a>
+</h3>
+
+<p>Ouvrir <a href="http://demo.ekylibre.lan:3000">http://demo.ekylibre.lan:3000</a> (ou <code>my-farm.ekylibre.lan</code> selon l'option choisie).</p>
+
+<p>Identifiants par défaut : voir <a href="https://github.com/ekylibre/first_run-demo"><code>db/first_runs/demo/</code></a> (généralement <code>admin@ekylibre.org</code> / <code>12345678</code>).</p>
+
+<h2 id="v-rifications-post-installation">Vérifications post-installation<a class="header-anchor" href="#v-rifications-post-installation" name="v-rifications-post-installation"></a>
+</h2>
+
+<pre><code class="bash"># Console Rails accessible
+bundle exec rails c
+# loading development environment (Rails 6.x.x)
+
+# Jobs en attente
+bundle exec sidekiq-cli status
+
+# Lexicon chargé
+bundle exec rails runner "puts Lexicon::ProductionNature.count"
+# Doit renvoyer un nombre &gt; 0
+</code></pre>
+
+<h2 id="tape-suivante">Étape suivante<a class="header-anchor" href="#tape-suivante" name="tape-suivante"></a>
+</h2>
+
+<p>L'installation est complète. Pour comprendre comment les pièces s'agencent, lire <a href="/techdoc/architecture/"><strong>Architecture</strong></a>. Pour soumettre un correctif, lire <a href="/techdoc/contributing/"><strong>Contribuer</strong></a>.</p>
+
+<p>En cas d'erreur, consulter <a href="/techdoc/install/troubleshooting/"><strong>Résolution de problèmes</strong></a>.</p>
+</body></html>
+
+      <p class="open-source-notice">
+          <i class="fa fa-file"></i> Cette documentation est <a href="https://github.com/ekylibre/doc">open-source</a>. Aidez-nous à l'améliorer en ouvrant une issue ou une pull request.
+      </p>
+    </div>
+
+  </div>
+  <hr>
+  <footer>
+    <p class="pull-left">
+      &copy; Ekylibre Authors 2014-2026 | Documentation Distributed under CC-BY-4.0
+    </p>
+    <p class="pull-left">
+       &copy; 2026 Ekylibre SAS. All rights reserved. Ekylibre SAS has registered trademarks and uses trademarks.
+    </p>
+  </footer>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="/javascripts/jquery.js"</script>
+  <script src="/javascripts/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="An open-source monitoring system with a dimensional data model, flexible query language, efficient time series database and modern alerting approach.">
+    <meta name="keywords" content="prometheus, monitoring, monitoring system, time series, time series database, alerting, metrics, telemetry">
+    <meta name="author" content="Prometheus">
+    <meta name="twitter:card" content="summary">
+    <meta property="og:description" content="An open-source monitoring system with a dimensional data model, flexible query language, efficient time series database and modern alerting approach.">
+    <meta property="og:image" content="https://prometheus.io/assets/favicons/android-chrome-192x192.png">
+
+    <link rel="alternate" type="application/atom+xml" title="Prometheus Blog » Feed" href="/blog/feed.xml">
+
+    <link rel="shortcut icon" href="/assets/favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/assets/favicons/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/assets/favicons/android-chrome-manifest.json">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    
+    <meta property="og:title" content="Installation native sur Ubuntu | Prometheus">
+    <title>Installation native sur Ubuntu | Prometheus</title>
+    
+
+    <!-- Bootstrap core CSS -->
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="/stylesheets/docs.css" rel="stylesheet">
+    <link href="/stylesheets/routing-tree-editor.css" rel="stylesheet">
+    <link href="/stylesheets/techdoc.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/stylesheets/fontawesome.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,300italic,400' rel='stylesheet' type='text/css'>
+    <style>
+      .nav-lang-switcher { padding: 15px; line-height: 20px; font-weight: 700; letter-spacing: 0.05em; }
+      .nav-lang-switcher a, .nav-lang-switcher span { color: inherit; padding: 0 4px; text-decoration: none; }
+      .nav-lang-switcher a { opacity: 0.55; }
+      .nav-lang-switcher a:hover, .nav-lang-switcher a:focus { opacity: 1; text-decoration: underline; }
+      .nav-lang-switcher span[aria-current] { opacity: 1; }
+      .nav-lang-switcher .lang-sep { opacity: 0.35; }
+    </style>
+  </head>
+
+  <body>
+
+  <div class="">
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="nav navbar-nav navbar-right main-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/fr/user-doc/demarrage">User Doc FR</a></li>
+            <li><a href="/techdoc/">Tech Doc</a></li>
+            <li><a href="/api">API Doc</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="https://discord.gg/BSpD6hq7qR">Forum</a></li>
+            <li><a href="https://demo.ekylibre-dev.com">Demo</a></li>
+            <li><a href="https://github.com/ekylibre"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://twitter.com/ekylibre"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://discord.gg/BSpD6hq7qR"><i class="fab fa-discord"></i></a></li>
+            <li class="nav-lang-switcher" role="navigation" aria-label="Language">
+              
+                <span aria-current="page" lang="en">EN</span><span class="lang-sep" aria-hidden="true">|</span><a href="/fr/" hreflang="fr" lang="fr">FR</a>
+              
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 side-nav-col">
+      
+        <nav class="techdoc-sidebar" aria-label="Documentation technique"><ul class="nav techdoc-nav"><li><a class="techdoc-root" href="/techdoc/"><i class="fa fa-book" aria-hidden="true"></i> <strong>Accueil</strong></a></li><li class="active has-children"><a href="/techdoc/install/"><i class="fa fa-rocket" aria-hidden="true"></i> Installation</a><ul class="nav"><li><a href="/techdoc/install/prerequisites/"><i class="fa fa-check-square-o" aria-hidden="true"></i> Prérequis</a></li><li><a href="/techdoc/install/docker-dev/"><i class="fa fa-cube" aria-hidden="true"></i> Docker dev</a></li><li class="active current"><a href="/techdoc/install/native-ubuntu/" aria-current="page"><i class="fa fa-ubuntu" aria-hidden="true"></i> Native Ubuntu</a></li><li><a href="/techdoc/install/app-setup/"><i class="fa fa-cogs" aria-hidden="true"></i> Setup application</a></li><li><a href="/techdoc/install/docker-prod-standalone/"><i class="fa fa-server" aria-hidden="true"></i> Docker prod standalone</a></li><li><a href="/techdoc/install/docker-prod-dokploy/"><i class="fa fa-cloud" aria-hidden="true"></i> Docker prod Dokploy</a></li><li><a href="/techdoc/install/troubleshooting/"><i class="fa fa-medkit" aria-hidden="true"></i> Troubleshooting</a></li></ul></li><li><a href="/techdoc/architecture/"><i class="fa fa-sitemap" aria-hidden="true"></i> Architecture</a></li><li><a href="/techdoc/data-model/"><i class="fa fa-database" aria-hidden="true"></i> Data model</a></li><li><a href="/techdoc/contributing/"><i class="fa fa-code-fork" aria-hidden="true"></i> Contribuer</a></li></ul></nav>
+      
+    </div>
+
+    <div class="col-md-9 doc-content">
+      <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<h1 id="installation-native-sur-ubuntu" class="page-header">Installation native sur Ubuntu<a class="header-anchor" href="#installation-native-sur-ubuntu" name="installation-native-sur-ubuntu"></a>
+</h1>
+<div class="toc toc-full"><ul>
+<li><a href="#barre-de-progression-interactive">Barre de progression interactive
+</a></li>
+<li><a href="#1-rbenv-ruby-2-6-6-rbenv">1. Rbenv &amp; Ruby 2.6.6 {#rbenv}
+</a></li>
+<ul>
+<li><a href="#a-installer-git-et-curl">a. Installer Git et curl
+</a></li>
+<li><a href="#b-cloner-rbenv-et-ruby-build">b. Cloner rbenv et ruby-build
+</a></li>
+<li><a href="#c-d-pendances-de-compilation-ruby">c. Dépendances de compilation Ruby
+</a></li>
+<li><a href="#d-installer-ruby-2-6-6-et-bundler">d. Installer Ruby 2.6.6 et Bundler
+</a></li>
+</ul>
+<li><a href="#2-node-js-lts-yarn-node">2. Node.js LTS &amp; Yarn {#node}
+</a></li>
+<ul>
+<li><a href="#a-installer-nvm">a. Installer nvm
+</a></li>
+<li><a href="#b-installer-node-js-lts">b. Installer Node.js LTS
+</a></li>
+<li><a href="#c-installer-yarn">c. Installer Yarn
+</a></li>
+</ul>
+<li><a href="#3-postgresql-13-postgis-2-5-postgres">3. PostgreSQL 13 + PostGIS 2.5 {#postgres}
+</a></li>
+<ul>
+<li><a href="#a-installation">a. Installation
+</a></li>
+<li><a href="#b-cr-er-lutilisateur-ekylibre">b. Créer l'utilisateur <code>ekylibre</code>
+</a></li>
+<li><a href="#c-configurer-pg_hba-conf-pour-lauthentification-par-mot-de-passe">c. Configurer <code>pg_hba.conf</code> pour l'authentification par mot de passe
+</a></li>
+<li><a href="#d-optionnel-pgadmin-4-desktop">d. (Optionnel) PgAdmin 4 Desktop
+</a></li>
+</ul>
+<li><a href="#4-proj-projections-cartographiques-proj">4. PROJ (projections cartographiques) {#proj}
+</a></li>
+<li><a href="#5-java-8-redis-d-pendances-syst-me-java-redis">5. Java 8 &amp; Redis &amp; dépendances système {#java-redis}
+</a></li>
+<ul>
+<li><a href="#a-repos-additionnels-qt-4-pour-openjdk-8-sur-20-04">a. Repos additionnels (Qt 4 pour openjdk-8 sur 20.04)
+</a></li>
+<li><a href="#b-d-pendances-compl-tes">b. Dépendances complètes
+</a></li>
+<li><a href="#c-exporter-java_home">c. Exporter <code>JAVA_HOME</code>
+</a></li>
+<li><a href="#d-redis-d-j-install-en-1-c-v-rifier">d. Redis (déjà installé en §1.c, vérifier)
+</a></li>
+</ul>
+<li><a href="#6-certificats-renater-int-grations-pfi-renater">6. Certificats Renater (intégrations PFI) {#renater}
+</a></li>
+<li><a href="#tape-suivante">Étape suivante
+</a></li>
+</ul></div>
+
+<p>Cette procédure installe Ekylibre <strong>directement sur votre système</strong> (sans Docker). Elle convient si vous souhaitez profiler, attacher un debugger natif, ou si vous administrez un serveur Ubuntu dédié à Ekylibre.</p>
+
+<blockquote>
+<p><strong>Cible :</strong> Ubuntu 20.04 LTS. La branche <code>5.0-beta</code> utilise toujours Ruby 2.6.6. Pour Ubuntu 22.04+, certaines dépendances (PostGIS, libqt4, openjdk-8) nécessitent des PPAs ou des paquets ajustés. <strong>Si vous voulez aller plus vite, préférez la variante <a href="/techdoc/install/docker-dev/">Docker dev</a> ou <a href="/techdoc/install/docker-prod-standalone/">Docker prod</a>.</strong></p>
+</blockquote>
+
+<h2 id="barre-de-progression-interactive">Barre de progression interactive<a class="header-anchor" href="#barre-de-progression-interactive" name="barre-de-progression-interactive"></a>
+</h2>
+
+<p>Cette page est longue. La barre ci-dessous met en surbrillance l'étape où vous vous trouvez en scrollant.</p>
+
+<div id="install-progress" class="techdoc-pixi-progress" data-pixi-component="install-progress" data-steps="rbenv,ruby,node,postgres,proj,java-redis,renater" aria-hidden="true"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/pixi.js@8/dist/pixi.min.js" defer></script>
+
+<script src="/javascripts/techdoc-install-progress.js" defer></script>
+
+<h2 id="1-rbenv-ruby-2-6-6-rbenv">1. Rbenv &amp; Ruby 2.6.6 {#rbenv}<a class="header-anchor" href="#1-rbenv-ruby-2-6-6-rbenv" name="1-rbenv-ruby-2-6-6-rbenv"></a>
+</h2>
+
+<p><strong>Pourquoi rbenv ?</strong> Ubuntu 20.04 ne fournit pas Ruby 2.6 dans ses dépôts officiels. <code>rbenv</code> permet d'installer et de basculer entre plusieurs versions de Ruby sans toucher au système.</p>
+
+<h3 id="a-installer-git-et-curl">a. Installer Git et curl<a class="header-anchor" href="#a-installer-git-et-curl" name="a-installer-git-et-curl"></a>
+</h3>
+
+<pre><code class="bash">sudo apt update &amp;&amp; sudo apt install -y git curl
+</code></pre>
+
+<h3 id="b-cloner-rbenv-et-ruby-build">b. Cloner rbenv et ruby-build<a class="header-anchor" href="#b-cloner-rbenv-et-ruby-build" name="b-cloner-rbenv-et-ruby-build"></a>
+</h3>
+
+<pre><code class="bash">git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+</code></pre>
+
+<p>Ajouter <code>rbenv</code> au <code>PATH</code> :</p>
+
+<pre><code class="bash">echo 'export PATH="$HOME/.rbenv/bin:$PATH"' &gt;&gt; ~/.bashrc
+echo 'eval "$(rbenv init -)"' &gt;&gt; ~/.bashrc
+source ~/.bashrc
+</code></pre>
+
+<h3 id="c-d-pendances-de-compilation-ruby">c. Dépendances de compilation Ruby<a class="header-anchor" href="#c-d-pendances-de-compilation-ruby" name="c-d-pendances-de-compilation-ruby"></a>
+</h3>
+
+<pre><code class="bash">sudo apt install -y build-essential libreadline-dev libssl-dev zlib1g-dev redis-server
+</code></pre>
+
+<h3 id="d-installer-ruby-2-6-6-et-bundler">d. Installer Ruby 2.6.6 et Bundler<a class="header-anchor" href="#d-installer-ruby-2-6-6-et-bundler" name="d-installer-ruby-2-6-6-et-bundler"></a>
+</h3>
+
+<pre><code class="bash">rbenv install 2.6.6
+rbenv global 2.6.6
+gem install bundler
+</code></pre>
+
+<p>Vérification :</p>
+
+<pre><code class="bash">ruby --version
+# ruby 2.6.6p146 (2020-03-31 revision 67876)
+</code></pre>
+
+<h2 id="2-node-js-lts-yarn-node">2. Node.js LTS &amp; Yarn {#node}<a class="header-anchor" href="#2-node-js-lts-yarn-node" name="2-node-js-lts-yarn-node"></a>
+</h2>
+
+<p>Ekylibre compile ses assets via Webpacker, qui requiert Node.js et Yarn.</p>
+
+<h3 id="a-installer-nvm">a. Installer nvm<a class="header-anchor" href="#a-installer-nvm" name="a-installer-nvm"></a>
+</h3>
+
+<pre><code class="bash">curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+</code></pre>
+
+<p>Si la commande <code>nvm</code> n'est pas disponible après installation :</p>
+
+<pre><code class="bash">export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] &amp;&amp; . "$NVM_DIR/nvm.sh"
+</code></pre>
+
+<h3 id="b-installer-node-js-lts">b. Installer Node.js LTS<a class="header-anchor" href="#b-installer-node-js-lts" name="b-installer-node-js-lts"></a>
+</h3>
+
+<pre><code class="bash">nvm install --lts
+nvm alias default 'lts/*'
+</code></pre>
+
+<h3 id="c-installer-yarn">c. Installer Yarn<a class="header-anchor" href="#c-installer-yarn" name="c-installer-yarn"></a>
+</h3>
+
+<pre><code class="bash">npm install -g yarn
+</code></pre>
+
+<h2 id="3-postgresql-13-postgis-2-5-postgres">3. PostgreSQL 13 + PostGIS 2.5 {#postgres}<a class="header-anchor" href="#3-postgresql-13-postgis-2-5-postgres" name="3-postgresql-13-postgis-2-5-postgres"></a>
+</h2>
+
+<p>Ekylibre est intrinsèquement géospatial — PostGIS n'est pas optionnel.</p>
+
+<h3 id="a-installation">a. Installation<a class="header-anchor" href="#a-installation" name="a-installation"></a>
+</h3>
+
+<pre><code class="bash">sudo apt install -y \
+  postgresql-13 \
+  postgresql-13-postgis-2.5 \
+  postgresql-13-postgis-2.5-scripts
+</code></pre>
+
+<h3 id="b-cr-er-lutilisateur-ekylibre">b. Créer l'utilisateur <code>ekylibre</code><a class="header-anchor" href="#b-cr-er-lutilisateur-ekylibre" name="b-cr-er-lutilisateur-ekylibre"></a>
+</h3>
+
+<pre><code class="bash">sudo -u postgres createuser -d -P -s ekylibre
+# Mot de passe demandé interactivement : choisir 'ekylibre' pour le développement local
+echo "ALTER USER ekylibre SUPERUSER;" | sudo -u postgres psql
+</code></pre>
+
+<blockquote>
+<p><strong>Attention :</strong> ce mot de passe simple ne convient <strong>que</strong> pour le développement. En production, voir la variante <a href="/techdoc/install/docker-prod-standalone/">Docker prod standalone</a>.</p>
+</blockquote>
+
+<h3 id="c-configurer-pg_hba-conf-pour-lauthentification-par-mot-de-passe">c. Configurer <code>pg_hba.conf</code> pour l'authentification par mot de passe<a class="header-anchor" href="#c-configurer-pg_hba-conf-pour-lauthentification-par-mot-de-passe" name="c-configurer-pg_hba-conf-pour-lauthentification-par-mot-de-passe"></a>
+</h3>
+
+<p>Sur une installation fraîche, PostgreSQL utilise <code>peer</code> pour les sockets Unix locaux. Ekylibre s'attend à <code>md5</code> :</p>
+
+<pre><code class="bash">sudo vim /etc/postgresql/13/main/pg_hba.conf
+</code></pre>
+
+<p>Remplacer la ligne :</p>
+
+<pre><code>local   all             all                                peer
+</code></pre>
+
+<p>par :</p>
+
+<pre><code>local   all             all                                md5
+</code></pre>
+
+<p>Recharger :</p>
+
+<pre><code class="bash">sudo systemctl restart postgresql
+</code></pre>
+
+<h3 id="d-optionnel-pgadmin-4-desktop">d. (Optionnel) PgAdmin 4 Desktop<a class="header-anchor" href="#d-optionnel-pgadmin-4-desktop" name="d-optionnel-pgadmin-4-desktop"></a>
+</h3>
+
+<p>Pour inspecter visuellement la base :</p>
+
+<pre><code class="bash">curl https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo apt-key add -
+sudo sh -c 'echo "deb https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/$(lsb_release -cs) pgadmin4 main" &gt; /etc/apt/sources.list.d/pgadmin4.list'
+sudo apt update &amp;&amp; sudo apt install -y pgadmin4-desktop
+</code></pre>
+
+<h2 id="4-proj-projections-cartographiques-proj">4. PROJ (projections cartographiques) {#proj}<a class="header-anchor" href="#4-proj-projections-cartographiques-proj" name="4-proj-projections-cartographiques-proj"></a>
+</h2>
+
+<p>PostGIS dépend de PROJ pour les transformations de coordonnées. La version d'Ubuntu 20.04 est en général compatible — vérifier :</p>
+
+<pre><code class="bash">dpkg -l | grep ^ii.*proj
+</code></pre>
+
+<blockquote>
+<p><strong>Si la version installée est ≥ 5.2.0</strong> et que vous rencontrez l'erreur <code>ERROR: source code not in proj.4 format</code> au lancement de Rails, il faut récupérer une version compatible de PROJ depuis l'espace de partage Ekylibre et la copier dans <code>/opt/proj/share/</code>.</p>
+
+<pre><code class="bash">sudo mkdir -p /opt/proj/share
+# extraire proj.tar.gz dans /opt/proj/share/
+</code></pre>
+
+<p>La marche-à-suivre détaillée se trouve dans la page <a href="/techdoc/install/troubleshooting/#proj">Résolution de problèmes</a>.</p>
+</blockquote>
+
+<h2 id="5-java-8-redis-d-pendances-syst-me-java-redis">5. Java 8 &amp; Redis &amp; dépendances système {#java-redis}<a class="header-anchor" href="#5-java-8-redis-d-pendances-syst-me-java-redis" name="5-java-8-redis-d-pendances-syst-me-java-redis"></a>
+</h2>
+
+<p>Ekylibre embarque des outils Java pour la génération de PDF (clôtures d'exercice, bordereaux).</p>
+
+<h3 id="a-repos-additionnels-qt-4-pour-openjdk-8-sur-20-04">a. Repos additionnels (Qt 4 pour openjdk-8 sur 20.04)<a class="header-anchor" href="#a-repos-additionnels-qt-4-pour-openjdk-8-sur-20-04" name="a-repos-additionnels-qt-4-pour-openjdk-8-sur-20-04"></a>
+</h3>
+
+<pre><code class="bash">sudo add-apt-repository ppa:rock-core/qt4
+sudo apt update
+sudo apt install -y libqtcore4
+</code></pre>
+
+<h3 id="b-d-pendances-compl-tes">b. Dépendances complètes<a class="header-anchor" href="#b-d-pendances-compl-tes" name="b-d-pendances-compl-tes"></a>
+</h3>
+
+<pre><code class="bash">sudo apt install -y \
+  imagemagick graphicsmagick \
+  libproj-dev libgeos-dev libgeos++-dev \
+  libffi-dev libicu-dev libpq-dev \
+  openjdk-8-jdk libqtwebkit-dev \
+  tesseract-ocr pdftk
+</code></pre>
+
+<h3 id="c-exporter-java_home">c. Exporter <code>JAVA_HOME</code><a class="header-anchor" href="#c-exporter-java_home" name="c-exporter-java_home"></a>
+</h3>
+
+<pre><code class="bash">echo 'export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64' &gt;&gt; ~/.bashrc
+echo 'export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64' &gt;&gt; ~/.profile
+source ~/.bashrc
+</code></pre>
+
+<p>Vérification :</p>
+
+<pre><code class="bash">java -version
+# openjdk version "1.8.0_xxx"
+</code></pre>
+
+<h3 id="d-redis-d-j-install-en-1-c-v-rifier">d. Redis (déjà installé en §1.c, vérifier)<a class="header-anchor" href="#d-redis-d-j-install-en-1-c-v-rifier" name="d-redis-d-j-install-en-1-c-v-rifier"></a>
+</h3>
+
+<pre><code class="bash">systemctl status redis-server
+# active (running)
+</code></pre>
+
+<h2 id="6-certificats-renater-int-grations-pfi-renater">6. Certificats Renater (intégrations PFI) {#renater}<a class="header-anchor" href="#6-certificats-renater-int-grations-pfi-renater" name="6-certificats-renater-int-grations-pfi-renater"></a>
+</h2>
+
+<p>L'API PFI (PostgreSQL Fédération d'identité) utilise des certificats Renater non inclus dans Ubuntu 20.04. À installer <strong>uniquement</strong> si vous comptez utiliser cette intégration :</p>
+
+<pre><code class="bash">sudo wget https://services.renater.fr/_media/tcs/geant_ov_rsa_ca_4_usertrust_rsa_certification_authority.pem \
+  -O /usr/local/share/ca-certificates/geant_ov_rsa_ca_4_usertrust_rsa_certification_authority.crt
+
+sudo wget https://services.renater.fr/_media/tcs/geant_ov_rsa_ca_4.pem \
+  -O /usr/local/share/ca-certificates/geant_ov_rsa_ca_4.crt
+
+sudo update-ca-certificates
+</code></pre>
+
+<h2 id="tape-suivante">Étape suivante<a class="header-anchor" href="#tape-suivante" name="tape-suivante"></a>
+</h2>
+
+<p>L'environnement système est prêt. Passez au <a href="/techdoc/install/app-setup/"><strong>Setup de l'application Ekylibre</strong></a> (clone du repo, bundle, base de données, lexicon, premier run).</p>
+</body></html>
+
+      <p class="open-source-notice">
+          <i class="fa fa-file"></i> Cette documentation est <a href="https://github.com/ekylibre/doc">open-source</a>. Aidez-nous à l'améliorer en ouvrant une issue ou une pull request.
+      </p>
+    </div>
+
+  </div>
+  <hr>
+  <footer>
+    <p class="pull-left">
+      &copy; Ekylibre Authors 2014-2026 | Documentation Distributed under CC-BY-4.0
+    </p>
+    <p class="pull-left">
+       &copy; 2026 Ekylibre SAS. All rights reserved. Ekylibre SAS has registered trademarks and uses trademarks.
+    </p>
+  </footer>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="/javascripts/jquery.js"</script>
+  <script src="/javascripts/bootstrap.min.js"></script>
+</body>
+</html>

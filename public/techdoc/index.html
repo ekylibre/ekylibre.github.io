@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="An open-source monitoring system with a dimensional data model, flexible query language, efficient time series database and modern alerting approach.">
+    <meta name="keywords" content="prometheus, monitoring, monitoring system, time series, time series database, alerting, metrics, telemetry">
+    <meta name="author" content="Prometheus">
+    <meta name="twitter:card" content="summary">
+    <meta property="og:description" content="An open-source monitoring system with a dimensional data model, flexible query language, efficient time series database and modern alerting approach.">
+    <meta property="og:image" content="https://prometheus.io/assets/favicons/android-chrome-192x192.png">
+
+    <link rel="alternate" type="application/atom+xml" title="Prometheus Blog » Feed" href="/blog/feed.xml">
+
+    <link rel="shortcut icon" href="/assets/favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/assets/favicons/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/assets/favicons/android-chrome-manifest.json">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    
+    <meta property="og:title" content="Documentation technique | Prometheus">
+    <title>Documentation technique | Prometheus</title>
+    
+
+    <!-- Bootstrap core CSS -->
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="/stylesheets/docs.css" rel="stylesheet">
+    <link href="/stylesheets/routing-tree-editor.css" rel="stylesheet">
+    <link href="/stylesheets/techdoc.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/stylesheets/fontawesome.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,300italic,400' rel='stylesheet' type='text/css'>
+    <style>
+      .nav-lang-switcher { padding: 15px; line-height: 20px; font-weight: 700; letter-spacing: 0.05em; }
+      .nav-lang-switcher a, .nav-lang-switcher span { color: inherit; padding: 0 4px; text-decoration: none; }
+      .nav-lang-switcher a { opacity: 0.55; }
+      .nav-lang-switcher a:hover, .nav-lang-switcher a:focus { opacity: 1; text-decoration: underline; }
+      .nav-lang-switcher span[aria-current] { opacity: 1; }
+      .nav-lang-switcher .lang-sep { opacity: 0.35; }
+    </style>
+  </head>
+
+  <body>
+
+  <div class="">
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="nav navbar-nav navbar-right main-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/fr/user-doc/demarrage">User Doc FR</a></li>
+            <li><a href="/techdoc/">Tech Doc</a></li>
+            <li><a href="/api">API Doc</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="https://discord.gg/BSpD6hq7qR">Forum</a></li>
+            <li><a href="https://demo.ekylibre-dev.com">Demo</a></li>
+            <li><a href="https://github.com/ekylibre"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://twitter.com/ekylibre"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://discord.gg/BSpD6hq7qR"><i class="fab fa-discord"></i></a></li>
+            <li class="nav-lang-switcher" role="navigation" aria-label="Language">
+              
+                <span aria-current="page" lang="en">EN</span><span class="lang-sep" aria-hidden="true">|</span><a href="/fr/" hreflang="fr" lang="fr">FR</a>
+              
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 side-nav-col">
+      
+        <nav class="techdoc-sidebar" aria-label="Documentation technique"><ul class="nav techdoc-nav"><li class="active current"><a class="techdoc-root" href="/techdoc/" aria-current="page"><i class="fa fa-book" aria-hidden="true"></i> <strong>Accueil</strong></a></li><li class="has-children"><a href="/techdoc/install/"><i class="fa fa-rocket" aria-hidden="true"></i> Installation</a><ul class="nav"><li><a href="/techdoc/install/prerequisites/"><i class="fa fa-check-square-o" aria-hidden="true"></i> Prérequis</a></li><li><a href="/techdoc/install/docker-dev/"><i class="fa fa-cube" aria-hidden="true"></i> Docker dev</a></li><li><a href="/techdoc/install/native-ubuntu/"><i class="fa fa-ubuntu" aria-hidden="true"></i> Native Ubuntu</a></li><li><a href="/techdoc/install/app-setup/"><i class="fa fa-cogs" aria-hidden="true"></i> Setup application</a></li><li><a href="/techdoc/install/docker-prod-standalone/"><i class="fa fa-server" aria-hidden="true"></i> Docker prod standalone</a></li><li><a href="/techdoc/install/docker-prod-dokploy/"><i class="fa fa-cloud" aria-hidden="true"></i> Docker prod Dokploy</a></li><li><a href="/techdoc/install/troubleshooting/"><i class="fa fa-medkit" aria-hidden="true"></i> Troubleshooting</a></li></ul></li><li><a href="/techdoc/architecture/"><i class="fa fa-sitemap" aria-hidden="true"></i> Architecture</a></li><li><a href="/techdoc/data-model/"><i class="fa fa-database" aria-hidden="true"></i> Data model</a></li><li><a href="/techdoc/contributing/"><i class="fa fa-code-fork" aria-hidden="true"></i> Contribuer</a></li></ul></nav>
+      
+    </div>
+
+    <div class="col-md-9 doc-content">
+      <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<h1 id="documentation-technique-dekylibre" class="page-header">Documentation technique d'Ekylibre<a class="header-anchor" href="#documentation-technique-dekylibre" name="documentation-technique-dekylibre"></a>
+</h1>
+<div class="toc toc-right"><ul>
+<li><a href="#par-o-commencer">Par où commencer ?
+</a></li>
+<ul>
+<li><a href="#">Installer Ekylibre</a></li>
+<li><a href="#">Comprendre l'architecture</a></li>
+<li><a href="#">Contribuer au code</a></li>
+<li><a href="#">Modèle de données</a></li>
+</ul>
+<li><a href="#stack-technique-en-un-coup-d-il">Stack technique en un coup d'œil
+</a></li>
+<li><a href="#conventions-de-cette-documentation">Conventions de cette documentation
+</a></li>
+</ul></div>
+
+<blockquote>
+<p>Cible : la branche <strong><code>5.0-beta</code></strong> d'<code>ekylibre/ekylibre</code>. Les commandes, fichiers Docker et variables d'environnement décrits ici correspondent à cette branche, qui deviendra <code>main</code> à la sortie de la version 5.0.</p>
+</blockquote>
+
+<p>Bienvenue dans la <strong>documentation technique</strong> d'Ekylibre. Elle s'adresse aux personnes qui veulent <strong>installer, opérer ou contribuer</strong> à Ekylibre — par opposition à la <a href="/fr/user-doc/demarrage">documentation utilisateur</a> qui couvre l'usage métier de l'application.</p>
+
+<h2 id="par-o-commencer">Par où commencer ?<a class="header-anchor" href="#par-o-commencer" name="par-o-commencer"></a>
+</h2>
+
+<div class="row techdoc-cards">
+  <div class="col-md-6 col-sm-6">
+    <a class="techdoc-card techdoc-card--install" href="/techdoc/install/">
+      <div class="techdoc-card-icon"><i class="fa fa-rocket"></i></div>
+      <h3>Installer Ekylibre</h3>
+      <p>5 variantes d'installation couvertes pas-à-pas : Docker dev, Docker prod (Caddy ou Dokploy), installation native Ubuntu, setup application.</p>
+      <span class="techdoc-card-cta">Choisir une variante →</span>
+    </a>
+  </div>
+  <div class="col-md-6 col-sm-6">
+    <a class="techdoc-card techdoc-card--architecture" href="/techdoc/architecture/">
+      <div class="techdoc-card-icon"><i class="fa fa-sitemap"></i></div>
+      <h3>Comprendre l'architecture</h3>
+      <p>Vue d'ensemble des services (Rails, Sidekiq, PostgreSQL/PostGIS, Redis, Caddy) et de leurs interactions.</p>
+      <span class="techdoc-card-cta">Voir le schéma →</span>
+    </a>
+  </div>
+</div>
+
+<div class="row techdoc-cards">
+  <div class="col-md-6 col-sm-6">
+    <a class="techdoc-card techdoc-card--contribute" href="/techdoc/contributing/">
+      <div class="techdoc-card-icon"><i class="fa fa-code-fork"></i></div>
+      <h3>Contribuer au code</h3>
+      <p>Workflow Git/GitHub, conventions, tests, soumission d'une pull request.</p>
+      <span class="techdoc-card-cta">Lire le guide →</span>
+    </a>
+  </div>
+  <div class="col-md-6 col-sm-6">
+    <a class="techdoc-card techdoc-card--data" href="/techdoc/data-model/">
+      <div class="techdoc-card-icon"><i class="fa fa-database"></i></div>
+      <h3>Modèle de données</h3>
+      <p>Points d'entrée vers la documentation du schéma PostgreSQL/PostGIS (~300 modèles).</p>
+      <span class="techdoc-card-cta">Explorer →</span>
+    </a>
+  </div>
+</div>
+
+<h2 id="stack-technique-en-un-coup-d-il">Stack technique en un coup d'œil<a class="header-anchor" href="#stack-technique-en-un-coup-d-il" name="stack-technique-en-un-coup-d-il"></a>
+</h2>
+
+<table class=" table table-bordered">
+<thead>
+<tr>
+<th>Composant</th>
+<th>Version</th>
+<th>Rôle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ruby on Rails</strong></td>
+<td>Ruby 2.6.6</td>
+<td>Cœur applicatif, serveur web (Puma)</td>
+</tr>
+<tr>
+<td><strong>Sidekiq</strong></td>
+<td>dernière</td>
+<td>Jobs asynchrones (imports, exports, intégrations tierces)</td>
+</tr>
+<tr>
+<td><strong>PostgreSQL + PostGIS</strong></td>
+<td>13 + 2.5</td>
+<td>Stockage relationnel et géospatial (multi-tenant via schémas)</td>
+</tr>
+<tr>
+<td><strong>Redis</strong></td>
+<td>7</td>
+<td>Cache + file de jobs Sidekiq</td>
+</tr>
+<tr>
+<td><strong>Node.js + Yarn</strong></td>
+<td>LTS (14+)</td>
+<td>Compilation assets via Webpacker</td>
+</tr>
+<tr>
+<td><strong>Caddy</strong></td>
+<td>2.x</td>
+<td>Reverse-proxy HTTPS, certificats Let's Encrypt automatiques (prod)</td>
+</tr>
+<tr>
+<td><strong>Docker / Compose</strong></td>
+<td>24+ / v2</td>
+<td>Empaquetage et déploiement (dev, test, prod)</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="conventions-de-cette-documentation">Conventions de cette documentation<a class="header-anchor" href="#conventions-de-cette-documentation" name="conventions-de-cette-documentation"></a>
+</h2>
+
+<ul>
+<li>
+<strong>Tous les chemins</strong> sont relatifs à la racine du repo <code>ekylibre/ekylibre</code> (sauf indication contraire).</li>
+<li>
+<strong>Blocs de code</strong> : la première ligne précise le contexte d'exécution quand il est ambigu (hôte vs container, dev vs prod).</li>
+<li>
+<strong>Admonitions</strong> :
+&gt; <strong>Note :</strong> information complémentaire utile.
+&gt; <strong>Attention :</strong> point à ne pas manquer sous peine d'erreur.</li>
+</ul>
+</body></html>
+
+      <p class="open-source-notice">
+          <i class="fa fa-file"></i> Cette documentation est <a href="https://github.com/ekylibre/doc">open-source</a>. Aidez-nous à l'améliorer en ouvrant une issue ou une pull request.
+      </p>
+    </div>
+
+  </div>
+  <hr>
+  <footer>
+    <p class="pull-left">
+      &copy; Ekylibre Authors 2014-2026 | Documentation Distributed under CC-BY-4.0
+    </p>
+    <p class="pull-left">
+       &copy; 2026 Ekylibre SAS. All rights reserved. Ekylibre SAS has registered trademarks and uses trademarks.
+    </p>
+  </footer>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="/javascripts/jquery.js"</script>
+  <script src="/javascripts/bootstrap.min.js"></script>
+</body>
+</html>

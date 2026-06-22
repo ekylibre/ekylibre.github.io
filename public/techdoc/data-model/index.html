@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="An open-source monitoring system with a dimensional data model, flexible query language, efficient time series database and modern alerting approach.">
+    <meta name="keywords" content="prometheus, monitoring, monitoring system, time series, time series database, alerting, metrics, telemetry">
+    <meta name="author" content="Prometheus">
+    <meta name="twitter:card" content="summary">
+    <meta property="og:description" content="An open-source monitoring system with a dimensional data model, flexible query language, efficient time series database and modern alerting approach.">
+    <meta property="og:image" content="https://prometheus.io/assets/favicons/android-chrome-192x192.png">
+
+    <link rel="alternate" type="application/atom+xml" title="Prometheus Blog » Feed" href="/blog/feed.xml">
+
+    <link rel="shortcut icon" href="/assets/favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/assets/favicons/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/assets/favicons/android-chrome-manifest.json">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    
+    <meta property="og:title" content="Modèle de données | Prometheus">
+    <title>Modèle de données | Prometheus</title>
+    
+
+    <!-- Bootstrap core CSS -->
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="/stylesheets/docs.css" rel="stylesheet">
+    <link href="/stylesheets/routing-tree-editor.css" rel="stylesheet">
+    <link href="/stylesheets/techdoc.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/stylesheets/fontawesome.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,300italic,400' rel='stylesheet' type='text/css'>
+    <style>
+      .nav-lang-switcher { padding: 15px; line-height: 20px; font-weight: 700; letter-spacing: 0.05em; }
+      .nav-lang-switcher a, .nav-lang-switcher span { color: inherit; padding: 0 4px; text-decoration: none; }
+      .nav-lang-switcher a { opacity: 0.55; }
+      .nav-lang-switcher a:hover, .nav-lang-switcher a:focus { opacity: 1; text-decoration: underline; }
+      .nav-lang-switcher span[aria-current] { opacity: 1; }
+      .nav-lang-switcher .lang-sep { opacity: 0.35; }
+    </style>
+  </head>
+
+  <body>
+
+  <div class="">
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="nav navbar-nav navbar-right main-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/fr/user-doc/demarrage">User Doc FR</a></li>
+            <li><a href="/techdoc/">Tech Doc</a></li>
+            <li><a href="/api">API Doc</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="https://discord.gg/BSpD6hq7qR">Forum</a></li>
+            <li><a href="https://demo.ekylibre-dev.com">Demo</a></li>
+            <li><a href="https://github.com/ekylibre"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://twitter.com/ekylibre"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://discord.gg/BSpD6hq7qR"><i class="fab fa-discord"></i></a></li>
+            <li class="nav-lang-switcher" role="navigation" aria-label="Language">
+              
+                <span aria-current="page" lang="en">EN</span><span class="lang-sep" aria-hidden="true">|</span><a href="/fr/" hreflang="fr" lang="fr">FR</a>
+              
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 side-nav-col">
+      
+        <nav class="techdoc-sidebar" aria-label="Documentation technique"><ul class="nav techdoc-nav"><li><a class="techdoc-root" href="/techdoc/"><i class="fa fa-book" aria-hidden="true"></i> <strong>Accueil</strong></a></li><li class="has-children"><a href="/techdoc/install/"><i class="fa fa-rocket" aria-hidden="true"></i> Installation</a><ul class="nav"><li><a href="/techdoc/install/prerequisites/"><i class="fa fa-check-square-o" aria-hidden="true"></i> Prérequis</a></li><li><a href="/techdoc/install/docker-dev/"><i class="fa fa-cube" aria-hidden="true"></i> Docker dev</a></li><li><a href="/techdoc/install/native-ubuntu/"><i class="fa fa-ubuntu" aria-hidden="true"></i> Native Ubuntu</a></li><li><a href="/techdoc/install/app-setup/"><i class="fa fa-cogs" aria-hidden="true"></i> Setup application</a></li><li><a href="/techdoc/install/docker-prod-standalone/"><i class="fa fa-server" aria-hidden="true"></i> Docker prod standalone</a></li><li><a href="/techdoc/install/docker-prod-dokploy/"><i class="fa fa-cloud" aria-hidden="true"></i> Docker prod Dokploy</a></li><li><a href="/techdoc/install/troubleshooting/"><i class="fa fa-medkit" aria-hidden="true"></i> Troubleshooting</a></li></ul></li><li><a href="/techdoc/architecture/"><i class="fa fa-sitemap" aria-hidden="true"></i> Architecture</a></li><li class="active current"><a href="/techdoc/data-model/" aria-current="page"><i class="fa fa-database" aria-hidden="true"></i> Data model</a></li><li><a href="/techdoc/contributing/"><i class="fa fa-code-fork" aria-hidden="true"></i> Contribuer</a></li></ul></nav>
+      
+    </div>
+
+    <div class="col-md-9 doc-content">
+      <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<h1 id="mod-le-de-donn-es" class="page-header">Modèle de données<a class="header-anchor" href="#mod-le-de-donn-es" name="mod-le-de-donn-es"></a>
+</h1>
+<div class="toc toc-full"><ul>
+<li><a href="#vue-densemble-des-domaines">Vue d'ensemble des domaines
+</a></li>
+<li><a href="#lexicon-r-f-rentiel-nomenclaturel">Lexicon — référentiel nomenclaturel
+</a></li>
+<li><a href="#multi-tenancy">Multi-tenancy
+</a></li>
+<li><a href="#g-ospatial-postgis">Géospatial (PostGIS)
+</a></li>
+<li><a href="#ressources-de-r-f-rence">Ressources de référence
+</a></li>
+<li><a href="#inspection-rapide">Inspection rapide
+</a></li>
+<ul>
+<li><a href="#console-rails">Console Rails
+</a></li>
+<li><a href="#connexion-sql-directe">Connexion SQL directe
+</a></li>
+</ul>
+<li><a href="#volutions">Évolutions
+</a></li>
+</ul></div>
+
+<p>Ekylibre repose sur <strong>PostgreSQL 13</strong> étendu par <strong>PostGIS 2.5</strong> pour les données géospatiales. Le schéma compte plus de <strong>300 modèles ActiveRecord</strong> organisés en domaines métier : production végétale, animale, comptabilité, ventes, achats, ressources humaines.</p>
+
+<h2 id="vue-densemble-des-domaines">Vue d'ensemble des domaines<a class="header-anchor" href="#vue-densemble-des-domaines" name="vue-densemble-des-domaines"></a>
+</h2>
+
+<table class=" table table-bordered">
+<thead>
+<tr>
+<th>Domaine</th>
+<th>Modèles clés</th>
+<th>Tables racines</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Production végétale</strong></td>
+<td>
+<code>Activity</code>, <code>LandParcel</code>, <code>Intervention</code>, <code>Plant</code>, <code>Cultivation</code>
+</td>
+<td>
+<code>activities</code>, <code>land_parcels</code>, <code>interventions</code>
+</td>
+</tr>
+<tr>
+<td><strong>Production animale</strong></td>
+<td>
+<code>AnimalGroup</code>, <code>Animal</code>, <code>IntegrationTask</code>
+</td>
+<td>
+<code>animal_groups</code>, <code>animals</code>
+</td>
+</tr>
+<tr>
+<td><strong>Comptabilité</strong></td>
+<td>
+<code>Account</code>, <code>JournalEntry</code>, <code>FiscalYear</code>
+</td>
+<td>
+<code>accounts</code>, <code>journal_entries</code>, <code>fiscal_years</code>
+</td>
+</tr>
+<tr>
+<td><strong>Ventes / Achats</strong></td>
+<td>
+<code>Sale</code>, <code>Purchase</code>, <code>Invoice</code>, <code>Payment</code>
+</td>
+<td>
+<code>sales</code>, <code>purchases</code>, <code>parcels</code> (livraisons)</td>
+</tr>
+<tr>
+<td><strong>Stock</strong></td>
+<td>
+<code>Inventory</code>, <code>Product</code>, <code>ProductMovement</code>
+</td>
+<td>
+<code>inventories</code>, <code>products</code>, <code>product_movements</code>
+</td>
+</tr>
+<tr>
+<td><strong>Tiers</strong></td>
+<td>
+<code>Entity</code>, <code>EntityAddress</code>
+</td>
+<td><code>entities</code></td>
+</tr>
+<tr>
+<td><strong>Référentiels</strong></td>
+<td><code>Lexicon::*</code></td>
+<td>schémas <code>lexicon</code> (variétés, intrants, équipements)</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="lexicon-r-f-rentiel-nomenclaturel">Lexicon — référentiel nomenclaturel<a class="header-anchor" href="#lexicon-r-f-rentiel-nomenclaturel" name="lexicon-r-f-rentiel-nomenclaturel"></a>
+</h2>
+
+<p>Le <strong>lexicon</strong> est une base nomenclaturale agricole partagée (variétés, intrants, équipements, taxonomies). Il contient <strong>plus de 20 millions d'items</strong> servant de référence pour tous les tenants.</p>
+
+<ul>
+<li>Chargé via <code>bin/rake lexicon:load</code> (voir <a href="/techdoc/install/app-setup/#lexicon">Setup app §6</a>)</li>
+<li>Versionné via <code>.lexicon-version</code> (rechargement automatique en prod si la version change)</li>
+<li>Stockage : schéma <code>lexicon</code> (partagé entre tenants)</li>
+</ul>
+
+<h2 id="multi-tenancy">Multi-tenancy<a class="header-anchor" href="#multi-tenancy" name="multi-tenancy"></a>
+</h2>
+
+<p>Chaque ferme est un <strong>tenant</strong> isolé via la gem <a href="https://github.com/influitive/apartment"><code>apartment</code></a> :</p>
+
+<ul>
+<li>Un schéma PostgreSQL par tenant (ex: <code>acme</code>, <code>closeriedesterres</code>, <code>demo</code>)</li>
+<li>Le schéma <code>public</code> contient les tables système et le <code>lexicon</code>
+</li>
+<li>Routage HTTP par sous-domaine : <code>acme.example.com</code> → <code>Apartment::Tenant.switch!('acme')</code>
+</li>
+</ul>
+
+<p>Lister les tenants :</p>
+
+<pre><code class="bash">bundle exec rails runner "puts Apartment::Tenant.list"
+</code></pre>
+
+<p>Créer un tenant :</p>
+
+<pre><code class="bash"># Native
+bin/rake tenant:init TENANT=my-farm
+
+# Docker prod
+./docker/prod/scripts/tenant-init.sh my-farm admin@my-farm.com 'MotDePasse!'
+</code></pre>
+
+<h2 id="g-ospatial-postgis">Géospatial (PostGIS)<a class="header-anchor" href="#g-ospatial-postgis" name="g-ospatial-postgis"></a>
+</h2>
+
+<p>Les entités géolocalisées (parcelles, observations, points GPS) utilisent les types <strong>PostGIS</strong> :</p>
+
+<ul>
+<li>
+<code>geometry(MultiPolygon, 4326)</code> pour les surfaces (parcelles, zones d'observation)</li>
+<li>
+<code>geometry(Point, 4326)</code> pour les points (traces GPS, observations ponctuelles)</li>
+</ul>
+
+<p>Requêtes spatiales typiques :</p>
+
+<pre><code class="sql">-- Interventions sur une parcelle donnée
+SELECT i.* FROM interventions i
+JOIN land_parcels p ON ST_Intersects(i.geometry, p.shape)
+WHERE p.id = 42;
+
+-- Surface totale en hectares d'une activité
+SELECT SUM(ST_Area(shape::geography) / 10000)
+FROM land_parcels WHERE activity_id = 7;
+</code></pre>
+
+<h2 id="ressources-de-r-f-rence">Ressources de référence<a class="header-anchor" href="#ressources-de-r-f-rence" name="ressources-de-r-f-rence"></a>
+</h2>
+
+<blockquote>
+<p>Cette page est un <strong>point d'entrée</strong>. Pour le détail du schéma complet, les diagrammes ERD et les invariants métier :</p>
+</blockquote>
+
+<ul>
+<li>
+<strong>Schéma DB documenté</strong> : <code>docs/development/db.md</code> dans le repo Ekylibre (en cours d'enrichissement)</li>
+<li>
+<strong>Algorithmes d'interventions</strong> : <code>docs/development/algo/interventions.md</code>
+</li>
+<li>
+<strong>Helpers et composants UI</strong> : <code>docs/guides/helpers.md</code>, <code>docs/guides/components.md</code>
+</li>
+<li>
+<strong>API publique</strong> : <a href="https://ekylibre.stoplight.io/docs/eky/">Online API doc</a> (Stoplight) ou OpenAPI 3.0 dans <code>docs/api/openapi-v2.yaml</code>
+</li>
+</ul>
+
+<h2 id="inspection-rapide">Inspection rapide<a class="header-anchor" href="#inspection-rapide" name="inspection-rapide"></a>
+</h2>
+
+<h3 id="console-rails">Console Rails<a class="header-anchor" href="#console-rails" name="console-rails"></a>
+</h3>
+
+<pre><code class="bash">bundle exec rails c
+</code></pre>
+
+<pre><code class="ruby"># Bascule sur un tenant
+Apartment::Tenant.switch!('demo')
+
+# Compter les modèles
+Plant.count
+Intervention.where('started_at &gt; ?', 1.month.ago).count
+
+# Inspecter le lexicon
+Lexicon::Variety.count
+Lexicon::ProductionNature.where(name: 'wheat').first
+</code></pre>
+
+<h3 id="connexion-sql-directe">Connexion SQL directe<a class="header-anchor" href="#connexion-sql-directe" name="connexion-sql-directe"></a>
+</h3>
+
+<pre><code class="bash"># Dev native
+psql -U ekylibre eky_development
+
+# Dev Docker
+psql -h localhost -p 5431 -U ekylibre eky_development
+
+# Prod Docker
+docker compose -f docker/prod/docker-compose.yml exec db \
+  psql -U ekylibre eky_production
+</code></pre>
+
+<p>Puis dans <code>psql</code> :</p>
+
+<pre><code class="sql">-- Lister les tenants
+\dn
+
+-- Bascule sur un tenant
+SET search_path TO acme, public;
+
+-- Tables du tenant
+\dt
+</code></pre>
+
+<h2 id="volutions">Évolutions<a class="header-anchor" href="#volutions" name="volutions"></a>
+</h2>
+
+<p>Pour les changements de schéma à venir, voir <code>docs/planning/v6-brainstorm.md</code> dans le repo Ekylibre.</p>
+</body></html>
+
+      <p class="open-source-notice">
+          <i class="fa fa-file"></i> Cette documentation est <a href="https://github.com/ekylibre/doc">open-source</a>. Aidez-nous à l'améliorer en ouvrant une issue ou une pull request.
+      </p>
+    </div>
+
+  </div>
+  <hr>
+  <footer>
+    <p class="pull-left">
+      &copy; Ekylibre Authors 2014-2026 | Documentation Distributed under CC-BY-4.0
+    </p>
+    <p class="pull-left">
+       &copy; 2026 Ekylibre SAS. All rights reserved. Ekylibre SAS has registered trademarks and uses trademarks.
+    </p>
+  </footer>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="/javascripts/jquery.js"</script>
+  <script src="/javascripts/bootstrap.min.js"></script>
+</body>
+</html>

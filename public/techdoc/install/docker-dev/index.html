@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="An open-source monitoring system with a dimensional data model, flexible query language, efficient time series database and modern alerting approach.">
+    <meta name="keywords" content="prometheus, monitoring, monitoring system, time series, time series database, alerting, metrics, telemetry">
+    <meta name="author" content="Prometheus">
+    <meta name="twitter:card" content="summary">
+    <meta property="og:description" content="An open-source monitoring system with a dimensional data model, flexible query language, efficient time series database and modern alerting approach.">
+    <meta property="og:image" content="https://prometheus.io/assets/favicons/android-chrome-192x192.png">
+
+    <link rel="alternate" type="application/atom+xml" title="Prometheus Blog » Feed" href="/blog/feed.xml">
+
+    <link rel="shortcut icon" href="/assets/favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/assets/favicons/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/assets/favicons/android-chrome-manifest.json">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    
+    <meta property="og:title" content="Installation Docker (développement) | Prometheus">
+    <title>Installation Docker (développement) | Prometheus</title>
+    
+
+    <!-- Bootstrap core CSS -->
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="/stylesheets/docs.css" rel="stylesheet">
+    <link href="/stylesheets/routing-tree-editor.css" rel="stylesheet">
+    <link href="/stylesheets/techdoc.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/stylesheets/fontawesome.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,300italic,400' rel='stylesheet' type='text/css'>
+    <style>
+      .nav-lang-switcher { padding: 15px; line-height: 20px; font-weight: 700; letter-spacing: 0.05em; }
+      .nav-lang-switcher a, .nav-lang-switcher span { color: inherit; padding: 0 4px; text-decoration: none; }
+      .nav-lang-switcher a { opacity: 0.55; }
+      .nav-lang-switcher a:hover, .nav-lang-switcher a:focus { opacity: 1; text-decoration: underline; }
+      .nav-lang-switcher span[aria-current] { opacity: 1; }
+      .nav-lang-switcher .lang-sep { opacity: 0.35; }
+    </style>
+  </head>
+
+  <body>
+
+  <div class="">
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="nav navbar-nav navbar-right main-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/fr/user-doc/demarrage">User Doc FR</a></li>
+            <li><a href="/techdoc/">Tech Doc</a></li>
+            <li><a href="/api">API Doc</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="https://discord.gg/BSpD6hq7qR">Forum</a></li>
+            <li><a href="https://demo.ekylibre-dev.com">Demo</a></li>
+            <li><a href="https://github.com/ekylibre"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://twitter.com/ekylibre"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://discord.gg/BSpD6hq7qR"><i class="fab fa-discord"></i></a></li>
+            <li class="nav-lang-switcher" role="navigation" aria-label="Language">
+              
+                <span aria-current="page" lang="en">EN</span><span class="lang-sep" aria-hidden="true">|</span><a href="/fr/" hreflang="fr" lang="fr">FR</a>
+              
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 side-nav-col">
+      
+        <nav class="techdoc-sidebar" aria-label="Documentation technique"><ul class="nav techdoc-nav"><li><a class="techdoc-root" href="/techdoc/"><i class="fa fa-book" aria-hidden="true"></i> <strong>Accueil</strong></a></li><li class="active has-children"><a href="/techdoc/install/"><i class="fa fa-rocket" aria-hidden="true"></i> Installation</a><ul class="nav"><li><a href="/techdoc/install/prerequisites/"><i class="fa fa-check-square-o" aria-hidden="true"></i> Prérequis</a></li><li class="active current"><a href="/techdoc/install/docker-dev/" aria-current="page"><i class="fa fa-cube" aria-hidden="true"></i> Docker dev</a></li><li><a href="/techdoc/install/native-ubuntu/"><i class="fa fa-ubuntu" aria-hidden="true"></i> Native Ubuntu</a></li><li><a href="/techdoc/install/app-setup/"><i class="fa fa-cogs" aria-hidden="true"></i> Setup application</a></li><li><a href="/techdoc/install/docker-prod-standalone/"><i class="fa fa-server" aria-hidden="true"></i> Docker prod standalone</a></li><li><a href="/techdoc/install/docker-prod-dokploy/"><i class="fa fa-cloud" aria-hidden="true"></i> Docker prod Dokploy</a></li><li><a href="/techdoc/install/troubleshooting/"><i class="fa fa-medkit" aria-hidden="true"></i> Troubleshooting</a></li></ul></li><li><a href="/techdoc/architecture/"><i class="fa fa-sitemap" aria-hidden="true"></i> Architecture</a></li><li><a href="/techdoc/data-model/"><i class="fa fa-database" aria-hidden="true"></i> Data model</a></li><li><a href="/techdoc/contributing/"><i class="fa fa-code-fork" aria-hidden="true"></i> Contribuer</a></li></ul></nav>
+      
+    </div>
+
+    <div class="col-md-9 doc-content">
+      <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<h1 id="installation-docker-environnement-de-d-veloppement" class="page-header">Installation Docker — Environnement de développement<a class="header-anchor" href="#installation-docker-environnement-de-d-veloppement" name="installation-docker-environnement-de-d-veloppement"></a>
+</h1>
+<div class="toc toc-full"><ul>
+<li><a href="#sch-ma-de-la-stack">Schéma de la stack
+</a></li>
+<li><a href="#pr-requis">Prérequis
+</a></li>
+<li><a href="#1-cloner-le-d-p-t">1. Cloner le dépôt
+</a></li>
+<li><a href="#2-configurer-env-du-container-dev">2. Configurer <code>.env</code> du container dev
+</a></li>
+<li><a href="#3-builder-les-images">3. Builder les images
+</a></li>
+<li><a href="#4-lancer-la-stack">4. Lancer la stack
+</a></li>
+<li><a href="#5-charger-les-donn-es-de-d-monstration-optionnel">5. Charger les données de démonstration (optionnel)
+</a></li>
+<li><a href="#6-https-multi-tenant-caddy-localhost">6. HTTPS multi-tenant — Caddy + <code>.localhost</code>
+</a></li>
+<ul><li><a href="#v-rifications">Vérifications
+</a></li></ul>
+<li><a href="#7-plugins-ekylibre">7. Plugins Ekylibre
+</a></li>
+<ul>
+<li><a href="#acc-s-ssh-aux-d-p-ts-priv-s">Accès SSH aux dépôts privés
+</a></li>
+<li><a href="#plugins-par-d-faut">Plugins par défaut
+</a></li>
+<li><a href="#apr-s-modification-de-gemfile-local">Après modification de <code>Gemfile.local</code>
+</a></li>
+</ul>
+<li><a href="#8-commandes-utiles-au-quotidien">8. Commandes utiles au quotidien
+</a></li>
+<li><a href="#9-erreurs-fr-quentes">9. Erreurs fréquentes
+</a></li>
+<li><a href="#tape-suivante">Étape suivante
+</a></li>
+</ul></div>
+
+<p>C'est la <strong>variante la plus simple</strong> pour démarrer. L'environnement complet (Rails + Sidekiq + PostgreSQL/PostGIS + Redis + Caddy HTTPS local) est containerisé. Votre poste n'a besoin que de Docker et de Git.</p>
+
+<h2 id="sch-ma-de-la-stack">Schéma de la stack<a class="header-anchor" href="#sch-ma-de-la-stack" name="sch-ma-de-la-stack"></a>
+</h2>
+
+<pre><code>navigateur ─► 127.0.0.1:443 (Caddy, cert auto via tls internal)
+                ├─ duke.ekylibre.localhost ─► host.docker.internal:8000 (Duke local, optionnel)
+                ├─ ekylibre.localhost      ─► app:3000 (landing)
+                └─ *.ekylibre.localhost    ─► app:3000 (tenants)
+</code></pre>
+
+<table class=" table table-bordered">
+<thead>
+<tr>
+<th>Service</th>
+<th>Port hôte</th>
+<th>Rôle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>app</code></td>
+<td><code>3000</code></td>
+<td>Serveur Rails</td>
+</tr>
+<tr>
+<td><code>app</code></td>
+<td><code>8808</code></td>
+<td>Rack Mini Profiler</td>
+</tr>
+<tr>
+<td><code>db</code></td>
+<td><code>5431</code></td>
+<td>PostgreSQL 13 + PostGIS</td>
+</tr>
+<tr>
+<td><code>redis</code></td>
+<td>— (interne)</td>
+<td>Redis 7</td>
+</tr>
+<tr>
+<td><code>sidekiq</code></td>
+<td>— (interne)</td>
+<td>Worker de jobs</td>
+</tr>
+<tr>
+<td><code>caddy</code></td>
+<td>
+<code>127.0.0.1:80</code> / <code>127.0.0.1:443</code>
+</td>
+<td>Reverse-proxy HTTPS local</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="pr-requis">Prérequis<a class="header-anchor" href="#pr-requis" name="pr-requis"></a>
+</h2>
+
+<p>Avoir validé les <a href="/techdoc/install/prerequisites/">prérequis communs</a> — en particulier Docker Engine ≥ 24 et Docker Compose v2.</p>
+
+<p>L'image de base est sur <strong>GHCR public</strong>, aucune authentification requise.</p>
+
+<h2 id="1-cloner-le-d-p-t">1. Cloner le dépôt<a class="header-anchor" href="#1-cloner-le-d-p-t" name="1-cloner-le-d-p-t"></a>
+</h2>
+
+<pre><code class="bash">mkdir -p ~/projects &amp;&amp; cd ~/projects
+git clone -b 5.0-beta https://github.com/ekylibre/ekylibre.git
+cd ekylibre
+</code></pre>
+
+<h2 id="2-configurer-env-du-container-dev">2. Configurer <code>.env</code> du container dev<a class="header-anchor" href="#2-configurer-env-du-container-dev" name="2-configurer-env-du-container-dev"></a>
+</h2>
+
+<pre><code class="bash">cp docker/dev/.env.dist docker/dev/.env
+</code></pre>
+
+<p>Éditer <code>docker/dev/.env</code> et renseigner <strong>au minimum</strong> :</p>
+
+<table class=" table table-bordered">
+<thead>
+<tr>
+<th>Variable</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>RAILS_ENV</code></td>
+<td>Laisser à <code>development</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>DB_USERNAME</code> / <code>DB_PASSWORD</code>
+</td>
+<td>Identifiants PostgreSQL (ex: <code>ekylibre</code> / <code>ekylibre</code>)</td>
+</tr>
+<tr>
+<td><code>REDIS_URL</code></td>
+<td>Doit valoir <code>redis://redis</code>
+</td>
+</tr>
+<tr>
+<td>
+<code>UID</code> / <code>GID</code>
+</td>
+<td>Vos UID/GID hôte (<code>id</code> pour les obtenir)</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p><strong>Important :</strong> si votre UID hôte n'est pas <code>1000</code>, <strong>renseignez <code>UID</code> et <code>GID</code></strong> dans <code>.env</code> — sinon les fichiers créés dans le volume monté seront propriété de <code>root</code> et vous ne pourrez plus les éditer depuis votre éditeur préféré.</p>
+
+<p><strong>Pas de configuration <code>/etc/hosts</code> à faire</strong> : <code>*.ekylibre.localhost</code> est résolu nativement par systemd-resolved / glibc (RFC 6761).</p>
+</blockquote>
+
+<h2 id="3-builder-les-images">3. Builder les images<a class="header-anchor" href="#3-builder-les-images" name="3-builder-les-images"></a>
+</h2>
+
+<p>Depuis la racine du projet :</p>
+
+<pre><code class="bash">docker compose -f docker/dev/docker-compose.yml build
+</code></pre>
+
+<p>Le premier build est long (téléchargement de l'image de base Ruby 2.6, ~1 GB). Les suivants sont instantanés grâce au cache Docker.</p>
+
+<h2 id="4-lancer-la-stack">4. Lancer la stack<a class="header-anchor" href="#4-lancer-la-stack" name="4-lancer-la-stack"></a>
+</h2>
+
+<pre><code class="bash">docker compose -f docker/dev/docker-compose.yml up
+</code></pre>
+
+<p>Au <strong>premier démarrage</strong>, le container <code>app</code> exécute automatiquement :</p>
+
+<ol>
+<li>
+<code>bundle install</code> — gems Ruby</li>
+<li>
+<code>yarn install</code> — packages JS</li>
+<li>
+<code>rails db:create db:migrate</code> — création + migrations</li>
+<li>
+<code>rake lexicon:load</code> — <strong>5 à 10 minutes</strong> (nomenclatures agricoles)</li>
+<li>Démarrage de Puma sur le port <code>3000</code>
+</li>
+</ol>
+
+<p>L'admin est ensuite accessible sur <a href="http://localhost:3000/admin">http://localhost:3000/admin</a>.</p>
+
+<h2 id="5-charger-les-donn-es-de-d-monstration-optionnel">5. Charger les données de démonstration (optionnel)<a class="header-anchor" href="#5-charger-les-donn-es-de-d-monstration-optionnel" name="5-charger-les-donn-es-de-d-monstration-optionnel"></a>
+</h2>
+
+<pre><code class="bash">docker compose -f docker/dev/docker-compose.yml exec app bundle exec rake first_run
+</code></pre>
+
+<h2 id="6-https-multi-tenant-caddy-localhost">6. HTTPS multi-tenant — Caddy + <code>.localhost</code><a class="header-anchor" href="#6-https-multi-tenant-caddy-localhost" name="6-https-multi-tenant-caddy-localhost"></a>
+</h2>
+
+<p>Pour bénéficier de l'HTTPS local et tester le multi-tenant, il faut faire confiance à la CA Caddy <strong>une seule fois</strong>.</p>
+
+<pre><code class="bash">sudo apt install -y libnss3-tools   # une seule fois (Firefox/Chrome)
+docker/dev/trust-ca.sh
+</code></pre>
+
+<p>Le script :</p>
+
+<ul>
+<li>Récupère la CA Caddy dans le volume <code>caddy-data</code>
+</li>
+<li>L'installe dans <code>/usr/local/share/ca-certificates/</code> (store système)</li>
+<li>L'ajoute aux bases NSS de Firefox / Chromium</li>
+</ul>
+
+<p><strong>Redémarrer le navigateur</strong> après.</p>
+
+<h3 id="v-rifications">Vérifications<a class="header-anchor" href="#v-rifications" name="v-rifications"></a>
+</h3>
+
+<pre><code class="bash">resolvectl query demo.ekylibre.localhost
+# 127.0.0.1, ::1 — synthetic (résolution native)
+
+curl -I https://ekylibre.localhost/
+# HTTP/2 200 — landing page
+
+curl -I https://closeriedesterres.ekylibre.localhost/
+# HTTP/2 200 — tenant Rails (cert auto)
+</code></pre>
+
+<p>Tout tenant créé dans l'admin est accessible instantanément, sans toucher à <code>/etc/hosts</code>.</p>
+
+<h2 id="7-plugins-ekylibre">7. Plugins Ekylibre<a class="header-anchor" href="#7-plugins-ekylibre" name="7-plugins-ekylibre"></a>
+</h2>
+
+<p>Les plugins sont déclarés dans <code>Gemfile.local</code> (à la racine, monté en volume).</p>
+
+<h3 id="acc-s-ssh-aux-d-p-ts-priv-s">Accès SSH aux dépôts privés<a class="header-anchor" href="#acc-s-ssh-aux-d-p-ts-priv-s" name="acc-s-ssh-aux-d-p-ts-priv-s"></a>
+</h3>
+
+<p>La clé SSH de l'hôte est montée automatiquement dans les containers (<code>~/.ssh:/home/ekylibre/.ssh</code>). S'assurer qu'elle est bien autorisée sur GitHub :</p>
+
+<pre><code class="bash">ssh -T git@github.com
+# Hi &lt;username&gt;! You've successfully authenticated...
+</code></pre>
+
+<h3 id="plugins-par-d-faut">Plugins par défaut<a class="header-anchor" href="#plugins-par-d-faut" name="plugins-par-d-faut"></a>
+</h3>
+
+<table class=" table table-bordered">
+<thead>
+<tr>
+<th>Plugin</th>
+<th>Dépôt</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ekylibre-baqio</code></td>
+<td>ekylibre/ekylibre-baqio</td>
+</tr>
+<tr>
+<td><code>ekylibre-ednotif</code></td>
+<td>ekylibre/ekylibre-ednotif</td>
+</tr>
+<tr>
+<td><code>ekylibre-banking</code></td>
+<td>ekylibre/ekylibre-banking</td>
+</tr>
+<tr>
+<td><code>ekylibre-qonto</code></td>
+<td>ekylibre/ekylibre-qonto</td>
+</tr>
+<tr>
+<td><code>hajimari</code></td>
+<td>ekylibre/ekylibre-hajimari</td>
+</tr>
+<tr>
+<td><code>idea</code></td>
+<td>ekylibre/ekylibre-idea</td>
+</tr>
+<tr>
+<td><code>planning</code></td>
+<td>ekylibre/ekylibre-planning</td>
+</tr>
+<tr>
+<td><code>ekylibre-samsys</code></td>
+<td>ekylibre/ekylibre-samsys</td>
+</tr>
+<tr>
+<td><code>ekylibre-traccar</code></td>
+<td>ekylibre/ekylibre-traccar</td>
+</tr>
+<tr>
+<td><code>ekylibre_ekyviti</code></td>
+<td>ekylibre/ekylibre-viti</td>
+</tr>
+<tr>
+<td><code>weenat</code></td>
+<td>ekylibre/ekylibre-weenat</td>
+</tr>
+<tr>
+<td><code>ekylibre-economic</code></td>
+<td>ekylibre/ekylibre-economic</td>
+</tr>
+<tr>
+<td><code>ekylibre-natuition</code></td>
+<td>ekylibre/ekylibre-natuition</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="apr-s-modification-de-gemfile-local">Après modification de <code>Gemfile.local</code><a class="header-anchor" href="#apr-s-modification-de-gemfile-local" name="apr-s-modification-de-gemfile-local"></a>
+</h3>
+
+<p>Aucun rebuild d'image n'est nécessaire — <code>bundle install</code> est lancé au démarrage du container. Pour le forcer :</p>
+
+<pre><code class="bash">docker compose -f docker/dev/docker-compose.yml exec app bundle install --path vendor/bundle
+</code></pre>
+
+<h2 id="8-commandes-utiles-au-quotidien">8. Commandes utiles au quotidien<a class="header-anchor" href="#8-commandes-utiles-au-quotidien" name="8-commandes-utiles-au-quotidien"></a>
+</h2>
+
+<pre><code class="bash"># Arrêter
+docker compose -f docker/dev/docker-compose.yml down
+
+# Logs d'un service
+docker compose -f docker/dev/docker-compose.yml logs -f app
+
+# Shell dans le container app
+docker compose -f docker/dev/docker-compose.yml exec app bash
+
+# Console Rails
+docker compose -f docker/dev/docker-compose.yml exec app bundle exec rails c
+
+# Connexion directe à la DB depuis l'hôte
+psql -h localhost -p 5431 -U ekylibre eky_development
+</code></pre>
+
+<h2 id="9-erreurs-fr-quentes">9. Erreurs fréquentes<a class="header-anchor" href="#9-erreurs-fr-quentes" name="9-erreurs-fr-quentes"></a>
+</h2>
+
+<p>Toutes regroupées dans <a href="/techdoc/install/troubleshooting/">Résolution de problèmes</a> :</p>
+
+<ul>
+<li>Permissions sur <code>vendor/bundle</code> / <code>/app</code> → vérifier <code>UID</code>/<code>GID</code> dans <code>.env</code>
+</li>
+<li>Warning Redis <code>Memory overcommit</code> → <code>sudo sysctl vm.overcommit_memory=1</code>
+</li>
+<li>Image inaccessible (<code>403 Forbidden</code>) → vérifier authentification registry</li>
+</ul>
+
+<h2 id="tape-suivante">Étape suivante<a class="header-anchor" href="#tape-suivante" name="tape-suivante"></a>
+</h2>
+
+<p>L'app est en route. Pour comprendre les services et leurs interactions, lire <a href="/techdoc/architecture/"><strong>Architecture</strong></a>. Pour contribuer, lire <a href="/techdoc/contributing/"><strong>Contribuer</strong></a>.</p>
+</body></html>
+
+      <p class="open-source-notice">
+          <i class="fa fa-file"></i> Cette documentation est <a href="https://github.com/ekylibre/doc">open-source</a>. Aidez-nous à l'améliorer en ouvrant une issue ou une pull request.
+      </p>
+    </div>
+
+  </div>
+  <hr>
+  <footer>
+    <p class="pull-left">
+      &copy; Ekylibre Authors 2014-2026 | Documentation Distributed under CC-BY-4.0
+    </p>
+    <p class="pull-left">
+       &copy; 2026 Ekylibre SAS. All rights reserved. Ekylibre SAS has registered trademarks and uses trademarks.
+    </p>
+  </footer>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="/javascripts/jquery.js"</script>
+  <script src="/javascripts/bootstrap.min.js"></script>
+</body>
+</html>

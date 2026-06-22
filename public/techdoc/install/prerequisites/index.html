@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="An open-source monitoring system with a dimensional data model, flexible query language, efficient time series database and modern alerting approach.">
+    <meta name="keywords" content="prometheus, monitoring, monitoring system, time series, time series database, alerting, metrics, telemetry">
+    <meta name="author" content="Prometheus">
+    <meta name="twitter:card" content="summary">
+    <meta property="og:description" content="An open-source monitoring system with a dimensional data model, flexible query language, efficient time series database and modern alerting approach.">
+    <meta property="og:image" content="https://prometheus.io/assets/favicons/android-chrome-192x192.png">
+
+    <link rel="alternate" type="application/atom+xml" title="Prometheus Blog » Feed" href="/blog/feed.xml">
+
+    <link rel="shortcut icon" href="/assets/favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/assets/favicons/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/assets/favicons/android-chrome-manifest.json">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    
+    <meta property="og:title" content="Prérequis communs | Prometheus">
+    <title>Prérequis communs | Prometheus</title>
+    
+
+    <!-- Bootstrap core CSS -->
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="/stylesheets/docs.css" rel="stylesheet">
+    <link href="/stylesheets/routing-tree-editor.css" rel="stylesheet">
+    <link href="/stylesheets/techdoc.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/stylesheets/fontawesome.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,300italic,400' rel='stylesheet' type='text/css'>
+    <style>
+      .nav-lang-switcher { padding: 15px; line-height: 20px; font-weight: 700; letter-spacing: 0.05em; }
+      .nav-lang-switcher a, .nav-lang-switcher span { color: inherit; padding: 0 4px; text-decoration: none; }
+      .nav-lang-switcher a { opacity: 0.55; }
+      .nav-lang-switcher a:hover, .nav-lang-switcher a:focus { opacity: 1; text-decoration: underline; }
+      .nav-lang-switcher span[aria-current] { opacity: 1; }
+      .nav-lang-switcher .lang-sep { opacity: 0.35; }
+    </style>
+  </head>
+
+  <body>
+
+  <div class="">
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="nav navbar-nav navbar-right main-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/fr/user-doc/demarrage">User Doc FR</a></li>
+            <li><a href="/techdoc/">Tech Doc</a></li>
+            <li><a href="/api">API Doc</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="https://discord.gg/BSpD6hq7qR">Forum</a></li>
+            <li><a href="https://demo.ekylibre-dev.com">Demo</a></li>
+            <li><a href="https://github.com/ekylibre"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://twitter.com/ekylibre"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://discord.gg/BSpD6hq7qR"><i class="fab fa-discord"></i></a></li>
+            <li class="nav-lang-switcher" role="navigation" aria-label="Language">
+              
+                <span aria-current="page" lang="en">EN</span><span class="lang-sep" aria-hidden="true">|</span><a href="/fr/" hreflang="fr" lang="fr">FR</a>
+              
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 side-nav-col">
+      
+        <nav class="techdoc-sidebar" aria-label="Documentation technique"><ul class="nav techdoc-nav"><li><a class="techdoc-root" href="/techdoc/"><i class="fa fa-book" aria-hidden="true"></i> <strong>Accueil</strong></a></li><li class="active has-children"><a href="/techdoc/install/"><i class="fa fa-rocket" aria-hidden="true"></i> Installation</a><ul class="nav"><li class="active current"><a href="/techdoc/install/prerequisites/" aria-current="page"><i class="fa fa-check-square-o" aria-hidden="true"></i> Prérequis</a></li><li><a href="/techdoc/install/docker-dev/"><i class="fa fa-cube" aria-hidden="true"></i> Docker dev</a></li><li><a href="/techdoc/install/native-ubuntu/"><i class="fa fa-ubuntu" aria-hidden="true"></i> Native Ubuntu</a></li><li><a href="/techdoc/install/app-setup/"><i class="fa fa-cogs" aria-hidden="true"></i> Setup application</a></li><li><a href="/techdoc/install/docker-prod-standalone/"><i class="fa fa-server" aria-hidden="true"></i> Docker prod standalone</a></li><li><a href="/techdoc/install/docker-prod-dokploy/"><i class="fa fa-cloud" aria-hidden="true"></i> Docker prod Dokploy</a></li><li><a href="/techdoc/install/troubleshooting/"><i class="fa fa-medkit" aria-hidden="true"></i> Troubleshooting</a></li></ul></li><li><a href="/techdoc/architecture/"><i class="fa fa-sitemap" aria-hidden="true"></i> Architecture</a></li><li><a href="/techdoc/data-model/"><i class="fa fa-database" aria-hidden="true"></i> Data model</a></li><li><a href="/techdoc/contributing/"><i class="fa fa-code-fork" aria-hidden="true"></i> Contribuer</a></li></ul></nav>
+      
+    </div>
+
+    <div class="col-md-9 doc-content">
+      <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<h1 id="pr-requis-communs-toutes-les-variantes" class="page-header">Prérequis communs à toutes les variantes<a class="header-anchor" href="#pr-requis-communs-toutes-les-variantes" name="pr-requis-communs-toutes-les-variantes"></a>
+</h1>
+<div class="toc toc-full"><ul>
+<li><a href="#1-git">1. Git
+</a></li>
+<li><a href="#2-docker-variantes-docker-uniquement">2. Docker (variantes Docker uniquement)
+</a></li>
+<li><a href="#3-acc-s-aux-registres-dimages">3. Accès aux registres d'images
+</a></li>
+<li><a href="#4-dns-variantes-prod-uniquement">4. DNS (variantes prod uniquement)
+</a></li>
+<li><a href="#5-configuration-sysctl-variantes-prod">5. Configuration <code>sysctl</code> (variantes prod)
+</a></li>
+<li><a href="#6-ressources-serveur-variantes-prod">6. Ressources serveur (variantes prod)
+</a></li>
+<li><a href="#7-ports-ouvrir-variantes-prod">7. Ports à ouvrir (variantes prod)
+</a></li>
+<li><a href="#8-outils-compl-mentaires-selon-variante">8. Outils complémentaires (selon variante)
+</a></li>
+<li><a href="#pr-t">Prêt ?
+</a></li>
+</ul></div>
+
+<p>Quelle que soit la façon dont vous installez Ekylibre, vous aurez besoin de ces outils et de ces accès. Cochez chaque section avant d'aller plus loin.</p>
+
+<h2 id="1-git">1. Git<a class="header-anchor" href="#1-git" name="1-git"></a>
+</h2>
+
+<p>Toutes les variantes commencent par un <code>git clone</code>. Vérifier la présence de Git :</p>
+
+<pre><code class="bash">git --version
+# git version 2.43.0 (ou supérieur)
+</code></pre>
+
+<p>Installer si absent :</p>
+
+<pre><code class="bash">sudo apt update &amp;&amp; sudo apt install -y git
+</code></pre>
+
+<blockquote>
+<p><strong>Astuce :</strong> configurez une <a href="https://docs.github.com/en/authentication/connecting-to-github-with-ssh">clé SSH GitHub</a> avant de cloner. Plusieurs plugins Ekylibre sont sur des dépôts privés et nécessitent un accès SSH lors du <code>bundle install</code>.</p>
+</blockquote>
+
+<h2 id="2-docker-variantes-docker-uniquement">2. Docker (variantes Docker uniquement)<a class="header-anchor" href="#2-docker-variantes-docker-uniquement" name="2-docker-variantes-docker-uniquement"></a>
+</h2>
+
+<p>Docker Engine <strong>≥ 24</strong> et Docker Compose <strong>v2</strong> intégré :</p>
+
+<pre><code class="bash">docker --version
+# Docker version 24.x.x ou plus
+docker compose version
+# Docker Compose version v2.x.x
+</code></pre>
+
+<p>Installation Ubuntu/Debian (procédure officielle) :</p>
+
+<pre><code class="bash">curl -fsSL https://get.docker.com | sudo sh
+sudo usermod -aG docker $USER
+# Se déconnecter / reconnecter pour activer le groupe
+</code></pre>
+
+<p>Vérifier qu'il fonctionne sans <code>sudo</code> :</p>
+
+<pre><code class="bash">docker run --rm hello-world
+</code></pre>
+
+<h2 id="3-acc-s-aux-registres-dimages">3. Accès aux registres d'images<a class="header-anchor" href="#3-acc-s-aux-registres-dimages" name="3-acc-s-aux-registres-dimages"></a>
+</h2>
+
+<p>L'image Ekylibre de production est publiée sur <strong>GHCR</strong> (GitHub Container Registry — public) :</p>
+
+<ul>
+<li>
+<code>ghcr.io/ekylibre/ekylibre/app:latest</code> (Rails + Sidekiq)</li>
+<li>
+<code>ghcr.io/ekylibre/docker-base-images/ruby2.6:latest</code> (image de base de dev)</li>
+</ul>
+
+<p>Aucune authentification requise pour ces images publiques.</p>
+
+<blockquote>
+<p><strong>Note :</strong> certains pipelines historiques pointent encore vers <code>registry.gitlab.com/ekylibre/...</code>. Si vous y êtes redirigé, il vous faudra un <a href="https://gitlab.com/-/profile/personal_access_tokens">Personal Access Token GitLab</a> avec le scope <code>read_registry</code>, puis <code>docker login registry.gitlab.com</code>.</p>
+</blockquote>
+
+<h2 id="4-dns-variantes-prod-uniquement">4. DNS (variantes prod uniquement)<a class="header-anchor" href="#4-dns-variantes-prod-uniquement" name="4-dns-variantes-prod-uniquement"></a>
+</h2>
+
+<p>Le déploiement multi-tenant d'Ekylibre repose sur un <strong>wildcard DNS</strong> : chaque tenant est un sous-domaine.</p>
+
+<table class=" table table-bordered">
+<thead>
+<tr>
+<th>Type</th>
+<th>Nom</th>
+<th>Cible</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>A</code></td>
+<td><code>example.com</code></td>
+<td><code>&lt;IP_serveur&gt;</code></td>
+</tr>
+<tr>
+<td><code>A</code></td>
+<td><code>*.example.com</code></td>
+<td><code>&lt;IP_serveur&gt;</code></td>
+</tr>
+</tbody>
+</table>
+
+<p>Vérifier :</p>
+
+<pre><code class="bash">dig +short example.com acme.example.com
+# Les deux doivent renvoyer la même IP
+</code></pre>
+
+<blockquote>
+<p><strong>Pour la variante Docker dev :</strong> <strong>aucune</strong> configuration DNS n'est nécessaire — <code>*.ekylibre.localhost</code> est résolu nativement par systemd-resolved / glibc (RFC 6761).</p>
+</blockquote>
+
+<h2 id="5-configuration-sysctl-variantes-prod">5. Configuration <code>sysctl</code> (variantes prod)<a class="header-anchor" href="#5-configuration-sysctl-variantes-prod" name="5-configuration-sysctl-variantes-prod"></a>
+</h2>
+
+<p>Redis recommande <code>vm.overcommit_memory=1</code> pour éviter les échecs de <code>BGSAVE</code> sous pression mémoire. À faire <strong>une seule fois</strong> sur l'hôte :</p>
+
+<pre><code class="bash">echo "vm.overcommit_memory = 1" | sudo tee /etc/sysctl.d/99-redis-overcommit.conf
+sudo sysctl --system
+
+# Vérification
+sysctl vm.overcommit_memory
+# vm.overcommit_memory = 1
+</code></pre>
+
+<p>Non-bloquant : Redis fonctionne sans, mais un warning persiste dans les logs.</p>
+
+<h2 id="6-ressources-serveur-variantes-prod">6. Ressources serveur (variantes prod)<a class="header-anchor" href="#6-ressources-serveur-variantes-prod" name="6-ressources-serveur-variantes-prod"></a>
+</h2>
+
+<table class=" table table-bordered">
+<thead>
+<tr>
+<th>Ressource</th>
+<th>Minimum recommandé</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>vCPU</strong></td>
+<td>4</td>
+</tr>
+<tr>
+<td><strong>RAM</strong></td>
+<td>8 GB</td>
+</tr>
+<tr>
+<td><strong>Disque</strong></td>
+<td>30 GB (lexicon ~3 GB + DB + assets)</td>
+</tr>
+<tr>
+<td><strong>OS</strong></td>
+<td>Ubuntu 22.04+ ou équivalent</td>
+</tr>
+</tbody>
+</table>
+
+<p>Pour une instance multi-tenants avec usage soutenu, viser <strong>8 vCPU / 16 GB RAM</strong>.</p>
+
+<h2 id="7-ports-ouvrir-variantes-prod">7. Ports à ouvrir (variantes prod)<a class="header-anchor" href="#7-ports-ouvrir-variantes-prod" name="7-ports-ouvrir-variantes-prod"></a>
+</h2>
+
+<table class=" table table-bordered">
+<thead>
+<tr>
+<th>Port</th>
+<th>Protocole</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>80</code></td>
+<td>TCP</td>
+<td>Challenge HTTP-01 Let's Encrypt + redirection HTTPS</td>
+</tr>
+<tr>
+<td><code>443</code></td>
+<td>TCP</td>
+<td>Trafic applicatif HTTPS</td>
+</tr>
+<tr>
+<td><code>22</code></td>
+<td>TCP</td>
+<td>SSH (votre poste uniquement)</td>
+</tr>
+</tbody>
+</table>
+
+<p>Les ports DB (<code>5432</code>), Redis (<code>6379</code>) et Sidekiq ne <strong>doivent pas</strong> être exposés publiquement.</p>
+
+<h2 id="8-outils-compl-mentaires-selon-variante">8. Outils complémentaires (selon variante)<a class="header-anchor" href="#8-outils-compl-mentaires-selon-variante" name="8-outils-compl-mentaires-selon-variante"></a>
+</h2>
+
+<table class=" table table-bordered">
+<thead>
+<tr>
+<th>Outil</th>
+<th>Variante concernée</th>
+<th>Pour quoi faire</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>curl</code></td>
+<td>Toutes</td>
+<td>Tests de healthcheck, install Docker</td>
+</tr>
+<tr>
+<td><code>openssl</code></td>
+<td>Prod</td>
+<td>Générer <code>SECRET_KEY_BASE</code> (<code>openssl rand -hex 64</code>)</td>
+</tr>
+<tr>
+<td><code>psql</code></td>
+<td>Toutes</td>
+<td>Inspecter la base depuis l'hôte (optionnel)</td>
+</tr>
+<tr>
+<td><code>libnss3-tools</code></td>
+<td>Dev (Linux)</td>
+<td>Faire confiance à la CA locale de Caddy</td>
+</tr>
+<tr>
+<td><code>gpg</code></td>
+<td>Native</td>
+<td>Génération de clé pour signature de documents</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="pr-t">Prêt ?<a class="header-anchor" href="#pr-t" name="pr-t"></a>
+</h2>
+
+<p>Vous avez tout ce qu'il faut → choisir une variante dans la <a href="/techdoc/install/">page principale d'installation</a>.</p>
+</body></html>
+
+      <p class="open-source-notice">
+          <i class="fa fa-file"></i> Cette documentation est <a href="https://github.com/ekylibre/doc">open-source</a>. Aidez-nous à l'améliorer en ouvrant une issue ou une pull request.
+      </p>
+    </div>
+
+  </div>
+  <hr>
+  <footer>
+    <p class="pull-left">
+      &copy; Ekylibre Authors 2014-2026 | Documentation Distributed under CC-BY-4.0
+    </p>
+    <p class="pull-left">
+       &copy; 2026 Ekylibre SAS. All rights reserved. Ekylibre SAS has registered trademarks and uses trademarks.
+    </p>
+  </footer>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="/javascripts/jquery.js"</script>
+  <script src="/javascripts/bootstrap.min.js"></script>
+</body>
+</html>

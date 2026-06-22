@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="An open-source monitoring system with a dimensional data model, flexible query language, efficient time series database and modern alerting approach.">
+    <meta name="keywords" content="prometheus, monitoring, monitoring system, time series, time series database, alerting, metrics, telemetry">
+    <meta name="author" content="Prometheus">
+    <meta name="twitter:card" content="summary">
+    <meta property="og:description" content="An open-source monitoring system with a dimensional data model, flexible query language, efficient time series database and modern alerting approach.">
+    <meta property="og:image" content="https://prometheus.io/assets/favicons/android-chrome-192x192.png">
+
+    <link rel="alternate" type="application/atom+xml" title="Prometheus Blog » Feed" href="/blog/feed.xml">
+
+    <link rel="shortcut icon" href="/assets/favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/assets/favicons/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/assets/favicons/android-chrome-manifest.json">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    
+    <meta property="og:title" content="Contribuer à Ekylibre | Prometheus">
+    <title>Contribuer à Ekylibre | Prometheus</title>
+    
+
+    <!-- Bootstrap core CSS -->
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="/stylesheets/docs.css" rel="stylesheet">
+    <link href="/stylesheets/routing-tree-editor.css" rel="stylesheet">
+    <link href="/stylesheets/techdoc.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/stylesheets/fontawesome.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,300italic,400' rel='stylesheet' type='text/css'>
+    <style>
+      .nav-lang-switcher { padding: 15px; line-height: 20px; font-weight: 700; letter-spacing: 0.05em; }
+      .nav-lang-switcher a, .nav-lang-switcher span { color: inherit; padding: 0 4px; text-decoration: none; }
+      .nav-lang-switcher a { opacity: 0.55; }
+      .nav-lang-switcher a:hover, .nav-lang-switcher a:focus { opacity: 1; text-decoration: underline; }
+      .nav-lang-switcher span[aria-current] { opacity: 1; }
+      .nav-lang-switcher .lang-sep { opacity: 0.35; }
+    </style>
+  </head>
+
+  <body>
+
+  <div class="">
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="nav navbar-nav navbar-right main-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/fr/user-doc/demarrage">User Doc FR</a></li>
+            <li><a href="/techdoc/">Tech Doc</a></li>
+            <li><a href="/api">API Doc</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="https://discord.gg/BSpD6hq7qR">Forum</a></li>
+            <li><a href="https://demo.ekylibre-dev.com">Demo</a></li>
+            <li><a href="https://github.com/ekylibre"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://twitter.com/ekylibre"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://discord.gg/BSpD6hq7qR"><i class="fab fa-discord"></i></a></li>
+            <li class="nav-lang-switcher" role="navigation" aria-label="Language">
+              
+                <span aria-current="page" lang="en">EN</span><span class="lang-sep" aria-hidden="true">|</span><a href="/fr/" hreflang="fr" lang="fr">FR</a>
+              
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 side-nav-col">
+      
+        <nav class="techdoc-sidebar" aria-label="Documentation technique"><ul class="nav techdoc-nav"><li><a class="techdoc-root" href="/techdoc/"><i class="fa fa-book" aria-hidden="true"></i> <strong>Accueil</strong></a></li><li class="has-children"><a href="/techdoc/install/"><i class="fa fa-rocket" aria-hidden="true"></i> Installation</a><ul class="nav"><li><a href="/techdoc/install/prerequisites/"><i class="fa fa-check-square-o" aria-hidden="true"></i> Prérequis</a></li><li><a href="/techdoc/install/docker-dev/"><i class="fa fa-cube" aria-hidden="true"></i> Docker dev</a></li><li><a href="/techdoc/install/native-ubuntu/"><i class="fa fa-ubuntu" aria-hidden="true"></i> Native Ubuntu</a></li><li><a href="/techdoc/install/app-setup/"><i class="fa fa-cogs" aria-hidden="true"></i> Setup application</a></li><li><a href="/techdoc/install/docker-prod-standalone/"><i class="fa fa-server" aria-hidden="true"></i> Docker prod standalone</a></li><li><a href="/techdoc/install/docker-prod-dokploy/"><i class="fa fa-cloud" aria-hidden="true"></i> Docker prod Dokploy</a></li><li><a href="/techdoc/install/troubleshooting/"><i class="fa fa-medkit" aria-hidden="true"></i> Troubleshooting</a></li></ul></li><li><a href="/techdoc/architecture/"><i class="fa fa-sitemap" aria-hidden="true"></i> Architecture</a></li><li><a href="/techdoc/data-model/"><i class="fa fa-database" aria-hidden="true"></i> Data model</a></li><li class="active current"><a href="/techdoc/contributing/" aria-current="page"><i class="fa fa-code-fork" aria-hidden="true"></i> Contribuer</a></li></ul></nav>
+      
+    </div>
+
+    <div class="col-md-9 doc-content">
+      <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<h1 id="contribuer-ekylibre" class="page-header">Contribuer à Ekylibre<a class="header-anchor" href="#contribuer-ekylibre" name="contribuer-ekylibre"></a>
+</h1>
+<div class="toc toc-full"><ul>
+<li><a href="#1-o-commencer">1. Où commencer ?
+</a></li>
+<ul>
+<li><a href="#vous-avez-rep-r-un-bug-ou-une-question">Vous avez repéré un bug ou une question
+</a></li>
+<li><a href="#vous-voulez-proposer-une-fonctionnalit">Vous voulez proposer une fonctionnalité
+</a></li>
+</ul>
+<li><a href="#2-fork-branche">2. Fork &amp; branche
+</a></li>
+<li><a href="#3-installer-lenvironnement-de-d-veloppement">3. Installer l'environnement de développement
+</a></li>
+<li><a href="#4-faire-tourner-la-suite-de-tests">4. Faire tourner la suite de tests
+</a></li>
+<ul>
+<li><a href="#installer-les-d-pendances-de-dev">Installer les dépendances de dev
+</a></li>
+<li><a href="#lancer-la-suite-compl-te">Lancer la suite complète
+</a></li>
+<li><a href="#lancer-un-test-cibl">Lancer un test ciblé
+</a></li>
+</ul>
+<li><a href="#5-impl-menter-votre-changement">5. Implémenter votre changement
+</a></li>
+<ul>
+<li><a href="#conventions-ruby-rails">Conventions Ruby / Rails
+</a></li>
+<li><a href="#conventions-haml-front">Conventions HAML / front
+</a></li>
+<li><a href="#plugins">Plugins
+</a></li>
+</ul>
+<li><a href="#6-commit-pr">6. Commit &amp; PR
+</a></li>
+<ul>
+<li><a href="#messages-de-commit">Messages de commit
+</a></li>
+<li><a href="#soumettre-la-pr">Soumettre la PR
+</a></li>
+<li><a href="#code-review">Code review
+</a></li>
+</ul>
+<li><a href="#7-apr-s-le-merge">7. Après le merge
+</a></li>
+<li><a href="#ressources">Ressources
+</a></li>
+</ul></div>
+
+<p>Merci d'envisager une contribution à Ekylibre. Ce guide décrit le workflow Git, les conventions et la procédure de soumission d'une pull request.</p>
+
+<h2 id="1-o-commencer">1. Où commencer ?<a class="header-anchor" href="#1-o-commencer" name="1-o-commencer"></a>
+</h2>
+
+<h3 id="vous-avez-rep-r-un-bug-ou-une-question">Vous avez repéré un bug ou une question<a class="header-anchor" href="#vous-avez-rep-r-un-bug-ou-une-question" name="vous-avez-rep-r-un-bug-ou-une-question"></a>
+</h3>
+
+<p>Cherchez d'abord dans les <a href="https://github.com/ekylibre/ekylibre/issues">issues existantes</a> — quelqu'un d'autre l'a peut-être déjà signalé. Sinon, <a href="https://github.com/ekylibre/ekylibre/issues/new">ouvrez une nouvelle issue</a> avec :</p>
+
+<ul>
+<li>
+<strong>Titre clair</strong> décrivant le problème</li>
+<li>
+<strong>Description détaillée</strong> : contexte, étapes pour reproduire, comportement attendu vs observé</li>
+<li>
+<strong>Échantillon de code</strong> ou <strong>cas de test exécutable</strong> si possible</li>
+<li>
+<strong>Version / branche</strong> d'Ekylibre utilisée (<code>git rev-parse HEAD</code>)</li>
+<li>
+<strong>Variante d'installation</strong> (Docker dev / native / prod)</li>
+</ul>
+
+<h3 id="vous-voulez-proposer-une-fonctionnalit">Vous voulez proposer une fonctionnalité<a class="header-anchor" href="#vous-voulez-proposer-une-fonctionnalit" name="vous-voulez-proposer-une-fonctionnalit"></a>
+</h3>
+
+<p>Ouvrez d'abord une <strong>issue de discussion</strong> avant de coder, pour valider l'approche avec les mainteneurs. Évite de gaspiller du temps sur une PR qui sera refusée pour raison conceptuelle.</p>
+
+<h2 id="2-fork-branche">2. Fork &amp; branche<a class="header-anchor" href="#2-fork-branche" name="2-fork-branche"></a>
+</h2>
+
+<p><a href="https://docs.github.com/en/get-started/quickstart/fork-a-repo">Forker Ekylibre</a> puis créer une branche <strong>descriptive</strong>, conventionnellement préfixée par le numéro d'issue :</p>
+
+<pre><code class="bash">git checkout -b 1747-add-rapeseed-varieties
+</code></pre>
+
+<h2 id="3-installer-lenvironnement-de-d-veloppement">3. Installer l'environnement de développement<a class="header-anchor" href="#3-installer-lenvironnement-de-d-veloppement" name="3-installer-lenvironnement-de-d-veloppement"></a>
+</h2>
+
+<p>Le plus simple : la variante <a href="/techdoc/install/docker-dev/"><strong>Docker dev</strong></a> — tout en container, votre poste reste propre.</p>
+
+<p>Si vous voulez profiler ou attacher un debugger natif : <a href="/techdoc/install/native-ubuntu/"><strong>Native Ubuntu</strong></a> + <a href="/techdoc/install/app-setup/"><strong>Setup app</strong></a>.</p>
+
+<h2 id="4-faire-tourner-la-suite-de-tests">4. Faire tourner la suite de tests<a class="header-anchor" href="#4-faire-tourner-la-suite-de-tests" name="4-faire-tourner-la-suite-de-tests"></a>
+</h2>
+
+<p>Une version récente de Ruby (2.6.6) et <code>bundler ≥ 1.14.6</code> sont requises.</p>
+
+<h3 id="installer-les-d-pendances-de-dev">Installer les dépendances de dev<a class="header-anchor" href="#installer-les-d-pendances-de-dev" name="installer-les-d-pendances-de-dev"></a>
+</h3>
+
+<pre><code class="bash">bundle install
+yarn install
+</code></pre>
+
+<h3 id="lancer-la-suite-compl-te">Lancer la suite complète<a class="header-anchor" href="#lancer-la-suite-compl-te" name="lancer-la-suite-compl-te"></a>
+</h3>
+
+<pre><code class="bash">bundle exec rake test
+</code></pre>
+
+<p>Ou via Docker :</p>
+
+<pre><code class="bash">docker compose -f docker/dev/docker-compose.yml exec app bundle exec rake test
+</code></pre>
+
+<h3 id="lancer-un-test-cibl">Lancer un test ciblé<a class="header-anchor" href="#lancer-un-test-cibl" name="lancer-un-test-cibl"></a>
+</h3>
+
+<pre><code class="bash"># Un fichier
+bundle exec rails test test/models/intervention_test.rb
+
+# Un test précis
+bundle exec rails test test/models/intervention_test.rb:42
+</code></pre>
+
+<blockquote>
+<p><strong>CI</strong> : la suite tourne automatiquement sur les PR via <code>.gitlab-ci.yml</code> (et / ou <code>.github/workflows/</code>). Pas de merge sans CI verte.</p>
+</blockquote>
+
+<h2 id="5-impl-menter-votre-changement">5. Implémenter votre changement<a class="header-anchor" href="#5-impl-menter-votre-changement" name="5-impl-menter-votre-changement"></a>
+</h2>
+
+<h3 id="conventions-ruby-rails">Conventions Ruby / Rails<a class="header-anchor" href="#conventions-ruby-rails" name="conventions-ruby-rails"></a>
+</h3>
+
+<ul>
+<li>
+<strong>RuboCop</strong> : <code>.rubocop.yml</code> à la racine définit le style. CI échoue si non conforme.</li>
+<li>
+<strong>Tests</strong> : tout nouveau modèle, contrôleur ou helper s'accompagne d'un test minimum. Préférer <strong>fixtures + assertions explicites</strong> au DRY excessif.</li>
+<li>
+<strong>Migrations</strong> : irréversibles uniquement si justifié. Préférer des migrations idempotentes (<code>add_column_if_not_exists</code>, etc.).</li>
+<li>
+<strong>Lexicon</strong> : ne pas écrire dans les tables <code>lexicon</code> — ce sont des nomenclatures partagées versionnées.</li>
+</ul>
+
+<h3 id="conventions-haml-front">Conventions HAML / front<a class="header-anchor" href="#conventions-haml-front" name="conventions-haml-front"></a>
+</h3>
+
+<ul>
+<li>
+<strong>HAML-Lint</strong> : <code>.haml-lint.yml</code> (le <code>.haml-lint_todo.yml</code> recense les exceptions historiques — ne pas en ajouter).</li>
+<li>
+<strong>SCSS</strong> : conventions BEM-ish, voir <code>docs/guides/ui.md</code> dans le repo.</li>
+<li>
+<strong>Webpacker</strong> : les nouveaux modules JS vont dans <code>app/javascript/packs/</code>.</li>
+</ul>
+
+<h3 id="plugins">Plugins<a class="header-anchor" href="#plugins" name="plugins"></a>
+</h3>
+
+<p>Un changement métier large peut être un <strong>plugin</strong> (gem séparée) plutôt qu'un patch du core. Voir les plugins existants pour le pattern (<code>ekylibre-banking</code>, <code>ekylibre-baqio</code>…).</p>
+
+<h2 id="6-commit-pr">6. Commit &amp; PR<a class="header-anchor" href="#6-commit-pr" name="6-commit-pr"></a>
+</h2>
+
+<h3 id="messages-de-commit">Messages de commit<a class="header-anchor" href="#messages-de-commit" name="messages-de-commit"></a>
+</h3>
+
+<pre><code>sujet (50 caractères max, impératif)
+
+Corps en lignes de 72 caractères max.
+
+Détaille le « pourquoi » (l'effet, le bug corrigé, la motivation),
+pas le « quoi » (le diff le dit déjà).
+
+Refs #1747
+</code></pre>
+
+<h3 id="soumettre-la-pr">Soumettre la PR<a class="header-anchor" href="#soumettre-la-pr" name="soumettre-la-pr"></a>
+</h3>
+
+<pre><code class="bash">git push origin 1747-add-rapeseed-varieties
+</code></pre>
+
+<p>Puis sur GitHub, ouvrir la PR avec :</p>
+
+<ul>
+<li>
+<strong>Titre</strong> = sujet du commit principal</li>
+<li>
+<strong>Description</strong> : contexte, screenshots si UI, comment tester</li>
+<li>
+<strong>Lien vers l'issue</strong> : <code>Closes #1747</code> ou <code>Refs #1747</code>
+</li>
+<li>
+<strong>Checklist</strong> : tests verts, RuboCop OK, doc mise à jour si comportement public modifié</li>
+</ul>
+
+<h3 id="code-review">Code review<a class="header-anchor" href="#code-review" name="code-review"></a>
+</h3>
+
+<p>Les mainteneurs reviewent. Soyez ouvert au feedback — c'est la garantie d'un code maintenable à long terme. Pour intégrer des modifs demandées, faites des <strong>commits additionnels</strong> (pas de rebase / force-push, sauf demande explicite — préserve l'historique de la discussion).</p>
+
+<h2 id="7-apr-s-le-merge">7. Après le merge<a class="header-anchor" href="#7-apr-s-le-merge" name="7-apr-s-le-merge"></a>
+</h2>
+
+<ul>
+<li>Supprimer votre branche locale et distante (<code>git branch -D 1747-...</code>, <code>git push origin :1747-...</code>)</li>
+<li>Mettre à jour votre fork</li>
+<li>Penser à un message de remerciement aux reviewers — l'OSS tient en partie par la sympathie 🙂</li>
+</ul>
+
+<h2 id="ressources">Ressources<a class="header-anchor" href="#ressources" name="ressources"></a>
+</h2>
+
+<ul>
+<li>
+<strong>Code source</strong> : <a href="https://github.com/ekylibre/ekylibre">github.com/ekylibre/ekylibre</a>
+</li>
+<li>
+<strong>Issues</strong> : <a href="https://github.com/ekylibre/ekylibre/issues">github.com/ekylibre/ekylibre/issues</a>
+</li>
+<li>
+<strong>Forum</strong> : <a href="https://discord.gg/BSpD6hq7qR">Discord Ekylibre</a>
+</li>
+<li>
+<strong>Code of Conduct</strong> : voir <code>CODE_OF_CONDUCT.md</code> dans le repo (basé sur Contributor Covenant)</li>
+<li>
+<strong>Licence</strong> : <a href="https://github.com/ekylibre/ekylibre/blob/main/LICENSE">GNU AGPL v3</a>
+</li>
+</ul>
+</body></html>
+
+      <p class="open-source-notice">
+          <i class="fa fa-file"></i> Cette documentation est <a href="https://github.com/ekylibre/doc">open-source</a>. Aidez-nous à l'améliorer en ouvrant une issue ou une pull request.
+      </p>
+    </div>
+
+  </div>
+  <hr>
+  <footer>
+    <p class="pull-left">
+      &copy; Ekylibre Authors 2014-2026 | Documentation Distributed under CC-BY-4.0
+    </p>
+    <p class="pull-left">
+       &copy; 2026 Ekylibre SAS. All rights reserved. Ekylibre SAS has registered trademarks and uses trademarks.
+    </p>
+  </footer>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="/javascripts/jquery.js"</script>
+  <script src="/javascripts/bootstrap.min.js"></script>
+</body>
+</html>

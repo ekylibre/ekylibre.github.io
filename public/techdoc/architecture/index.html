@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="An open-source monitoring system with a dimensional data model, flexible query language, efficient time series database and modern alerting approach.">
+    <meta name="keywords" content="prometheus, monitoring, monitoring system, time series, time series database, alerting, metrics, telemetry">
+    <meta name="author" content="Prometheus">
+    <meta name="twitter:card" content="summary">
+    <meta property="og:description" content="An open-source monitoring system with a dimensional data model, flexible query language, efficient time series database and modern alerting approach.">
+    <meta property="og:image" content="https://prometheus.io/assets/favicons/android-chrome-192x192.png">
+
+    <link rel="alternate" type="application/atom+xml" title="Prometheus Blog » Feed" href="/blog/feed.xml">
+
+    <link rel="shortcut icon" href="/assets/favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/assets/favicons/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/assets/favicons/android-chrome-manifest.json">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    
+    <meta property="og:title" content="Architecture | Prometheus">
+    <title>Architecture | Prometheus</title>
+    
+
+    <!-- Bootstrap core CSS -->
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="/stylesheets/docs.css" rel="stylesheet">
+    <link href="/stylesheets/routing-tree-editor.css" rel="stylesheet">
+    <link href="/stylesheets/techdoc.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/stylesheets/fontawesome.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,300italic,400' rel='stylesheet' type='text/css'>
+    <style>
+      .nav-lang-switcher { padding: 15px; line-height: 20px; font-weight: 700; letter-spacing: 0.05em; }
+      .nav-lang-switcher a, .nav-lang-switcher span { color: inherit; padding: 0 4px; text-decoration: none; }
+      .nav-lang-switcher a { opacity: 0.55; }
+      .nav-lang-switcher a:hover, .nav-lang-switcher a:focus { opacity: 1; text-decoration: underline; }
+      .nav-lang-switcher span[aria-current] { opacity: 1; }
+      .nav-lang-switcher .lang-sep { opacity: 0.35; }
+    </style>
+  </head>
+
+  <body>
+
+  <div class="">
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="nav navbar-nav navbar-right main-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/fr/user-doc/demarrage">User Doc FR</a></li>
+            <li><a href="/techdoc/">Tech Doc</a></li>
+            <li><a href="/api">API Doc</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="https://discord.gg/BSpD6hq7qR">Forum</a></li>
+            <li><a href="https://demo.ekylibre-dev.com">Demo</a></li>
+            <li><a href="https://github.com/ekylibre"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://twitter.com/ekylibre"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://discord.gg/BSpD6hq7qR"><i class="fab fa-discord"></i></a></li>
+            <li class="nav-lang-switcher" role="navigation" aria-label="Language">
+              
+                <span aria-current="page" lang="en">EN</span><span class="lang-sep" aria-hidden="true">|</span><a href="/fr/" hreflang="fr" lang="fr">FR</a>
+              
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 side-nav-col">
+      
+        <nav class="techdoc-sidebar" aria-label="Documentation technique"><ul class="nav techdoc-nav"><li><a class="techdoc-root" href="/techdoc/"><i class="fa fa-book" aria-hidden="true"></i> <strong>Accueil</strong></a></li><li class="has-children"><a href="/techdoc/install/"><i class="fa fa-rocket" aria-hidden="true"></i> Installation</a><ul class="nav"><li><a href="/techdoc/install/prerequisites/"><i class="fa fa-check-square-o" aria-hidden="true"></i> Prérequis</a></li><li><a href="/techdoc/install/docker-dev/"><i class="fa fa-cube" aria-hidden="true"></i> Docker dev</a></li><li><a href="/techdoc/install/native-ubuntu/"><i class="fa fa-ubuntu" aria-hidden="true"></i> Native Ubuntu</a></li><li><a href="/techdoc/install/app-setup/"><i class="fa fa-cogs" aria-hidden="true"></i> Setup application</a></li><li><a href="/techdoc/install/docker-prod-standalone/"><i class="fa fa-server" aria-hidden="true"></i> Docker prod standalone</a></li><li><a href="/techdoc/install/docker-prod-dokploy/"><i class="fa fa-cloud" aria-hidden="true"></i> Docker prod Dokploy</a></li><li><a href="/techdoc/install/troubleshooting/"><i class="fa fa-medkit" aria-hidden="true"></i> Troubleshooting</a></li></ul></li><li class="active current"><a href="/techdoc/architecture/" aria-current="page"><i class="fa fa-sitemap" aria-hidden="true"></i> Architecture</a></li><li><a href="/techdoc/data-model/"><i class="fa fa-database" aria-hidden="true"></i> Data model</a></li><li><a href="/techdoc/contributing/"><i class="fa fa-code-fork" aria-hidden="true"></i> Contribuer</a></li></ul></nav>
+      
+    </div>
+
+    <div class="col-md-9 doc-content">
+      <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<h1 id="architecture-dekylibre" class="page-header">Architecture d'Ekylibre<a class="header-anchor" href="#architecture-dekylibre" name="architecture-dekylibre"></a>
+</h1>
+<div class="toc toc-full"><ul>
+<li><a href="#sch-ma-interactif-des-services">Schéma interactif des services
+</a></li>
+<li><a href="#vue-densemble-texte">Vue d'ensemble (texte)
+</a></li>
+<li><a href="#les-services-en-d-tail">Les services en détail
+</a></li>
+<ul>
+<li><a href="#caddy-reverse-proxy-https">Caddy — reverse-proxy HTTPS
+</a></li>
+<li><a href="#rails-puma-c-ur-applicatif">Rails (Puma) — cœur applicatif
+</a></li>
+<li><a href="#sidekiq-jobs-asynchrones">Sidekiq — jobs asynchrones
+</a></li>
+<li><a href="#postgresql-postgis-stockage">PostgreSQL + PostGIS — stockage
+</a></li>
+<li><a href="#redis-cache-file-sidekiq">Redis — cache + file Sidekiq
+</a></li>
+<li><a href="#duke-assistant-chatbot-optionnel">Duke — assistant chatbot (optionnel)
+</a></li>
+</ul>
+<li><a href="#flux-applicatifs-typiques">Flux applicatifs typiques
+</a></li>
+<ul>
+<li><a href="#connexion-dun-utilisateur">Connexion d'un utilisateur
+</a></li>
+<li><a href="#saisie-dune-intervention-culturale">Saisie d'une intervention culturale
+</a></li>
+<li><a href="#import-dun-catalogue-long">Import d'un catalogue (long)
+</a></li>
+</ul>
+<li><a href="#choix-structurants-et-trade-offs">Choix structurants et trade-offs
+</a></li>
+<ul>
+<li><a href="#pourquoi-rails-6-ruby-2-6">Pourquoi Rails 6 / Ruby 2.6 ?
+</a></li>
+<li><a href="#pourquoi-postgis-et-pas-une-couche-g-o-s-par-e">Pourquoi PostGIS et pas une couche géo séparée ?
+</a></li>
+<li><a href="#pourquoi-multi-tenant-par-sch-mas-et-pas-par-database">Pourquoi multi-tenant par schémas et pas par database ?
+</a></li>
+<li><a href="#pourquoi-caddy-et-pas-nginx">Pourquoi Caddy et pas Nginx ?
+</a></li>
+<li><a href="#pourquoi-sidekiq-plut-t-que-sucker-punch-delayed-job">Pourquoi Sidekiq plutôt que Sucker Punch / Delayed Job ?
+</a></li>
+</ul>
+<li><a href="#ressources">Ressources
+</a></li>
+</ul></div>
+
+<p>Vue d'ensemble des services qui composent une instance Ekylibre, de leurs interactions, et des choix structurants.</p>
+
+<h2 id="sch-ma-interactif-des-services">Schéma interactif des services<a class="header-anchor" href="#sch-ma-interactif-des-services" name="sch-ma-interactif-des-services"></a>
+</h2>
+
+<p>Le schéma ci-dessous est rendu en <strong>PixiJS</strong> : survolez un service pour voir son rôle, observez les flux de requêtes animés. Le contenu est purement décoratif — toute l'information est aussi présente dans les sections texte ci-dessous.</p>
+
+<div id="architecture-diagram" class="techdoc-pixi-stage techdoc-pixi-stage--tall" data-pixi-component="architecture" aria-hidden="true"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/pixi.js@8/dist/pixi.min.js" defer></script>
+
+<script src="/javascripts/techdoc-architecture-diagram.js" defer></script>
+
+<h2 id="vue-densemble-texte">Vue d'ensemble (texte)<a class="header-anchor" href="#vue-densemble-texte" name="vue-densemble-texte"></a>
+</h2>
+
+<pre><code>                ┌─────────────┐
+                │  Navigateur │
+                └──────┬──────┘
+                       │ HTTPS
+                       ▼
+                ┌─────────────┐
+                │    Caddy    │  ← TLS, Let's Encrypt auto, on-demand
+                │  (reverse-  │     (prod) / cert local (dev)
+                │   proxy)    │
+                └──┬───────┬──┘
+                   │       │
+        ┌──────────▼─┐   ┌─▼──────────┐
+        │   Rails    │   │  duke-api  │  (optionnel)
+        │   (Puma)   │   │  chatbot   │
+        └──┬─────┬───┘   └─────┬──────┘
+           │     │              │
+           │     │              ▼
+           │     │       ┌──────────────┐
+           │     │       │ postgres-duke│
+           │     │       └──────────────┘
+           │     │
+       ┌───▼─┐ ┌─▼────┐
+       │ DB  │ │ Redis│
+       │ +   │ │      │
+       │POST-│ └──┬───┘
+       │ GIS │    │
+       └──┬──┘    │
+          │       │ enqueue / fetch
+          │       │
+          │  ┌────▼─────┐
+          └──┤ Sidekiq  │  ← jobs asynchrones
+             │ (worker) │     (imports, exports, intégrations)
+             └──────────┘
+</code></pre>
+
+<h2 id="les-services-en-d-tail">Les services en détail<a class="header-anchor" href="#les-services-en-d-tail" name="les-services-en-d-tail"></a>
+</h2>
+
+<h3 id="caddy-reverse-proxy-https">Caddy — reverse-proxy HTTPS<a class="header-anchor" href="#caddy-reverse-proxy-https" name="caddy-reverse-proxy-https"></a>
+</h3>
+
+<p><strong>Rôle :</strong> terminaison TLS, routage des sous-domaines vers Rails ou Duke.</p>
+
+<ul>
+<li>
+<strong>En prod</strong> : provisionne automatiquement les certificats Let's Encrypt à la demande via le mode <code>on_demand_tls</code>. Un endpoint <code>/health</code> de Rails filtre les hostnames inconnus pour éviter le rate-limit ACME.</li>
+<li>
+<strong>En dev</strong> : génère sa propre CA locale, le script <code>docker/dev/trust-ca.sh</code> l'installe dans le store système et NSS pour Firefox/Chrome. Domaine <code>*.ekylibre.localhost</code> (résolu nativement RFC 6761).</li>
+</ul>
+
+<h3 id="rails-puma-c-ur-applicatif">Rails (Puma) — cœur applicatif<a class="header-anchor" href="#rails-puma-c-ur-applicatif" name="rails-puma-c-ur-applicatif"></a>
+</h3>
+
+<p><strong>Stack :</strong> Ruby 2.6.6 + Rails 6.x + Puma. Port interne <code>3000</code>.</p>
+
+<p><strong>Multi-tenancy :</strong> chaque "ferme" est un <strong>tenant</strong> isolé via la gem <a href="https://github.com/influitive/apartment"><code>apartment</code></a> (schémas PostgreSQL séparés). Routage par sous-domaine : <code>acme.example.com</code> → <code>Apartment::Tenant.switch!('acme')</code>.</p>
+
+<p><strong>Plugins :</strong> déclarés dans <code>Gemfile.local</code> (dev) ou <code>docker/prod/Gemfile.prod</code> (prod). 13+ plugins publics couvrant les intégrations bancaires, le suivi GPS, la météo, la traçabilité, etc.</p>
+
+<h3 id="sidekiq-jobs-asynchrones">Sidekiq — jobs asynchrones<a class="header-anchor" href="#sidekiq-jobs-asynchrones" name="sidekiq-jobs-asynchrones"></a>
+</h3>
+
+<p><strong>Rôle :</strong> déporter les opérations longues hors du cycle requête HTTP.</p>
+
+<p>Exemples : imports de catalogues, exports de bilans comptables, synchronisation Saisigo / Baqio, calculs d'interventions sur grandes parcelles.</p>
+
+<p>Lit la file dans Redis, écrit les résultats dans PostgreSQL. Le même container peut donc être <em>app</em> ou <em>sidekiq</em> — c'est la commande de démarrage qui change.</p>
+
+<h3 id="postgresql-postgis-stockage">PostgreSQL + PostGIS — stockage<a class="header-anchor" href="#postgresql-postgis-stockage" name="postgresql-postgis-stockage"></a>
+</h3>
+
+<p><strong>Version :</strong> 13 + PostGIS 2.5. Port interne <code>5432</code> (exposé sur <code>5431</code> en dev pour <code>psql</code> direct depuis l'hôte ; <strong>non exposé</strong> en prod).</p>
+
+<p><strong>Volumétrie typique :</strong>
+- ~300 modèles ActiveRecord
+- ~3 GB de <strong>lexicon</strong> (nomenclatures) par tenant
+- ~10-100 MB de données métier par exploitation moyenne</p>
+
+<p><strong>Schémas séparés</strong> :
+- <code>public</code> : tables système, lexicon partagé
+- <code>&lt;tenant_name&gt;</code> : tables métier propres à chaque ferme</p>
+
+<h3 id="redis-cache-file-sidekiq">Redis — cache + file Sidekiq<a class="header-anchor" href="#redis-cache-file-sidekiq" name="redis-cache-file-sidekiq"></a>
+</h3>
+
+<p><strong>Version :</strong> 7-alpine. Port interne <code>6379</code>, <strong>non exposé</strong>.</p>
+
+<p><strong>Usages :</strong>
+- File Sidekiq (jobs en attente, en cours, échoués)
+- Cache Rails (fragments de vue, queries)
+- Sessions utilisateur (selon config)</p>
+
+<blockquote>
+<p><strong>Optimisation :</strong> sur l'hôte, <code>sysctl vm.overcommit_memory=1</code> évite l'échec de <code>BGSAVE</code> sous pression mémoire.</p>
+</blockquote>
+
+<h3 id="duke-assistant-chatbot-optionnel">Duke — assistant chatbot (optionnel)<a class="header-anchor" href="#duke-assistant-chatbot-optionnel" name="duke-assistant-chatbot-optionnel"></a>
+</h3>
+
+<p><strong>Stack :</strong> API Python (FastAPI) + PostgreSQL dédié + LLM (Anthropic / Mistral / Ollama local).</p>
+
+<p><strong>Architecture :</strong>
+<code>
+WebSocket ─► duke-api ─► PostgreSQL duke (historique)
+                   │
+                   ├─► PostgreSQL Ekylibre (lecture seule, rôle duke_reader)
+                   │
+                   └─► LLM (Claude / Mistral / Ollama local)
+</code></p>
+
+<ul>
+<li>Rôle PostgreSQL dédié <code>duke_reader</code> avec <code>GRANT SELECT</code> uniquement sur <code>public</code>, <code>postgis</code>, <code>lexicon</code>
+</li>
+<li>Audit RGPD via <code>HASH_SECRET</code> (toutes les requêtes utilisateur sont hashées avant log)</li>
+<li>Démarré via profile Docker Compose (<code>--profile duke</code>)</li>
+</ul>
+
+<h2 id="flux-applicatifs-typiques">Flux applicatifs typiques<a class="header-anchor" href="#flux-applicatifs-typiques" name="flux-applicatifs-typiques"></a>
+</h2>
+
+<h3 id="connexion-dun-utilisateur">Connexion d'un utilisateur<a class="header-anchor" href="#connexion-dun-utilisateur" name="connexion-dun-utilisateur"></a>
+</h3>
+
+<pre><code>Browser → Caddy (TLS) → Rails (Puma)
+                          → Devise (auth)
+                          → Apartment.switch(tenant)
+                          → Render dashboard
+</code></pre>
+
+<h3 id="saisie-dune-intervention-culturale">Saisie d'une intervention culturale<a class="header-anchor" href="#saisie-dune-intervention-culturale" name="saisie-dune-intervention-culturale"></a>
+</h3>
+
+<pre><code>Browser → Rails (formulaire)
+            → PostgreSQL (insert intervention + working_periods + cost_amount)
+            → Sidekiq.perform_async (recalcul agrégats parcelle)
+            → Redis (job enqueue)
+Sidekiq → Redis (job dequeue)
+       → PostgreSQL (recalculs)
+       → ActionCable / WebSocket → Browser (notification temps réel)
+</code></pre>
+
+<h3 id="import-dun-catalogue-long">Import d'un catalogue (long)<a class="header-anchor" href="#import-dun-catalogue-long" name="import-dun-catalogue-long"></a>
+</h3>
+
+<pre><code>Browser → Rails (upload fichier)
+            → ActiveStorage (S3 ou disque)
+            → Sidekiq.perform_async(CatalogImportJob)
+            → Reply 202 Accepted
+
+Sidekiq → Lecture fichier
+       → Parsing
+       → Insert batch par batch
+       → PostgreSQL
+       → Update progress (broadcast WebSocket)
+</code></pre>
+
+<h2 id="choix-structurants-et-trade-offs">Choix structurants et trade-offs<a class="header-anchor" href="#choix-structurants-et-trade-offs" name="choix-structurants-et-trade-offs"></a>
+</h2>
+
+<h3 id="pourquoi-rails-6-ruby-2-6">Pourquoi Rails 6 / Ruby 2.6 ?<a class="header-anchor" href="#pourquoi-rails-6-ruby-2-6" name="pourquoi-rails-6-ruby-2-6"></a>
+</h3>
+
+<p>Décision historique. La migration vers Ruby 3.x + Rails 7 est dans la roadmap v6 — voir <code>docs/planning/v6-brainstorm.md</code> dans le repo Ekylibre.</p>
+
+<h3 id="pourquoi-postgis-et-pas-une-couche-g-o-s-par-e">Pourquoi PostGIS et pas une couche géo séparée ?<a class="header-anchor" href="#pourquoi-postgis-et-pas-une-couche-g-o-s-par-e" name="pourquoi-postgis-et-pas-une-couche-g-o-s-par-e"></a>
+</h3>
+
+<p>Les données géospatiales (parcelles, observations) sont au cœur des requêtes métier (« quelles interventions sur cette zone ? »). Une couche séparée imposerait des jointures cross-store coûteuses. PostGIS gère 99 % des cas avec <code>ST_Intersects</code> / <code>ST_Area</code> natifs.</p>
+
+<h3 id="pourquoi-multi-tenant-par-sch-mas-et-pas-par-database">Pourquoi multi-tenant par schémas et pas par database ?<a class="header-anchor" href="#pourquoi-multi-tenant-par-sch-mas-et-pas-par-database" name="pourquoi-multi-tenant-par-sch-mas-et-pas-par-database"></a>
+</h3>
+
+<ul>
+<li>
+<strong>Coût opérationnel</strong> : 1 DB = 1 backup, 1 monitoring, 1 set de migrations</li>
+<li>
+<strong>Isolation suffisante</strong> : <code>search_path</code> PostgreSQL garantit qu'un tenant ne voit pas les autres</li>
+<li>
+<strong>Limite</strong> : remontée à ~1000 tenants par instance avant de devoir sharder</li>
+</ul>
+
+<h3 id="pourquoi-caddy-et-pas-nginx">Pourquoi Caddy et pas Nginx ?<a class="header-anchor" href="#pourquoi-caddy-et-pas-nginx" name="pourquoi-caddy-et-pas-nginx"></a>
+</h3>
+
+<ul>
+<li>
+<strong>Cert auto</strong> intégré (pas de cron <code>certbot renew</code>)</li>
+<li>
+<strong><code>on_demand_tls</code></strong> : provisionne à la volée pour les sous-domaines tenant, sans recharger la config</li>
+<li>Configuration plus lisible (Caddyfile vs nginx.conf)</li>
+</ul>
+
+<h3 id="pourquoi-sidekiq-plut-t-que-sucker-punch-delayed-job">Pourquoi Sidekiq plutôt que Sucker Punch / Delayed Job ?<a class="header-anchor" href="#pourquoi-sidekiq-plut-t-que-sucker-punch-delayed-job" name="pourquoi-sidekiq-plut-t-que-sucker-punch-delayed-job"></a>
+</h3>
+
+<ul>
+<li>Performances Redis-backed &gt;&gt; DB-backed</li>
+<li>Concurrent threads (vs processes) → moins gourmand en RAM</li>
+<li>Écosystème mature (Pro, Web UI, plugins de retry/dead-set)</li>
+</ul>
+
+<h2 id="ressources">Ressources<a class="header-anchor" href="#ressources" name="ressources"></a>
+</h2>
+
+<ul>
+<li>
+<strong>Modèle de données</strong> : voir <a href="/techdoc/data-model/">Data model</a>
+</li>
+<li>
+<strong>Plugins</strong> : <code>Gemfile.local</code> (dev) et <code>docker/prod/Gemfile.prod</code> (prod)</li>
+<li>
+<strong>Code source</strong> : <a href="https://github.com/ekylibre/ekylibre">github.com/ekylibre/ekylibre</a>
+</li>
+</ul>
+</body></html>
+
+      <p class="open-source-notice">
+          <i class="fa fa-file"></i> Cette documentation est <a href="https://github.com/ekylibre/doc">open-source</a>. Aidez-nous à l'améliorer en ouvrant une issue ou une pull request.
+      </p>
+    </div>
+
+  </div>
+  <hr>
+  <footer>
+    <p class="pull-left">
+      &copy; Ekylibre Authors 2014-2026 | Documentation Distributed under CC-BY-4.0
+    </p>
+    <p class="pull-left">
+       &copy; 2026 Ekylibre SAS. All rights reserved. Ekylibre SAS has registered trademarks and uses trademarks.
+    </p>
+  </footer>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="/javascripts/jquery.js"</script>
+  <script src="/javascripts/bootstrap.min.js"></script>
+</body>
+</html>

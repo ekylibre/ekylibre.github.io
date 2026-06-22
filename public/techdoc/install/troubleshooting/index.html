@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="An open-source monitoring system with a dimensional data model, flexible query language, efficient time series database and modern alerting approach.">
+    <meta name="keywords" content="prometheus, monitoring, monitoring system, time series, time series database, alerting, metrics, telemetry">
+    <meta name="author" content="Prometheus">
+    <meta name="twitter:card" content="summary">
+    <meta property="og:description" content="An open-source monitoring system with a dimensional data model, flexible query language, efficient time series database and modern alerting approach.">
+    <meta property="og:image" content="https://prometheus.io/assets/favicons/android-chrome-192x192.png">
+
+    <link rel="alternate" type="application/atom+xml" title="Prometheus Blog » Feed" href="/blog/feed.xml">
+
+    <link rel="shortcut icon" href="/assets/favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/assets/favicons/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/assets/favicons/android-chrome-manifest.json">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    
+    <meta property="og:title" content="Résolution de problèmes | Prometheus">
+    <title>Résolution de problèmes | Prometheus</title>
+    
+
+    <!-- Bootstrap core CSS -->
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="/stylesheets/docs.css" rel="stylesheet">
+    <link href="/stylesheets/routing-tree-editor.css" rel="stylesheet">
+    <link href="/stylesheets/techdoc.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/stylesheets/fontawesome.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,300italic,400' rel='stylesheet' type='text/css'>
+    <style>
+      .nav-lang-switcher { padding: 15px; line-height: 20px; font-weight: 700; letter-spacing: 0.05em; }
+      .nav-lang-switcher a, .nav-lang-switcher span { color: inherit; padding: 0 4px; text-decoration: none; }
+      .nav-lang-switcher a { opacity: 0.55; }
+      .nav-lang-switcher a:hover, .nav-lang-switcher a:focus { opacity: 1; text-decoration: underline; }
+      .nav-lang-switcher span[aria-current] { opacity: 1; }
+      .nav-lang-switcher .lang-sep { opacity: 0.35; }
+    </style>
+  </head>
+
+  <body>
+
+  <div class="">
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="nav navbar-nav navbar-right main-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/fr/user-doc/demarrage">User Doc FR</a></li>
+            <li><a href="/techdoc/">Tech Doc</a></li>
+            <li><a href="/api">API Doc</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="https://discord.gg/BSpD6hq7qR">Forum</a></li>
+            <li><a href="https://demo.ekylibre-dev.com">Demo</a></li>
+            <li><a href="https://github.com/ekylibre"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://twitter.com/ekylibre"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://discord.gg/BSpD6hq7qR"><i class="fab fa-discord"></i></a></li>
+            <li class="nav-lang-switcher" role="navigation" aria-label="Language">
+              
+                <span aria-current="page" lang="en">EN</span><span class="lang-sep" aria-hidden="true">|</span><a href="/fr/" hreflang="fr" lang="fr">FR</a>
+              
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 side-nav-col">
+      
+        <nav class="techdoc-sidebar" aria-label="Documentation technique"><ul class="nav techdoc-nav"><li><a class="techdoc-root" href="/techdoc/"><i class="fa fa-book" aria-hidden="true"></i> <strong>Accueil</strong></a></li><li class="active has-children"><a href="/techdoc/install/"><i class="fa fa-rocket" aria-hidden="true"></i> Installation</a><ul class="nav"><li><a href="/techdoc/install/prerequisites/"><i class="fa fa-check-square-o" aria-hidden="true"></i> Prérequis</a></li><li><a href="/techdoc/install/docker-dev/"><i class="fa fa-cube" aria-hidden="true"></i> Docker dev</a></li><li><a href="/techdoc/install/native-ubuntu/"><i class="fa fa-ubuntu" aria-hidden="true"></i> Native Ubuntu</a></li><li><a href="/techdoc/install/app-setup/"><i class="fa fa-cogs" aria-hidden="true"></i> Setup application</a></li><li><a href="/techdoc/install/docker-prod-standalone/"><i class="fa fa-server" aria-hidden="true"></i> Docker prod standalone</a></li><li><a href="/techdoc/install/docker-prod-dokploy/"><i class="fa fa-cloud" aria-hidden="true"></i> Docker prod Dokploy</a></li><li class="active current"><a href="/techdoc/install/troubleshooting/" aria-current="page"><i class="fa fa-medkit" aria-hidden="true"></i> Troubleshooting</a></li></ul></li><li><a href="/techdoc/architecture/"><i class="fa fa-sitemap" aria-hidden="true"></i> Architecture</a></li><li><a href="/techdoc/data-model/"><i class="fa fa-database" aria-hidden="true"></i> Data model</a></li><li><a href="/techdoc/contributing/"><i class="fa fa-code-fork" aria-hidden="true"></i> Contribuer</a></li></ul></nav>
+      
+    </div>
+
+    <div class="col-md-9 doc-content">
+      <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<h1 id="r-solution-de-probl-mes" class="page-header">Résolution de problèmes<a class="header-anchor" href="#r-solution-de-probl-mes" name="r-solution-de-probl-mes"></a>
+</h1>
+<div class="toc toc-full"><ul>
+<li><a href="#native-ubuntu">Native Ubuntu
+</a></li>
+<ul>
+<li><a href="#postgis-error-source-code-not-in-proj-4-format-proj">PostGIS — <code>ERROR: source code not in proj.4 format</code> {#proj}
+</a></li>
+<li><a href="#postgresql-fatal-peer-authentication-failed">PostgreSQL — <code>FATAL: Peer authentication failed</code>
+</a></li>
+<li><a href="#bundle-install-choue-sur-nokogiri-ou-rgeo">
+<code>bundle install</code> échoue sur <code>nokogiri</code> ou <code>rgeo</code>
+</a></li>
+<li><a href="#java-introuvable-au-d-marrage">Java introuvable au démarrage
+</a></li>
+</ul>
+<li><a href="#docker-dev">Docker dev
+</a></li>
+<ul>
+<li><a href="#permissions-sur-vendor-bundle-ou-app">Permissions sur <code>vendor/bundle</code> ou <code>/app</code>
+</a></li>
+<li><a href="#warning-redis-memory-overcommit-must-be-enabled">Warning Redis <code>Memory overcommit must be enabled</code>
+</a></li>
+<li><a href="#image-de-base-inaccessible-403-forbidden">Image de base inaccessible (<code>403 Forbidden</code>)
+</a></li>
+<li><a href="#https-ekylibre-localhost-non-joignable-cert-invalide">
+<code>https://ekylibre.localhost/</code> non joignable / cert invalide
+</a></li>
+</ul>
+<li><a href="#docker-prod">Docker prod
+</a></li>
+<ul>
+<li><a href="#caddy-ne-provisionne-pas-de-cert">Caddy ne provisionne pas de cert
+</a></li>
+<li><a href="#lexicon-nest-pas-charg">Lexicon n'est pas chargé
+</a></li>
+<li><a href="#secret_key_base-is-empty">
+<code>SECRET_KEY_BASE is empty</code>
+</a></li>
+<li><a href="#app-container-red-marre-en-boucle">App container redémarre en boucle
+</a></li>
+<li><a href="#duke-renvoie-502">Duke renvoie 502
+</a></li>
+</ul>
+<li><a href="#app-data">App / data
+</a></li>
+<ul>
+<li><a href="#lexicon-productionnature-count-0">
+<code>Lexicon::ProductionNature.count == 0</code>
+</a></li>
+<li><a href="#tenant-inaccessible-apartment-tenantnotfound">Tenant inaccessible — <code>Apartment::TenantNotFound</code>
+</a></li>
+<li><a href="#sidekiq-ne-traite-pas-les-jobs">Sidekiq ne traite pas les jobs
+</a></li>
+</ul>
+<li><a href="#vous-ne-trouvez-pas-votre-erreur">Vous ne trouvez pas votre erreur ?
+</a></li>
+</ul></div>
+
+<p>Erreurs fréquentes et solutions, regroupées par symptôme.</p>
+
+<h2 id="native-ubuntu">Native Ubuntu<a class="header-anchor" href="#native-ubuntu" name="native-ubuntu"></a>
+</h2>
+
+<h3 id="postgis-error-source-code-not-in-proj-4-format-proj">PostGIS — <code>ERROR: source code not in proj.4 format</code> {#proj}<a class="header-anchor" href="#postgis-error-source-code-not-in-proj-4-format-proj" name="postgis-error-source-code-not-in-proj-4-format-proj"></a>
+</h3>
+
+<p>La version de PROJ installée par Ubuntu 20.04 est parfois trop récente pour la version de PostGIS embarquée.</p>
+
+<ol>
+<li>Vérifier la version de PROJ installée :
+<code>bash
+dpkg -l | grep ^ii.*proj
+</code>
+</li>
+<li>Si version ≥ 5.2.0 et erreur au démarrage de Rails :
+
+<ul>
+<li>Récupérer un snapshot compatible de <code>proj.tar.gz</code> auprès d'un autre développeur Ekylibre</li>
+<li>Extraire et déposer dans <code>/opt/proj/share/</code> :
+<code>bash
+sudo mkdir -p /opt/proj/share
+sudo tar -xzf proj.tar.gz -C /opt/proj/share
+</code>
+</li>
+</ul>
+</li>
+<li>Définir la variable d'environnement avant de lancer Rails :
+<code>bash
+export PROJ_LIB=/opt/proj/share
+bundle exec rails s
+</code>
+</li>
+</ol>
+
+<h3 id="postgresql-fatal-peer-authentication-failed">PostgreSQL — <code>FATAL: Peer authentication failed</code><a class="header-anchor" href="#postgresql-fatal-peer-authentication-failed" name="postgresql-fatal-peer-authentication-failed"></a>
+</h3>
+
+<p><code>pg_hba.conf</code> utilise par défaut l'authentification <code>peer</code> pour les connexions Unix socket. Ekylibre s'attend à <code>md5</code>.</p>
+
+<p>Éditer :</p>
+
+<pre><code class="bash">sudo vim /etc/postgresql/13/main/pg_hba.conf
+</code></pre>
+
+<p>Remplacer :</p>
+
+<pre><code>local   all             all                                peer
+</code></pre>
+
+<p>par :</p>
+
+<pre><code>local   all             all                                md5
+</code></pre>
+
+<p>Puis :</p>
+
+<pre><code class="bash">sudo systemctl restart postgresql
+</code></pre>
+
+<h3 id="bundle-install-choue-sur-nokogiri-ou-rgeo">
+<code>bundle install</code> échoue sur <code>nokogiri</code> ou <code>rgeo</code><a class="header-anchor" href="#bundle-install-choue-sur-nokogiri-ou-rgeo" name="bundle-install-choue-sur-nokogiri-ou-rgeo"></a>
+</h3>
+
+<p>Mettre à jour Bundler :</p>
+
+<pre><code class="bash">gem install bundler -v '&gt;= 2.3'
+</code></pre>
+
+<p>Si l'erreur persiste, installer les en-têtes manquants :</p>
+
+<pre><code class="bash">sudo apt install -y libxml2-dev libxslt1-dev libgeos-dev libgeos++-dev libproj-dev
+</code></pre>
+
+<h3 id="java-introuvable-au-d-marrage">Java introuvable au démarrage<a class="header-anchor" href="#java-introuvable-au-d-marrage" name="java-introuvable-au-d-marrage"></a>
+</h3>
+
+<p>Vérifier <code>JAVA_HOME</code> :</p>
+
+<pre><code class="bash">echo $JAVA_HOME
+# Doit retourner /usr/lib/jvm/java-8-openjdk-amd64
+</code></pre>
+
+<p>Si vide :</p>
+
+<pre><code class="bash">echo 'export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64' &gt;&gt; ~/.bashrc
+source ~/.bashrc
+</code></pre>
+
+<h2 id="docker-dev">Docker dev<a class="header-anchor" href="#docker-dev" name="docker-dev"></a>
+</h2>
+
+<h3 id="permissions-sur-vendor-bundle-ou-app">Permissions sur <code>vendor/bundle</code> ou <code>/app</code><a class="header-anchor" href="#permissions-sur-vendor-bundle-ou-app" name="permissions-sur-vendor-bundle-ou-app"></a>
+</h3>
+
+<p>Le container écrit avec son UID interne. Si votre UID hôte n'est pas <code>1000</code>, les fichiers créés appartiennent à un user inexistant.</p>
+
+<p>Vérifier votre UID/GID :</p>
+
+<pre><code class="bash">id
+# uid=1001(djoulin) gid=1001(djoulin) ...
+</code></pre>
+
+<p>Renseigner dans <code>docker/dev/.env</code> :</p>
+
+<pre><code class="dotenv">UID=1001
+GID=1001
+</code></pre>
+
+<p>Supprimer les volumes et rebuilder :</p>
+
+<pre><code class="bash">docker volume rm dev_bundle-volume dev_docker-dev
+docker compose -f docker/dev/docker-compose.yml build --no-cache
+</code></pre>
+
+<h3 id="warning-redis-memory-overcommit-must-be-enabled">Warning Redis <code>Memory overcommit must be enabled</code><a class="header-anchor" href="#warning-redis-memory-overcommit-must-be-enabled" name="warning-redis-memory-overcommit-must-be-enabled"></a>
+</h3>
+
+<p>Sur l'hôte Linux :</p>
+
+<pre><code class="bash">sudo sysctl vm.overcommit_memory=1
+echo "vm.overcommit_memory = 1" | sudo tee -a /etc/sysctl.conf
+</code></pre>
+
+<h3 id="image-de-base-inaccessible-403-forbidden">Image de base inaccessible (<code>403 Forbidden</code>)<a class="header-anchor" href="#image-de-base-inaccessible-403-forbidden" name="image-de-base-inaccessible-403-forbidden"></a>
+</h3>
+
+<p>Certains pipelines historiques pointent encore sur <code>registry.gitlab.com</code>. S'authentifier :</p>
+
+<pre><code class="bash">docker login registry.gitlab.com
+# Login: &lt;votre-username-gitlab&gt;
+# Password: &lt;Personal Access Token avec scope read_registry&gt;
+</code></pre>
+
+<h3 id="https-ekylibre-localhost-non-joignable-cert-invalide">
+<code>https://ekylibre.localhost/</code> non joignable / cert invalide<a class="header-anchor" href="#https-ekylibre-localhost-non-joignable-cert-invalide" name="https-ekylibre-localhost-non-joignable-cert-invalide"></a>
+</h3>
+
+<p>Faire confiance à la CA Caddy :</p>
+
+<pre><code class="bash">sudo apt install -y libnss3-tools
+docker/dev/trust-ca.sh
+</code></pre>
+
+<p><strong>Redémarrer le navigateur</strong> après. Voir <a href="/techdoc/install/docker-dev/">Docker dev §6</a>.</p>
+
+<h2 id="docker-prod">Docker prod<a class="header-anchor" href="#docker-prod" name="docker-prod"></a>
+</h2>
+
+<h3 id="caddy-ne-provisionne-pas-de-cert">Caddy ne provisionne pas de cert<a class="header-anchor" href="#caddy-ne-provisionne-pas-de-cert" name="caddy-ne-provisionne-pas-de-cert"></a>
+</h3>
+
+<p>Vérifier dans l'ordre :</p>
+
+<ol>
+<li><p><strong>Ports 80/443 ouverts depuis Internet</strong> (challenge ACME) — tester depuis votre poste (pas depuis le serveur) :
+<code>bash
+curl -I http://example.com/
+</code></p></li>
+<li><p><strong>DNS du domaine ET du wildcard</strong> pointent vers le serveur :
+<code>bash
+dig +short example.com
+dig +short acme.example.com
+</code>
+Les deux doivent renvoyer l'IP du serveur.</p></li>
+<li>
+<p><strong>L'<code>ask</code> endpoint répond</strong> (filtre <code>on_demand_tls</code>) :
+```bash
+docker compose -f docker/prod/docker-compose.yml exec caddy \
+ wget -O- <a href="http://app:3000/health">http://app:3000/health</a></p>
+
+<h1 id="attendu-ok" class="page-header">Attendu : ok<a class="header-anchor" href="#attendu-ok" name="attendu-ok"></a>
+</h1>
+
+<pre><code>Si pas accessible : vérifier que `app` est healthy et que les containers sont sur le même réseau.
+</code></pre>
+</li>
+<li><p><strong>Logs Caddy</strong> :
+<code>bash
+docker compose -f docker/prod/docker-compose.yml logs caddy \
+ | grep -iE "obtain|challenge|error" | tail -20
+</code></p></li>
+<li>
+<p><strong>Rate-limit Let's Encrypt atteint</strong> (50 certs/semaine/domaine racine) :</p>
+
+<ul>
+<li>Si <code>urn:ietf:params:acme:error:rateLimited</code> → attendre 7 jours</li>
+<li>Ou basculer en challenge DNS-01 wildcard (voir <a href="https://caddyserver.com/docs/automatic-https#dns-challenge">doc Caddy</a>)</li>
+</ul>
+</li>
+</ol>
+
+<h3 id="lexicon-nest-pas-charg">Lexicon n'est pas chargé<a class="header-anchor" href="#lexicon-nest-pas-charg" name="lexicon-nest-pas-charg"></a>
+</h3>
+
+<pre><code class="bash">./docker/prod/scripts/lexicon-reload.sh
+</code></pre>
+
+<h3 id="secret_key_base-is-empty">
+<code>SECRET_KEY_BASE is empty</code><a class="header-anchor" href="#secret_key_base-is-empty" name="secret_key_base-is-empty"></a>
+</h3>
+
+<p>Générer un secret et l'ajouter au <code>.env</code> :</p>
+
+<pre><code class="bash">echo "SECRET_KEY_BASE=$(openssl rand -hex 64)" &gt;&gt; docker/prod/.env
+</code></pre>
+
+<h3 id="app-container-red-marre-en-boucle">App container redémarre en boucle<a class="header-anchor" href="#app-container-red-marre-en-boucle" name="app-container-red-marre-en-boucle"></a>
+</h3>
+
+<p>Le healthcheck a <code>start_period: 600s</code> (10 min) pour laisser le temps au lexicon de charger. Si l'app redémarre quand même :</p>
+
+<pre><code class="bash"># DB joignable ?
+docker compose -f docker/prod/docker-compose.yml exec db pg_isready -U ekylibre
+
+# Logs détaillés
+docker compose -f docker/prod/docker-compose.yml logs --tail=200 app
+</code></pre>
+
+<h3 id="duke-renvoie-502">Duke renvoie 502<a class="header-anchor" href="#duke-renvoie-502" name="duke-renvoie-502"></a>
+</h3>
+
+<ul>
+<li>Vérifier que le profile Duke est actif :
+<code>bash
+docker compose -f docker/prod/docker-compose.yml ps
+</code>
+</li>
+<li>Logs Duke :
+<code>bash
+docker compose -f docker/prod/docker-compose.yml --profile duke logs -f duke-api
+</code>
+</li>
+<li>Vérifier <code>HASH_SECRET</code> non-vide et au moins une clé LLM (<code>ANTHROPIC_API_KEY</code> ou <code>MISTRAL_API_KEY</code>) renseignée</li>
+</ul>
+
+<h2 id="app-data">App / data<a class="header-anchor" href="#app-data" name="app-data"></a>
+</h2>
+
+<h3 id="lexicon-productionnature-count-0">
+<code>Lexicon::ProductionNature.count == 0</code><a class="header-anchor" href="#lexicon-productionnature-count-0" name="lexicon-productionnature-count-0"></a>
+</h3>
+
+<p>Le lexicon ne s'est pas chargé. Relancer :</p>
+
+<ul>
+<li>
+<strong>Native</strong> : <code>bin/rake lexicon:load</code>
+</li>
+<li>
+<strong>Docker dev</strong> : <code>docker compose -f docker/dev/docker-compose.yml exec app bundle exec rake lexicon:load</code>
+</li>
+<li>
+<strong>Docker prod</strong> : <code>./docker/prod/scripts/lexicon-reload.sh</code>
+</li>
+</ul>
+
+<h3 id="tenant-inaccessible-apartment-tenantnotfound">Tenant inaccessible — <code>Apartment::TenantNotFound</code><a class="header-anchor" href="#tenant-inaccessible-apartment-tenantnotfound" name="tenant-inaccessible-apartment-tenantnotfound"></a>
+</h3>
+
+<p>Le tenant n'existe pas ou son nom dans l'URL ne correspond pas. Lister les tenants :</p>
+
+<pre><code class="bash">bundle exec rails runner "puts Apartment::Tenant.list"
+</code></pre>
+
+<p>Créer un tenant manquant :</p>
+
+<pre><code class="bash"># Native
+bin/rake tenant:init TENANT=my-farm
+# Docker
+./docker/prod/scripts/tenant-init.sh my-farm admin@my-farm.com 'MotDePasse!'
+</code></pre>
+
+<h3 id="sidekiq-ne-traite-pas-les-jobs">Sidekiq ne traite pas les jobs<a class="header-anchor" href="#sidekiq-ne-traite-pas-les-jobs" name="sidekiq-ne-traite-pas-les-jobs"></a>
+</h3>
+
+<p>Vérifier qu'il tourne :</p>
+
+<pre><code class="bash"># Native
+ps aux | grep sidekiq
+
+# Docker
+docker compose -f docker/dev/docker-compose.yml ps sidekiq
+</code></pre>
+
+<p>Vérifier la connexion Redis depuis Sidekiq :</p>
+
+<pre><code class="bash">docker compose -f docker/dev/docker-compose.yml exec sidekiq \
+  bundle exec rails runner "puts Sidekiq.redis(&amp;:ping)"
+# PONG
+</code></pre>
+
+<h2 id="vous-ne-trouvez-pas-votre-erreur">Vous ne trouvez pas votre erreur ?<a class="header-anchor" href="#vous-ne-trouvez-pas-votre-erreur" name="vous-ne-trouvez-pas-votre-erreur"></a>
+</h2>
+
+<ul>
+<li>Forum Discord : <a href="https://discord.gg/BSpD6hq7qR">https://discord.gg/BSpD6hq7qR</a>
+</li>
+<li>Issues GitHub : <a href="https://github.com/ekylibre/ekylibre/issues">https://github.com/ekylibre/ekylibre/issues</a>
+</li>
+</ul>
+
+<p>Quand vous demandez de l'aide, joignez systématiquement :</p>
+
+<ul>
+<li>Variante d'installation utilisée</li>
+<li>Branche / commit (<code>git rev-parse HEAD</code>)</li>
+<li>Sortie complète de l'erreur</li>
+<li>Sortie de <code>docker compose ... ps</code> (variantes Docker) ou <code>systemctl status postgresql redis-server</code> (native)</li>
+</ul>
+</body></html>
+
+      <p class="open-source-notice">
+          <i class="fa fa-file"></i> Cette documentation est <a href="https://github.com/ekylibre/doc">open-source</a>. Aidez-nous à l'améliorer en ouvrant une issue ou une pull request.
+      </p>
+    </div>
+
+  </div>
+  <hr>
+  <footer>
+    <p class="pull-left">
+      &copy; Ekylibre Authors 2014-2026 | Documentation Distributed under CC-BY-4.0
+    </p>
+    <p class="pull-left">
+       &copy; 2026 Ekylibre SAS. All rights reserved. Ekylibre SAS has registered trademarks and uses trademarks.
+    </p>
+  </footer>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="/javascripts/jquery.js"</script>
+  <script src="/javascripts/bootstrap.min.js"></script>
+</body>
+</html>

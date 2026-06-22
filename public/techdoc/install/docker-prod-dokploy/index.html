@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="An open-source monitoring system with a dimensional data model, flexible query language, efficient time series database and modern alerting approach.">
+    <meta name="keywords" content="prometheus, monitoring, monitoring system, time series, time series database, alerting, metrics, telemetry">
+    <meta name="author" content="Prometheus">
+    <meta name="twitter:card" content="summary">
+    <meta property="og:description" content="An open-source monitoring system with a dimensional data model, flexible query language, efficient time series database and modern alerting approach.">
+    <meta property="og:image" content="https://prometheus.io/assets/favicons/android-chrome-192x192.png">
+
+    <link rel="alternate" type="application/atom+xml" title="Prometheus Blog » Feed" href="/blog/feed.xml">
+
+    <link rel="shortcut icon" href="/assets/favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/assets/favicons/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/assets/favicons/android-chrome-manifest.json">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    
+    <meta property="og:title" content="Docker production (Dokploy) | Prometheus">
+    <title>Docker production (Dokploy) | Prometheus</title>
+    
+
+    <!-- Bootstrap core CSS -->
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="/stylesheets/docs.css" rel="stylesheet">
+    <link href="/stylesheets/routing-tree-editor.css" rel="stylesheet">
+    <link href="/stylesheets/techdoc.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/stylesheets/fontawesome.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,300italic,400' rel='stylesheet' type='text/css'>
+    <style>
+      .nav-lang-switcher { padding: 15px; line-height: 20px; font-weight: 700; letter-spacing: 0.05em; }
+      .nav-lang-switcher a, .nav-lang-switcher span { color: inherit; padding: 0 4px; text-decoration: none; }
+      .nav-lang-switcher a { opacity: 0.55; }
+      .nav-lang-switcher a:hover, .nav-lang-switcher a:focus { opacity: 1; text-decoration: underline; }
+      .nav-lang-switcher span[aria-current] { opacity: 1; }
+      .nav-lang-switcher .lang-sep { opacity: 0.35; }
+    </style>
+  </head>
+
+  <body>
+
+  <div class="">
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="nav navbar-nav navbar-right main-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/fr/user-doc/demarrage">User Doc FR</a></li>
+            <li><a href="/techdoc/">Tech Doc</a></li>
+            <li><a href="/api">API Doc</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="https://discord.gg/BSpD6hq7qR">Forum</a></li>
+            <li><a href="https://demo.ekylibre-dev.com">Demo</a></li>
+            <li><a href="https://github.com/ekylibre"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://twitter.com/ekylibre"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://discord.gg/BSpD6hq7qR"><i class="fab fa-discord"></i></a></li>
+            <li class="nav-lang-switcher" role="navigation" aria-label="Language">
+              
+                <span aria-current="page" lang="en">EN</span><span class="lang-sep" aria-hidden="true">|</span><a href="/fr/" hreflang="fr" lang="fr">FR</a>
+              
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 side-nav-col">
+      
+        <nav class="techdoc-sidebar" aria-label="Documentation technique"><ul class="nav techdoc-nav"><li><a class="techdoc-root" href="/techdoc/"><i class="fa fa-book" aria-hidden="true"></i> <strong>Accueil</strong></a></li><li class="active has-children"><a href="/techdoc/install/"><i class="fa fa-rocket" aria-hidden="true"></i> Installation</a><ul class="nav"><li><a href="/techdoc/install/prerequisites/"><i class="fa fa-check-square-o" aria-hidden="true"></i> Prérequis</a></li><li><a href="/techdoc/install/docker-dev/"><i class="fa fa-cube" aria-hidden="true"></i> Docker dev</a></li><li><a href="/techdoc/install/native-ubuntu/"><i class="fa fa-ubuntu" aria-hidden="true"></i> Native Ubuntu</a></li><li><a href="/techdoc/install/app-setup/"><i class="fa fa-cogs" aria-hidden="true"></i> Setup application</a></li><li><a href="/techdoc/install/docker-prod-standalone/"><i class="fa fa-server" aria-hidden="true"></i> Docker prod standalone</a></li><li class="active current"><a href="/techdoc/install/docker-prod-dokploy/" aria-current="page"><i class="fa fa-cloud" aria-hidden="true"></i> Docker prod Dokploy</a></li><li><a href="/techdoc/install/troubleshooting/"><i class="fa fa-medkit" aria-hidden="true"></i> Troubleshooting</a></li></ul></li><li><a href="/techdoc/architecture/"><i class="fa fa-sitemap" aria-hidden="true"></i> Architecture</a></li><li><a href="/techdoc/data-model/"><i class="fa fa-database" aria-hidden="true"></i> Data model</a></li><li><a href="/techdoc/contributing/"><i class="fa fa-code-fork" aria-hidden="true"></i> Contribuer</a></li></ul></nav>
+      
+    </div>
+
+    <div class="col-md-9 doc-content">
+      <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<h1 id="installation-docker-production-via-dokploy" class="page-header">Installation Docker — Production via Dokploy<a class="header-anchor" href="#installation-docker-production-via-dokploy" name="installation-docker-production-via-dokploy"></a>
+</h1>
+<div class="toc toc-full"><ul>
+<li><a href="#quand-choisir-dokploy-plut-t-que-standalone">Quand choisir Dokploy plutôt que standalone ?
+</a></li>
+<li><a href="#pr-requis">Prérequis
+</a></li>
+<ul><li><a href="#configuration-sysctl-du-serveur">Configuration sysctl du serveur
+</a></li></ul>
+<li><a href="#1-cr-er-le-projet-dokploy">1. Créer le projet Dokploy
+</a></li>
+<li><a href="#2-configurer-la-source">2. Configurer la source
+</a></li>
+<li><a href="#3-renseigner-les-variables-denvironnement">3. Renseigner les variables d'environnement
+</a></li>
+<li><a href="#4-activer-traefik-certificats">4. Activer Traefik / certificats
+</a></li>
+<li><a href="#5-premier-d-ploiement">5. Premier déploiement
+</a></li>
+<li><a href="#6-push-to-deploy">6. Push-to-deploy
+</a></li>
+<li><a href="#7-cr-er-un-premier-tenant">7. Créer un premier tenant
+</a></li>
+<li><a href="#8-backups-via-dokploy">8. Backups via Dokploy
+</a></li>
+<li><a href="#9-monitoring">9. Monitoring
+</a></li>
+<li><a href="#10-mises-jour">10. Mises à jour
+</a></li>
+<li><a href="#11-erreurs-fr-quentes">11. Erreurs fréquentes
+</a></li>
+<li><a href="#ressources">Ressources
+</a></li>
+</ul></div>
+
+<p><a href="https://dokploy.com/">Dokploy</a> est un PaaS open-source basé sur Traefik. Cette variante permet de gérer plusieurs apps sur un même serveur, avec une UI web (logs, backups, push-to-deploy Git).</p>
+
+<h2 id="quand-choisir-dokploy-plut-t-que-standalone">Quand choisir Dokploy plutôt que standalone ?<a class="header-anchor" href="#quand-choisir-dokploy-plut-t-que-standalone" name="quand-choisir-dokploy-plut-t-que-standalone"></a>
+</h2>
+
+<table class=" table table-bordered">
+<thead>
+<tr>
+<th>Mode</th>
+<th>Quand l'utiliser</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<strong>Standalone</strong> (<code>docker-compose.yml</code> + Caddy)</td>
+<td>Une seule app sur le serveur, contrôle total</td>
+</tr>
+<tr>
+<td>
+<strong>Dokploy</strong> (<code>docker-compose.dokploy.yml</code> + Traefik)</td>
+<td>Plusieurs apps sur le serveur, UI de gestion, push-to-deploy</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="pr-requis">Prérequis<a class="header-anchor" href="#pr-requis" name="pr-requis"></a>
+</h2>
+
+<ul>
+<li>Une instance <strong>Dokploy</strong> installée :
+<code>bash
+curl -sSL https://dokploy.com/install.sh | sh
+</code>
+</li>
+<li>Un serveur Linux dédié, 4 vCPU / 8 GB RAM minimum</li>
+<li>Ports <code>80</code> et <code>443</code> ouverts publiquement (gérés par Traefik via Dokploy)</li>
+<li>Un nom de domaine avec <strong>wildcard DNS</strong> pointant vers le serveur :
+<code>
+example.com       A    &lt;IP_serveur&gt;
+*.example.com     A    &lt;IP_serveur&gt;
+</code>
+</li>
+</ul>
+
+<h3 id="configuration-sysctl-du-serveur">Configuration sysctl du serveur<a class="header-anchor" href="#configuration-sysctl-du-serveur" name="configuration-sysctl-du-serveur"></a>
+</h3>
+
+<p>À faire <strong>une fois</strong> sur l'hôte avant le premier déploiement (en SSH root) :</p>
+
+<pre><code class="bash">echo "vm.overcommit_memory = 1" &gt; /etc/sysctl.d/99-redis-overcommit.conf
+sysctl --system
+sysctl vm.overcommit_memory
+# vm.overcommit_memory = 1
+</code></pre>
+
+<p>Non-bloquant : Redis fonctionne sans, mais un warning persiste dans les logs.</p>
+
+<h2 id="1-cr-er-le-projet-dokploy">1. Créer le projet Dokploy<a class="header-anchor" href="#1-cr-er-le-projet-dokploy" name="1-cr-er-le-projet-dokploy"></a>
+</h2>
+
+<p>Dans l'UI Dokploy :</p>
+
+<ol>
+<li>
+<strong>Projects</strong> → <strong>Create Project</strong> → nommer <code>ekylibre</code>
+</li>
+<li>Dans le projet, <strong>Create Service</strong> → <strong>Compose</strong>
+</li>
+<li>Nommer la compose app : <code>ekylibre-prod</code>
+</li>
+</ol>
+
+<h2 id="2-configurer-la-source">2. Configurer la source<a class="header-anchor" href="#2-configurer-la-source" name="2-configurer-la-source"></a>
+</h2>
+
+<p>Onglet <strong>General</strong> de la compose app :</p>
+
+<table class=" table table-bordered">
+<thead>
+<tr>
+<th>Champ</th>
+<th>Valeur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Source Type</strong></td>
+<td><code>Git</code></td>
+</tr>
+<tr>
+<td><strong>Repository URL</strong></td>
+<td><code>https://github.com/ekylibre/ekylibre.git</code></td>
+</tr>
+<tr>
+<td><strong>Branch</strong></td>
+<td>
+<code>5.0-beta</code> (ou <code>main</code> selon votre cible)</td>
+</tr>
+<tr>
+<td><strong>Compose Path</strong></td>
+<td><code>docker/prod/docker-compose.dokploy.yml</code></td>
+</tr>
+</tbody>
+</table>
+
+<p>Dokploy clonera le repo à chaque déploiement.</p>
+
+<h2 id="3-renseigner-les-variables-denvironnement">3. Renseigner les variables d'environnement<a class="header-anchor" href="#3-renseigner-les-variables-denvironnement" name="3-renseigner-les-variables-denvironnement"></a>
+</h2>
+
+<p>Onglet <strong>Environment</strong> de la compose app — coller le contenu adapté de <code>docker/prod/.env.dist</code> :</p>
+
+<pre><code class="dotenv"># === Application ===
+RAILS_ENV=production
+EKYLIBRE_IMAGE_TAG=latest
+HOST_DOMAIN_NAME=example.com
+ADMIN_USERNAME=admin
+ADMIN_PASSWORD=&lt;mot de passe fort&gt;
+SECRET_KEY_BASE=&lt;openssl rand -hex 64&gt;
+RAILS_SERVE_STATIC_FILES=true
+RAILS_LOG_TO_STDOUT=true
+
+# === Database ===
+DB_HOST=db
+DB_NAME=eky_production
+DB_USERNAME=ekylibre
+DB_PASSWORD=&lt;mot de passe fort&gt;
+DB_PORT=5432
+
+# === Redis ===
+REDIS_URL=redis://redis:6379/0
+
+# === Traefik (Dokploy) ===
+# Le wildcard et la racine doivent matcher votre DNS
+TRAEFIK_HOST=example.com
+TRAEFIK_WILDCARD_HOST=*.example.com
+</code></pre>
+
+<blockquote>
+<p><strong>Secrets</strong> : utiliser l'UI Dokploy → Environment Secrets (chiffrés au repos) pour <code>SECRET_KEY_BASE</code>, <code>ADMIN_PASSWORD</code>, <code>DB_PASSWORD</code>.</p>
+</blockquote>
+
+<h2 id="4-activer-traefik-certificats">4. Activer Traefik / certificats<a class="header-anchor" href="#4-activer-traefik-certificats" name="4-activer-traefik-certificats"></a>
+</h2>
+
+<p>Dans l'onglet <strong>Domains</strong> de la compose app, configurer un domaine pour chaque sous-domaine que vous voulez exposer (au moins <code>example.com</code> et <code>*.example.com</code>).</p>
+
+<p>Dokploy déclenche automatiquement Traefik pour provisionner les certificats Let's Encrypt à chaque hostname interrogé.</p>
+
+<blockquote>
+<p><strong>Différence clé avec Caddy standalone</strong> : Dokploy/Traefik s'attend à connaître les hostnames à l'avance via les labels Docker. Pour le wildcard multi-tenant, configurer Traefik avec un certificat <strong>DNS-01 wildcard</strong> plutôt que HTTP-01 (nécessite un provider DNS supporté : Cloudflare, OVH, Route53…). Voir la <a href="https://doc.traefik.io/traefik/https/acme/#dnschallenge">doc Traefik</a>.</p>
+</blockquote>
+
+<h2 id="5-premier-d-ploiement">5. Premier déploiement<a class="header-anchor" href="#5-premier-d-ploiement" name="5-premier-d-ploiement"></a>
+</h2>
+
+<p>Cliquer sur <strong>Deploy</strong> dans l'UI Dokploy.</p>
+
+<p>Dokploy va :</p>
+
+<ol>
+<li>Cloner le repo Ekylibre sur la branche déclarée</li>
+<li>Builder l'image (ou la tirer depuis GHCR selon votre <code>docker-compose.dokploy.yml</code>)</li>
+<li>Démarrer les services</li>
+<li>Provisionner les certificats Traefik</li>
+</ol>
+
+<p>Au premier démarrage, le container <code>app</code> charge le lexicon — <strong>5 à 10 minutes</strong>.</p>
+
+<p>Suivre dans l'onglet <strong>Logs</strong> de Dokploy.</p>
+
+<h2 id="6-push-to-deploy">6. Push-to-deploy<a class="header-anchor" href="#6-push-to-deploy" name="6-push-to-deploy"></a>
+</h2>
+
+<p>Activer dans <strong>General → Auto Deploy</strong> pour redéployer automatiquement à chaque push sur la branche déclarée.</p>
+
+<p>Pour un déploiement manuel ponctuel, le bouton <strong>Deploy</strong> force un re-clone + restart.</p>
+
+<h2 id="7-cr-er-un-premier-tenant">7. Créer un premier tenant<a class="header-anchor" href="#7-cr-er-un-premier-tenant" name="7-cr-er-un-premier-tenant"></a>
+</h2>
+
+<p>Ouvrir un shell sur le container <code>app</code> via l'UI Dokploy (onglet <strong>Terminal</strong>) :</p>
+
+<pre><code class="bash">./docker/prod/scripts/tenant-init.sh acme admin@acme.com 'MotDePasseFort!'
+</code></pre>
+
+<h2 id="8-backups-via-dokploy">8. Backups via Dokploy<a class="header-anchor" href="#8-backups-via-dokploy" name="8-backups-via-dokploy"></a>
+</h2>
+
+<p>Onglet <strong>Backups</strong> :</p>
+
+<ul>
+<li>Configurer une cible S3 / volume local</li>
+<li>Sélectionner le service <code>db</code>
+</li>
+<li>Planifier (cron) — recommandation : quotidien à 3 h du matin, rétention 7 jours</li>
+</ul>
+
+<h2 id="9-monitoring">9. Monitoring<a class="header-anchor" href="#9-monitoring" name="9-monitoring"></a>
+</h2>
+
+<p>Dokploy fournit out-of-the-box :</p>
+
+<ul>
+<li>Métriques CPU/RAM par container</li>
+<li>Logs temps réel</li>
+<li>Healthchecks</li>
+<li>Notifications (Discord / Telegram / Slack / Email)</li>
+</ul>
+
+<h2 id="10-mises-jour">10. Mises à jour<a class="header-anchor" href="#10-mises-jour" name="10-mises-jour"></a>
+</h2>
+
+<p>Si <code>EKYLIBRE_IMAGE_TAG=latest</code> : redéployer pour tirer la dernière image (cliquer <strong>Deploy</strong> dans l'UI).</p>
+
+<p>Pour pinner une version :</p>
+
+<ol>
+<li>Modifier <code>EKYLIBRE_IMAGE_TAG=v5.0.0</code> dans l'onglet Environment</li>
+<li><strong>Save</strong></li>
+<li><strong>Deploy</strong></li>
+</ol>
+
+<h2 id="11-erreurs-fr-quentes">11. Erreurs fréquentes<a class="header-anchor" href="#11-erreurs-fr-quentes" name="11-erreurs-fr-quentes"></a>
+</h2>
+
+<p>Voir <a href="/techdoc/install/troubleshooting/">Résolution de problèmes</a> — Dokploy hérite des erreurs Docker Compose. Spécifiques à Dokploy :</p>
+
+<ul>
+<li>
+<strong>Traefik ne route pas</strong> → vérifier les labels <code>traefik.*</code> dans <code>docker-compose.dokploy.yml</code> et le mapping de domaine dans l'UI</li>
+<li>
+<strong>Cert wildcard introuvable</strong> → DNS-01 mal configuré ; vérifier le provider DNS dans la config Traefik de Dokploy</li>
+</ul>
+
+<h2 id="ressources">Ressources<a class="header-anchor" href="#ressources" name="ressources"></a>
+</h2>
+
+<ul>
+<li><a href="https://docs.dokploy.com/">Documentation Dokploy</a></li>
+<li><a href="https://doc.traefik.io/traefik/https/acme/#dnschallenge">Traefik + Let's Encrypt DNS Challenge</a></li>
+<li>Fichier de référence : <code>docker/prod/DOKPLOY.md</code> dans le repo Ekylibre</li>
+</ul>
+</body></html>
+
+      <p class="open-source-notice">
+          <i class="fa fa-file"></i> Cette documentation est <a href="https://github.com/ekylibre/doc">open-source</a>. Aidez-nous à l'améliorer en ouvrant une issue ou une pull request.
+      </p>
+    </div>
+
+  </div>
+  <hr>
+  <footer>
+    <p class="pull-left">
+      &copy; Ekylibre Authors 2014-2026 | Documentation Distributed under CC-BY-4.0
+    </p>
+    <p class="pull-left">
+       &copy; 2026 Ekylibre SAS. All rights reserved. Ekylibre SAS has registered trademarks and uses trademarks.
+    </p>
+  </footer>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="/javascripts/jquery.js"</script>
+  <script src="/javascripts/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="An open-source monitoring system with a dimensional data model, flexible query language, efficient time series database and modern alerting approach.">
+    <meta name="keywords" content="prometheus, monitoring, monitoring system, time series, time series database, alerting, metrics, telemetry">
+    <meta name="author" content="Prometheus">
+    <meta name="twitter:card" content="summary">
+    <meta property="og:description" content="An open-source monitoring system with a dimensional data model, flexible query language, efficient time series database and modern alerting approach.">
+    <meta property="og:image" content="https://prometheus.io/assets/favicons/android-chrome-192x192.png">
+
+    <link rel="alternate" type="application/atom+xml" title="Prometheus Blog » Feed" href="/blog/feed.xml">
+
+    <link rel="shortcut icon" href="/assets/favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/assets/favicons/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/assets/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/assets/favicons/android-chrome-manifest.json">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/assets/favicons/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    
+    <meta property="og:title" content="Installer Ekylibre | Prometheus">
+    <title>Installer Ekylibre | Prometheus</title>
+    
+
+    <!-- Bootstrap core CSS -->
+    <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="/stylesheets/docs.css" rel="stylesheet">
+    <link href="/stylesheets/routing-tree-editor.css" rel="stylesheet">
+    <link href="/stylesheets/techdoc.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/stylesheets/fontawesome.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,300italic,400' rel='stylesheet' type='text/css'>
+    <style>
+      .nav-lang-switcher { padding: 15px; line-height: 20px; font-weight: 700; letter-spacing: 0.05em; }
+      .nav-lang-switcher a, .nav-lang-switcher span { color: inherit; padding: 0 4px; text-decoration: none; }
+      .nav-lang-switcher a { opacity: 0.55; }
+      .nav-lang-switcher a:hover, .nav-lang-switcher a:focus { opacity: 1; text-decoration: underline; }
+      .nav-lang-switcher span[aria-current] { opacity: 1; }
+      .nav-lang-switcher .lang-sep { opacity: 0.35; }
+    </style>
+  </head>
+
+  <body>
+
+  <div class="">
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="nav navbar-nav navbar-right main-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/fr/user-doc/demarrage">User Doc FR</a></li>
+            <li><a href="/techdoc/">Tech Doc</a></li>
+            <li><a href="/api">API Doc</a></li>
+            <li><a href="/faq">FAQ</a></li>
+            <li><a href="https://discord.gg/BSpD6hq7qR">Forum</a></li>
+            <li><a href="https://demo.ekylibre-dev.com">Demo</a></li>
+            <li><a href="https://github.com/ekylibre"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://twitter.com/ekylibre"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://discord.gg/BSpD6hq7qR"><i class="fab fa-discord"></i></a></li>
+            <li class="nav-lang-switcher" role="navigation" aria-label="Language">
+              
+                <span aria-current="page" lang="en">EN</span><span class="lang-sep" aria-hidden="true">|</span><a href="/fr/" hreflang="fr" lang="fr">FR</a>
+              
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 side-nav-col">
+      
+        <nav class="techdoc-sidebar" aria-label="Documentation technique"><ul class="nav techdoc-nav"><li><a class="techdoc-root" href="/techdoc/"><i class="fa fa-book" aria-hidden="true"></i> <strong>Accueil</strong></a></li><li class="active current has-children"><a href="/techdoc/install/" aria-current="page"><i class="fa fa-rocket" aria-hidden="true"></i> Installation</a><ul class="nav"><li><a href="/techdoc/install/prerequisites/"><i class="fa fa-check-square-o" aria-hidden="true"></i> Prérequis</a></li><li><a href="/techdoc/install/docker-dev/"><i class="fa fa-cube" aria-hidden="true"></i> Docker dev</a></li><li><a href="/techdoc/install/native-ubuntu/"><i class="fa fa-ubuntu" aria-hidden="true"></i> Native Ubuntu</a></li><li><a href="/techdoc/install/app-setup/"><i class="fa fa-cogs" aria-hidden="true"></i> Setup application</a></li><li><a href="/techdoc/install/docker-prod-standalone/"><i class="fa fa-server" aria-hidden="true"></i> Docker prod standalone</a></li><li><a href="/techdoc/install/docker-prod-dokploy/"><i class="fa fa-cloud" aria-hidden="true"></i> Docker prod Dokploy</a></li><li><a href="/techdoc/install/troubleshooting/"><i class="fa fa-medkit" aria-hidden="true"></i> Troubleshooting</a></li></ul></li><li><a href="/techdoc/architecture/"><i class="fa fa-sitemap" aria-hidden="true"></i> Architecture</a></li><li><a href="/techdoc/data-model/"><i class="fa fa-database" aria-hidden="true"></i> Data model</a></li><li><a href="/techdoc/contributing/"><i class="fa fa-code-fork" aria-hidden="true"></i> Contribuer</a></li></ul></nav>
+      
+    </div>
+
+    <div class="col-md-9 doc-content">
+      <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><body>
+<h1 id="installer-ekylibre-5-variantes" class="page-header">Installer Ekylibre — 5 variantes<a class="header-anchor" href="#installer-ekylibre-5-variantes" name="installer-ekylibre-5-variantes"></a>
+</h1>
+<div class="toc toc-full"><ul>
+<li><a href="#arbre-de-d-cision-interactif">Arbre de décision interactif
+</a></li>
+<li><a href="#tableau-comparatif">Tableau comparatif
+</a></li>
+<li><a href="#crit-res-de-choix">Critères de choix
+</a></li>
+<ul>
+<li><a href="#vous-d-couvrez-ekylibre-et-voulez-juste-regarder-le-code-tourner">Vous découvrez Ekylibre et voulez juste <strong>regarder le code tourner</strong>
+</a></li>
+<li><a href="#vous-allez-contribuer-activement-pr-fr-quentes-debug-console-rails-quotidienne">Vous allez <strong>contribuer activement</strong> (PR fréquentes, debug, console Rails quotidienne)
+</a></li>
+<li><a href="#vous-h-bergez-une-instance-pour-un-client-une-coop-rative-vous-m-me">Vous <strong>hébergez une instance</strong> pour un client / une coopérative / vous-même
+</a></li>
+<li><a href="#vous-packagez-ekylibre-pour-debian-ubuntu-cas-avanc">Vous <strong>packagez Ekylibre pour Debian / Ubuntu</strong> (cas avancé)
+</a></li>
+</ul>
+<li><a href="#avant-de-commencer-pr-requis-communs">Avant de commencer — prérequis communs
+</a></li>
+<li><a href="#en-cas-de-p-pin">En cas de pépin
+</a></li>
+</ul></div>
+
+<p>Ekylibre se déploie de plusieurs manières selon votre objectif (contribuer, héberger, tester). Cette page vous aide à choisir, puis vous renvoie vers la procédure pas-à-pas.</p>
+
+<h2 id="arbre-de-d-cision-interactif">Arbre de décision interactif<a class="header-anchor" href="#arbre-de-d-cision-interactif" name="arbre-de-d-cision-interactif"></a>
+</h2>
+
+<p>L'arbre ci-dessous vous guide vers la variante la plus adaptée à votre contexte. Il s'agit d'un mini-canvas <strong>PixiJS</strong>, purement visuel — toute la même information est disponible dans le tableau qui suit, si JavaScript est désactivé ou en mode <code>prefers-reduced-motion</code>.</p>
+
+<div id="install-decision-tree" class="techdoc-pixi-stage" data-pixi-component="install-tree" aria-hidden="true"></div>
+
+<noscript class="techdoc-noscript">
+  <p>JavaScript désactivé — référez-vous au tableau comparatif ci-dessous.</p>
+</noscript>
+
+<script src="https://cdn.jsdelivr.net/npm/pixi.js@8/dist/pixi.min.js" defer></script>
+
+<script src="/javascripts/techdoc-install-tree.js" defer></script>
+
+<h2 id="tableau-comparatif">Tableau comparatif<a class="header-anchor" href="#tableau-comparatif" name="tableau-comparatif"></a>
+</h2>
+
+<table class=" table table-bordered">
+<thead>
+<tr>
+<th>Variante</th>
+<th>Quand la choisir</th>
+<th>Effort</th>
+<th>Durée 1ʳᵉ install</th>
+<th>Lien</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Docker dev</strong></td>
+<td>Vous contribuez au code, vous voulez un environnement isolé reproductible</td>
+<td>Faible</td>
+<td>30 min</td>
+<td><a href="/techdoc/install/docker-dev/">Docker dev</a></td>
+</tr>
+<tr>
+<td><strong>Native Ubuntu</strong></td>
+<td>Vous voulez tout maîtriser, sans Docker, sur votre poste Linux</td>
+<td>Moyen</td>
+<td>1-2 h</td>
+<td><a href="/techdoc/install/native-ubuntu/">Native Ubuntu</a></td>
+</tr>
+<tr>
+<td><strong>Setup app</strong></td>
+<td>Étape commune aux variantes natives, après installation des dépendances système</td>
+<td>Faible</td>
+<td>20 min</td>
+<td><a href="/techdoc/install/app-setup/">Setup application</a></td>
+</tr>
+<tr>
+<td><strong>Docker prod standalone</strong></td>
+<td>Une seule app Ekylibre sur un serveur, HTTPS auto, contrôle total</td>
+<td>Moyen</td>
+<td>1 h</td>
+<td><a href="/techdoc/install/docker-prod-standalone/">Docker prod standalone</a></td>
+</tr>
+<tr>
+<td><strong>Docker prod Dokploy</strong></td>
+<td>Plusieurs apps sur le même serveur, UI de gestion, push-to-deploy Git</td>
+<td>Moyen+</td>
+<td>1-2 h</td>
+<td><a href="/techdoc/install/docker-prod-dokploy/">Docker prod Dokploy</a></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="crit-res-de-choix">Critères de choix<a class="header-anchor" href="#crit-res-de-choix" name="crit-res-de-choix"></a>
+</h2>
+
+<h3 id="vous-d-couvrez-ekylibre-et-voulez-juste-regarder-le-code-tourner">Vous découvrez Ekylibre et voulez juste <strong>regarder le code tourner</strong><a class="header-anchor" href="#vous-d-couvrez-ekylibre-et-voulez-juste-regarder-le-code-tourner" name="vous-d-couvrez-ekylibre-et-voulez-juste-regarder-le-code-tourner"></a>
+</h3>
+
+<p>→ <strong>Docker dev</strong>. Tout est containerisé, vous n'altérez pas votre poste. Une fois fini, <code>docker compose down</code> et il ne reste rien.</p>
+
+<h3 id="vous-allez-contribuer-activement-pr-fr-quentes-debug-console-rails-quotidienne">Vous allez <strong>contribuer activement</strong> (PR fréquentes, debug, console Rails quotidienne)<a class="header-anchor" href="#vous-allez-contribuer-activement-pr-fr-quentes-debug-console-rails-quotidienne" name="vous-allez-contribuer-activement-pr-fr-quentes-debug-console-rails-quotidienne"></a>
+</h3>
+
+<p>→ <strong>Docker dev</strong> suffit dans 90 % des cas (volume monté, console Rails dispo). Choisissez <strong>Native Ubuntu + Setup app</strong> si vous avez besoin d'attacher un debugger natif ou de profiler.</p>
+
+<h3 id="vous-h-bergez-une-instance-pour-un-client-une-coop-rative-vous-m-me">Vous <strong>hébergez une instance</strong> pour un client / une coopérative / vous-même<a class="header-anchor" href="#vous-h-bergez-une-instance-pour-un-client-une-coop-rative-vous-m-me" name="vous-h-bergez-une-instance-pour-un-client-une-coop-rative-vous-m-me"></a>
+</h3>
+
+<p>→ <strong>Docker prod standalone</strong> si vous gérez ce serveur uniquement pour Ekylibre. <strong>Docker prod Dokploy</strong> si vous y faites tourner plusieurs apps et voulez une UI de monitoring.</p>
+
+<h3 id="vous-packagez-ekylibre-pour-debian-ubuntu-cas-avanc">Vous <strong>packagez Ekylibre pour Debian / Ubuntu</strong> (cas avancé)<a class="header-anchor" href="#vous-packagez-ekylibre-pour-debian-ubuntu-cas-avanc" name="vous-packagez-ekylibre-pour-debian-ubuntu-cas-avanc"></a>
+</h3>
+
+<p>→ Le fichier <code>.pkgr.yml</code> à la racine du repo contient les dépendances historiques (Debian 8, Ubuntu 14.04). Procédure non maintenue — préférer Docker.</p>
+
+<h2 id="avant-de-commencer-pr-requis-communs">Avant de commencer — prérequis communs<a class="header-anchor" href="#avant-de-commencer-pr-requis-communs" name="avant-de-commencer-pr-requis-communs"></a>
+</h2>
+
+<p>Quelle que soit la variante, vérifiez les <a href="/techdoc/install/prerequisites/"><strong>prérequis communs</strong></a> : Git, Docker, accès aux registres d'images, DNS, sysctl.</p>
+
+<h2 id="en-cas-de-p-pin">En cas de pépin<a class="header-anchor" href="#en-cas-de-p-pin" name="en-cas-de-p-pin"></a>
+</h2>
+
+<p>Toutes les erreurs courantes sont regroupées dans la page <a href="/techdoc/install/troubleshooting/"><strong>Résolution de problèmes</strong></a> : conflits de port, permissions Docker, Let's Encrypt rate-limit, lexicon qui ne charge pas, etc.</p>
+</body></html>
+
+      <p class="open-source-notice">
+          <i class="fa fa-file"></i> Cette documentation est <a href="https://github.com/ekylibre/doc">open-source</a>. Aidez-nous à l'améliorer en ouvrant une issue ou une pull request.
+      </p>
+    </div>
+
+  </div>
+  <hr>
+  <footer>
+    <p class="pull-left">
+      &copy; Ekylibre Authors 2014-2026 | Documentation Distributed under CC-BY-4.0
+    </p>
+    <p class="pull-left">
+       &copy; 2026 Ekylibre SAS. All rights reserved. Ekylibre SAS has registered trademarks and uses trademarks.
+    </p>
+  </footer>
+  <!-- Bootstrap core JavaScript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="/javascripts/jquery.js"</script>
+  <script src="/javascripts/bootstrap.min.js"></script>
+</body>
+</html>
